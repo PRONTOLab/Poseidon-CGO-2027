@@ -159,8 +159,7 @@ The build log is in the toolchain Volume:
 
 ## Not the default: the full on-device flow
 
-`./make_bundle.sh --herbie-repo <clone of Herbie with the --num-taylor-terms
-commit>`, `modal run poseidon_b300.py --stage build --with-herbie`, then
+`./make_bundle.sh --with-herbie`, `modal run poseidon_b300.py --stage build --with-herbie`, then
 `modal run --detach poseidon_b300.py --stage full --run-id <id>` runs the
 artifact's own pipeline on the B300 (measure the cost model, profile, solve,
 Herbie search for GENGA), as `slurm/run_artifact.sbatch` would; results under

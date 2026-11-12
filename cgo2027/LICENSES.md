@@ -87,7 +87,7 @@ Licence of these files: **TODO (owner): choose and add a top-level `LICENSE`.**
 |---|---|---|---|---|
 | `sources/Enzyme` (git submodule) | Enzyme, https://github.com/EnzymeAD/Enzyme (Poseidon is `enzyme/Poseidon`) | `9e2e0572931248b4610940f2906e583914f9913e` | Apache License 2.0 with LLVM Exceptions (`LICENSE`) | See "Inside the compiler" below. |
 | `sources/cuMpSGEMM` (git submodule) | cuMpSGEMM, https://github.com/enp1s0/cuMpSGEMM | `42dd92ea1c0e3d603bbb3f8f354f53e0967a9f4b` | MIT, Copyright (c) 2022 enp1s0 (`LICENSE`) | Submodules at the commits it records: `cutf` `97339d83` (MIT, `LICENSE`), `wmma_extension` `03772a7f` (MIT, `LICENSE`), `cuGEMM-Mx2x2` `1f68ec6d` (https://github.com/enp1s0/cuGEMM-Mx2x2: no licence file found). |
-| `herbie-<commit>.tar.gz` (archival deposit only, not in the git repository) | Herbie, https://github.com/herbie-fp/herbie | `50ffcda040cd90ea36900140a1bd4ee2acea8b9d` (upstream `73ba1fe76` plus the `--num-taylor-terms` option) | MIT, Copyright (c) 2015-2024 Herbie Project, modified work Copyright 2016 Google Inc. (`LICENSE.md`) | Needed only for `GENGA_HERBIE=run`. |
+| `sources/herbie` (git submodule) and `sources/herbie-num-taylor-terms.patch` | Herbie, https://github.com/herbie-fp/herbie | `73ba1fe76f97d4cdb852a602addd82e3a983b209`; the patch adds the `--num-taylor-terms` option (written for this artifact, same licence) | MIT, Copyright (c) 2015-2024 Herbie Project, modified work Copyright 2016 Google Inc. (`LICENSE.md`) | Needed only for `GENGA_HERBIE=run`. |
 
 LLVM is not shipped. The compiler is built against llvm-project
 (https://github.com/llvm/llvm-project) at commit

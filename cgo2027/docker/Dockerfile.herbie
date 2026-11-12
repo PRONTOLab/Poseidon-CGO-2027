@@ -4,15 +4,15 @@
 # of this archive; the same commands built this Herbie in an earlier container
 # test of the same source.
 #
-# Build from the repository root, after the main image, with Herbie's source
-# tarball (herbie-50ffcda04.tar.gz of the archival deposit; it is not in the
-# git repository) placed in sources/:
+# Build from the repository root (cloned with its submodules), after the main
+# image:
 #
 #   docker build -f cgo2027/docker/Dockerfile -t poseidon-cgo2027 .
 #   docker build -f cgo2027/docker/Dockerfile.herbie -t poseidon-cgo2027:herbie .
 #
-# Herbie is built from sources/herbie-*.tar.gz (upstream Herbie 73ba1fe76 plus
-# the --num-taylor-terms option) with the commands of the compiler's
+# Herbie is built from the sources/herbie submodule (upstream Herbie 73ba1fe76)
+# with sources/herbie-num-taylor-terms.patch applied (the --num-taylor-terms
+# option the GENGA search uses), with the commands of the compiler's
 # cmake/Herbie.cmake, and installed at /opt/herbie, the path the compiler in
 # the main image was configured with. This step downloads Racket 8.15, Rust
 # 1.85.1, Herbie's Rust crates and the Racket packages fpbench, rival and
@@ -30,8 +30,15 @@ RUN set -eux; \
     /tmp/rustup-init -y --no-modify-path --profile minimal --default-toolchain 1.85.1; \
     rm -f /tmp/rustup-init
 ENV PATH=/opt/racket/bin:/opt/rust/cargo/bin:$PATH
-COPY sources/herbie-*.tar.gz /tmp/herbie-src.tar.gz
-RUN set -eux; tar -C /tmp -xzf /tmp/herbie-src.tar.gz; cd /tmp/herbie; \
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends patch \
+ && rm -rf /var/lib/apt/lists/*
+COPY sources/herbie /tmp/herbie
+COPY sources/herbie-num-taylor-terms.patch /tmp/herbie-num-taylor-terms.patch
+RUN set -eux; \
+    [ -f /tmp/herbie/src/main.rkt ] || \
+      { echo "sources/herbie is empty: git submodule update --init --recursive" >&2; exit 1; }; \
+    cd /tmp/herbie; patch -p1 < /tmp/herbie-num-taylor-terms.patch; \
     cargo build --release --manifest-path=egg-herbie/Cargo.toml; \
     raco pkg install --auto --no-docs --batch ./egg-herbie; \
     raco pkg update --auto --no-docs --batch fpbench rival rival3 \
@@ -40,7 +47,7 @@ RUN set -eux; tar -C /tmp -xzf /tmp/herbie-src.tar.gz; cd /tmp/herbie; \
     raco exe -o herbie --orig-exe --embed-dlls --vv src/main.rkt; \
     raco distribute herbie-compiled herbie; \
     cp -a herbie-compiled /opt/herbie; \
-    cd /; rm -rf /tmp/herbie /tmp/herbie-src.tar.gz; \
+    cd /; rm -rf /tmp/herbie /tmp/herbie-num-taylor-terms.patch; \
     /opt/herbie/bin/herbie improve --help 2>&1 | grep -q -- '--num-taylor-terms'
 # The default stays GENGA_HERBIE=replay; GENGA_HERBIE=run selects the search.
 ENV HERBIE=/opt/herbie/bin/herbie

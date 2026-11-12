@@ -9,9 +9,9 @@
 #   --artifact <cgo2027 artifact directory>                   (default: ../cgo2027)
 #   --cumpsgemm-repo <enp1s0/cuMpSGEMM with its submodules>   (default: ../sources/cuMpSGEMM)
 #   --cumpsgemm-commit <rev>                                  (default: HEAD of that checkout)
-#   --herbie-repo <git clone of Herbie> [--herbie-commit <rev>]
-#                           optional: only the full on-device flow searches
-#                           with Herbie (default commit: num-taylor-terms-73ba1fe76)
+#   --with-herbie           also bundle Herbie (../sources/herbie with
+#                           ../sources/herbie-num-taylor-terms.patch applied);
+#                           only the full on-device flow searches with Herbie
 #   --replay-pack <dir>                                       (default: ./replay_pack)
 #   --out <dir>                                               (default: ./bundle)
 #
@@ -19,8 +19,8 @@
 #   poseidon-src.tar.gz  `git archive` of <compiler-commit>, the enzyme/ subtree
 #                        only, under poseidon-src/ (read-only git; the worktree's
 #                        uncommitted edits are NOT included)
-#   herbie-src.tar.gz    (only with --herbie-repo)
-#                        `git archive` of <herbie-commit> under herbie/: upstream
+#   herbie-src.tar.gz    (only with --with-herbie) the Herbie submodule's
+#                        commit with the patch applied, under herbie/: upstream
 #                        Herbie 73ba1fe76 plus the --num-taylor-terms option the
 #                        GENGA drift and unified solves search with
 #   cumpsgemm-src.tar.gz cuMpSGEMM at <cumpsgemm-commit> with its submodules,
@@ -45,7 +45,7 @@ OUT="$HERE/bundle"
 PACK="$HERE/replay_pack"
 CUMPS_REPO="$HERE/../sources/cuMpSGEMM" CUMPS_COMMIT="HEAD"
 COMPILER_REPO="$HERE/../sources/Enzyme" COMPILER_COMMIT="HEAD" ARTIFACT="$HERE/../cgo2027"
-HERBIE_REPO="" HERBIE_COMMIT="num-taylor-terms-73ba1fe76"
+WITH_HERBIE=0 HERBIE_REPO="$HERE/../sources/herbie" HERBIE_PATCH="$HERE/../sources/herbie-num-taylor-terms.patch"
 
 usage() { sed -n '2,36p' "$0"; exit 2; }
 while [ $# -gt 0 ]; do
@@ -53,8 +53,7 @@ while [ $# -gt 0 ]; do
     --compiler-repo)   COMPILER_REPO="$2"; shift 2 ;;
     --compiler-commit) COMPILER_COMMIT="$2"; shift 2 ;;
     --artifact)        ARTIFACT="$2"; shift 2 ;;
-    --herbie-repo)     HERBIE_REPO="$2"; shift 2 ;;
-    --herbie-commit)   HERBIE_COMMIT="$2"; shift 2 ;;
+    --with-herbie)     WITH_HERBIE=1; shift ;;
     --out)             OUT="$2"; shift 2 ;;
     --replay-pack)     PACK="$2"; shift 2 ;;
     --cumpsgemm-repo)  CUMPS_REPO="$2"; shift 2 ;;
@@ -72,8 +71,11 @@ COMPILER_SHA="$(git -C "$COMPILER_REPO" rev-parse --verify "$COMPILER_COMMIT^{co
 git -C "$COMPILER_REPO" cat-file -e "$COMPILER_SHA:enzyme/Poseidon/CMakeLists.txt" ||
   { echo "make_bundle: $COMPILER_SHA has no enzyme/Poseidon" >&2; exit 1; }
 HERBIE_SHA=""
-if [ -n "$HERBIE_REPO" ]; then
-  HERBIE_SHA="$(git -C "$HERBIE_REPO" rev-parse --verify "$HERBIE_COMMIT^{commit}")"
+if [ "$WITH_HERBIE" = 1 ]; then
+  [ -e "$HERBIE_REPO/.git" ] ||
+    { echo "make_bundle: $HERBIE_REPO is not checked out: git submodule update --init --recursive" >&2; exit 1; }
+  [ -f "$HERBIE_PATCH" ] || { echo "make_bundle: no $HERBIE_PATCH" >&2; exit 1; }
+  HERBIE_SHA="$(git -C "$HERBIE_REPO" rev-parse --verify "HEAD^{commit}")"
   git -C "$HERBIE_REPO" cat-file -e "$HERBIE_SHA:src/main.rkt" ||
     { echo "make_bundle: $HERBIE_SHA is not a Herbie tree" >&2; exit 1; }
 fi
@@ -87,8 +89,12 @@ trap 'rm -rf "$TMP"' EXIT
 git -C "$COMPILER_REPO" archive --format=tar --prefix=poseidon-src/ "$COMPILER_SHA" enzyme |
   gzip -n -9 > "$TMP/poseidon-src.tar.gz"
 if [ -n "$HERBIE_SHA" ]; then
-  git -C "$HERBIE_REPO" archive --format=tar --prefix=herbie/ "$HERBIE_SHA" |
+  mkdir -p "$TMP/herbie-tree"
+  git -C "$HERBIE_REPO" archive --format=tar --prefix=herbie/ "$HERBIE_SHA" | tar -C "$TMP/herbie-tree" -xf -
+  patch -s -d "$TMP/herbie-tree/herbie" -p1 < "$HERBIE_PATCH"
+  tar -C "$TMP/herbie-tree" --owner=0 --group=0 --numeric-owner --sort=name --mtime=@0 -cf - herbie |
     gzip -n -9 > "$TMP/herbie-src.tar.gz"
+  rm -rf "$TMP/herbie-tree"
 fi
 
 # ---- cuMpSGEMM (the TCEC backend the B300 compiler is configured with) ----------
@@ -267,7 +273,7 @@ for t in $TARBALLS; do check_privacy "$TMP/$t.tar.gz"; done
       "$(stat -c %s "$TMP/$t.tar.gz")" "$t.tar.gz"
   done
   echo "compiler_commit=$COMPILER_SHA"
-  [ -n "$HERBIE_SHA" ] && echo "herbie_commit=$HERBIE_SHA"
+  [ -n "$HERBIE_SHA" ] && echo "herbie_commit=$HERBIE_SHA+num-taylor-terms.patch"
   echo "cumpsgemm_commit=$CUMPS_SHA"
   echo "artifact_files=$ART_FILES"
   echo "created=$(date -u +%Y-%m-%dT%H:%M:%SZ)"

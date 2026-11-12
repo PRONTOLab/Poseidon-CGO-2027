@@ -17,6 +17,7 @@ tensor-core emulation.
 | `cgo2027/LICENSES.md` | Licences and provenance of everything in this repository. |
 | `sources/Enzyme` | Git submodule, the compiler: the Enzyme repository (https://github.com/EnzymeAD/Enzyme) at commit `9e2e0572931248b4610940f2906e583914f9913e`; Poseidon is `enzyme/Poseidon`. Apache License 2.0 with LLVM Exceptions. |
 | `sources/cuMpSGEMM` | Git submodule: cuMpSGEMM (https://github.com/enp1s0/cuMpSGEMM) at commit `42dd92ea1c0e3d603bbb3f8f354f53e0967a9f4b` with its three submodules at the commits it records: the error-corrected tensor-core GEMM the compiler's TCEC runtime calls. |
+| `sources/herbie`, `sources/herbie-num-taylor-terms.patch` | Git submodule: Herbie (https://github.com/herbie-fp/herbie) at commit `73ba1fe76f97d4cdb852a602addd82e3a983b209`, and the patch that adds the `--num-taylor-terms` option the GENGA search uses. Needed only to run the Herbie searches again; the artifact replays the shipped Herbie answers by default. `cgo2027/docker/Dockerfile.herbie` builds it. |
 
 Clone with the submodules:
 
@@ -24,12 +25,6 @@ Clone with the submodules:
 git clone --recursive https://github.com/PRONTOLab/Poseidon-CGO-2027.git
 # in an existing clone: git submodule update --init --recursive
 ```
-
-Herbie (https://github.com/herbie-fp/herbie, upstream commit 73ba1fe76 plus the
-`--num-taylor-terms` option) is needed only to search GENGA's rewrites again;
-the artifact replays the shipped Herbie answers by default. Its source is in
-the archival deposit (`sources/herbie-50ffcda04.tar.gz`), not in this
-repository.
 
 LLVM is not included. The compiler is built against llvm-project
 (https://github.com/llvm/llvm-project) at commit `9d618fc0243103263ebf9bdcd08ef25e871d9c78`; the

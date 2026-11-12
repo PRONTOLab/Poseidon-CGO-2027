@@ -1,0 +1,61 @@
+Adds the --num-taylor-terms option to Herbie (https://github.com/herbie-fp/herbie)
+at commit 73ba1fe76f97d4cdb852a602addd82e3a983b209, the sources/herbie submodule.
+It sets *taylor-order-limit*, the number of terms kept in each Taylor series
+(default 2), and passes the parameter to worker places so that the option
+takes effect with --threads. The GENGA drift search uses it.
+Apply from the root of the Herbie tree: patch -p1 < herbie-num-taylor-terms.patch
+
+diff --git a/src/api/server.rkt b/src/api/server.rkt
+index 2a8a7344a..a24bef078 100644
+--- a/src/api/server.rkt
++++ b/src/api/server.rkt
+@@ -296,6 +296,7 @@
+                          *reeval-pts*
+                          *node-limit*
+                          *max-find-range-depth*
++                         *taylor-order-limit*
+                          *platform-state*)
+    (activate-platform! (*platform-state*))
+    ; not sure if the above code is actaully needed.
+@@ -427,6 +428,7 @@
+                          *reeval-pts*
+                          *node-limit*
+                          *max-find-range-depth*
++                         *taylor-order-limit*
+                          *platform-state*)
+    (activate-platform! (*platform-state*))
+    (define worker-thread
+diff --git a/src/main.rkt b/src/main.rkt
+index 98dbde578..919f19586 100644
+--- a/src/main.rkt
++++ b/src/main.rkt
+@@ -103,6 +103,12 @@
+      during sampling. May fix \"Cannot sample enough valid points\" but will slow."
+      (format "[Default: ~a iterations]" (*max-find-range-depth*)))
+     (*max-find-range-depth* (string->number num))]
++   [("--num-taylor-terms")
++    num
++    ("The maximum number of terms in each Taylor series. Herbie may find additional improvements
++     with more terms. Herbie slows down with more terms."
++     (format "[Default: ~a terms]" (*taylor-order-limit*)))
++    (*taylor-order-limit* (string->number num))]
+    [("--profile") "Whether to profile each run (no-op, always on)" (void)]
+    #:multi [("-o" "--disable")
+             flag
+diff --git a/www/doc/2.4/options.html b/www/doc/2.4/options.html
+index f1beeae85..c9b3732c3 100644
+--- a/www/doc/2.4/options.html
++++ b/www/doc/2.4/options.html
+@@ -126,6 +126,12 @@
+       algebraic reasoning. The default is 4000. Increasing this option
+       will slow Herbie down, but may improve results slightly.</dd>
+     
++    <dt><code>--num-taylor-terms <var>N</var></code></dt>
++    <dd>The maximum number of terms in each Taylor series that
++      Herbie uses to approximate expressions. The default is 2.
++      Increasing this option will slow Herbie down, but may find more
++      accurate series approximations.</dd>
++    
+   </dl>
+ 
+   <h2>Web shell options</h2>

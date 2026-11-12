@@ -80,7 +80,7 @@ SMOKE_TIMEOUT = 1800
 RUN_TIMEOUT = 24 * 3600     # Modal's maximum
 REPLAY_TIMEOUT = 2 * 3600
 BUNDLE_FILES = ("poseidon-src.tar.gz", "cumpsgemm-src.tar.gz", "artifact.tar.gz", "replay_pack.tar.gz")
-# Bundled only by make_bundle.sh --herbie-repo; needed by --with-herbie.
+# Bundled only by make_bundle.sh --with-herbie; needed by --with-herbie here.
 OPTIONAL_BUNDLE_FILES = ("herbie-src.tar.gz",)
 BENCHES = ("fig2_drift", "genga_nbody", "ozp", "chase_eigensolver")
 
@@ -287,7 +287,7 @@ def main(stage: str = "", run_id: str = "", rows: str = "", benches: str = "", m
           f"files, made {MANIFEST.get('created')}")
     get = f"modal volume get {RESULTS_VOLUME} {run_id} ."
     if with_herbie and "herbie-src.tar.gz" not in MANIFEST["files"]:
-        raise SystemExit("--with-herbie needs a bundle made with make_bundle.sh --herbie-repo <Herbie clone>")
+        raise SystemExit("--with-herbie needs a bundle made with ./make_bundle.sh --with-herbie")
     if stage != "build":
         print(f"run id: {run_id}\nresults, when done: {get}")
 

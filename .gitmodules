@@ -4,3 +4,6 @@
 [submodule "sources/cuMpSGEMM"]
 	path = sources/cuMpSGEMM
 	url = https://github.com/enp1s0/cuMpSGEMM.git
+[submodule "sources/herbie"]
+	path = sources/herbie
+	url = https://github.com/herbie-fp/herbie.git
