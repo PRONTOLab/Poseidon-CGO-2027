@@ -1,0 +1,22 @@
+{
+  "key": {
+    "K": "2048",
+    "M": "16",
+    "N": "16",
+    "accuracy model": "A66DEC37FBE2781C",
+    "confidence": "0.94999999999999996",
+    "exponent penalty": "1e+30",
+    "format": "1",
+    "gradient statistics": "97D0EBBEEFD6A8A2",
+    "model": "getOzakiIIAccuracyCost",
+    "moduli": "8",
+    "operand statistics": "4DFE84CE2AB36B6B",
+    "samples": "256",
+    "sampling log bits": "40",
+    "seed": "239778888"
+  },
+  "value": {
+    "accuracy cost": "1826.1493522402852",
+    "domain error": "2.2753338202450566e-08"
+  }
+}

@@ -1,0 +1,1617 @@
+[poseidon] Optimizing preprocess__Z8hemm_optPdPKdS1_dd_poseidon_body with relative error tolerance: 0.000000e+00
+[poseidon] Optimizing preprocess__Z9resid_optPdPKdS1_S1__poseidon_body with relative error tolerance: 0.000000e+00
+[poseidon] Optimizing preprocess__Z8gram_optPdPKd_poseidon_body with relative error tolerance: 0.000000e+00
+[poseidon] Optimizing preprocess__Z8rrhv_optPdPKdS1__poseidon_body with relative error tolerance: 0.000000e+00
+[poseidon] Optimizing preprocess__Z10rrproj_optPdPKdS1__poseidon_body with relative error tolerance: 0.000000e+00
+Poseidon JOINT: collecting candidates from 5 marked function(s)
+[poseidon] GPU mode active for preprocess__Z8hemm_optPdPKdS1_dd_poseidon_body
+[poseidon] canonical form hash of preprocess__Z8hemm_optPdPKdS1_dd_poseidon_body is 85f4a7329d0e3279
+[poseidon] profile header for preprocess__Z8hemm_optPdPKdS1_dd_poseidon_body: MaxBlockDims=(16,16,1) LaunchCount=7040
+[hostgemm] preprocess__Z8hemm_optPdPKdS1_dd_poseidon_body: 1 candidate reduction loop(s)
+[poseidon] Found 1 AbstractMatmul(s) for preprocess__Z8hemm_optPdPKdS1_dd_poseidon_body
+  Matmul[0]: 16x16x2048 a=f64 b=f64 acc=f64 d=f64 origin=ScalarLoopReduction
+    (profile dump skipped for ScalarLoopReduction)
+[poseidon] Starting Floodfill for preprocess__Z8hemm_optPdPKdS1_dd_poseidon_body
+Registered FPLLValue for non-isOptimizable instruction:   tail call void @llvm.experimental.noalias.scope.decl(metadata !149) #21
+Registered FPLLValue for non-isOptimizable instruction:   tail call void @llvm.experimental.noalias.scope.decl(metadata !152) #21
+Registered FPLLValue for non-isOptimizable instruction:   tail call void @llvm.experimental.noalias.scope.decl(metadata !154) #21
+Registered FPLLValue for non-isOptimizable instruction:   %6 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ctaid.x() #21
+Registered FPLLValue for non-isOptimizable instruction:   %7 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ntid.x() #21
+Registered FPLLValue for non-isOptimizable instruction:   %8 = mul i32 %6, %7
+Registered FPLLValue for non-isOptimizable instruction:   %9 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.tid.x() #21
+Registered FPLLValue for non-isOptimizable instruction:   %10 = add i32 %8, %9
+Registered FPLLValue for non-isOptimizable instruction:   %11 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ctaid.y() #21
+Registered FPLLValue for non-isOptimizable instruction:   %12 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ntid.y() #21
+Registered FPLLValue for non-isOptimizable instruction:   %13 = mul nuw nsw i32 %11, %12
+Registered FPLLValue for non-isOptimizable instruction:   %14 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.tid.y() #21
+Registered FPLLValue for non-isOptimizable instruction:   %15 = add nuw nsw i32 %13, %14
+Registered FPLLValue for non-isOptimizable instruction:   %16 = icmp sgt i32 %10, 2047
+Registered FPLLValue for non-isOptimizable instruction:   %17 = icmp samesign ugt i32 %15, 111
+Registered FPLLValue for non-isOptimizable instruction:   %18 = or i1 %16, %17
+Registered FPLLValue for non-isOptimizable instruction:   br i1 %18, label %45, label %19
+Registered FPLLValue for non-isOptimizable instruction:   %20 = sext i32 %10 to i64
+Registered FPLLValue for non-isOptimizable instruction:   %21 = shl nsw i64 %20, 14
+Registered FPLLValue for non-isOptimizable instruction:   %22 = getelementptr inbounds nuw i8, ptr %1, i64 %21
+Registered FPLLValue for non-isOptimizable instruction:   %23 = shl nuw nsw i32 %15, 11
+Registered FPLLValue for non-isOptimizable instruction:   %24 = zext nneg i32 %23 to i64
+Registered FPLLValue for non-isOptimizable instruction:   %25 = getelementptr inbounds nuw [8 x i8], ptr %2, i64 %24
+Registered FPLLValue for non-isOptimizable instruction:   br label %32
+Registered FPLLValue for non-isOptimizable instruction:   %27 = getelementptr [8 x i8], ptr %0, i64 %24
+Registered FPLLValue for non-isOptimizable instruction:   %28 = getelementptr [8 x i8], ptr %27, i64 %20
+Registered FPLLValue for non-isOptimizable instruction:   %29 = load double, ptr %28, align 8, !tbaa !33, !alias.scope !149
+Registered FPLLValue for non-isOptimizable instruction:   store double %31, ptr %28, align 8, !tbaa !33, !alias.scope !149
+Registered FPLLValue for non-isOptimizable instruction:   br label %45
+Registered FPLLValue for non-isOptimizable instruction:   %33 = phi i64 [ %36, %32 ], [ 0, %19 ]
+Registered FPLLValue for non-isOptimizable instruction:   %34 = phi double [ 0.000000e+00, %19 ], [ %42, %32 ]
+Registered FPLLValue for non-isOptimizable instruction:   %35 = trunc i64 %33 to i32
+Registered FPLLValue for non-isOptimizable instruction:   %36 = add nuw i64 %33, 1
+Registered FPLLValue for non-isOptimizable instruction:   %37 = zext nneg i32 %35 to i64
+Registered FPLLValue for non-isOptimizable instruction:   %38 = getelementptr inbounds nuw [8 x i8], ptr %22, i64 %37
+Registered FPLLValue for non-isOptimizable instruction:   %39 = load double, ptr %38, align 8, !tbaa !33, !alias.scope !152
+Registered FPLLValue for non-isOptimizable instruction:   %40 = getelementptr inbounds nuw [8 x i8], ptr %25, i64 %37
+Registered FPLLValue for non-isOptimizable instruction:   %41 = load double, ptr %40, align 8, !tbaa !33, !alias.scope !154
+Registered FPLLValue for non-isOptimizable instruction:   %43 = add nuw nsw i32 %35, 1
+Registered FPLLValue for non-isOptimizable instruction:   %44 = icmp eq i32 %43, 2048
+Registered FPLLValue for non-isOptimizable instruction:   br i1 %44, label %26, label %32, !llvm.loop !155
+Registered FPLLValue for non-isOptimizable instruction:   ret void
+Registered FPNode for argument: double %4
+Registered FPNode for argument: double %3
+Skipping non-isOptimizable instruction:   tail call void @llvm.experimental.noalias.scope.decl(metadata !149) #21
+Skipping non-isOptimizable instruction:   tail call void @llvm.experimental.noalias.scope.decl(metadata !152) #21
+Skipping non-isOptimizable instruction:   tail call void @llvm.experimental.noalias.scope.decl(metadata !154) #21
+Skipping non-isOptimizable instruction:   %6 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ctaid.x() #21
+Skipping non-isOptimizable instruction:   %7 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ntid.x() #21
+Skipping non-isOptimizable instruction:   %8 = mul i32 %6, %7
+Skipping non-isOptimizable instruction:   %9 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.tid.x() #21
+Skipping non-isOptimizable instruction:   %10 = add i32 %8, %9
+Skipping non-isOptimizable instruction:   %11 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ctaid.y() #21
+Skipping non-isOptimizable instruction:   %12 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ntid.y() #21
+Skipping non-isOptimizable instruction:   %13 = mul nuw nsw i32 %11, %12
+Skipping non-isOptimizable instruction:   %14 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.tid.y() #21
+Skipping non-isOptimizable instruction:   %15 = add nuw nsw i32 %13, %14
+Skipping non-isOptimizable instruction:   %16 = icmp sgt i32 %10, 2047
+Skipping non-isOptimizable instruction:   %17 = icmp samesign ugt i32 %15, 111
+Skipping non-isOptimizable instruction:   %18 = or i1 %16, %17
+Skipping non-isOptimizable instruction:   br i1 %18, label %45, label %19
+Skipping non-isOptimizable instruction:   %20 = sext i32 %10 to i64
+Skipping non-isOptimizable instruction:   %21 = shl nsw i64 %20, 14
+Skipping non-isOptimizable instruction:   %22 = getelementptr inbounds nuw i8, ptr %1, i64 %21
+Skipping non-isOptimizable instruction:   %23 = shl nuw nsw i32 %15, 11
+Skipping non-isOptimizable instruction:   %24 = zext nneg i32 %23 to i64
+Skipping non-isOptimizable instruction:   %25 = getelementptr inbounds nuw [8 x i8], ptr %2, i64 %24
+Skipping non-isOptimizable instruction:   br label %32
+Skipping non-isOptimizable instruction:   %27 = getelementptr [8 x i8], ptr %0, i64 %24
+Skipping non-isOptimizable instruction:   %28 = getelementptr [8 x i8], ptr %27, i64 %20
+Skipping non-isOptimizable instruction:   %29 = load double, ptr %28, align 8, !tbaa !33, !alias.scope !149
+Starting floodfill from:   %30 = fmul double %4, %29, !enzyme_active !156, !poseidon.prof.idx !157
+Insert to operation_seen and processed:   %30 = fmul double %4, %29, !enzyme_active !156, !poseidon.prof.idx !157
+Non-isOptimizable input found: double %4
+Non-isOptimizable input found:   %29 = load double, ptr %28, align 8, !tbaa !33, !alias.scope !149
+Adding user to todo list:   %31 = tail call double @llvm.fmuladd.f64(double %3, double %42, double %30) #21, !enzyme_active !156, !poseidon.prof.idx !158
+Insert to operation_seen and processed:   %31 = tail call double @llvm.fmuladd.f64(double %3, double %42, double %30) #21, !enzyme_active !156, !poseidon.prof.idx !158
+Non-isOptimizable input found: double %3
+Adding operand to todo list:   %42 = tail call double @llvm.fmuladd.f64(double %39, double %41, double %34) #21, !enzyme_active !156, !poseidon.prof.idx !159
+Adding operand to todo list:   %30 = fmul double %4, %29, !enzyme_active !156, !poseidon.prof.idx !157
+Output instruction found:   %31 = tail call double @llvm.fmuladd.f64(double %3, double %42, double %30) #21, !enzyme_active !156, !poseidon.prof.idx !158
+Skipping already seen instruction:   %30 = fmul double %4, %29, !enzyme_active !156, !poseidon.prof.idx !157
+Insert to operation_seen and processed:   %42 = tail call double @llvm.fmuladd.f64(double %39, double %41, double %34) #21, !enzyme_active !156, !poseidon.prof.idx !159
+Non-isOptimizable input found:   %39 = load double, ptr %38, align 8, !tbaa !33, !alias.scope !152
+Non-isOptimizable input found:   %41 = load double, ptr %40, align 8, !tbaa !33, !alias.scope !154
+Non-isOptimizable input found:   %34 = phi double [ 0.000000e+00, %19 ], [ %42, %32 ]
+Output instruction found:   %42 = tail call double @llvm.fmuladd.f64(double %39, double %41, double %34) #21, !enzyme_active !156, !poseidon.prof.idx !159
+Adding user to todo list:   %31 = tail call double @llvm.fmuladd.f64(double %3, double %42, double %30) #21, !enzyme_active !156, !poseidon.prof.idx !158
+Skipping already seen instruction:   %31 = tail call double @llvm.fmuladd.f64(double %3, double %42, double %30) #21, !enzyme_active !156, !poseidon.prof.idx !158
+Found a subgraph with 3 operations and 6 inputs and 2 outputs
+Inputs:
+double %4
+  %29 = load double, ptr %28, align 8, !tbaa !33, !alias.scope !149
+double %3
+  %39 = load double, ptr %38, align 8, !tbaa !33, !alias.scope !152
+  %41 = load double, ptr %40, align 8, !tbaa !33, !alias.scope !154
+  %34 = phi double [ 0.000000e+00, %19 ], [ %42, %32 ]
+Outputs:
+  %31 = tail call double @llvm.fmuladd.f64(double %3, double %42, double %30) #21, !enzyme_active !156, !poseidon.prof.idx !158
+  %42 = tail call double @llvm.fmuladd.f64(double %39, double %41, double %34) #21, !enzyme_active !156, !poseidon.prof.idx !159
+Operations:
+  %30 = fmul double %4, %29, !enzyme_active !156, !poseidon.prof.idx !157
+  %31 = tail call double @llvm.fmuladd.f64(double %3, double %42, double %30) #21, !enzyme_active !156, !poseidon.prof.idx !158
+  %42 = tail call double @llvm.fmuladd.f64(double %39, double %41, double %34) #21, !enzyme_active !156, !poseidon.prof.idx !159
+Skipping already seen instruction:   %31 = tail call double @llvm.fmuladd.f64(double %3, double %42, double %30) #21, !enzyme_active !156, !poseidon.prof.idx !158
+Skipping non-isOptimizable instruction:   store double %31, ptr %28, align 8, !tbaa !33, !alias.scope !149
+Skipping non-isOptimizable instruction:   br label %45
+Skipping non-isOptimizable instruction:   %33 = phi i64 [ %36, %32 ], [ 0, %19 ]
+Skipping non-isOptimizable instruction:   %34 = phi double [ 0.000000e+00, %19 ], [ %42, %32 ]
+Skipping non-isOptimizable instruction:   %35 = trunc i64 %33 to i32
+Skipping non-isOptimizable instruction:   %36 = add nuw i64 %33, 1
+Skipping non-isOptimizable instruction:   %37 = zext nneg i32 %35 to i64
+Skipping non-isOptimizable instruction:   %38 = getelementptr inbounds nuw [8 x i8], ptr %22, i64 %37
+Skipping non-isOptimizable instruction:   %39 = load double, ptr %38, align 8, !tbaa !33, !alias.scope !152
+Skipping non-isOptimizable instruction:   %40 = getelementptr inbounds nuw [8 x i8], ptr %25, i64 %37
+Skipping non-isOptimizable instruction:   %41 = load double, ptr %40, align 8, !tbaa !33, !alias.scope !154
+Skipping already seen instruction:   %42 = tail call double @llvm.fmuladd.f64(double %39, double %41, double %34) #21, !enzyme_active !156, !poseidon.prof.idx !159
+Skipping non-isOptimizable instruction:   %43 = add nuw nsw i32 %35, 1
+Skipping non-isOptimizable instruction:   %44 = icmp eq i32 %43, 2048
+Skipping non-isOptimizable instruction:   br i1 %44, label %26, label %32, !llvm.loop !155
+Skipping non-isOptimizable instruction:   ret void
+[poseidon] Found 1 initial subgraphs in preprocess__Z8hemm_optPdPKdS1_dd_poseidon_body
+Updated bounds for   %30 = fmul double %4, %29, !enzyme_active !156, !poseidon.prof.idx !157: [-0.000000e+00, 0.000000e+00]
+Range of   %30 = fmul double %4, %29, !enzyme_active !156, !poseidon.prof.idx !157 is [-0.000000e+00, 0.000000e+00]
+Sensitivity score of   %30 = fmul double %4, %29, !enzyme_active !156, !poseidon.prof.idx !157 is: 0.000000e+00
+Gradient sum of   %30 = fmul double %4, %29, !enzyme_active !156, !poseidon.prof.idx !157 is: 3.303495e+04
+Execution count of   %30 = fmul double %4, %29, !enzyme_active !156, !poseidon.prof.idx !157 is: 1802240
+Updated bounds for double %4: [0.000000e+00, 0.000000e+00]
+Range of double %4 is [0.000000e+00, 0.000000e+00]
+Updated bounds for   %29 = load double, ptr %28, align 8, !tbaa !33, !alias.scope !149: [-3.069588e+00, 3.716776e+00]
+Range of   %29 = load double, ptr %28, align 8, !tbaa !33, !alias.scope !149 is [-3.069588e+00, 3.716776e+00]
+Updated bounds for   %31 = tail call double @llvm.fmuladd.f64(double %3, double %42, double %30) #21, !enzyme_active !156, !poseidon.prof.idx !158: [-9.583964e-02, 1.072637e-01]
+Range of   %31 = tail call double @llvm.fmuladd.f64(double %3, double %42, double %30) #21, !enzyme_active !156, !poseidon.prof.idx !158 is [-9.583964e-02, 1.072637e-01]
+Sensitivity score of   %31 = tail call double @llvm.fmuladd.f64(double %3, double %42, double %30) #21, !enzyme_active !156, !poseidon.prof.idx !158 is: 6.177941e+02
+Gradient sum of   %31 = tail call double @llvm.fmuladd.f64(double %3, double %42, double %30) #21, !enzyme_active !156, !poseidon.prof.idx !158 is: 3.303495e+04
+Execution count of   %31 = tail call double @llvm.fmuladd.f64(double %3, double %42, double %30) #21, !enzyme_active !156, !poseidon.prof.idx !158 is: 1802240
+Updated bounds for double %3: [5.905984e-02, 6.920477e-02]
+Range of double %3 is [5.905984e-02, 6.920477e-02]
+Updated bounds for   %42 = tail call double @llvm.fmuladd.f64(double %39, double %41, double %34) #21, !enzyme_active !156, !poseidon.prof.idx !159: [-1.384870e+00, 1.556828e+00]
+Range of   %42 = tail call double @llvm.fmuladd.f64(double %39, double %41, double %34) #21, !enzyme_active !156, !poseidon.prof.idx !159 is [-1.384870e+00, 1.556828e+00]
+Updated bounds for   %30 = fmul double %4, %29, !enzyme_active !156, !poseidon.prof.idx !157: [-0.000000e+00, 0.000000e+00]
+Range of   %30 = fmul double %4, %29, !enzyme_active !156, !poseidon.prof.idx !157 is [-0.000000e+00, 0.000000e+00]
+Updated bounds for   %42 = tail call double @llvm.fmuladd.f64(double %39, double %41, double %34) #21, !enzyme_active !156, !poseidon.prof.idx !159: [-1.386660e+00, 1.565965e+00]
+Range of   %42 = tail call double @llvm.fmuladd.f64(double %39, double %41, double %34) #21, !enzyme_active !156, !poseidon.prof.idx !159 is [-1.386660e+00, 1.565965e+00]
+Sensitivity score of   %42 = tail call double @llvm.fmuladd.f64(double %39, double %41, double %34) #21, !enzyme_active !156, !poseidon.prof.idx !159 is: 1.907323e+05
+Gradient sum of   %42 = tail call double @llvm.fmuladd.f64(double %39, double %41, double %34) #21, !enzyme_active !156, !poseidon.prof.idx !159 is: 1.170480e+06
+Execution count of   %42 = tail call double @llvm.fmuladd.f64(double %39, double %41, double %34) #21, !enzyme_active !156, !poseidon.prof.idx !159 is: 922746880
+Updated bounds for   %39 = load double, ptr %38, align 8, !tbaa !33, !alias.scope !152: [-1.597061e+00, 1.661587e+01]
+Range of   %39 = load double, ptr %38, align 8, !tbaa !33, !alias.scope !152 is [-1.597061e+00, 1.661587e+01]
+Updated bounds for   %41 = load double, ptr %40, align 8, !tbaa !33, !alias.scope !154: [-8.797073e-02, 8.562318e-02]
+Range of   %41 = load double, ptr %40, align 8, !tbaa !33, !alias.scope !154 is [-8.797073e-02, 8.562318e-02]
+Updated bounds for   %34 = phi double [ 0.000000e+00, %19 ], [ %42, %32 ]: [-1.386660e+00, 1.565965e+00]
+Range of   %34 = phi double [ 0.000000e+00, %19 ], [ %42, %32 ] is [-1.386660e+00, 1.565965e+00]
+=== Subgraph splitting complete ===
+  Original subgraphs: 1
+  Final subgraphs after splitting: 1
+[poseidon] After splitting, have 1 subgraphs in preprocess__Z8hemm_optPdPKdS1_dd_poseidon_body
+
+=== Function IR after Subgraph Splitting ===
+%5:
+    tail call void @llvm.experimental.noalias.scope.decl(metadata !149) #21
+    tail call void @llvm.experimental.noalias.scope.decl(metadata !152) #21
+    tail call void @llvm.experimental.noalias.scope.decl(metadata !154) #21
+    %6 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ctaid.x() #21
+    %7 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ntid.x() #21
+    %8 = mul i32 %6, %7
+    %9 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.tid.x() #21
+    %10 = add i32 %8, %9
+    %11 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ctaid.y() #21
+    %12 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ntid.y() #21
+    %13 = mul nuw nsw i32 %11, %12
+    %14 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.tid.y() #21
+    %15 = add nuw nsw i32 %13, %14
+    %16 = icmp sgt i32 %10, 2047
+    %17 = icmp samesign ugt i32 %15, 111
+    %18 = or i1 %16, %17
+    br i1 %18, label %45, label %19
+%19:
+    %20 = sext i32 %10 to i64
+    %21 = shl nsw i64 %20, 14
+    %22 = getelementptr inbounds nuw i8, ptr %1, i64 %21
+    %23 = shl nuw nsw i32 %15, 11
+    %24 = zext nneg i32 %23 to i64
+    %25 = getelementptr inbounds nuw [8 x i8], ptr %2, i64 %24
+    br label %32
+%26:
+    %27 = getelementptr [8 x i8], ptr %0, i64 %24
+    %28 = getelementptr [8 x i8], ptr %27, i64 %20
+    %29 = load double, ptr %28, align 8, !tbaa !33, !alias.scope !149
+    %30 = fmul double %4, %29, !enzyme_active !156, !poseidon.prof.idx !157 ; [SG0]
+    %31 = tail call double @llvm.fmuladd.f64(double %3, double %42, double %30) #21, !enzyme_active !156, !poseidon.prof.idx !158 ; [SG0]
+    store double %31, ptr %28, align 8, !tbaa !33, !alias.scope !149
+    br label %45
+%32:
+    %33 = phi i64 [ %36, %32 ], [ 0, %19 ]
+    %34 = phi double [ 0.000000e+00, %19 ], [ %42, %32 ]
+    %35 = trunc i64 %33 to i32
+    %36 = add nuw i64 %33, 1
+    %37 = zext nneg i32 %35 to i64
+    %38 = getelementptr inbounds nuw [8 x i8], ptr %22, i64 %37
+    %39 = load double, ptr %38, align 8, !tbaa !33, !alias.scope !152
+    %40 = getelementptr inbounds nuw [8 x i8], ptr %25, i64 %37
+    %41 = load double, ptr %40, align 8, !tbaa !33, !alias.scope !154
+    %42 = tail call double @llvm.fmuladd.f64(double %39, double %41, double %34) #21, !enzyme_active !156, !poseidon.prof.idx !159 ; [SG0]
+    %43 = add nuw nsw i32 %35, 1
+    %44 = icmp eq i32 %43, 2048
+    br i1 %44, label %26, label %32, !llvm.loop !155
+%45:
+    ret void
+=== End of Function IR ===
+
+##### Finished synthesizing candidates for 1 of 1 subgraphs! #####
+Poseidon: cost model missing row for known wmma intrinsic wmma_mma_m32n8k16 f16_f16 — this target will not be considered.
+Poseidon: cost model missing row for known wmma intrinsic wmma_mma_m32n8k16 f16_f32 — this target will not be considered.
+Poseidon: cost model missing row for known wmma intrinsic wmma_mma_m32n8k16 bf16_f32 — this target will not be considered.
+Poseidon: cost model missing row for known wmma intrinsic wmma_mma_m8n32k16 f16_f16 — this target will not be considered.
+Poseidon: cost model missing row for known wmma intrinsic wmma_mma_m8n32k16 f16_f32 — this target will not be considered.
+Poseidon: cost model missing row for known wmma intrinsic wmma_mma_m8n32k16 bf16_f32 — this target will not be considered.
+Poseidon: cost model missing row for known wmma intrinsic wmma_mma_m8n8k4 f64_f64 — this target will not be considered.
+  Matmul[0] 16x16x2048: host-dispatched Ozaki-II NOT PROPOSED -- body is not a host-dispatchable GEMM (computeGemmBodyNote failed: operands do not trace to Function arguments, or the body is not a pure GEMM).
+[poseidon] matmul[0] pricing: baseline/MAC=8.052272e-03 executions=922746880
+[poseidon]   #0 wmma m16n16k16 f16/f16  compCost/MAC=5.061658e-04  rel=6.286000e-02  domainError=INF
+[poseidon]   #1 wmma m16n16k16 f16/f32  compCost/MAC=5.061255e-04  rel=6.285500e-02  domainError=INF
+[poseidon]   #2 wmma m16n16k16 bf16/f32  compCost/MAC=5.057954e-04  rel=6.281400e-02  domainError=2.393079e-03
+[poseidon]   #3 wmma m16n16k8 tf32/f32  compCost/MAC=8.057103e-04  rel=1.000600e-01  domainError=2.896680e-04
+[poseidon]   #4 tcec n=2 wmma m16n16k16 f16/f32  compCost/MAC=6.467826e-04  rel=8.032300e-02  domainError=INF
+[poseidon]   #5 tcec n=3 wmma m16n16k16 f16/f32  compCost/MAC=9.140456e-04  rel=1.135140e-01  domainError=INF
+[poseidon]   #6 tcec n=5 wmma m16n16k16 f16/f32  compCost/MAC=1.557132e-03  rel=1.933780e-01  domainError=INF
+[poseidon]   #7 tcec n=2 wmma m16n16k16 bf16/f32  compCost/MAC=6.532647e-04  rel=8.112800e-02  domainError=9.197910e-06
+[poseidon]   #8 tcec n=2 wmma m16n16k8 tf32/f32  compCost/MAC=1.362187e-03  rel=1.691680e-01  domainError=7.837605e-07
+[poseidon]   #9 tcec n=3 wmma m16n16k8 tf32/f32  compCost/MAC=2.084500e-03  rel=2.588710e-01  domainError=7.592733e-07
+[poseidon]   #10 tcec n=5 wmma m16n16k8 tf32/f32  compCost/MAC=3.606468e-03  rel=4.478820e-01  domainError=7.592733e-07
+[poseidon] site preprocess__Z8hemm_optPdPKdS1_dd_poseidon_body: kappa=9.005688e+03 (nonlinear) sumsens=1.913501e+05 factor=4.706394e-02
+Matmul[0] candidates (initial cost=8.052272e-03, executions=922746880, globalM=512, globalN=64, globalK=512, K=2048, gridCTAs=128):
+  wmma m16n16k16 f16/f16: Δcost=-6.963146e+06 ΔaccCost=4.706394e+28
+  wmma m16n16k16 f16/f32: Δcost=-6.963183e+06 ΔaccCost=4.706394e+28
+  wmma m16n16k16 bf16/f32: Δcost=-6.963487e+06 ΔaccCost=5.508798e+05
+  wmma m16n16k8 tf32/f32: Δcost=-6.686742e+06 ΔaccCost=6.949153e+04
+  tcec n=2 wmma m16n16k16 f16/f32: Δcost=-6.833392e+06 ΔaccCost=4.706394e+28
+  tcec n=3 wmma m16n16k16 f16/f32: Δcost=-6.586776e+06 ΔaccCost=4.706394e+28
+  tcec n=5 wmma m16n16k16 f16/f32: Δcost=-5.993370e+06 ΔaccCost=4.706394e+28
+  tcec n=2 wmma m16n16k16 bf16/f32: Δcost=-6.827411e+06 ΔaccCost=2.137359e+03
+  tcec n=2 wmma m16n16k8 tf32/f32: Δcost=-6.173255e+06 ΔaccCost=2.059651e+02
+  tcec n=3 wmma m16n16k8 tf32/f32: Δcost=-5.506743e+06 ΔaccCost=2.022307e+02
+  tcec n=5 wmma m16n16k8 tf32/f32: Δcost=-4.102352e+06 ΔaccCost=2.022307e+02
+[poseidon] GPU mode active for preprocess__Z9resid_optPdPKdS1_S1__poseidon_body
+[poseidon] canonical form hash of preprocess__Z9resid_optPdPKdS1_S1__poseidon_body is 1d38675f3b3cafb4
+[poseidon] profile header for preprocess__Z9resid_optPdPKdS1_S1__poseidon_body: MaxBlockDims=(16,16,1) LaunchCount=640
+[hostgemm] preprocess__Z9resid_optPdPKdS1_S1__poseidon_body: 1 candidate reduction loop(s)
+[poseidon] Found 1 AbstractMatmul(s) for preprocess__Z9resid_optPdPKdS1_S1__poseidon_body
+  Matmul[0]: 16x16x2048 a=f64 b=f64 acc=f64 d=f64 origin=ScalarLoopReduction
+    (profile dump skipped for ScalarLoopReduction)
+[poseidon] Starting Floodfill for preprocess__Z9resid_optPdPKdS1_S1__poseidon_body
+Registered FPLLValue for non-isOptimizable instruction:   tail call void @llvm.experimental.noalias.scope.decl(metadata !161) #21
+Registered FPLLValue for non-isOptimizable instruction:   tail call void @llvm.experimental.noalias.scope.decl(metadata !164) #21
+Registered FPLLValue for non-isOptimizable instruction:   tail call void @llvm.experimental.noalias.scope.decl(metadata !166) #21
+Registered FPLLValue for non-isOptimizable instruction:   tail call void @llvm.experimental.noalias.scope.decl(metadata !168) #21
+Registered FPLLValue for non-isOptimizable instruction:   %5 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ctaid.x() #21
+Registered FPLLValue for non-isOptimizable instruction:   %6 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ntid.x() #21
+Registered FPLLValue for non-isOptimizable instruction:   %7 = mul i32 %5, %6
+Registered FPLLValue for non-isOptimizable instruction:   %8 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.tid.x() #21
+Registered FPLLValue for non-isOptimizable instruction:   %9 = add i32 %7, %8
+Registered FPLLValue for non-isOptimizable instruction:   %10 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ctaid.y() #21
+Registered FPLLValue for non-isOptimizable instruction:   %11 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ntid.y() #21
+Registered FPLLValue for non-isOptimizable instruction:   %12 = mul nuw nsw i32 %10, %11
+Registered FPLLValue for non-isOptimizable instruction:   %13 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.tid.y() #21
+Registered FPLLValue for non-isOptimizable instruction:   %14 = add nuw nsw i32 %12, %13
+Registered FPLLValue for non-isOptimizable instruction:   %15 = icmp sgt i32 %9, 2047
+Registered FPLLValue for non-isOptimizable instruction:   %16 = icmp samesign ugt i32 %14, 111
+Registered FPLLValue for non-isOptimizable instruction:   %17 = or i1 %15, %16
+Registered FPLLValue for non-isOptimizable instruction:   br i1 %17, label %47, label %18
+Registered FPLLValue for non-isOptimizable instruction:   %19 = sext i32 %9 to i64
+Registered FPLLValue for non-isOptimizable instruction:   %20 = shl nsw i64 %19, 14
+Registered FPLLValue for non-isOptimizable instruction:   %21 = getelementptr inbounds nuw i8, ptr %1, i64 %20
+Registered FPLLValue for non-isOptimizable instruction:   %22 = zext nneg i32 %14 to i64
+Registered FPLLValue for non-isOptimizable instruction:   %23 = shl nuw nsw i64 %22, 11
+Registered FPLLValue for non-isOptimizable instruction:   %24 = getelementptr inbounds nuw [8 x i8], ptr %2, i64 %23
+Registered FPLLValue for non-isOptimizable instruction:   br label %34
+Registered FPLLValue for non-isOptimizable instruction:   %26 = getelementptr inbounds nuw [8 x i8], ptr %3, i64 %22
+Registered FPLLValue for non-isOptimizable instruction:   %27 = load double, ptr %26, align 8, !tbaa !33, !alias.scope !168
+Registered FPLLValue for non-isOptimizable instruction:   %28 = getelementptr inbounds [8 x i8], ptr %24, i64 %19
+Registered FPLLValue for non-isOptimizable instruction:   %29 = load double, ptr %28, align 8, !tbaa !33, !alias.scope !166
+Registered FPLLValue for non-isOptimizable instruction:   %32 = getelementptr [8 x i8], ptr %0, i64 %23
+Registered FPLLValue for non-isOptimizable instruction:   %33 = getelementptr [8 x i8], ptr %32, i64 %19
+Registered FPLLValue for non-isOptimizable instruction:   store double %31, ptr %33, align 8, !tbaa !33, !alias.scope !161
+Registered FPLLValue for non-isOptimizable instruction:   br label %47
+Registered FPLLValue for non-isOptimizable instruction:   %35 = phi i64 [ %38, %34 ], [ 0, %18 ]
+Registered FPLLValue for non-isOptimizable instruction:   %36 = phi double [ 0.000000e+00, %18 ], [ %44, %34 ]
+Registered FPLLValue for non-isOptimizable instruction:   %37 = trunc i64 %35 to i32
+Registered FPLLValue for non-isOptimizable instruction:   %38 = add nuw i64 %35, 1
+Registered FPLLValue for non-isOptimizable instruction:   %39 = zext nneg i32 %37 to i64
+Registered FPLLValue for non-isOptimizable instruction:   %40 = getelementptr inbounds nuw [8 x i8], ptr %21, i64 %39
+Registered FPLLValue for non-isOptimizable instruction:   %41 = load double, ptr %40, align 8, !tbaa !33, !alias.scope !164
+Registered FPLLValue for non-isOptimizable instruction:   %42 = getelementptr inbounds nuw [8 x i8], ptr %24, i64 %39
+Registered FPLLValue for non-isOptimizable instruction:   %43 = load double, ptr %42, align 8, !tbaa !33, !alias.scope !166
+Registered FPLLValue for non-isOptimizable instruction:   %45 = add nuw nsw i32 %37, 1
+Registered FPLLValue for non-isOptimizable instruction:   %46 = icmp eq i32 %45, 2048
+Registered FPLLValue for non-isOptimizable instruction:   br i1 %46, label %25, label %34, !llvm.loop !169
+Registered FPLLValue for non-isOptimizable instruction:   ret void
+Skipping non-isOptimizable instruction:   tail call void @llvm.experimental.noalias.scope.decl(metadata !161) #21
+Skipping non-isOptimizable instruction:   tail call void @llvm.experimental.noalias.scope.decl(metadata !164) #21
+Skipping non-isOptimizable instruction:   tail call void @llvm.experimental.noalias.scope.decl(metadata !166) #21
+Skipping non-isOptimizable instruction:   tail call void @llvm.experimental.noalias.scope.decl(metadata !168) #21
+Skipping non-isOptimizable instruction:   %5 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ctaid.x() #21
+Skipping non-isOptimizable instruction:   %6 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ntid.x() #21
+Skipping non-isOptimizable instruction:   %7 = mul i32 %5, %6
+Skipping non-isOptimizable instruction:   %8 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.tid.x() #21
+Skipping non-isOptimizable instruction:   %9 = add i32 %7, %8
+Skipping non-isOptimizable instruction:   %10 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ctaid.y() #21
+Skipping non-isOptimizable instruction:   %11 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ntid.y() #21
+Skipping non-isOptimizable instruction:   %12 = mul nuw nsw i32 %10, %11
+Skipping non-isOptimizable instruction:   %13 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.tid.y() #21
+Skipping non-isOptimizable instruction:   %14 = add nuw nsw i32 %12, %13
+Skipping non-isOptimizable instruction:   %15 = icmp sgt i32 %9, 2047
+Skipping non-isOptimizable instruction:   %16 = icmp samesign ugt i32 %14, 111
+Skipping non-isOptimizable instruction:   %17 = or i1 %15, %16
+Skipping non-isOptimizable instruction:   br i1 %17, label %47, label %18
+Skipping non-isOptimizable instruction:   %19 = sext i32 %9 to i64
+Skipping non-isOptimizable instruction:   %20 = shl nsw i64 %19, 14
+Skipping non-isOptimizable instruction:   %21 = getelementptr inbounds nuw i8, ptr %1, i64 %20
+Skipping non-isOptimizable instruction:   %22 = zext nneg i32 %14 to i64
+Skipping non-isOptimizable instruction:   %23 = shl nuw nsw i64 %22, 11
+Skipping non-isOptimizable instruction:   %24 = getelementptr inbounds nuw [8 x i8], ptr %2, i64 %23
+Skipping non-isOptimizable instruction:   br label %34
+Skipping non-isOptimizable instruction:   %26 = getelementptr inbounds nuw [8 x i8], ptr %3, i64 %22
+Skipping non-isOptimizable instruction:   %27 = load double, ptr %26, align 8, !tbaa !33, !alias.scope !168
+Skipping non-isOptimizable instruction:   %28 = getelementptr inbounds [8 x i8], ptr %24, i64 %19
+Skipping non-isOptimizable instruction:   %29 = load double, ptr %28, align 8, !tbaa !33, !alias.scope !166
+Starting floodfill from:   %30 = fneg double %27, !enzyme_active !156, !poseidon.prof.idx !157
+Insert to operation_seen and processed:   %30 = fneg double %27, !enzyme_active !156, !poseidon.prof.idx !157
+Non-isOptimizable input found:   %27 = load double, ptr %26, align 8, !tbaa !33, !alias.scope !168
+Adding user to todo list:   %31 = tail call double @llvm.fmuladd.f64(double %30, double %29, double %44) #21, !enzyme_active !156, !poseidon.prof.idx !158
+Insert to operation_seen and processed:   %31 = tail call double @llvm.fmuladd.f64(double %30, double %29, double %44) #21, !enzyme_active !156, !poseidon.prof.idx !158
+Adding operand to todo list:   %30 = fneg double %27, !enzyme_active !156, !poseidon.prof.idx !157
+Non-isOptimizable input found:   %29 = load double, ptr %28, align 8, !tbaa !33, !alias.scope !166
+Adding operand to todo list:   %44 = tail call double @llvm.fmuladd.f64(double %41, double %43, double %36) #21, !enzyme_active !156, !poseidon.prof.idx !159
+Output instruction found:   %31 = tail call double @llvm.fmuladd.f64(double %30, double %29, double %44) #21, !enzyme_active !156, !poseidon.prof.idx !158
+Insert to operation_seen and processed:   %44 = tail call double @llvm.fmuladd.f64(double %41, double %43, double %36) #21, !enzyme_active !156, !poseidon.prof.idx !159
+Non-isOptimizable input found:   %41 = load double, ptr %40, align 8, !tbaa !33, !alias.scope !164
+Non-isOptimizable input found:   %43 = load double, ptr %42, align 8, !tbaa !33, !alias.scope !166
+Non-isOptimizable input found:   %36 = phi double [ 0.000000e+00, %18 ], [ %44, %34 ]
+Output instruction found:   %44 = tail call double @llvm.fmuladd.f64(double %41, double %43, double %36) #21, !enzyme_active !156, !poseidon.prof.idx !159
+Adding user to todo list:   %31 = tail call double @llvm.fmuladd.f64(double %30, double %29, double %44) #21, !enzyme_active !156, !poseidon.prof.idx !158
+Skipping already seen instruction:   %31 = tail call double @llvm.fmuladd.f64(double %30, double %29, double %44) #21, !enzyme_active !156, !poseidon.prof.idx !158
+Skipping already seen instruction:   %30 = fneg double %27, !enzyme_active !156, !poseidon.prof.idx !157
+Found a subgraph with 3 operations and 5 inputs and 2 outputs
+Inputs:
+  %27 = load double, ptr %26, align 8, !tbaa !33, !alias.scope !168
+  %29 = load double, ptr %28, align 8, !tbaa !33, !alias.scope !166
+  %41 = load double, ptr %40, align 8, !tbaa !33, !alias.scope !164
+  %43 = load double, ptr %42, align 8, !tbaa !33, !alias.scope !166
+  %36 = phi double [ 0.000000e+00, %18 ], [ %44, %34 ]
+Outputs:
+  %31 = tail call double @llvm.fmuladd.f64(double %30, double %29, double %44) #21, !enzyme_active !156, !poseidon.prof.idx !158
+  %44 = tail call double @llvm.fmuladd.f64(double %41, double %43, double %36) #21, !enzyme_active !156, !poseidon.prof.idx !159
+Operations:
+  %30 = fneg double %27, !enzyme_active !156, !poseidon.prof.idx !157
+  %31 = tail call double @llvm.fmuladd.f64(double %30, double %29, double %44) #21, !enzyme_active !156, !poseidon.prof.idx !158
+  %44 = tail call double @llvm.fmuladd.f64(double %41, double %43, double %36) #21, !enzyme_active !156, !poseidon.prof.idx !159
+Skipping already seen instruction:   %31 = tail call double @llvm.fmuladd.f64(double %30, double %29, double %44) #21, !enzyme_active !156, !poseidon.prof.idx !158
+Skipping non-isOptimizable instruction:   %32 = getelementptr [8 x i8], ptr %0, i64 %23
+Skipping non-isOptimizable instruction:   %33 = getelementptr [8 x i8], ptr %32, i64 %19
+Skipping non-isOptimizable instruction:   store double %31, ptr %33, align 8, !tbaa !33, !alias.scope !161
+Skipping non-isOptimizable instruction:   br label %47
+Skipping non-isOptimizable instruction:   %35 = phi i64 [ %38, %34 ], [ 0, %18 ]
+Skipping non-isOptimizable instruction:   %36 = phi double [ 0.000000e+00, %18 ], [ %44, %34 ]
+Skipping non-isOptimizable instruction:   %37 = trunc i64 %35 to i32
+Skipping non-isOptimizable instruction:   %38 = add nuw i64 %35, 1
+Skipping non-isOptimizable instruction:   %39 = zext nneg i32 %37 to i64
+Skipping non-isOptimizable instruction:   %40 = getelementptr inbounds nuw [8 x i8], ptr %21, i64 %39
+Skipping non-isOptimizable instruction:   %41 = load double, ptr %40, align 8, !tbaa !33, !alias.scope !164
+Skipping non-isOptimizable instruction:   %42 = getelementptr inbounds nuw [8 x i8], ptr %24, i64 %39
+Skipping non-isOptimizable instruction:   %43 = load double, ptr %42, align 8, !tbaa !33, !alias.scope !166
+Skipping already seen instruction:   %44 = tail call double @llvm.fmuladd.f64(double %41, double %43, double %36) #21, !enzyme_active !156, !poseidon.prof.idx !159
+Skipping non-isOptimizable instruction:   %45 = add nuw nsw i32 %37, 1
+Skipping non-isOptimizable instruction:   %46 = icmp eq i32 %45, 2048
+Skipping non-isOptimizable instruction:   br i1 %46, label %25, label %34, !llvm.loop !169
+Skipping non-isOptimizable instruction:   ret void
+[poseidon] Found 1 initial subgraphs in preprocess__Z9resid_optPdPKdS1_S1__poseidon_body
+Updated bounds for   %30 = fneg double %27, !enzyme_active !156, !poseidon.prof.idx !157: [-2.070098e+01, -1.000000e-01]
+Range of   %30 = fneg double %27, !enzyme_active !156, !poseidon.prof.idx !157 is [-2.070098e+01, -1.000000e-01]
+Sensitivity score of   %30 = fneg double %27, !enzyme_active !156, !poseidon.prof.idx !157 is: 1.790092e+04
+Gradient sum of   %30 = fneg double %27, !enzyme_active !156, !poseidon.prof.idx !157 is: 3.251037e+00
+Execution count of   %30 = fneg double %27, !enzyme_active !156, !poseidon.prof.idx !157 is: 163840
+Updated bounds for   %27 = load double, ptr %26, align 8, !tbaa !33, !alias.scope !168: [1.000000e-01, 2.070098e+01]
+Range of   %27 = load double, ptr %26, align 8, !tbaa !33, !alias.scope !168 is [1.000000e-01, 2.070098e+01]
+Updated bounds for   %31 = tail call double @llvm.fmuladd.f64(double %30, double %29, double %44) #21, !enzyme_active !156, !poseidon.prof.idx !158: [-1.418095e+00, 1.519148e+00]
+Range of   %31 = tail call double @llvm.fmuladd.f64(double %30, double %29, double %44) #21, !enzyme_active !156, !poseidon.prof.idx !158 is [-1.418095e+00, 1.519148e+00]
+Sensitivity score of   %31 = tail call double @llvm.fmuladd.f64(double %30, double %29, double %44) #21, !enzyme_active !156, !poseidon.prof.idx !158 is: 9.174393e+03
+Gradient sum of   %31 = tail call double @llvm.fmuladd.f64(double %30, double %29, double %44) #21, !enzyme_active !156, !poseidon.prof.idx !158 is: 3.276800e+04
+Execution count of   %31 = tail call double @llvm.fmuladd.f64(double %30, double %29, double %44) #21, !enzyme_active !156, !poseidon.prof.idx !158 is: 163840
+Updated bounds for   %30 = fneg double %27, !enzyme_active !156, !poseidon.prof.idx !157: [-2.070098e+01, -1.000000e-01]
+Range of   %30 = fneg double %27, !enzyme_active !156, !poseidon.prof.idx !157 is [-2.070098e+01, -1.000000e-01]
+Updated bounds for   %29 = load double, ptr %28, align 8, !tbaa !33, !alias.scope !166: [-1.816153e-01, 2.250318e-01]
+Range of   %29 = load double, ptr %28, align 8, !tbaa !33, !alias.scope !166 is [-1.816153e-01, 2.250318e-01]
+Updated bounds for   %44 = tail call double @llvm.fmuladd.f64(double %41, double %43, double %36) #21, !enzyme_active !156, !poseidon.prof.idx !159: [-3.191486e+00, 3.706237e+00]
+Range of   %44 = tail call double @llvm.fmuladd.f64(double %41, double %43, double %36) #21, !enzyme_active !156, !poseidon.prof.idx !159 is [-3.191486e+00, 3.706237e+00]
+Updated bounds for   %44 = tail call double @llvm.fmuladd.f64(double %41, double %43, double %36) #21, !enzyme_active !156, !poseidon.prof.idx !159: [-3.317217e+00, 3.739691e+00]
+Range of   %44 = tail call double @llvm.fmuladd.f64(double %41, double %43, double %36) #21, !enzyme_active !156, !poseidon.prof.idx !159 is [-3.317217e+00, 3.739691e+00]
+Sensitivity score of   %44 = tail call double @llvm.fmuladd.f64(double %41, double %43, double %36) #21, !enzyme_active !156, !poseidon.prof.idx !159 is: 6.325798e+06
+Gradient sum of   %44 = tail call double @llvm.fmuladd.f64(double %41, double %43, double %36) #21, !enzyme_active !156, !poseidon.prof.idx !159 is: 1.677722e+07
+Execution count of   %44 = tail call double @llvm.fmuladd.f64(double %41, double %43, double %36) #21, !enzyme_active !156, !poseidon.prof.idx !159 is: 83886080
+Updated bounds for   %41 = load double, ptr %40, align 8, !tbaa !33, !alias.scope !164: [-1.597061e+00, 1.661587e+01]
+Range of   %41 = load double, ptr %40, align 8, !tbaa !33, !alias.scope !164 is [-1.597061e+00, 1.661587e+01]
+Updated bounds for   %43 = load double, ptr %42, align 8, !tbaa !33, !alias.scope !166: [-1.816153e-01, 2.250318e-01]
+Range of   %43 = load double, ptr %42, align 8, !tbaa !33, !alias.scope !166 is [-1.816153e-01, 2.250318e-01]
+Updated bounds for   %36 = phi double [ 0.000000e+00, %18 ], [ %44, %34 ]: [-3.317217e+00, 3.739691e+00]
+Range of   %36 = phi double [ 0.000000e+00, %18 ], [ %44, %34 ] is [-3.317217e+00, 3.739691e+00]
+=== Subgraph splitting complete ===
+  Original subgraphs: 1
+  Final subgraphs after splitting: 1
+[poseidon] After splitting, have 1 subgraphs in preprocess__Z9resid_optPdPKdS1_S1__poseidon_body
+
+=== Function IR after Subgraph Splitting ===
+%4:
+    tail call void @llvm.experimental.noalias.scope.decl(metadata !161) #21
+    tail call void @llvm.experimental.noalias.scope.decl(metadata !164) #21
+    tail call void @llvm.experimental.noalias.scope.decl(metadata !166) #21
+    tail call void @llvm.experimental.noalias.scope.decl(metadata !168) #21
+    %5 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ctaid.x() #21
+    %6 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ntid.x() #21
+    %7 = mul i32 %5, %6
+    %8 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.tid.x() #21
+    %9 = add i32 %7, %8
+    %10 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ctaid.y() #21
+    %11 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ntid.y() #21
+    %12 = mul nuw nsw i32 %10, %11
+    %13 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.tid.y() #21
+    %14 = add nuw nsw i32 %12, %13
+    %15 = icmp sgt i32 %9, 2047
+    %16 = icmp samesign ugt i32 %14, 111
+    %17 = or i1 %15, %16
+    br i1 %17, label %47, label %18
+%18:
+    %19 = sext i32 %9 to i64
+    %20 = shl nsw i64 %19, 14
+    %21 = getelementptr inbounds nuw i8, ptr %1, i64 %20
+    %22 = zext nneg i32 %14 to i64
+    %23 = shl nuw nsw i64 %22, 11
+    %24 = getelementptr inbounds nuw [8 x i8], ptr %2, i64 %23
+    br label %34
+%25:
+    %26 = getelementptr inbounds nuw [8 x i8], ptr %3, i64 %22
+    %27 = load double, ptr %26, align 8, !tbaa !33, !alias.scope !168
+    %28 = getelementptr inbounds [8 x i8], ptr %24, i64 %19
+    %29 = load double, ptr %28, align 8, !tbaa !33, !alias.scope !166
+    %30 = fneg double %27, !enzyme_active !156, !poseidon.prof.idx !157 ; [SG0]
+    %31 = tail call double @llvm.fmuladd.f64(double %30, double %29, double %44) #21, !enzyme_active !156, !poseidon.prof.idx !158 ; [SG0]
+    %32 = getelementptr [8 x i8], ptr %0, i64 %23
+    %33 = getelementptr [8 x i8], ptr %32, i64 %19
+    store double %31, ptr %33, align 8, !tbaa !33, !alias.scope !161
+    br label %47
+%34:
+    %35 = phi i64 [ %38, %34 ], [ 0, %18 ]
+    %36 = phi double [ 0.000000e+00, %18 ], [ %44, %34 ]
+    %37 = trunc i64 %35 to i32
+    %38 = add nuw i64 %35, 1
+    %39 = zext nneg i32 %37 to i64
+    %40 = getelementptr inbounds nuw [8 x i8], ptr %21, i64 %39
+    %41 = load double, ptr %40, align 8, !tbaa !33, !alias.scope !164
+    %42 = getelementptr inbounds nuw [8 x i8], ptr %24, i64 %39
+    %43 = load double, ptr %42, align 8, !tbaa !33, !alias.scope !166
+    %44 = tail call double @llvm.fmuladd.f64(double %41, double %43, double %36) #21, !enzyme_active !156, !poseidon.prof.idx !159 ; [SG0]
+    %45 = add nuw nsw i32 %37, 1
+    %46 = icmp eq i32 %45, 2048
+    br i1 %46, label %25, label %34, !llvm.loop !169
+%47:
+    ret void
+=== End of Function IR ===
+
+##### Finished synthesizing candidates for 1 of 1 subgraphs! #####
+  Matmul[0] 16x16x2048: host-dispatched Ozaki-II NOT PROPOSED -- body is not a host-dispatchable GEMM (computeGemmBodyNote failed: operands do not trace to Function arguments, or the body is not a pure GEMM).
+[poseidon] matmul[0] pricing: baseline/MAC=8.052272e-03 executions=83886080
+[poseidon]   #0 wmma m16n16k16 f16/f16  compCost/MAC=5.061658e-04  rel=6.286000e-02  domainError=4.754354e-03
+[poseidon]   #1 wmma m16n16k16 f16/f32  compCost/MAC=5.061255e-04  rel=6.285500e-02  domainError=3.781285e-05
+[poseidon]   #2 wmma m16n16k16 bf16/f32  compCost/MAC=5.057954e-04  rel=6.281400e-02  domainError=3.076211e-04
+[poseidon]   #3 wmma m16n16k8 tf32/f32  compCost/MAC=8.057103e-04  rel=1.000600e-01  domainError=3.781285e-05
+[poseidon]   #4 tcec n=2 wmma m16n16k16 f16/f32  compCost/MAC=6.467826e-04  rel=8.032300e-02  domainError=5.928701e-07
+[poseidon]   #5 tcec n=3 wmma m16n16k16 f16/f32  compCost/MAC=9.140456e-04  rel=1.135140e-01  domainError=5.873703e-07
+[poseidon]   #6 tcec n=5 wmma m16n16k16 f16/f32  compCost/MAC=1.557132e-03  rel=1.933780e-01  domainError=5.873703e-07
+[poseidon]   #7 tcec n=2 wmma m16n16k16 bf16/f32  compCost/MAC=6.532647e-04  rel=8.112800e-02  domainError=1.319705e-06
+[poseidon]   #8 tcec n=2 wmma m16n16k8 tf32/f32  compCost/MAC=1.362187e-03  rel=1.691680e-01  domainError=5.928701e-07
+[poseidon]   #9 tcec n=3 wmma m16n16k8 tf32/f32  compCost/MAC=2.084500e-03  rel=2.588710e-01  domainError=5.873703e-07
+[poseidon]   #10 tcec n=5 wmma m16n16k8 tf32/f32  compCost/MAC=3.606468e-03  rel=4.478820e-01  domainError=5.873703e-07
+[poseidon] site preprocess__Z9resid_optPdPKdS1_S1__poseidon_body: kappa=8.337627e+12 (ok) sumsens=6.352873e+06 factor=1.312418e+06
+Matmul[0] candidates (initial cost=8.052272e-03, executions=83886080, globalM=512, globalN=64, globalK=512, K=2048, gridCTAs=128):
+  wmma m16n16k16 f16/f16: Δcost=-6.330132e+05 ΔaccCost=8.277501e+15
+  wmma m16n16k16 f16/f32: Δcost=-6.330166e+05 ΔaccCost=6.326262e+13
+  wmma m16n16k16 bf16/f32: Δcost=-6.330443e+05 ΔaccCost=5.036214e+14
+  wmma m16n16k8 tf32/f32: Δcost=-6.078856e+05 ΔaccCost=6.326264e+13
+  tcec n=2 wmma m16n16k16 f16/f32: Δcost=-6.212174e+05 ΔaccCost=1.030010e+12
+  tcec n=3 wmma m16n16k16 f16/f32: Δcost=-5.987978e+05 ΔaccCost=1.028437e+12
+  tcec n=5 wmma m16n16k16 f16/f32: Δcost=-5.448518e+05 ΔaccCost=1.028437e+12
+  tcec n=2 wmma m16n16k16 bf16/f32: Δcost=-6.206737e+05 ΔaccCost=2.233636e+12
+  tcec n=2 wmma m16n16k8 tf32/f32: Δcost=-5.612050e+05 ΔaccCost=1.030010e+12
+  tcec n=3 wmma m16n16k8 tf32/f32: Δcost=-5.006130e+05 ΔaccCost=1.028437e+12
+  tcec n=5 wmma m16n16k8 tf32/f32: Δcost=-3.729411e+05 ΔaccCost=1.028437e+12
+[poseidon] GPU mode active for preprocess__Z8gram_optPdPKd_poseidon_body
+[poseidon] canonical form hash of preprocess__Z8gram_optPdPKd_poseidon_body is fea337c617ef94c9
+[poseidon] profile header for preprocess__Z8gram_optPdPKd_poseidon_body: MaxBlockDims=(16,16,1) LaunchCount=80
+[hostgemm] preprocess__Z8gram_optPdPKd_poseidon_body: 1 candidate reduction loop(s)
+[poseidon] Found 1 AbstractMatmul(s) for preprocess__Z8gram_optPdPKd_poseidon_body
+  Matmul[0]: 16x16x2048 a=f64 b=f64 acc=f64 d=f64 origin=ScalarLoopReduction
+    (profile dump skipped for ScalarLoopReduction)
+[poseidon] Starting Floodfill for preprocess__Z8gram_optPdPKd_poseidon_body
+Registered FPLLValue for non-isOptimizable instruction:   tail call void @llvm.experimental.noalias.scope.decl(metadata !171) #21
+Registered FPLLValue for non-isOptimizable instruction:   tail call void @llvm.experimental.noalias.scope.decl(metadata !174) #21
+Registered FPLLValue for non-isOptimizable instruction:   %3 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ctaid.x() #21
+Registered FPLLValue for non-isOptimizable instruction:   %4 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ntid.x() #21
+Registered FPLLValue for non-isOptimizable instruction:   %5 = mul i32 %3, %4
+Registered FPLLValue for non-isOptimizable instruction:   %6 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.tid.x() #21
+Registered FPLLValue for non-isOptimizable instruction:   %7 = add i32 %5, %6
+Registered FPLLValue for non-isOptimizable instruction:   %8 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ctaid.y() #21
+Registered FPLLValue for non-isOptimizable instruction:   %9 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ntid.y() #21
+Registered FPLLValue for non-isOptimizable instruction:   %10 = mul nuw nsw i32 %8, %9
+Registered FPLLValue for non-isOptimizable instruction:   %11 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.tid.y() #21
+Registered FPLLValue for non-isOptimizable instruction:   %12 = add nuw nsw i32 %10, %11
+Registered FPLLValue for non-isOptimizable instruction:   %13 = icmp sgt i32 %7, 111
+Registered FPLLValue for non-isOptimizable instruction:   %14 = icmp samesign ugt i32 %12, 111
+Registered FPLLValue for non-isOptimizable instruction:   %15 = or i1 %13, %14
+Registered FPLLValue for non-isOptimizable instruction:   br i1 %15, label %40, label %16
+Registered FPLLValue for non-isOptimizable instruction:   %17 = sext i32 %7 to i64
+Registered FPLLValue for non-isOptimizable instruction:   %18 = shl nsw i64 %17, 14
+Registered FPLLValue for non-isOptimizable instruction:   %19 = getelementptr inbounds nuw i8, ptr %1, i64 %18
+Registered FPLLValue for non-isOptimizable instruction:   %20 = zext nneg i32 %12 to i64
+Registered FPLLValue for non-isOptimizable instruction:   %21 = shl nuw nsw i64 %20, 14
+Registered FPLLValue for non-isOptimizable instruction:   %22 = getelementptr inbounds nuw i8, ptr %1, i64 %21
+Registered FPLLValue for non-isOptimizable instruction:   br label %27
+Registered FPLLValue for non-isOptimizable instruction:   %24 = mul nuw nsw i64 %20, 896
+Registered FPLLValue for non-isOptimizable instruction:   %25 = getelementptr i8, ptr %0, i64 %24
+Registered FPLLValue for non-isOptimizable instruction:   %26 = getelementptr [8 x i8], ptr %25, i64 %17
+Registered FPLLValue for non-isOptimizable instruction:   store double %37, ptr %26, align 8, !tbaa !33, !alias.scope !171
+Registered FPLLValue for non-isOptimizable instruction:   br label %40
+Registered FPLLValue for non-isOptimizable instruction:   %28 = phi i64 [ %31, %27 ], [ 0, %16 ]
+Registered FPLLValue for non-isOptimizable instruction:   %29 = phi double [ 0.000000e+00, %16 ], [ %37, %27 ]
+Registered FPLLValue for non-isOptimizable instruction:   %30 = trunc i64 %28 to i32
+Registered FPLLValue for non-isOptimizable instruction:   %31 = add nuw i64 %28, 1
+Registered FPLLValue for non-isOptimizable instruction:   %32 = zext nneg i32 %30 to i64
+Registered FPLLValue for non-isOptimizable instruction:   %33 = getelementptr inbounds nuw [8 x i8], ptr %19, i64 %32
+Registered FPLLValue for non-isOptimizable instruction:   %34 = load double, ptr %33, align 8, !tbaa !33, !alias.scope !174
+Registered FPLLValue for non-isOptimizable instruction:   %35 = getelementptr inbounds nuw [8 x i8], ptr %22, i64 %32
+Registered FPLLValue for non-isOptimizable instruction:   %36 = load double, ptr %35, align 8, !tbaa !33, !alias.scope !174
+Registered FPLLValue for non-isOptimizable instruction:   %38 = add nuw nsw i32 %30, 1
+Registered FPLLValue for non-isOptimizable instruction:   %39 = icmp eq i32 %38, 2048
+Registered FPLLValue for non-isOptimizable instruction:   br i1 %39, label %23, label %27, !llvm.loop !175
+Registered FPLLValue for non-isOptimizable instruction:   ret void
+Skipping non-isOptimizable instruction:   tail call void @llvm.experimental.noalias.scope.decl(metadata !171) #21
+Skipping non-isOptimizable instruction:   tail call void @llvm.experimental.noalias.scope.decl(metadata !174) #21
+Skipping non-isOptimizable instruction:   %3 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ctaid.x() #21
+Skipping non-isOptimizable instruction:   %4 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ntid.x() #21
+Skipping non-isOptimizable instruction:   %5 = mul i32 %3, %4
+Skipping non-isOptimizable instruction:   %6 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.tid.x() #21
+Skipping non-isOptimizable instruction:   %7 = add i32 %5, %6
+Skipping non-isOptimizable instruction:   %8 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ctaid.y() #21
+Skipping non-isOptimizable instruction:   %9 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ntid.y() #21
+Skipping non-isOptimizable instruction:   %10 = mul nuw nsw i32 %8, %9
+Skipping non-isOptimizable instruction:   %11 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.tid.y() #21
+Skipping non-isOptimizable instruction:   %12 = add nuw nsw i32 %10, %11
+Skipping non-isOptimizable instruction:   %13 = icmp sgt i32 %7, 111
+Skipping non-isOptimizable instruction:   %14 = icmp samesign ugt i32 %12, 111
+Skipping non-isOptimizable instruction:   %15 = or i1 %13, %14
+Skipping non-isOptimizable instruction:   br i1 %15, label %40, label %16
+Skipping non-isOptimizable instruction:   %17 = sext i32 %7 to i64
+Skipping non-isOptimizable instruction:   %18 = shl nsw i64 %17, 14
+Skipping non-isOptimizable instruction:   %19 = getelementptr inbounds nuw i8, ptr %1, i64 %18
+Skipping non-isOptimizable instruction:   %20 = zext nneg i32 %12 to i64
+Skipping non-isOptimizable instruction:   %21 = shl nuw nsw i64 %20, 14
+Skipping non-isOptimizable instruction:   %22 = getelementptr inbounds nuw i8, ptr %1, i64 %21
+Skipping non-isOptimizable instruction:   br label %27
+Skipping non-isOptimizable instruction:   %24 = mul nuw nsw i64 %20, 896
+Skipping non-isOptimizable instruction:   %25 = getelementptr i8, ptr %0, i64 %24
+Skipping non-isOptimizable instruction:   %26 = getelementptr [8 x i8], ptr %25, i64 %17
+Skipping non-isOptimizable instruction:   store double %37, ptr %26, align 8, !tbaa !33, !alias.scope !171
+Skipping non-isOptimizable instruction:   br label %40
+Skipping non-isOptimizable instruction:   %28 = phi i64 [ %31, %27 ], [ 0, %16 ]
+Skipping non-isOptimizable instruction:   %29 = phi double [ 0.000000e+00, %16 ], [ %37, %27 ]
+Skipping non-isOptimizable instruction:   %30 = trunc i64 %28 to i32
+Skipping non-isOptimizable instruction:   %31 = add nuw i64 %28, 1
+Skipping non-isOptimizable instruction:   %32 = zext nneg i32 %30 to i64
+Skipping non-isOptimizable instruction:   %33 = getelementptr inbounds nuw [8 x i8], ptr %19, i64 %32
+Skipping non-isOptimizable instruction:   %34 = load double, ptr %33, align 8, !tbaa !33, !alias.scope !174
+Skipping non-isOptimizable instruction:   %35 = getelementptr inbounds nuw [8 x i8], ptr %22, i64 %32
+Skipping non-isOptimizable instruction:   %36 = load double, ptr %35, align 8, !tbaa !33, !alias.scope !174
+Starting floodfill from:   %37 = tail call double @llvm.fmuladd.f64(double %34, double %36, double %29) #21, !enzyme_active !156, !poseidon.prof.idx !157
+Insert to operation_seen and processed:   %37 = tail call double @llvm.fmuladd.f64(double %34, double %36, double %29) #21, !enzyme_active !156, !poseidon.prof.idx !157
+Non-isOptimizable input found:   %34 = load double, ptr %33, align 8, !tbaa !33, !alias.scope !174
+Non-isOptimizable input found:   %36 = load double, ptr %35, align 8, !tbaa !33, !alias.scope !174
+Non-isOptimizable input found:   %29 = phi double [ 0.000000e+00, %16 ], [ %37, %27 ]
+Output instruction found:   %37 = tail call double @llvm.fmuladd.f64(double %34, double %36, double %29) #21, !enzyme_active !156, !poseidon.prof.idx !157
+Output instruction found:   %37 = tail call double @llvm.fmuladd.f64(double %34, double %36, double %29) #21, !enzyme_active !156, !poseidon.prof.idx !157
+Found a subgraph with 1 operations and 3 inputs and 1 outputs
+Inputs:
+  %34 = load double, ptr %33, align 8, !tbaa !33, !alias.scope !174
+  %36 = load double, ptr %35, align 8, !tbaa !33, !alias.scope !174
+  %29 = phi double [ 0.000000e+00, %16 ], [ %37, %27 ]
+Outputs:
+  %37 = tail call double @llvm.fmuladd.f64(double %34, double %36, double %29) #21, !enzyme_active !156, !poseidon.prof.idx !157
+Operations:
+  %37 = tail call double @llvm.fmuladd.f64(double %34, double %36, double %29) #21, !enzyme_active !156, !poseidon.prof.idx !157
+Skipping trivial subgraph
+Skipping non-isOptimizable instruction:   %38 = add nuw nsw i32 %30, 1
+Skipping non-isOptimizable instruction:   %39 = icmp eq i32 %38, 2048
+Skipping non-isOptimizable instruction:   br i1 %39, label %23, label %27, !llvm.loop !175
+Skipping non-isOptimizable instruction:   ret void
+[poseidon] Found 0 initial subgraphs in preprocess__Z8gram_optPdPKd_poseidon_body
+=== Subgraph splitting complete ===
+  Original subgraphs: 0
+  Final subgraphs after splitting: 0
+[poseidon] After splitting, have 0 subgraphs in preprocess__Z8gram_optPdPKd_poseidon_body
+
+=== Function IR after Subgraph Splitting ===
+%2:
+    tail call void @llvm.experimental.noalias.scope.decl(metadata !171) #21
+    tail call void @llvm.experimental.noalias.scope.decl(metadata !174) #21
+    %3 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ctaid.x() #21
+    %4 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ntid.x() #21
+    %5 = mul i32 %3, %4
+    %6 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.tid.x() #21
+    %7 = add i32 %5, %6
+    %8 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ctaid.y() #21
+    %9 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ntid.y() #21
+    %10 = mul nuw nsw i32 %8, %9
+    %11 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.tid.y() #21
+    %12 = add nuw nsw i32 %10, %11
+    %13 = icmp sgt i32 %7, 111
+    %14 = icmp samesign ugt i32 %12, 111
+    %15 = or i1 %13, %14
+    br i1 %15, label %40, label %16
+%16:
+    %17 = sext i32 %7 to i64
+    %18 = shl nsw i64 %17, 14
+    %19 = getelementptr inbounds nuw i8, ptr %1, i64 %18
+    %20 = zext nneg i32 %12 to i64
+    %21 = shl nuw nsw i64 %20, 14
+    %22 = getelementptr inbounds nuw i8, ptr %1, i64 %21
+    br label %27
+%23:
+    %24 = mul nuw nsw i64 %20, 896
+    %25 = getelementptr i8, ptr %0, i64 %24
+    %26 = getelementptr [8 x i8], ptr %25, i64 %17
+    store double %37, ptr %26, align 8, !tbaa !33, !alias.scope !171
+    br label %40
+%27:
+    %28 = phi i64 [ %31, %27 ], [ 0, %16 ]
+    %29 = phi double [ 0.000000e+00, %16 ], [ %37, %27 ]
+    %30 = trunc i64 %28 to i32
+    %31 = add nuw i64 %28, 1
+    %32 = zext nneg i32 %30 to i64
+    %33 = getelementptr inbounds nuw [8 x i8], ptr %19, i64 %32
+    %34 = load double, ptr %33, align 8, !tbaa !33, !alias.scope !174
+    %35 = getelementptr inbounds nuw [8 x i8], ptr %22, i64 %32
+    %36 = load double, ptr %35, align 8, !tbaa !33, !alias.scope !174
+    %37 = tail call double @llvm.fmuladd.f64(double %34, double %36, double %29) #21, !enzyme_active !156, !poseidon.prof.idx !157
+    %38 = add nuw nsw i32 %30, 1
+    %39 = icmp eq i32 %38, 2048
+    br i1 %39, label %23, label %27, !llvm.loop !175
+%40:
+    ret void
+=== End of Function IR ===
+
+[ozaki-host-dispatch] recovered deploy geometry for preprocess__Z8gram_optPdPKd_poseidon_body: M=112 Ncols=112 K=2048 (profile M/N/K = 64/64/512 does not track matrix order; extents taken from the kernel's own index guard on thread axes 0/1 and bounded again by the launch geometry at the dispatch)
+[poseidon] WARNING: matmul[0] 16x16x2048: padWaste=6.400000e+01 >= 1.05, so __poseidon_ozaki_dgemm_ex will take its RECTANGULAR arm, whose cost is linear in the column count -- but the cost model has no measured 'ozaki_dispatch_rect_rel,nm8_m64k512' row, so this candidate is priced from the SQUARE row times the padding ratio and is over-priced by roughly that ratio. Measure the row before trusting a refusal at this site.
+[poseidon] WARNING: matmul[0] 16x16x2048: direct f16_f32 host dispatch NOT PROPOSED -- this device's cost model carries no measured 'direct_dispatch_rel,f16_f32' row. Run poseidon-calibrate on this device; refusing to price a library dispatch on an unmeasured model.
+[poseidon] WARNING: matmul[0] 16x16x2048: direct bf16_f32 host dispatch NOT PROPOSED -- this device's cost model carries no measured 'direct_dispatch_rel,bf16_f32' row. Run poseidon-calibrate on this device; refusing to price a library dispatch on an unmeasured model.
+[poseidon] WARNING: matmul[0] 16x16x2048: direct tf32_f32 host dispatch NOT PROPOSED -- this device's cost model carries no measured 'direct_dispatch_rel,tf32_f32' row. Run poseidon-calibrate on this device; refusing to price a library dispatch on an unmeasured model.
+[poseidon] WARNING: matmul[0] 16x16x2048: direct f32_f32 host dispatch NOT PROPOSED -- this device's cost model carries no measured 'direct_dispatch_rel,f32_f32' row. Run poseidon-calibrate on this device; refusing to price a library dispatch on an unmeasured model.
+[poseidon] WARNING: matmul[0] 16x16x2048: the native DGEMM runs at 112x112x2048 (padWaste=3.343673e+02), but the cost model has no measured 'ozaki_dispatch_rect_rel,dgemm_m112n112k2048' row, so it is priced from the SQUARE 'ozaki_dispatch_rel,dgemm' row, a rate a DGEMM of this shape need not reach. Measure the row (poseidon-calibrate --ozaki-rect 112x112x2048) before trusting a pick at this site.
+[poseidon] matmul[0] pricing: baseline/MAC=8.052272e-03 executions=10485760
+[poseidon]   #0 wmma m16n16k16 f16/f16  compCost/MAC=5.061658e-04  rel=6.286000e-02  domainError=INF
+[poseidon]   #1 wmma m16n16k16 f16/f32  compCost/MAC=5.061255e-04  rel=6.285500e-02  domainError=INF
+[poseidon]   #2 wmma m16n16k16 bf16/f32  compCost/MAC=5.057954e-04  rel=6.281400e-02  domainError=2.763646e-03
+[poseidon]   #3 wmma m16n16k8 tf32/f32  compCost/MAC=8.057103e-04  rel=1.000600e-01  domainError=3.469196e-04
+[poseidon]   #4 tcec n=2 wmma m16n16k16 f16/f32  compCost/MAC=6.467826e-04  rel=8.032300e-02  domainError=INF
+[poseidon]   #5 tcec n=3 wmma m16n16k16 f16/f32  compCost/MAC=9.140456e-04  rel=1.135140e-01  domainError=INF
+[poseidon]   #6 tcec n=5 wmma m16n16k16 f16/f32  compCost/MAC=1.557132e-03  rel=1.933780e-01  domainError=INF
+[poseidon]   #7 tcec n=2 wmma m16n16k16 bf16/f32  compCost/MAC=6.532647e-04  rel=8.112800e-02  domainError=1.086901e-05
+[poseidon]   #8 tcec n=2 wmma m16n16k8 tf32/f32  compCost/MAC=1.362187e-03  rel=1.691680e-01  domainError=8.186192e-07
+[poseidon]   #9 tcec n=3 wmma m16n16k8 tf32/f32  compCost/MAC=2.084500e-03  rel=2.588710e-01  domainError=7.883074e-07
+[poseidon]   #10 tcec n=5 wmma m16n16k8 tf32/f32  compCost/MAC=3.606468e-03  rel=4.478820e-01  domainError=7.883074e-07
+[poseidon]   #11 ozaki-ii nm=8 wmma m16n16k16 s8/s32  compCost/MAC=2.504424e-02  rel=3.110208e+00  domainError=2.235377e-08
+[poseidon]   #12 ozaki-ii nm=9 wmma m16n16k16 s8/s32  compCost/MAC=2.805180e-02  rel=3.483712e+00  domainError=1.414681e-09
+[poseidon]   #13 ozaki-ii nm=10 wmma m16n16k16 s8/s32  compCost/MAC=3.052855e-02  rel=3.791296e+00  domainError=8.786445e-11
+[poseidon]   #14 ozaki-ii nm=11 wmma m16n16k16 s8/s32  compCost/MAC=3.357424e-02  rel=4.169536e+00  domainError=1.021397e-11
+[poseidon]   #15 ozaki-ii nm=12 wmma m16n16k16 s8/s32  compCost/MAC=3.604068e-02  rel=4.475840e+00  domainError=6.847164e-13
+[poseidon]   #16 ozaki-ii nm=13 wmma m16n16k16 s8/s32  compCost/MAC=3.864060e-02  rel=4.798720e+00  domainError=4.241945e-14
+[poseidon]   #17 ozaki-ii nm=14 wmma m16n16k16 s8/s32  compCost/MAC=4.157600e-02  rel=5.163264e+00  domainError=2.858390e-15
+[poseidon]   #18 tcec-dispatch wmma m16n16k16 f16/f32  compCost/MAC=2.066454e-04  rel=2.566300e-02  domainError=2.381195e-07
+[poseidon]   #19 native-dgemm cublas f64/f64  compCost/MAC=4.372327e-03  rel=5.429930e-01  domainError=1.516251e-15
+[poseidon] site preprocess__Z8gram_optPdPKd_poseidon_body: kappa=6.701936e+11 (ok) sumsens=5.043918e+03 factor=1.328716e+08
+Matmul[0] candidates (initial cost=8.052272e-03, executions=10485760, globalM=64, globalN=64, globalK=512, K=2048, gridCTAs=16):
+  wmma m16n16k16 f16/f16: Δcost=-7.912665e+04 ΔaccCost=1.328716e+38
+  wmma m16n16k16 f16/f32: Δcost=-7.912708e+04 ΔaccCost=1.328716e+38
+  wmma m16n16k16 bf16/f32: Δcost=-7.913054e+04 ΔaccCost=1.297189e+13
+  wmma m16n16k8 tf32/f32: Δcost=-7.598570e+04 ΔaccCost=1.627900e+12
+  tcec n=2 wmma m16n16k16 f16/f32: Δcost=-7.765218e+04 ΔaccCost=1.328716e+38
+  tcec n=3 wmma m16n16k16 f16/f32: Δcost=-7.484973e+04 ΔaccCost=1.328716e+38
+  tcec n=5 wmma m16n16k16 f16/f32: Δcost=-6.810647e+04 ΔaccCost=1.328716e+38
+  tcec n=2 wmma m16n16k16 bf16/f32: Δcost=-7.758421e+04 ΔaccCost=5.100433e+10
+  tcec n=2 wmma m16n16k8 tf32/f32: Δcost=-7.015062e+04 ΔaccCost=3.855379e+09
+  tcec n=3 wmma m16n16k8 tf32/f32: Δcost=-6.257662e+04 ΔaccCost=3.749622e+09
+  tcec n=5 wmma m16n16k8 tf32/f32: Δcost=-4.661763e+04 ΔaccCost=3.749622e+09
+  ozaki-ii nm=8 wmma m16n16k16 s8/s32: Δcost=1.781737e+05 ΔaccCost=1.098931e+08
+  ozaki-ii nm=9 wmma m16n16k16 s8/s32: Δcost=2.097102e+05 ΔaccCost=6.916184e+06
+  ozaki-ii nm=10 wmma m16n16k16 s8/s32: Δcost=2.356808e+05 ΔaccCost=4.306070e+05
+  ozaki-ii nm=11 wmma m16n16k16 s8/s32: Δcost=2.676172e+05 ΔaccCost=4.912256e+04
+  ozaki-ii nm=12 wmma m16n16k16 s8/s32: Δcost=2.934797e+05 ΔaccCost=3.368723e+03
+  ozaki-ii nm=13 wmma m16n16k16 s8/s32: Δcost=3.207418e+05 ΔaccCost=2.098523e+02
+  ozaki-ii nm=14 wmma m16n16k16 s8/s32: Δcost=3.515218e+05 ΔaccCost=1.386062e+01
+  tcec-dispatch wmma m16n16k16 f16/f32: Δcost=-8.226735e+04 ΔaccCost=1.120174e+09
+  native-dgemm cublas f64/f64: Δcost=-3.858701e+04 ΔaccCost=7.291596e+00
+[poseidon] GPU mode active for preprocess__Z8rrhv_optPdPKdS1__poseidon_body
+[poseidon] canonical form hash of preprocess__Z8rrhv_optPdPKdS1__poseidon_body is fea337c617ef94c9
+[poseidon] profile header for preprocess__Z8rrhv_optPdPKdS1__poseidon_body: MaxBlockDims=(16,16,1) LaunchCount=640
+[hostgemm] preprocess__Z8rrhv_optPdPKdS1__poseidon_body: 1 candidate reduction loop(s)
+[poseidon] Found 1 AbstractMatmul(s) for preprocess__Z8rrhv_optPdPKdS1__poseidon_body
+  Matmul[0]: 16x16x2048 a=f64 b=f64 acc=f64 d=f64 origin=ScalarLoopReduction
+    (profile dump skipped for ScalarLoopReduction)
+[poseidon] Starting Floodfill for preprocess__Z8rrhv_optPdPKdS1__poseidon_body
+Registered FPLLValue for non-isOptimizable instruction:   tail call void @llvm.experimental.noalias.scope.decl(metadata !177) #21
+Registered FPLLValue for non-isOptimizable instruction:   tail call void @llvm.experimental.noalias.scope.decl(metadata !180) #21
+Registered FPLLValue for non-isOptimizable instruction:   tail call void @llvm.experimental.noalias.scope.decl(metadata !182) #21
+Registered FPLLValue for non-isOptimizable instruction:   %4 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ctaid.x() #21
+Registered FPLLValue for non-isOptimizable instruction:   %5 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ntid.x() #21
+Registered FPLLValue for non-isOptimizable instruction:   %6 = mul i32 %4, %5
+Registered FPLLValue for non-isOptimizable instruction:   %7 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.tid.x() #21
+Registered FPLLValue for non-isOptimizable instruction:   %8 = add i32 %6, %7
+Registered FPLLValue for non-isOptimizable instruction:   %9 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ctaid.y() #21
+Registered FPLLValue for non-isOptimizable instruction:   %10 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ntid.y() #21
+Registered FPLLValue for non-isOptimizable instruction:   %11 = mul nuw nsw i32 %9, %10
+Registered FPLLValue for non-isOptimizable instruction:   %12 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.tid.y() #21
+Registered FPLLValue for non-isOptimizable instruction:   %13 = add nuw nsw i32 %11, %12
+Registered FPLLValue for non-isOptimizable instruction:   %14 = icmp sgt i32 %8, 2047
+Registered FPLLValue for non-isOptimizable instruction:   %15 = icmp samesign ugt i32 %13, 111
+Registered FPLLValue for non-isOptimizable instruction:   %16 = or i1 %14, %15
+Registered FPLLValue for non-isOptimizable instruction:   br i1 %16, label %40, label %17
+Registered FPLLValue for non-isOptimizable instruction:   %18 = sext i32 %8 to i64
+Registered FPLLValue for non-isOptimizable instruction:   %19 = shl nsw i64 %18, 14
+Registered FPLLValue for non-isOptimizable instruction:   %20 = getelementptr inbounds nuw i8, ptr %1, i64 %19
+Registered FPLLValue for non-isOptimizable instruction:   %21 = shl nuw nsw i32 %13, 11
+Registered FPLLValue for non-isOptimizable instruction:   %22 = zext nneg i32 %21 to i64
+Registered FPLLValue for non-isOptimizable instruction:   %23 = getelementptr inbounds nuw [8 x i8], ptr %2, i64 %22
+Registered FPLLValue for non-isOptimizable instruction:   br label %27
+Registered FPLLValue for non-isOptimizable instruction:   %25 = getelementptr [8 x i8], ptr %0, i64 %22
+Registered FPLLValue for non-isOptimizable instruction:   %26 = getelementptr [8 x i8], ptr %25, i64 %18
+Registered FPLLValue for non-isOptimizable instruction:   store double %37, ptr %26, align 8, !tbaa !33, !alias.scope !177
+Registered FPLLValue for non-isOptimizable instruction:   br label %40
+Registered FPLLValue for non-isOptimizable instruction:   %28 = phi i64 [ %31, %27 ], [ 0, %17 ]
+Registered FPLLValue for non-isOptimizable instruction:   %29 = phi double [ 0.000000e+00, %17 ], [ %37, %27 ]
+Registered FPLLValue for non-isOptimizable instruction:   %30 = trunc i64 %28 to i32
+Registered FPLLValue for non-isOptimizable instruction:   %31 = add nuw i64 %28, 1
+Registered FPLLValue for non-isOptimizable instruction:   %32 = zext nneg i32 %30 to i64
+Registered FPLLValue for non-isOptimizable instruction:   %33 = getelementptr inbounds nuw [8 x i8], ptr %20, i64 %32
+Registered FPLLValue for non-isOptimizable instruction:   %34 = load double, ptr %33, align 8, !tbaa !33, !alias.scope !180
+Registered FPLLValue for non-isOptimizable instruction:   %35 = getelementptr inbounds nuw [8 x i8], ptr %23, i64 %32
+Registered FPLLValue for non-isOptimizable instruction:   %36 = load double, ptr %35, align 8, !tbaa !33, !alias.scope !182
+Registered FPLLValue for non-isOptimizable instruction:   %38 = add nuw nsw i32 %30, 1
+Registered FPLLValue for non-isOptimizable instruction:   %39 = icmp eq i32 %38, 2048
+Registered FPLLValue for non-isOptimizable instruction:   br i1 %39, label %24, label %27, !llvm.loop !183
+Registered FPLLValue for non-isOptimizable instruction:   ret void
+Skipping non-isOptimizable instruction:   tail call void @llvm.experimental.noalias.scope.decl(metadata !177) #21
+Skipping non-isOptimizable instruction:   tail call void @llvm.experimental.noalias.scope.decl(metadata !180) #21
+Skipping non-isOptimizable instruction:   tail call void @llvm.experimental.noalias.scope.decl(metadata !182) #21
+Skipping non-isOptimizable instruction:   %4 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ctaid.x() #21
+Skipping non-isOptimizable instruction:   %5 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ntid.x() #21
+Skipping non-isOptimizable instruction:   %6 = mul i32 %4, %5
+Skipping non-isOptimizable instruction:   %7 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.tid.x() #21
+Skipping non-isOptimizable instruction:   %8 = add i32 %6, %7
+Skipping non-isOptimizable instruction:   %9 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ctaid.y() #21
+Skipping non-isOptimizable instruction:   %10 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ntid.y() #21
+Skipping non-isOptimizable instruction:   %11 = mul nuw nsw i32 %9, %10
+Skipping non-isOptimizable instruction:   %12 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.tid.y() #21
+Skipping non-isOptimizable instruction:   %13 = add nuw nsw i32 %11, %12
+Skipping non-isOptimizable instruction:   %14 = icmp sgt i32 %8, 2047
+Skipping non-isOptimizable instruction:   %15 = icmp samesign ugt i32 %13, 111
+Skipping non-isOptimizable instruction:   %16 = or i1 %14, %15
+Skipping non-isOptimizable instruction:   br i1 %16, label %40, label %17
+Skipping non-isOptimizable instruction:   %18 = sext i32 %8 to i64
+Skipping non-isOptimizable instruction:   %19 = shl nsw i64 %18, 14
+Skipping non-isOptimizable instruction:   %20 = getelementptr inbounds nuw i8, ptr %1, i64 %19
+Skipping non-isOptimizable instruction:   %21 = shl nuw nsw i32 %13, 11
+Skipping non-isOptimizable instruction:   %22 = zext nneg i32 %21 to i64
+Skipping non-isOptimizable instruction:   %23 = getelementptr inbounds nuw [8 x i8], ptr %2, i64 %22
+Skipping non-isOptimizable instruction:   br label %27
+Skipping non-isOptimizable instruction:   %25 = getelementptr [8 x i8], ptr %0, i64 %22
+Skipping non-isOptimizable instruction:   %26 = getelementptr [8 x i8], ptr %25, i64 %18
+Skipping non-isOptimizable instruction:   store double %37, ptr %26, align 8, !tbaa !33, !alias.scope !177
+Skipping non-isOptimizable instruction:   br label %40
+Skipping non-isOptimizable instruction:   %28 = phi i64 [ %31, %27 ], [ 0, %17 ]
+Skipping non-isOptimizable instruction:   %29 = phi double [ 0.000000e+00, %17 ], [ %37, %27 ]
+Skipping non-isOptimizable instruction:   %30 = trunc i64 %28 to i32
+Skipping non-isOptimizable instruction:   %31 = add nuw i64 %28, 1
+Skipping non-isOptimizable instruction:   %32 = zext nneg i32 %30 to i64
+Skipping non-isOptimizable instruction:   %33 = getelementptr inbounds nuw [8 x i8], ptr %20, i64 %32
+Skipping non-isOptimizable instruction:   %34 = load double, ptr %33, align 8, !tbaa !33, !alias.scope !180
+Skipping non-isOptimizable instruction:   %35 = getelementptr inbounds nuw [8 x i8], ptr %23, i64 %32
+Skipping non-isOptimizable instruction:   %36 = load double, ptr %35, align 8, !tbaa !33, !alias.scope !182
+Starting floodfill from:   %37 = tail call double @llvm.fmuladd.f64(double %34, double %36, double %29) #21, !enzyme_active !156, !poseidon.prof.idx !157
+Insert to operation_seen and processed:   %37 = tail call double @llvm.fmuladd.f64(double %34, double %36, double %29) #21, !enzyme_active !156, !poseidon.prof.idx !157
+Non-isOptimizable input found:   %34 = load double, ptr %33, align 8, !tbaa !33, !alias.scope !180
+Non-isOptimizable input found:   %36 = load double, ptr %35, align 8, !tbaa !33, !alias.scope !182
+Non-isOptimizable input found:   %29 = phi double [ 0.000000e+00, %17 ], [ %37, %27 ]
+Output instruction found:   %37 = tail call double @llvm.fmuladd.f64(double %34, double %36, double %29) #21, !enzyme_active !156, !poseidon.prof.idx !157
+Output instruction found:   %37 = tail call double @llvm.fmuladd.f64(double %34, double %36, double %29) #21, !enzyme_active !156, !poseidon.prof.idx !157
+Found a subgraph with 1 operations and 3 inputs and 1 outputs
+Inputs:
+  %34 = load double, ptr %33, align 8, !tbaa !33, !alias.scope !180
+  %36 = load double, ptr %35, align 8, !tbaa !33, !alias.scope !182
+  %29 = phi double [ 0.000000e+00, %17 ], [ %37, %27 ]
+Outputs:
+  %37 = tail call double @llvm.fmuladd.f64(double %34, double %36, double %29) #21, !enzyme_active !156, !poseidon.prof.idx !157
+Operations:
+  %37 = tail call double @llvm.fmuladd.f64(double %34, double %36, double %29) #21, !enzyme_active !156, !poseidon.prof.idx !157
+Skipping trivial subgraph
+Skipping non-isOptimizable instruction:   %38 = add nuw nsw i32 %30, 1
+Skipping non-isOptimizable instruction:   %39 = icmp eq i32 %38, 2048
+Skipping non-isOptimizable instruction:   br i1 %39, label %24, label %27, !llvm.loop !183
+Skipping non-isOptimizable instruction:   ret void
+[poseidon] Found 0 initial subgraphs in preprocess__Z8rrhv_optPdPKdS1__poseidon_body
+=== Subgraph splitting complete ===
+  Original subgraphs: 0
+  Final subgraphs after splitting: 0
+[poseidon] After splitting, have 0 subgraphs in preprocess__Z8rrhv_optPdPKdS1__poseidon_body
+
+=== Function IR after Subgraph Splitting ===
+%3:
+    tail call void @llvm.experimental.noalias.scope.decl(metadata !177) #21
+    tail call void @llvm.experimental.noalias.scope.decl(metadata !180) #21
+    tail call void @llvm.experimental.noalias.scope.decl(metadata !182) #21
+    %4 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ctaid.x() #21
+    %5 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ntid.x() #21
+    %6 = mul i32 %4, %5
+    %7 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.tid.x() #21
+    %8 = add i32 %6, %7
+    %9 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ctaid.y() #21
+    %10 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ntid.y() #21
+    %11 = mul nuw nsw i32 %9, %10
+    %12 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.tid.y() #21
+    %13 = add nuw nsw i32 %11, %12
+    %14 = icmp sgt i32 %8, 2047
+    %15 = icmp samesign ugt i32 %13, 111
+    %16 = or i1 %14, %15
+    br i1 %16, label %40, label %17
+%17:
+    %18 = sext i32 %8 to i64
+    %19 = shl nsw i64 %18, 14
+    %20 = getelementptr inbounds nuw i8, ptr %1, i64 %19
+    %21 = shl nuw nsw i32 %13, 11
+    %22 = zext nneg i32 %21 to i64
+    %23 = getelementptr inbounds nuw [8 x i8], ptr %2, i64 %22
+    br label %27
+%24:
+    %25 = getelementptr [8 x i8], ptr %0, i64 %22
+    %26 = getelementptr [8 x i8], ptr %25, i64 %18
+    store double %37, ptr %26, align 8, !tbaa !33, !alias.scope !177
+    br label %40
+%27:
+    %28 = phi i64 [ %31, %27 ], [ 0, %17 ]
+    %29 = phi double [ 0.000000e+00, %17 ], [ %37, %27 ]
+    %30 = trunc i64 %28 to i32
+    %31 = add nuw i64 %28, 1
+    %32 = zext nneg i32 %30 to i64
+    %33 = getelementptr inbounds nuw [8 x i8], ptr %20, i64 %32
+    %34 = load double, ptr %33, align 8, !tbaa !33, !alias.scope !180
+    %35 = getelementptr inbounds nuw [8 x i8], ptr %23, i64 %32
+    %36 = load double, ptr %35, align 8, !tbaa !33, !alias.scope !182
+    %37 = tail call double @llvm.fmuladd.f64(double %34, double %36, double %29) #21, !enzyme_active !156, !poseidon.prof.idx !157
+    %38 = add nuw nsw i32 %30, 1
+    %39 = icmp eq i32 %38, 2048
+    br i1 %39, label %24, label %27, !llvm.loop !183
+%40:
+    ret void
+=== End of Function IR ===
+
+[ozaki-host-dispatch] recovered deploy geometry for preprocess__Z8rrhv_optPdPKdS1__poseidon_body: M=2048 Ncols=112 K=2048 (profile M/N/K = 512/64/512 does not track matrix order; extents taken from the kernel's own index guard on thread axes 0/1 and bounded again by the launch geometry at the dispatch)
+[poseidon] WARNING: matmul[0] 16x16x2048: padWaste=8.000000e+00 >= 1.05, so __poseidon_ozaki_dgemm_ex will take its RECTANGULAR arm, whose cost is linear in the column count -- but the cost model has no measured 'ozaki_dispatch_rect_rel,nm8_m512k512' row, so this candidate is priced from the SQUARE row times the padding ratio and is over-priced by roughly that ratio. Measure the row before trusting a refusal at this site.
+[poseidon] WARNING: matmul[0] 16x16x2048: the native DGEMM runs at 2048x112x2048 (padWaste=1.828571e+01), but the cost model has no measured 'ozaki_dispatch_rect_rel,dgemm_m2048n112k2048' row, so it is priced from the SQUARE 'ozaki_dispatch_rel,dgemm' row, a rate a DGEMM of this shape need not reach. Measure the row (poseidon-calibrate --ozaki-rect 2048x112x2048) before trusting a pick at this site.
+[poseidon] matmul[0] pricing: baseline/MAC=8.052272e-03 executions=83886080
+[poseidon]   #0 wmma m16n16k16 f16/f16  compCost/MAC=5.061658e-04  rel=6.286000e-02  domainError=6.461849e-03
+[poseidon]   #1 wmma m16n16k16 f16/f32  compCost/MAC=5.061255e-04  rel=6.285500e-02  domainError=3.023509e-04
+[poseidon]   #2 wmma m16n16k16 bf16/f32  compCost/MAC=5.057954e-04  rel=6.281400e-02  domainError=2.486045e-03
+[poseidon]   #3 wmma m16n16k8 tf32/f32  compCost/MAC=8.057103e-04  rel=1.000600e-01  domainError=3.023522e-04
+[poseidon]   #4 tcec n=2 wmma m16n16k16 f16/f32  compCost/MAC=6.467826e-04  rel=8.032300e-02  domainError=7.649605e-07
+[poseidon]   #5 tcec n=3 wmma m16n16k16 f16/f32  compCost/MAC=9.140456e-04  rel=1.135140e-01  domainError=7.714021e-07
+[poseidon]   #6 tcec n=5 wmma m16n16k16 f16/f32  compCost/MAC=1.557132e-03  rel=1.933780e-01  domainError=7.714021e-07
+[poseidon]   #7 tcec n=2 wmma m16n16k16 bf16/f32  compCost/MAC=6.532647e-04  rel=8.112800e-02  domainError=9.444826e-06
+[poseidon]   #8 tcec n=2 wmma m16n16k8 tf32/f32  compCost/MAC=1.362187e-03  rel=1.691680e-01  domainError=7.649605e-07
+[poseidon]   #9 tcec n=3 wmma m16n16k8 tf32/f32  compCost/MAC=2.084500e-03  rel=2.588710e-01  domainError=7.714021e-07
+[poseidon]   #10 tcec n=5 wmma m16n16k8 tf32/f32  compCost/MAC=3.606468e-03  rel=4.478820e-01  domainError=7.714021e-07
+[poseidon]   #11 ozaki-ii nm=8 wmma m16n16k16 s8/s32  compCost/MAC=3.130530e-03  rel=3.887760e-01  domainError=2.783938e-08
+[poseidon]   #12 ozaki-ii nm=9 wmma m16n16k16 s8/s32  compCost/MAC=3.506474e-03  rel=4.354640e-01  domainError=1.825607e-09
+[poseidon]   #13 ozaki-ii nm=10 wmma m16n16k16 s8/s32  compCost/MAC=3.816068e-03  rel=4.739120e-01  domainError=1.130514e-10
+[poseidon]   #14 ozaki-ii nm=11 wmma m16n16k16 s8/s32  compCost/MAC=4.196780e-03  rel=5.211920e-01  domainError=6.880678e-12
+[poseidon]   #15 ozaki-ii nm=12 wmma m16n16k16 s8/s32  compCost/MAC=4.505085e-03  rel=5.594800e-01  domainError=4.407963e-13
+[poseidon]   #16 ozaki-ii nm=13 wmma m16n16k16 s8/s32  compCost/MAC=4.830075e-03  rel=5.998400e-01  domainError=2.623341e-14
+[poseidon]   #17 ozaki-ii nm=14 wmma m16n16k16 s8/s32  compCost/MAC=5.197001e-03  rel=6.454080e-01  domainError=3.248455e-15
+[poseidon]   #18 tcec-dispatch wmma m16n16k16 f16/f32  compCost/MAC=2.066454e-04  rel=2.566300e-02  domainError=2.255705e-07
+[poseidon]   #19 native-dgemm cublas f64/f64  compCost/MAC=4.372327e-03  rel=5.429930e-01  domainError=1.486089e-15
+[poseidon] site preprocess__Z8rrhv_optPdPKdS1__poseidon_body: kappa=2.225371e+12 (ok) sumsens=4.289068e+06 factor=5.188472e+05
+Matmul[0] candidates (initial cost=8.052272e-03, executions=83886080, globalM=512, globalN=64, globalK=512, K=2048, gridCTAs=128):
+  wmma m16n16k16 f16/f16: Δcost=-6.330132e+05 ΔaccCost=6.561704e+14
+  wmma m16n16k16 f16/f32: Δcost=-6.330166e+05 ΔaccCost=2.680242e+13
+  wmma m16n16k16 bf16/f32: Δcost=-6.330443e+05 ΔaccCost=2.156255e+14
+  wmma m16n16k8 tf32/f32: Δcost=-6.078856e+05 ΔaccCost=2.680242e+13
+  tcec n=2 wmma m16n16k16 f16/f32: Δcost=-6.212174e+05 ΔaccCost=8.080608e+10
+  tcec n=3 wmma m16n16k16 f16/f32: Δcost=-5.987978e+05 ΔaccCost=7.945461e+10
+  tcec n=5 wmma m16n16k16 f16/f32: Δcost=-5.448518e+05 ΔaccCost=7.945461e+10
+  tcec n=2 wmma m16n16k16 bf16/f32: Δcost=-6.206737e+05 ΔaccCost=8.479988e+11
+  tcec n=2 wmma m16n16k8 tf32/f32: Δcost=-5.612050e+05 ΔaccCost=8.080608e+10
+  tcec n=3 wmma m16n16k8 tf32/f32: Δcost=-5.006130e+05 ΔaccCost=7.945461e+10
+  tcec n=5 wmma m16n16k8 tf32/f32: Δcost=-3.729411e+05 ΔaccCost=7.945461e+10
+  ozaki-ii nm=8 wmma m16n16k16 s8/s32: Δcost=-4.128656e+05 ΔaccCost=3.028801e+09
+  ozaki-ii nm=9 wmma m16n16k16 s8/s32: Δcost=-3.813291e+05 ΔaccCost=1.918987e+08
+  ozaki-ii nm=10 wmma m16n16k16 s8/s32: Δcost=-3.553585e+05 ΔaccCost=1.213920e+07
+  ozaki-ii nm=11 wmma m16n16k16 s8/s32: Δcost=-3.234221e+05 ΔaccCost=7.486030e+05
+  ozaki-ii nm=12 wmma m16n16k16 s8/s32: Δcost=-2.975596e+05 ΔaccCost=4.680785e+04
+  ozaki-ii nm=13 wmma m16n16k16 s8/s32: Δcost=-2.702975e+05 ΔaccCost=2.803589e+03
+  ozaki-ii nm=14 wmma m16n16k16 s8/s32: Δcost=-2.395175e+05 ΔaccCost=3.109877e+02
+  tcec-dispatch wmma m16n16k16 f16/f32: Δcost=-6.581388e+05 ΔaccCost=2.282270e+10
+  native-dgemm cublas f64/f64: Δcost=-3.086961e+05 ΔaccCost=1.550504e+02
+[poseidon] GPU mode active for preprocess__Z10rrproj_optPdPKdS1__poseidon_body
+[poseidon] canonical form hash of preprocess__Z10rrproj_optPdPKdS1__poseidon_body is fea337c617ef94c9
+[poseidon] profile header for preprocess__Z10rrproj_optPdPKdS1__poseidon_body: MaxBlockDims=(16,16,1) LaunchCount=80
+[hostgemm] preprocess__Z10rrproj_optPdPKdS1__poseidon_body: 1 candidate reduction loop(s)
+[poseidon] Found 1 AbstractMatmul(s) for preprocess__Z10rrproj_optPdPKdS1__poseidon_body
+  Matmul[0]: 16x16x2048 a=f64 b=f64 acc=f64 d=f64 origin=ScalarLoopReduction
+    (profile dump skipped for ScalarLoopReduction)
+[poseidon] Starting Floodfill for preprocess__Z10rrproj_optPdPKdS1__poseidon_body
+Registered FPLLValue for non-isOptimizable instruction:   tail call void @llvm.experimental.noalias.scope.decl(metadata !185) #21
+Registered FPLLValue for non-isOptimizable instruction:   tail call void @llvm.experimental.noalias.scope.decl(metadata !188) #21
+Registered FPLLValue for non-isOptimizable instruction:   tail call void @llvm.experimental.noalias.scope.decl(metadata !190) #21
+Registered FPLLValue for non-isOptimizable instruction:   %4 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ctaid.x() #21
+Registered FPLLValue for non-isOptimizable instruction:   %5 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ntid.x() #21
+Registered FPLLValue for non-isOptimizable instruction:   %6 = mul i32 %4, %5
+Registered FPLLValue for non-isOptimizable instruction:   %7 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.tid.x() #21
+Registered FPLLValue for non-isOptimizable instruction:   %8 = add i32 %6, %7
+Registered FPLLValue for non-isOptimizable instruction:   %9 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ctaid.y() #21
+Registered FPLLValue for non-isOptimizable instruction:   %10 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ntid.y() #21
+Registered FPLLValue for non-isOptimizable instruction:   %11 = mul nuw nsw i32 %9, %10
+Registered FPLLValue for non-isOptimizable instruction:   %12 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.tid.y() #21
+Registered FPLLValue for non-isOptimizable instruction:   %13 = add nuw nsw i32 %11, %12
+Registered FPLLValue for non-isOptimizable instruction:   %14 = icmp sgt i32 %8, 111
+Registered FPLLValue for non-isOptimizable instruction:   %15 = icmp samesign ugt i32 %13, 111
+Registered FPLLValue for non-isOptimizable instruction:   %16 = or i1 %14, %15
+Registered FPLLValue for non-isOptimizable instruction:   br i1 %16, label %41, label %17
+Registered FPLLValue for non-isOptimizable instruction:   %18 = sext i32 %8 to i64
+Registered FPLLValue for non-isOptimizable instruction:   %19 = shl nsw i64 %18, 14
+Registered FPLLValue for non-isOptimizable instruction:   %20 = getelementptr inbounds nuw i8, ptr %1, i64 %19
+Registered FPLLValue for non-isOptimizable instruction:   %21 = zext nneg i32 %13 to i64
+Registered FPLLValue for non-isOptimizable instruction:   %22 = shl nuw nsw i64 %21, 14
+Registered FPLLValue for non-isOptimizable instruction:   %23 = getelementptr inbounds nuw i8, ptr %2, i64 %22
+Registered FPLLValue for non-isOptimizable instruction:   br label %28
+Registered FPLLValue for non-isOptimizable instruction:   %25 = mul nuw nsw i64 %21, 896
+Registered FPLLValue for non-isOptimizable instruction:   %26 = getelementptr i8, ptr %0, i64 %25
+Registered FPLLValue for non-isOptimizable instruction:   %27 = getelementptr [8 x i8], ptr %26, i64 %18
+Registered FPLLValue for non-isOptimizable instruction:   store double %38, ptr %27, align 8, !tbaa !33, !alias.scope !185
+Registered FPLLValue for non-isOptimizable instruction:   br label %41
+Registered FPLLValue for non-isOptimizable instruction:   %29 = phi i64 [ %32, %28 ], [ 0, %17 ]
+Registered FPLLValue for non-isOptimizable instruction:   %30 = phi double [ 0.000000e+00, %17 ], [ %38, %28 ]
+Registered FPLLValue for non-isOptimizable instruction:   %31 = trunc i64 %29 to i32
+Registered FPLLValue for non-isOptimizable instruction:   %32 = add nuw i64 %29, 1
+Registered FPLLValue for non-isOptimizable instruction:   %33 = zext nneg i32 %31 to i64
+Registered FPLLValue for non-isOptimizable instruction:   %34 = getelementptr inbounds nuw [8 x i8], ptr %20, i64 %33
+Registered FPLLValue for non-isOptimizable instruction:   %35 = load double, ptr %34, align 8, !tbaa !33, !alias.scope !188
+Registered FPLLValue for non-isOptimizable instruction:   %36 = getelementptr inbounds nuw [8 x i8], ptr %23, i64 %33
+Registered FPLLValue for non-isOptimizable instruction:   %37 = load double, ptr %36, align 8, !tbaa !33, !alias.scope !190
+Registered FPLLValue for non-isOptimizable instruction:   %39 = add nuw nsw i32 %31, 1
+Registered FPLLValue for non-isOptimizable instruction:   %40 = icmp eq i32 %39, 2048
+Registered FPLLValue for non-isOptimizable instruction:   br i1 %40, label %24, label %28, !llvm.loop !191
+Registered FPLLValue for non-isOptimizable instruction:   ret void
+Skipping non-isOptimizable instruction:   tail call void @llvm.experimental.noalias.scope.decl(metadata !185) #21
+Skipping non-isOptimizable instruction:   tail call void @llvm.experimental.noalias.scope.decl(metadata !188) #21
+Skipping non-isOptimizable instruction:   tail call void @llvm.experimental.noalias.scope.decl(metadata !190) #21
+Skipping non-isOptimizable instruction:   %4 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ctaid.x() #21
+Skipping non-isOptimizable instruction:   %5 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ntid.x() #21
+Skipping non-isOptimizable instruction:   %6 = mul i32 %4, %5
+Skipping non-isOptimizable instruction:   %7 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.tid.x() #21
+Skipping non-isOptimizable instruction:   %8 = add i32 %6, %7
+Skipping non-isOptimizable instruction:   %9 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ctaid.y() #21
+Skipping non-isOptimizable instruction:   %10 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ntid.y() #21
+Skipping non-isOptimizable instruction:   %11 = mul nuw nsw i32 %9, %10
+Skipping non-isOptimizable instruction:   %12 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.tid.y() #21
+Skipping non-isOptimizable instruction:   %13 = add nuw nsw i32 %11, %12
+Skipping non-isOptimizable instruction:   %14 = icmp sgt i32 %8, 111
+Skipping non-isOptimizable instruction:   %15 = icmp samesign ugt i32 %13, 111
+Skipping non-isOptimizable instruction:   %16 = or i1 %14, %15
+Skipping non-isOptimizable instruction:   br i1 %16, label %41, label %17
+Skipping non-isOptimizable instruction:   %18 = sext i32 %8 to i64
+Skipping non-isOptimizable instruction:   %19 = shl nsw i64 %18, 14
+Skipping non-isOptimizable instruction:   %20 = getelementptr inbounds nuw i8, ptr %1, i64 %19
+Skipping non-isOptimizable instruction:   %21 = zext nneg i32 %13 to i64
+Skipping non-isOptimizable instruction:   %22 = shl nuw nsw i64 %21, 14
+Skipping non-isOptimizable instruction:   %23 = getelementptr inbounds nuw i8, ptr %2, i64 %22
+Skipping non-isOptimizable instruction:   br label %28
+Skipping non-isOptimizable instruction:   %25 = mul nuw nsw i64 %21, 896
+Skipping non-isOptimizable instruction:   %26 = getelementptr i8, ptr %0, i64 %25
+Skipping non-isOptimizable instruction:   %27 = getelementptr [8 x i8], ptr %26, i64 %18
+Skipping non-isOptimizable instruction:   store double %38, ptr %27, align 8, !tbaa !33, !alias.scope !185
+Skipping non-isOptimizable instruction:   br label %41
+Skipping non-isOptimizable instruction:   %29 = phi i64 [ %32, %28 ], [ 0, %17 ]
+Skipping non-isOptimizable instruction:   %30 = phi double [ 0.000000e+00, %17 ], [ %38, %28 ]
+Skipping non-isOptimizable instruction:   %31 = trunc i64 %29 to i32
+Skipping non-isOptimizable instruction:   %32 = add nuw i64 %29, 1
+Skipping non-isOptimizable instruction:   %33 = zext nneg i32 %31 to i64
+Skipping non-isOptimizable instruction:   %34 = getelementptr inbounds nuw [8 x i8], ptr %20, i64 %33
+Skipping non-isOptimizable instruction:   %35 = load double, ptr %34, align 8, !tbaa !33, !alias.scope !188
+Skipping non-isOptimizable instruction:   %36 = getelementptr inbounds nuw [8 x i8], ptr %23, i64 %33
+Skipping non-isOptimizable instruction:   %37 = load double, ptr %36, align 8, !tbaa !33, !alias.scope !190
+Starting floodfill from:   %38 = tail call double @llvm.fmuladd.f64(double %35, double %37, double %30) #21, !enzyme_active !156, !poseidon.prof.idx !157
+Insert to operation_seen and processed:   %38 = tail call double @llvm.fmuladd.f64(double %35, double %37, double %30) #21, !enzyme_active !156, !poseidon.prof.idx !157
+Non-isOptimizable input found:   %35 = load double, ptr %34, align 8, !tbaa !33, !alias.scope !188
+Non-isOptimizable input found:   %37 = load double, ptr %36, align 8, !tbaa !33, !alias.scope !190
+Non-isOptimizable input found:   %30 = phi double [ 0.000000e+00, %17 ], [ %38, %28 ]
+Output instruction found:   %38 = tail call double @llvm.fmuladd.f64(double %35, double %37, double %30) #21, !enzyme_active !156, !poseidon.prof.idx !157
+Output instruction found:   %38 = tail call double @llvm.fmuladd.f64(double %35, double %37, double %30) #21, !enzyme_active !156, !poseidon.prof.idx !157
+Found a subgraph with 1 operations and 3 inputs and 1 outputs
+Inputs:
+  %35 = load double, ptr %34, align 8, !tbaa !33, !alias.scope !188
+  %37 = load double, ptr %36, align 8, !tbaa !33, !alias.scope !190
+  %30 = phi double [ 0.000000e+00, %17 ], [ %38, %28 ]
+Outputs:
+  %38 = tail call double @llvm.fmuladd.f64(double %35, double %37, double %30) #21, !enzyme_active !156, !poseidon.prof.idx !157
+Operations:
+  %38 = tail call double @llvm.fmuladd.f64(double %35, double %37, double %30) #21, !enzyme_active !156, !poseidon.prof.idx !157
+Skipping trivial subgraph
+Skipping non-isOptimizable instruction:   %39 = add nuw nsw i32 %31, 1
+Skipping non-isOptimizable instruction:   %40 = icmp eq i32 %39, 2048
+Skipping non-isOptimizable instruction:   br i1 %40, label %24, label %28, !llvm.loop !191
+Skipping non-isOptimizable instruction:   ret void
+[poseidon] Found 0 initial subgraphs in preprocess__Z10rrproj_optPdPKdS1__poseidon_body
+=== Subgraph splitting complete ===
+  Original subgraphs: 0
+  Final subgraphs after splitting: 0
+[poseidon] After splitting, have 0 subgraphs in preprocess__Z10rrproj_optPdPKdS1__poseidon_body
+
+=== Function IR after Subgraph Splitting ===
+%3:
+    tail call void @llvm.experimental.noalias.scope.decl(metadata !185) #21
+    tail call void @llvm.experimental.noalias.scope.decl(metadata !188) #21
+    tail call void @llvm.experimental.noalias.scope.decl(metadata !190) #21
+    %4 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ctaid.x() #21
+    %5 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ntid.x() #21
+    %6 = mul i32 %4, %5
+    %7 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.tid.x() #21
+    %8 = add i32 %6, %7
+    %9 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ctaid.y() #21
+    %10 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ntid.y() #21
+    %11 = mul nuw nsw i32 %9, %10
+    %12 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.tid.y() #21
+    %13 = add nuw nsw i32 %11, %12
+    %14 = icmp sgt i32 %8, 111
+    %15 = icmp samesign ugt i32 %13, 111
+    %16 = or i1 %14, %15
+    br i1 %16, label %41, label %17
+%17:
+    %18 = sext i32 %8 to i64
+    %19 = shl nsw i64 %18, 14
+    %20 = getelementptr inbounds nuw i8, ptr %1, i64 %19
+    %21 = zext nneg i32 %13 to i64
+    %22 = shl nuw nsw i64 %21, 14
+    %23 = getelementptr inbounds nuw i8, ptr %2, i64 %22
+    br label %28
+%24:
+    %25 = mul nuw nsw i64 %21, 896
+    %26 = getelementptr i8, ptr %0, i64 %25
+    %27 = getelementptr [8 x i8], ptr %26, i64 %18
+    store double %38, ptr %27, align 8, !tbaa !33, !alias.scope !185
+    br label %41
+%28:
+    %29 = phi i64 [ %32, %28 ], [ 0, %17 ]
+    %30 = phi double [ 0.000000e+00, %17 ], [ %38, %28 ]
+    %31 = trunc i64 %29 to i32
+    %32 = add nuw i64 %29, 1
+    %33 = zext nneg i32 %31 to i64
+    %34 = getelementptr inbounds nuw [8 x i8], ptr %20, i64 %33
+    %35 = load double, ptr %34, align 8, !tbaa !33, !alias.scope !188
+    %36 = getelementptr inbounds nuw [8 x i8], ptr %23, i64 %33
+    %37 = load double, ptr %36, align 8, !tbaa !33, !alias.scope !190
+    %38 = tail call double @llvm.fmuladd.f64(double %35, double %37, double %30) #21, !enzyme_active !156, !poseidon.prof.idx !157
+    %39 = add nuw nsw i32 %31, 1
+    %40 = icmp eq i32 %39, 2048
+    br i1 %40, label %24, label %28, !llvm.loop !191
+%41:
+    ret void
+=== End of Function IR ===
+
+[ozaki-host-dispatch] recovered deploy geometry for preprocess__Z10rrproj_optPdPKdS1__poseidon_body: M=112 Ncols=112 K=2048 (profile M/N/K = 64/64/512 does not track matrix order; extents taken from the kernel's own index guard on thread axes 0/1 and bounded again by the launch geometry at the dispatch)
+[poseidon] WARNING: matmul[0] 16x16x2048: padWaste=6.400000e+01 >= 1.05, so __poseidon_ozaki_dgemm_ex will take its RECTANGULAR arm, whose cost is linear in the column count -- but the cost model has no measured 'ozaki_dispatch_rect_rel,nm8_m64k512' row, so this candidate is priced from the SQUARE row times the padding ratio and is over-priced by roughly that ratio. Measure the row before trusting a refusal at this site.
+[poseidon] WARNING: matmul[0] 16x16x2048: the native DGEMM runs at 112x112x2048 (padWaste=3.343673e+02), but the cost model has no measured 'ozaki_dispatch_rect_rel,dgemm_m112n112k2048' row, so it is priced from the SQUARE 'ozaki_dispatch_rel,dgemm' row, a rate a DGEMM of this shape need not reach. Measure the row (poseidon-calibrate --ozaki-rect 112x112x2048) before trusting a pick at this site.
+[poseidon] matmul[0] pricing: baseline/MAC=8.052272e-03 executions=10485760
+[poseidon]   #0 wmma m16n16k16 f16/f16  compCost/MAC=5.061658e-04  rel=6.286000e-02  domainError=6.448765e-03
+[poseidon]   #1 wmma m16n16k16 f16/f32  compCost/MAC=5.061255e-04  rel=6.285500e-02  domainError=3.029144e-04
+[poseidon]   #2 wmma m16n16k16 bf16/f32  compCost/MAC=5.057954e-04  rel=6.281400e-02  domainError=2.412320e-03
+[poseidon]   #3 wmma m16n16k8 tf32/f32  compCost/MAC=8.057103e-04  rel=1.000600e-01  domainError=3.029156e-04
+[poseidon]   #4 tcec n=2 wmma m16n16k16 f16/f32  compCost/MAC=6.467826e-04  rel=8.032300e-02  domainError=8.071968e-07
+[poseidon]   #5 tcec n=3 wmma m16n16k16 f16/f32  compCost/MAC=9.140456e-04  rel=1.135140e-01  domainError=7.891618e-07
+[poseidon]   #6 tcec n=5 wmma m16n16k16 f16/f32  compCost/MAC=1.557132e-03  rel=1.933780e-01  domainError=7.891618e-07
+[poseidon]   #7 tcec n=2 wmma m16n16k16 bf16/f32  compCost/MAC=6.532647e-04  rel=8.112800e-02  domainError=9.599048e-06
+[poseidon]   #8 tcec n=2 wmma m16n16k8 tf32/f32  compCost/MAC=1.362187e-03  rel=1.691680e-01  domainError=8.071968e-07
+[poseidon]   #9 tcec n=3 wmma m16n16k8 tf32/f32  compCost/MAC=2.084500e-03  rel=2.588710e-01  domainError=7.891618e-07
+[poseidon]   #10 tcec n=5 wmma m16n16k8 tf32/f32  compCost/MAC=3.606468e-03  rel=4.478820e-01  domainError=7.891618e-07
+[poseidon]   #11 ozaki-ii nm=8 wmma m16n16k16 s8/s32  compCost/MAC=2.504424e-02  rel=3.110208e+00  domainError=3.042064e-08
+[poseidon]   #12 ozaki-ii nm=9 wmma m16n16k16 s8/s32  compCost/MAC=2.805180e-02  rel=3.483712e+00  domainError=1.894017e-09
+[poseidon]   #13 ozaki-ii nm=10 wmma m16n16k16 s8/s32  compCost/MAC=3.052855e-02  rel=3.791296e+00  domainError=1.180888e-10
+[poseidon]   #14 ozaki-ii nm=11 wmma m16n16k16 s8/s32  compCost/MAC=3.357424e-02  rel=4.169536e+00  domainError=7.374164e-12
+[poseidon]   #15 ozaki-ii nm=12 wmma m16n16k16 s8/s32  compCost/MAC=3.604068e-02  rel=4.475840e+00  domainError=4.591196e-13
+[poseidon]   #16 ozaki-ii nm=13 wmma m16n16k16 s8/s32  compCost/MAC=3.864060e-02  rel=4.798720e+00  domainError=2.861564e-14
+[poseidon]   #17 ozaki-ii nm=14 wmma m16n16k16 s8/s32  compCost/MAC=4.157600e-02  rel=5.163264e+00  domainError=3.318701e-15
+[poseidon]   #18 tcec-dispatch wmma m16n16k16 f16/f32  compCost/MAC=2.066454e-04  rel=2.566300e-02  domainError=2.286169e-07
+[poseidon]   #19 native-dgemm cublas f64/f64  compCost/MAC=4.372327e-03  rel=5.429930e-01  domainError=1.513328e-15
+[poseidon] site preprocess__Z10rrproj_optPdPKdS1__poseidon_body: kappa=8.885586e+11 (ok) sumsens=2.400849e+05 factor=3.701018e+06
+Matmul[0] candidates (initial cost=8.052272e-03, executions=10485760, globalM=64, globalN=64, globalK=512, K=2048, gridCTAs=16):
+  wmma m16n16k16 f16/f16: Δcost=-7.912665e+04 ΔaccCost=1.207499e+14
+  wmma m16n16k16 f16/f32: Δcost=-7.912708e+04 ΔaccCost=5.640907e+12
+  wmma m16n16k16 bf16/f32: Δcost=-7.913054e+04 ΔaccCost=4.509139e+13
+  wmma m16n16k8 tf32/f32: Δcost=-7.598570e+04 ΔaccCost=5.640904e+12
+  tcec n=2 wmma m16n16k16 f16/f32: Δcost=-7.765218e+04 ΔaccCost=1.508607e+10
+  tcec n=3 wmma m16n16k16 f16/f32: Δcost=-7.484973e+04 ΔaccCost=1.473329e+10
+  tcec n=5 wmma m16n16k16 f16/f32: Δcost=-6.810647e+04 ΔaccCost=1.473329e+10
+  tcec n=2 wmma m16n16k16 bf16/f32: Δcost=-7.758421e+04 ΔaccCost=1.781992e+11
+  tcec n=2 wmma m16n16k8 tf32/f32: Δcost=-7.015062e+04 ΔaccCost=1.508607e+10
+  tcec n=3 wmma m16n16k8 tf32/f32: Δcost=-6.257662e+04 ΔaccCost=1.473329e+10
+  tcec n=5 wmma m16n16k8 tf32/f32: Δcost=-4.661763e+04 ΔaccCost=1.473329e+10
+  ozaki-ii nm=8 wmma m16n16k16 s8/s32: Δcost=1.781737e+05 ΔaccCost=5.851203e+08
+  ozaki-ii nm=9 wmma m16n16k16 s8/s32: Δcost=2.097102e+05 ΔaccCost=3.662445e+07
+  ozaki-ii nm=10 wmma m16n16k16 s8/s32: Δcost=2.356808e+05 ΔaccCost=2.288324e+06
+  ozaki-ii nm=11 wmma m16n16k16 s8/s32: Δcost=2.676172e+05 ΔaccCost=1.425110e+05
+  ozaki-ii nm=12 wmma m16n16k16 s8/s32: Δcost=2.934797e+05 ΔaccCost=8.870302e+03
+  ozaki-ii nm=13 wmma m16n16k16 s8/s32: Δcost=3.207418e+05 ΔaccCost=5.530343e+02
+  ozaki-ii nm=14 wmma m16n16k16 s8/s32: Δcost=3.515218e+05 ΔaccCost=6.265293e+01
+  tcec-dispatch wmma m16n16k16 f16/f32: Δcost=-8.226735e+04 ΔaccCost=4.264126e+09
+  native-dgemm cublas f64/f64: Δcost=-3.858701e+04 ΔaccCost=2.829033e+01
+Starting JOINT accuracy DP solver over 5 function(s) with shared cost budget: -7.602599e-01 of their profiled cost
+JOINT DP table contains 63 entries; cost range [-9.375127e-01, 0.000000e+00]
+WARNING: No-op solution (budget = 0) is Pareto-optimal.
+JOINT: minimum accuracy cost within budget: 2.137359e+03; computation cost used: -7.602599e-01
+Poseidon explanation written to reports/preprocess__Z8hemm_optPdPKdS1_dd_poseidon_body.explain.json
+Poseidon explanation written to reports/preprocess__Z9resid_optPdPKdS1_S1__poseidon_body.explain.json
+Poseidon explanation written to reports/preprocess__Z8gram_optPdPKd_poseidon_body.explain.json
+Poseidon explanation written to reports/preprocess__Z8rrhv_optPdPKdS1__poseidon_body.explain.json
+Poseidon explanation written to reports/preprocess__Z10rrproj_optPdPKdS1__poseidon_body.explain.json
+
+!!! Applying solution (1 step(s)) ... !!!
+Applying solution for matmul[0] -> tcec n=2 wmma m16n16k16 bf16/f32 (#7)
+!!! Solution applied !!!
+
+[poseidon] pin: _Z8hemm_optPdPKdS1_dd:M0=tcec n=2 wmma m16n16k16 bf16/f32
+[poseidon] Finished optimizing preprocess__Z8hemm_optPdPKdS1_dd_poseidon_body
+Skip erasing a subgraph: only rewrote 0 of 2 outputs
+[poseidon] Finished cleaning up preprocess__Z8hemm_optPdPKdS1_dd_poseidon_body
+[narrow] G=@_ZZ11resid_fusedPKdS0_S0_PdE4ssum casts=1 elemGEPs=0 strideK=0 bail=0
+[narrow] G=@_ZZ9k_colnormPKdPdE2ss casts=1 elemGEPs=0 strideK=0 bail=0
+[narrow] G=@__poseidon_ozaki_preprocess__Z8hemm_optPdPKdS1_dd_poseidon_body_a0_bf16_16x16 casts=1 elemGEPs=0 strideK=0 bail=1
+[narrow] G=@__poseidon_ozaki_preprocess__Z8hemm_optPdPKdS1_dd_poseidon_body_b0_bf16_16x16 casts=1 elemGEPs=0 strideK=0 bail=1
+[narrow] G=@__poseidon_ozaki_preprocess__Z8hemm_optPdPKdS1_dd_poseidon_body_d0_f32_16x16 casts=1 elemGEPs=0 strideK=0 bail=1
+[narrow] G=@__poseidon_ozaki_preprocess__Z8hemm_optPdPKdS1_dd_poseidon_body_a1_bf16_16x16 casts=1 elemGEPs=0 strideK=0 bail=1
+[narrow] G=@__poseidon_ozaki_preprocess__Z8hemm_optPdPKdS1_dd_poseidon_body_b1_bf16_16x16 casts=1 elemGEPs=0 strideK=0 bail=1
+[narrow] G=@__poseidon_ozaki_preprocess__Z8hemm_optPdPKdS1_dd_poseidon_body_d1_f32_16x16 casts=1 elemGEPs=0 strideK=0 bail=1
+[poseidon] Finished Optimization
+; Function Attrs: alwaysinline mustprogress nofree norecurse nosync nounwind willreturn memory(argmem: readwrite, inaccessiblemem: readwrite)
+define internal void @preprocess__Z8hemm_optPdPKdS1_dd_poseidon_body(ptr nofree noundef captures(none) %0, ptr nofree noundef readonly captures(none) %1, ptr nofree noundef readonly captures(none) %2, double noundef %3, double noundef %4) #20 {
+  %6 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ctaid.x() #24
+  %7 = tail call i32 @llvm.nvvm.read.ptx.sreg.ntid.x()
+  %8 = mul i32 %6, %7
+  %9 = tail call i32 @llvm.nvvm.read.ptx.sreg.tid.x()
+  %10 = add i32 %8, %9
+  %11 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ctaid.y() #24
+  %12 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ntid.y() #24
+  %13 = mul nuw nsw i32 %11, %12
+  %14 = tail call i32 @llvm.nvvm.read.ptx.sreg.tid.y()
+  %15 = add nuw nsw i32 %13, %14
+  %16 = icmp sgt i32 %10, 2047
+  %17 = icmp samesign ugt i32 %15, 111
+  %18 = or i1 %16, %17
+  br i1 %18, label %188, label %19
+
+19:                                               ; preds = %5
+  %20 = sext i32 %10 to i64
+  %21 = shl nsw i64 %20, 14
+  %22 = getelementptr inbounds nuw i8, ptr %1, i64 %21
+  %23 = shl nuw nsw i32 %15, 11
+  %24 = zext nneg i32 %23 to i64
+  %25 = getelementptr inbounds nuw [8 x i8], ptr %2, i64 %24
+  %26 = shl nuw nsw i32 %9, 14
+  %27 = zext nneg i32 %26 to i64
+  %28 = sub nsw i64 0, %27
+  %29 = getelementptr i8, ptr %22, i64 %28
+  %30 = shl nuw nsw i32 %14, 14
+  %31 = zext nneg i32 %30 to i64
+  %32 = sub nsw i64 0, %31
+  %33 = getelementptr i8, ptr %25, i64 %32
+  %34 = mul nuw nsw i32 %14, %7
+  %35 = add nuw nsw i32 %34, %9
+  %36 = icmp samesign ult i32 %35, 256
+  %37 = shl nuw nsw i32 %35, 10
+  %38 = and i32 %37, 245760
+  %39 = shl nuw nsw i32 %35, 3
+  %40 = and i32 %39, 120
+  %41 = or disjoint i32 %38, %40
+  %42 = zext nneg i32 %41 to i64
+  %43 = getelementptr i8, ptr %29, i64 %42
+  %44 = shl nuw nsw i32 %35, 1
+  %45 = zext nneg i32 %44 to i64
+  %46 = getelementptr i8, ptr addrspacecast (ptr addrspace(3) @__poseidon_ozaki_preprocess__Z8hemm_optPdPKdS1_dd_poseidon_body_a0_bf16_16x16 to ptr), i64 %45
+  %47 = getelementptr i8, ptr addrspacecast (ptr addrspace(3) @__poseidon_ozaki_preprocess__Z8hemm_optPdPKdS1_dd_poseidon_body_a1_bf16_16x16 to ptr), i64 %45
+  %48 = lshr i32 %35, 1
+  %49 = and i32 %48, 120
+  %50 = shl nuw nsw i32 %35, 14
+  %51 = and i32 %50, 245760
+  %52 = or disjoint i32 %49, %51
+  %53 = zext nneg i32 %52 to i64
+  %54 = getelementptr i8, ptr %33, i64 %53
+  %55 = getelementptr i8, ptr addrspacecast (ptr addrspace(3) @__poseidon_ozaki_preprocess__Z8hemm_optPdPKdS1_dd_poseidon_body_b0_bf16_16x16 to ptr), i64 %45
+  %56 = getelementptr i8, ptr addrspacecast (ptr addrspace(3) @__poseidon_ozaki_preprocess__Z8hemm_optPdPKdS1_dd_poseidon_body_b1_bf16_16x16 to ptr), i64 %45
+  %57 = icmp samesign ult i32 %35, 32
+  br label %58
+
+58:                                               ; preds = %19, %151
+  %59 = phi i64 [ 0, %19 ], [ %168, %151 ]
+  %60 = phi float [ 0.000000e+00, %19 ], [ %167, %151 ]
+  %61 = phi float [ 0.000000e+00, %19 ], [ %166, %151 ]
+  %62 = phi float [ 0.000000e+00, %19 ], [ %165, %151 ]
+  %63 = phi float [ 0.000000e+00, %19 ], [ %164, %151 ]
+  %64 = phi float [ 0.000000e+00, %19 ], [ %163, %151 ]
+  %65 = phi float [ 0.000000e+00, %19 ], [ %162, %151 ]
+  %66 = phi float [ 0.000000e+00, %19 ], [ %161, %151 ]
+  %67 = phi float [ 0.000000e+00, %19 ], [ %160, %151 ]
+  %68 = phi float [ 0.000000e+00, %19 ], [ %159, %151 ]
+  %69 = phi float [ 0.000000e+00, %19 ], [ %158, %151 ]
+  %70 = phi float [ 0.000000e+00, %19 ], [ %157, %151 ]
+  %71 = phi float [ 0.000000e+00, %19 ], [ %156, %151 ]
+  %72 = phi float [ 0.000000e+00, %19 ], [ %155, %151 ]
+  %73 = phi float [ 0.000000e+00, %19 ], [ %154, %151 ]
+  %74 = phi float [ 0.000000e+00, %19 ], [ %153, %151 ]
+  %75 = phi float [ 0.000000e+00, %19 ], [ %152, %151 ]
+  br i1 %36, label %76, label %94
+
+76:                                               ; preds = %58
+  %77 = shl nuw nsw i64 %59, 3
+  %78 = getelementptr i8, ptr %43, i64 %77
+  %79 = load double, ptr %78, align 8
+  %80 = fptrunc double %79 to float
+  %81 = fptrunc float %80 to bfloat
+  %82 = fpext bfloat %81 to float
+  %83 = fsub float %80, %82
+  %84 = fmul float %83, 1.280000e+02
+  %85 = fptrunc float %84 to bfloat
+  store bfloat %81, ptr %46, align 2
+  store bfloat %85, ptr %47, align 2
+  %86 = getelementptr i8, ptr %54, i64 %77
+  %87 = load double, ptr %86, align 8
+  %88 = fptrunc double %87 to float
+  %89 = fptrunc float %88 to bfloat
+  %90 = fpext bfloat %89 to float
+  %91 = fsub float %88, %90
+  %92 = fmul float %91, 1.280000e+02
+  %93 = fptrunc float %92 to bfloat
+  store bfloat %89, ptr %55, align 2
+  store bfloat %93, ptr %56, align 2
+  br label %94
+
+94:                                               ; preds = %58, %76
+  tail call void @llvm.nvvm.barrier.cta.sync.aligned.all(i32 0)
+  br i1 %57, label %95, label %151
+
+95:                                               ; preds = %94
+  %96 = tail call { i32, i32, i32, i32 } @llvm.nvvm.wmma.m16n16k16.load.a.row.stride.bf16.p0(ptr addrspacecast (ptr addrspace(3) @__poseidon_ozaki_preprocess__Z8hemm_optPdPKdS1_dd_poseidon_body_a0_bf16_16x16 to ptr), i32 16)
+  %97 = tail call { i32, i32, i32, i32 } @llvm.nvvm.wmma.m16n16k16.load.b.row.stride.bf16.p0(ptr addrspacecast (ptr addrspace(3) @__poseidon_ozaki_preprocess__Z8hemm_optPdPKdS1_dd_poseidon_body_b0_bf16_16x16 to ptr), i32 16)
+  %98 = extractvalue { i32, i32, i32, i32 } %96, 0
+  %99 = extractvalue { i32, i32, i32, i32 } %96, 1
+  %100 = extractvalue { i32, i32, i32, i32 } %96, 2
+  %101 = extractvalue { i32, i32, i32, i32 } %96, 3
+  %102 = extractvalue { i32, i32, i32, i32 } %97, 0
+  %103 = extractvalue { i32, i32, i32, i32 } %97, 1
+  %104 = extractvalue { i32, i32, i32, i32 } %97, 2
+  %105 = extractvalue { i32, i32, i32, i32 } %97, 3
+  %106 = tail call { float, float, float, float, float, float, float, float } @llvm.nvvm.wmma.m16n16k16.mma.row.row.bf16(i32 %98, i32 %99, i32 %100, i32 %101, i32 %102, i32 %103, i32 %104, i32 %105, float 0.000000e+00, float 0.000000e+00, float 0.000000e+00, float 0.000000e+00, float 0.000000e+00, float 0.000000e+00, float 0.000000e+00, float 0.000000e+00)
+  %107 = extractvalue { float, float, float, float, float, float, float, float } %106, 0
+  %108 = fadd float %75, %107
+  %109 = extractvalue { float, float, float, float, float, float, float, float } %106, 1
+  %110 = fadd float %74, %109
+  %111 = extractvalue { float, float, float, float, float, float, float, float } %106, 2
+  %112 = fadd float %73, %111
+  %113 = extractvalue { float, float, float, float, float, float, float, float } %106, 3
+  %114 = fadd float %72, %113
+  %115 = extractvalue { float, float, float, float, float, float, float, float } %106, 4
+  %116 = fadd float %71, %115
+  %117 = extractvalue { float, float, float, float, float, float, float, float } %106, 5
+  %118 = fadd float %70, %117
+  %119 = extractvalue { float, float, float, float, float, float, float, float } %106, 6
+  %120 = fadd float %69, %119
+  %121 = extractvalue { float, float, float, float, float, float, float, float } %106, 7
+  %122 = fadd float %68, %121
+  %123 = tail call { i32, i32, i32, i32 } @llvm.nvvm.wmma.m16n16k16.load.b.row.stride.bf16.p0(ptr addrspacecast (ptr addrspace(3) @__poseidon_ozaki_preprocess__Z8hemm_optPdPKdS1_dd_poseidon_body_b1_bf16_16x16 to ptr), i32 16)
+  %124 = extractvalue { i32, i32, i32, i32 } %123, 0
+  %125 = extractvalue { i32, i32, i32, i32 } %123, 1
+  %126 = extractvalue { i32, i32, i32, i32 } %123, 2
+  %127 = extractvalue { i32, i32, i32, i32 } %123, 3
+  %128 = tail call { float, float, float, float, float, float, float, float } @llvm.nvvm.wmma.m16n16k16.mma.row.row.bf16(i32 %98, i32 %99, i32 %100, i32 %101, i32 %124, i32 %125, i32 %126, i32 %127, float %67, float %66, float %65, float %64, float %63, float %62, float %61, float %60)
+  %129 = extractvalue { float, float, float, float, float, float, float, float } %128, 0
+  %130 = extractvalue { float, float, float, float, float, float, float, float } %128, 1
+  %131 = extractvalue { float, float, float, float, float, float, float, float } %128, 2
+  %132 = extractvalue { float, float, float, float, float, float, float, float } %128, 3
+  %133 = extractvalue { float, float, float, float, float, float, float, float } %128, 4
+  %134 = extractvalue { float, float, float, float, float, float, float, float } %128, 5
+  %135 = extractvalue { float, float, float, float, float, float, float, float } %128, 6
+  %136 = extractvalue { float, float, float, float, float, float, float, float } %128, 7
+  %137 = tail call { i32, i32, i32, i32 } @llvm.nvvm.wmma.m16n16k16.load.a.row.stride.bf16.p0(ptr addrspacecast (ptr addrspace(3) @__poseidon_ozaki_preprocess__Z8hemm_optPdPKdS1_dd_poseidon_body_a1_bf16_16x16 to ptr), i32 16)
+  %138 = extractvalue { i32, i32, i32, i32 } %137, 0
+  %139 = extractvalue { i32, i32, i32, i32 } %137, 1
+  %140 = extractvalue { i32, i32, i32, i32 } %137, 2
+  %141 = extractvalue { i32, i32, i32, i32 } %137, 3
+  %142 = tail call { float, float, float, float, float, float, float, float } @llvm.nvvm.wmma.m16n16k16.mma.row.row.bf16(i32 %138, i32 %139, i32 %140, i32 %141, i32 %102, i32 %103, i32 %104, i32 %105, float %129, float %130, float %131, float %132, float %133, float %134, float %135, float %136)
+  %143 = extractvalue { float, float, float, float, float, float, float, float } %142, 0
+  %144 = extractvalue { float, float, float, float, float, float, float, float } %142, 1
+  %145 = extractvalue { float, float, float, float, float, float, float, float } %142, 2
+  %146 = extractvalue { float, float, float, float, float, float, float, float } %142, 3
+  %147 = extractvalue { float, float, float, float, float, float, float, float } %142, 4
+  %148 = extractvalue { float, float, float, float, float, float, float, float } %142, 5
+  %149 = extractvalue { float, float, float, float, float, float, float, float } %142, 6
+  %150 = extractvalue { float, float, float, float, float, float, float, float } %142, 7
+  br label %151
+
+151:                                              ; preds = %95, %94
+  %152 = phi float [ %108, %95 ], [ %75, %94 ]
+  %153 = phi float [ %110, %95 ], [ %74, %94 ]
+  %154 = phi float [ %112, %95 ], [ %73, %94 ]
+  %155 = phi float [ %114, %95 ], [ %72, %94 ]
+  %156 = phi float [ %116, %95 ], [ %71, %94 ]
+  %157 = phi float [ %118, %95 ], [ %70, %94 ]
+  %158 = phi float [ %120, %95 ], [ %69, %94 ]
+  %159 = phi float [ %122, %95 ], [ %68, %94 ]
+  %160 = phi float [ %143, %95 ], [ %67, %94 ]
+  %161 = phi float [ %144, %95 ], [ %66, %94 ]
+  %162 = phi float [ %145, %95 ], [ %65, %94 ]
+  %163 = phi float [ %146, %95 ], [ %64, %94 ]
+  %164 = phi float [ %147, %95 ], [ %63, %94 ]
+  %165 = phi float [ %148, %95 ], [ %62, %94 ]
+  %166 = phi float [ %149, %95 ], [ %61, %94 ]
+  %167 = phi float [ %150, %95 ], [ %60, %94 ]
+  tail call void @llvm.nvvm.barrier.cta.sync.aligned.all(i32 0)
+  %168 = add nuw nsw i64 %59, 16
+  %169 = icmp samesign ult i64 %59, 2032
+  br i1 %169, label %58, label %170
+
+170:                                              ; preds = %151
+  br i1 %57, label %171, label %172
+
+171:                                              ; preds = %170
+  tail call void @llvm.nvvm.wmma.m16n16k16.store.d.row.stride.f32.p0(ptr addrspacecast (ptr addrspace(3) @__poseidon_ozaki_preprocess__Z8hemm_optPdPKdS1_dd_poseidon_body_d0_f32_16x16 to ptr), float %152, float %153, float %154, float %155, float %156, float %157, float %158, float %159, i32 16)
+  tail call void @llvm.nvvm.wmma.m16n16k16.store.d.row.stride.f32.p0(ptr addrspacecast (ptr addrspace(3) @__poseidon_ozaki_preprocess__Z8hemm_optPdPKdS1_dd_poseidon_body_d1_f32_16x16 to ptr), float %160, float %161, float %162, float %163, float %164, float %165, float %166, float %167, i32 16)
+  br label %172
+
+172:                                              ; preds = %171, %170
+  tail call void @llvm.nvvm.barrier.cta.sync.aligned.all(i32 0)
+  %173 = shl nuw nsw i32 %9, 4
+  %174 = add nuw nsw i32 %173, %14
+  %175 = zext nneg i32 %174 to i64
+  %176 = getelementptr [4 x i8], ptr addrspacecast (ptr addrspace(3) @__poseidon_ozaki_preprocess__Z8hemm_optPdPKdS1_dd_poseidon_body_d0_f32_16x16 to ptr), i64 %175
+  %177 = load float, ptr %176, align 4
+  %178 = getelementptr [4 x i8], ptr addrspacecast (ptr addrspace(3) @__poseidon_ozaki_preprocess__Z8hemm_optPdPKdS1_dd_poseidon_body_d1_f32_16x16 to ptr), i64 %175
+  %179 = load float, ptr %178, align 4
+  %180 = fmul float %179, 7.812500e-03
+  %181 = fadd float %177, %180
+  %182 = fpext float %181 to double
+  %183 = getelementptr [8 x i8], ptr %0, i64 %24
+  %184 = getelementptr [8 x i8], ptr %183, i64 %20
+  %185 = load double, ptr %184, align 8, !tbaa !33, !alias.scope !149
+  %186 = fmul double %4, %185, !enzyme_active !156, !poseidon.prof.idx !157
+  %187 = tail call double @llvm.fmuladd.f64(double %3, double %182, double %186) #24, !enzyme_active !156, !poseidon.prof.idx !158
+  store double %187, ptr %184, align 8, !tbaa !33, !alias.scope !149
+  br label %188
+
+188:                                              ; preds = %172, %5
+  ret void
+}
+[poseidon] pin: 
+[poseidon] Finished optimizing preprocess__Z9resid_optPdPKdS1_S1__poseidon_body
+[poseidon] Finished Optimization
+; Function Attrs: alwaysinline mustprogress nofree norecurse nosync nounwind willreturn memory(argmem: readwrite, inaccessiblemem: readwrite)
+define internal void @preprocess__Z9resid_optPdPKdS1_S1__poseidon_body(ptr nofree noundef writeonly captures(none) %0, ptr nofree noundef readonly captures(none) %1, ptr nofree noundef readonly captures(none) %2, ptr nofree noundef readonly captures(none) %3) #20 {
+  tail call void @llvm.experimental.noalias.scope.decl(metadata !161) #24
+  tail call void @llvm.experimental.noalias.scope.decl(metadata !164) #24
+  tail call void @llvm.experimental.noalias.scope.decl(metadata !166) #24
+  tail call void @llvm.experimental.noalias.scope.decl(metadata !168) #24
+  %5 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ctaid.x() #24
+  %6 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ntid.x() #24
+  %7 = mul i32 %5, %6
+  %8 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.tid.x() #24
+  %9 = add i32 %7, %8
+  %10 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ctaid.y() #24
+  %11 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ntid.y() #24
+  %12 = mul nuw nsw i32 %10, %11
+  %13 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.tid.y() #24
+  %14 = add nuw nsw i32 %12, %13
+  %15 = icmp sgt i32 %9, 2047
+  %16 = icmp samesign ugt i32 %14, 111
+  %17 = or i1 %15, %16
+  br i1 %17, label %45, label %18
+
+18:                                               ; preds = %4
+  %19 = sext i32 %9 to i64
+  %20 = shl nsw i64 %19, 14
+  %21 = getelementptr inbounds nuw i8, ptr %1, i64 %20
+  %22 = zext nneg i32 %14 to i64
+  %23 = shl nuw nsw i64 %22, 11
+  %24 = getelementptr inbounds nuw [8 x i8], ptr %2, i64 %23
+  br label %34
+
+25:                                               ; preds = %34
+  %26 = getelementptr inbounds nuw [8 x i8], ptr %3, i64 %22
+  %27 = load double, ptr %26, align 8, !tbaa !33, !alias.scope !168
+  %28 = getelementptr inbounds [8 x i8], ptr %24, i64 %19
+  %29 = load double, ptr %28, align 8, !tbaa !33, !alias.scope !166
+  %30 = fneg double %27, !enzyme_active !156, !poseidon.prof.idx !157
+  %31 = tail call double @llvm.fmuladd.f64(double %30, double %29, double %42) #24, !enzyme_active !156, !poseidon.prof.idx !158
+  %32 = getelementptr [8 x i8], ptr %0, i64 %23
+  %33 = getelementptr [8 x i8], ptr %32, i64 %19
+  store double %31, ptr %33, align 8, !tbaa !33, !alias.scope !161
+  br label %45
+
+34:                                               ; preds = %34, %18
+  %35 = phi i64 [ %37, %34 ], [ 0, %18 ]
+  %36 = phi double [ %42, %34 ], [ 0.000000e+00, %18 ]
+  %37 = add nuw i64 %35, 1
+  %38 = getelementptr inbounds nuw [8 x i8], ptr %21, i64 %35
+  %39 = load double, ptr %38, align 8, !tbaa !33, !alias.scope !164
+  %40 = getelementptr inbounds nuw [8 x i8], ptr %24, i64 %35
+  %41 = load double, ptr %40, align 8, !tbaa !33, !alias.scope !166
+  %42 = tail call double @llvm.fmuladd.f64(double %39, double %41, double %36) #24, !enzyme_active !156, !poseidon.prof.idx !159
+  %43 = and i64 %35, 4294967295
+  %44 = icmp eq i64 %43, 2047
+  br i1 %44, label %25, label %34, !llvm.loop !169
+
+45:                                               ; preds = %25, %4
+  ret void
+}
+[poseidon] no rewrite applied for preprocess__Z9resid_optPdPKdS1_S1__poseidon_body; wrapper call restored to original body _Z9resid_optPdPKdS1_S1__poseidon_body (bit-transparent no-op)
+[poseidon] pin: 
+[poseidon] Finished optimizing preprocess__Z8gram_optPdPKd_poseidon_body
+[poseidon] Finished Optimization
+; Function Attrs: alwaysinline mustprogress nofree norecurse nosync nounwind willreturn memory(argmem: readwrite, inaccessiblemem: readwrite)
+define internal void @preprocess__Z8gram_optPdPKd_poseidon_body(ptr nofree noundef writeonly captures(none) %0, ptr nofree noundef readonly captures(none) %1) #20 {
+  tail call void @llvm.experimental.noalias.scope.decl(metadata !171) #24
+  tail call void @llvm.experimental.noalias.scope.decl(metadata !174) #24
+  %3 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ctaid.x() #24
+  %4 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ntid.x() #24
+  %5 = mul i32 %3, %4
+  %6 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.tid.x() #24
+  %7 = add i32 %5, %6
+  %8 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ctaid.y() #24
+  %9 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ntid.y() #24
+  %10 = mul nuw nsw i32 %8, %9
+  %11 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.tid.y() #24
+  %12 = add nuw nsw i32 %10, %11
+  %13 = icmp sgt i32 %7, 111
+  %14 = icmp samesign ugt i32 %12, 111
+  %15 = or i1 %13, %14
+  br i1 %15, label %38, label %16
+
+16:                                               ; preds = %2
+  %17 = sext i32 %7 to i64
+  %18 = shl nsw i64 %17, 14
+  %19 = getelementptr inbounds nuw i8, ptr %1, i64 %18
+  %20 = zext nneg i32 %12 to i64
+  %21 = shl nuw nsw i64 %20, 14
+  %22 = getelementptr inbounds nuw i8, ptr %1, i64 %21
+  br label %27
+
+23:                                               ; preds = %27
+  %24 = mul nuw nsw i64 %20, 896
+  %25 = getelementptr i8, ptr %0, i64 %24
+  %26 = getelementptr [8 x i8], ptr %25, i64 %17
+  store double %35, ptr %26, align 8, !tbaa !33, !alias.scope !171
+  br label %38
+
+27:                                               ; preds = %27, %16
+  %28 = phi i64 [ %30, %27 ], [ 0, %16 ]
+  %29 = phi double [ %35, %27 ], [ 0.000000e+00, %16 ]
+  %30 = add nuw i64 %28, 1
+  %31 = getelementptr inbounds nuw [8 x i8], ptr %19, i64 %28
+  %32 = load double, ptr %31, align 8, !tbaa !33, !alias.scope !174
+  %33 = getelementptr inbounds nuw [8 x i8], ptr %22, i64 %28
+  %34 = load double, ptr %33, align 8, !tbaa !33, !alias.scope !174
+  %35 = tail call double @llvm.fmuladd.f64(double %32, double %34, double %29) #24, !enzyme_active !156, !poseidon.prof.idx !157
+  %36 = and i64 %28, 4294967295
+  %37 = icmp eq i64 %36, 2047
+  br i1 %37, label %23, label %27, !llvm.loop !175
+
+38:                                               ; preds = %23, %2
+  ret void
+}
+[poseidon] no rewrite applied for preprocess__Z8gram_optPdPKd_poseidon_body; wrapper call restored to original body _Z8gram_optPdPKd_poseidon_body (bit-transparent no-op)
+[poseidon] pin: 
+[poseidon] Finished optimizing preprocess__Z8rrhv_optPdPKdS1__poseidon_body
+[poseidon] Finished Optimization
+; Function Attrs: alwaysinline mustprogress nofree norecurse nosync nounwind willreturn memory(argmem: readwrite, inaccessiblemem: readwrite)
+define internal void @preprocess__Z8rrhv_optPdPKdS1__poseidon_body(ptr nofree noundef writeonly captures(none) %0, ptr nofree noundef readonly captures(none) %1, ptr nofree noundef readonly captures(none) %2) #20 {
+  tail call void @llvm.experimental.noalias.scope.decl(metadata !177) #24
+  tail call void @llvm.experimental.noalias.scope.decl(metadata !180) #24
+  tail call void @llvm.experimental.noalias.scope.decl(metadata !182) #24
+  %4 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ctaid.x() #24
+  %5 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ntid.x() #24
+  %6 = mul i32 %4, %5
+  %7 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.tid.x() #24
+  %8 = add i32 %6, %7
+  %9 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ctaid.y() #24
+  %10 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ntid.y() #24
+  %11 = mul nuw nsw i32 %9, %10
+  %12 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.tid.y() #24
+  %13 = add nuw nsw i32 %11, %12
+  %14 = icmp sgt i32 %8, 2047
+  %15 = icmp samesign ugt i32 %13, 111
+  %16 = or i1 %14, %15
+  br i1 %16, label %38, label %17
+
+17:                                               ; preds = %3
+  %18 = sext i32 %8 to i64
+  %19 = shl nsw i64 %18, 14
+  %20 = getelementptr inbounds nuw i8, ptr %1, i64 %19
+  %21 = shl nuw nsw i32 %13, 11
+  %22 = zext nneg i32 %21 to i64
+  %23 = getelementptr inbounds nuw [8 x i8], ptr %2, i64 %22
+  br label %27
+
+24:                                               ; preds = %27
+  %25 = getelementptr [8 x i8], ptr %0, i64 %22
+  %26 = getelementptr [8 x i8], ptr %25, i64 %18
+  store double %35, ptr %26, align 8, !tbaa !33, !alias.scope !177
+  br label %38
+
+27:                                               ; preds = %27, %17
+  %28 = phi i64 [ %30, %27 ], [ 0, %17 ]
+  %29 = phi double [ %35, %27 ], [ 0.000000e+00, %17 ]
+  %30 = add nuw i64 %28, 1
+  %31 = getelementptr inbounds nuw [8 x i8], ptr %20, i64 %28
+  %32 = load double, ptr %31, align 8, !tbaa !33, !alias.scope !180
+  %33 = getelementptr inbounds nuw [8 x i8], ptr %23, i64 %28
+  %34 = load double, ptr %33, align 8, !tbaa !33, !alias.scope !182
+  %35 = tail call double @llvm.fmuladd.f64(double %32, double %34, double %29) #24, !enzyme_active !156, !poseidon.prof.idx !157
+  %36 = and i64 %28, 4294967295
+  %37 = icmp eq i64 %36, 2047
+  br i1 %37, label %24, label %27, !llvm.loop !183
+
+38:                                               ; preds = %24, %3
+  ret void
+}
+[poseidon] no rewrite applied for preprocess__Z8rrhv_optPdPKdS1__poseidon_body; wrapper call restored to original body _Z8rrhv_optPdPKdS1__poseidon_body (bit-transparent no-op)
+[poseidon] pin: 
+[poseidon] Finished optimizing preprocess__Z10rrproj_optPdPKdS1__poseidon_body
+[poseidon] Finished Optimization
+; Function Attrs: alwaysinline mustprogress nofree norecurse nosync nounwind willreturn memory(argmem: readwrite, inaccessiblemem: readwrite)
+define internal void @preprocess__Z10rrproj_optPdPKdS1__poseidon_body(ptr nofree noundef writeonly captures(none) %0, ptr nofree noundef readonly captures(none) %1, ptr nofree noundef readonly captures(none) %2) #20 {
+  tail call void @llvm.experimental.noalias.scope.decl(metadata !185) #24
+  tail call void @llvm.experimental.noalias.scope.decl(metadata !188) #24
+  tail call void @llvm.experimental.noalias.scope.decl(metadata !190) #24
+  %4 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ctaid.x() #24
+  %5 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ntid.x() #24
+  %6 = mul i32 %4, %5
+  %7 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.tid.x() #24
+  %8 = add i32 %6, %7
+  %9 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ctaid.y() #24
+  %10 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.ntid.y() #24
+  %11 = mul nuw nsw i32 %9, %10
+  %12 = tail call noundef i32 @llvm.nvvm.read.ptx.sreg.tid.y() #24
+  %13 = add nuw nsw i32 %11, %12
+  %14 = icmp sgt i32 %8, 111
+  %15 = icmp samesign ugt i32 %13, 111
+  %16 = or i1 %14, %15
+  br i1 %16, label %39, label %17
+
+17:                                               ; preds = %3
+  %18 = sext i32 %8 to i64
+  %19 = shl nsw i64 %18, 14
+  %20 = getelementptr inbounds nuw i8, ptr %1, i64 %19
+  %21 = zext nneg i32 %13 to i64
+  %22 = shl nuw nsw i64 %21, 14
+  %23 = getelementptr inbounds nuw i8, ptr %2, i64 %22
+  br label %28
+
+24:                                               ; preds = %28
+  %25 = mul nuw nsw i64 %21, 896
+  %26 = getelementptr i8, ptr %0, i64 %25
+  %27 = getelementptr [8 x i8], ptr %26, i64 %18
+  store double %36, ptr %27, align 8, !tbaa !33, !alias.scope !185
+  br label %39
+
+28:                                               ; preds = %28, %17
+  %29 = phi i64 [ %31, %28 ], [ 0, %17 ]
+  %30 = phi double [ %36, %28 ], [ 0.000000e+00, %17 ]
+  %31 = add nuw i64 %29, 1
+  %32 = getelementptr inbounds nuw [8 x i8], ptr %20, i64 %29
+  %33 = load double, ptr %32, align 8, !tbaa !33, !alias.scope !188
+  %34 = getelementptr inbounds nuw [8 x i8], ptr %23, i64 %29
+  %35 = load double, ptr %34, align 8, !tbaa !33, !alias.scope !190
+  %36 = tail call double @llvm.fmuladd.f64(double %33, double %35, double %30) #24, !enzyme_active !156, !poseidon.prof.idx !157
+  %37 = and i64 %29, 4294967295
+  %38 = icmp eq i64 %37, 2047
+  br i1 %38, label %24, label %28, !llvm.loop !191
+
+39:                                               ; preds = %24, %3
+  ret void
+}
+[poseidon] no rewrite applied for preprocess__Z10rrproj_optPdPKdS1__poseidon_body; wrapper call restored to original body _Z10rrproj_optPdPKdS1__poseidon_body (bit-transparent no-op)

@@ -1,0 +1,10 @@
+compiler_commit=9e2e0572931248b4610940f2906e583914f9913e
+poseidon_stamp=src=5390962e75758f53094ccd8a5a6312c0408605fbcb9887c5d6a2c831a5c9bffd llvm=[external:clang version 24.0.0git (https://github.com/llvm/llvm-project.git 9d618fc0243103263ebf9bdcd08ef25e871d9c78)] cumpsgemm=[src=8969ec602a683380b1088a14c2b1868c1523ee607f503a1fb921bbf0b5a3e44a arch=103 cuda=release 13.1, V13.1.115] cuda_archs=103-real cuda=release 13.1, V13.1.115
+cuda=release 13.1, V13.1.115
+artifact_sha256=f15f285e1ab7ccef857eadb75d8cc5dd4b1d69d337bc8ee502f19efac543cb7a
+cost_model_md5=59d86901e5946727cec3df2ad016416f  ./cm_sm_103_B300SXM6AC.rev2.csv
+cost_model_md5=ef7c8e4b0cf56bb4f931432deb0335d9  ./cm_sm_103_B300SXM6AC_ef7c8e4b.csv
+cost_model_md5=b104c61ce4208d8adb3f2cbb2dcc06fe  ./genga_x1e6/cm_native_x1e6.csv
+cost_model_md5=c86bf80e9c1bdb94fa0904a734b0564d  ./genga_x1e6/cm_native_x1e6.herbie.rkt
+rows=t1-force-b300 t1-drift-b300 t1-ozp7-b300 t1-ozp6-b300 t1-rchfsi-b300 t1-ozp7-b300-paper
+created=2026-11-12T05:20:51Z

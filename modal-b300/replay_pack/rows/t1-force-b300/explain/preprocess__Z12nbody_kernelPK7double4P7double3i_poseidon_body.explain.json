@@ -1,0 +1,1717 @@
+{
+  "function": {
+    "ir": "preprocess__Z12nbody_kernelPK7double4P7double3i_poseidon_body",
+    "name": "nbody_kernel(double4 const*, double3*, int)",
+    "symbol": "_Z12nbody_kernelPK7double4P7double3i"
+  },
+  "pareto": [
+    {
+      "applied": [
+        "PT0_0"
+      ],
+      "budget": -0.98246469628623345,
+      "cost": 0.017535303710909431,
+      "modelled_rel_error": 1.7147586579649232e-07
+    },
+    {
+      "applied": [
+        "PT0_23"
+      ],
+      "budget": -0.97475649301038714,
+      "cost": 0.02524350698675569,
+      "modelled_rel_error": 7.6739856194706555e-08
+    },
+    {
+      "applied": [
+        "PT0_24"
+      ],
+      "budget": -0.96030721850065892,
+      "cost": 0.039692781496483892,
+      "modelled_rel_error": 2.2949692721494498e-11
+    },
+    {
+      "applied": [
+        "PT0_26"
+      ],
+      "budget": -0.93000650828759734,
+      "cost": 0.069993491709545538,
+      "modelled_rel_error": 2.1326012483735614e-11
+    },
+    {
+      "applied": [
+        "PT0_27"
+      ],
+      "budget": -0.92326543691636886,
+      "cost": 0.076734563080773949,
+      "modelled_rel_error": 2.0788466206257227e-11
+    },
+    {
+      "applied": [
+        "PT0_11"
+      ],
+      "budget": -0.76869270782573706,
+      "cost": 0.23130729217140575,
+      "modelled_rel_error": 5.3677867645784929e-15,
+      "selected": true
+    },
+    {
+      "applied": [
+        "PT0_12"
+      ],
+      "budget": -0.53663108535005921,
+      "cost": 0.46336891464708357,
+      "modelled_rel_error": 2.3996276662087506e-15
+    },
+    {
+      "applied": [
+        "PT0_13"
+      ],
+      "budget": -0.27575160669206605,
+      "cost": 0.72424839330507684,
+      "modelled_rel_error": 4.6703641114078228e-19
+    },
+    {
+      "applied": [
+        "PT0_21"
+      ],
+      "budget": -0.017945676424099527,
+      "cost": 0.98205432357304334,
+      "modelled_rel_error": 3.9672985462496565e-19
+    },
+    {
+      "applied": [],
+      "budget": 0,
+      "cost": 0.99999999999714284,
+      "modelled_rel_error": 0
+    }
+  ],
+  "result": {
+    "applied": [
+      "PT0_11"
+    ],
+    "cost_after": 0.23130729217140575,
+    "cost_before": 0.99999999999714284,
+    "modelled_rel_error": 5.3677867645784929e-15,
+    "modelled_rel_error_as_written": 0
+  },
+  "schema": "poseidon-explain/1",
+  "subgraphs": [
+    {
+      "alternatives": [
+        {
+          "c": [
+            "(double)(((float)? - (float)?) * ((float)? * (1.0f / sqrtf(((float)? - (float)?) * ((float)? - (float)?) + (((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30f) * (1.0f / sqrtf(((float)? - (float)?) * ((float)? - (float)?) + (((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30f) * (1.0f / sqrtf(((float)? - (float)?) * ((float)? - (float)?) + (((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30f))))) + (float)?)",
+            "(double)(((float)? - (float)?) * ((float)? * (1.0f / sqrtf(((float)? - (float)?) * ((float)? - (float)?) + (((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30f) * (1.0f / sqrtf(((float)? - (float)?) * ((float)? - (float)?) + (((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30f) * (1.0f / sqrtf(((float)? - (float)?) * ((float)? - (float)?) + (((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30f))))) + (float)?)",
+            "(double)(((float)? - (float)?) * ((float)? * (1.0f / sqrtf(((float)? - (float)?) * ((float)? - (float)?) + (((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30f) * (1.0f / sqrtf(((float)? - (float)?) * ((float)? - (float)?) + (((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30f) * (1.0f / sqrtf(((float)? - (float)?) * ((float)? - (float)?) + (((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30f))))) + (float)?)"
+          ],
+          "changes": [
+            {
+              "from": "FP64",
+              "ops": [
+                3,
+                1,
+                0,
+                2,
+                4,
+                9,
+                10,
+                11,
+                5,
+                6,
+                7,
+                8,
+                12,
+                13,
+                14
+              ],
+              "to": "FP32"
+            }
+          ],
+          "id": "PT0_0",
+          "kind": "precision",
+          "outputs": [
+            0,
+            1,
+            2
+          ],
+          "reason": "on the Pareto frontier; -poseidon-apply-rewrites=PT0_0 applies it",
+          "status": "pareto",
+          "summary": "All FP64(0%) + FP32(100%): 4 x '*', 3 x '-', 5 x fma, '+', sqrt and '/' in float (15 of 15 operations)"
+        },
+        {
+          "c": [
+            "(double)(((float)? - (float)?) * ((float)? * (1.0f / sqrtf(((float)? - (float)?) * ((float)? - (float)?) + (((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30f) * (1.0f / sqrtf(((float)? - (float)?) * ((float)? - (float)?) + (((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30f) * (1.0f / sqrtf(((float)? - (float)?) * ((float)? - (float)?) + (((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30f))))) + (float)?)",
+            "(double)(((float)? - (float)?) * ((float)? * (1.0f / sqrtf(((float)? - (float)?) * ((float)? - (float)?) + (((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30f) * (1.0f / sqrtf(((float)? - (float)?) * ((float)? - (float)?) + (((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30f) * (1.0f / sqrtf(((float)? - (float)?) * ((float)? - (float)?) + (((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30f))))) + (float)?)",
+            "(double)((float)? - (float)?) * (double)((float)? * (1.0f / sqrtf(((float)? - (float)?) * ((float)? - (float)?) + (((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30f) * (1.0f / sqrtf(((float)? - (float)?) * ((float)? - (float)?) + (((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30f) * (1.0f / sqrtf(((float)? - (float)?) * ((float)? - (float)?) + (((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30f))))) + ?"
+          ],
+          "changes": [
+            {
+              "from": "FP64",
+              "ops": [
+                3,
+                1,
+                0,
+                2,
+                4,
+                9,
+                10,
+                11,
+                5,
+                6,
+                7,
+                8,
+                12,
+                13
+              ],
+              "to": "FP32"
+            }
+          ],
+          "id": "PT0_1",
+          "kind": "precision",
+          "outputs": [
+            0,
+            1,
+            2
+          ],
+          "reason": "not on the Pareto frontier of the site",
+          "status": "rejected",
+          "summary": "All FP64(10%) + FP32(90%): 4 x '*', 3 x '-', 4 x fma, '+', sqrt and '/' in float (14 of 15 operations)"
+        },
+        {
+          "c": [
+            "(double)((float)? - (float)?) * (double)((float)? * (1.0f / sqrtf(((float)? - (float)?) * ((float)? - (float)?) + (((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30f) * (1.0f / sqrtf(((float)? - (float)?) * ((float)? - (float)?) + (((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30f) * (1.0f / sqrtf(((float)? - (float)?) * ((float)? - (float)?) + (((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30f))))) + ?",
+            "(double)((float)? - (float)?) * (double)((float)? * (1.0f / sqrtf(((float)? - (float)?) * ((float)? - (float)?) + (((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30f) * (1.0f / sqrtf(((float)? - (float)?) * ((float)? - (float)?) + (((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30f) * (1.0f / sqrtf(((float)? - (float)?) * ((float)? - (float)?) + (((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30f))))) + ?",
+            "(double)((float)? - (float)?) * (double)((float)? * (1.0f / sqrtf(((float)? - (float)?) * ((float)? - (float)?) + (((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30f) * (1.0f / sqrtf(((float)? - (float)?) * ((float)? - (float)?) + (((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30f) * (1.0f / sqrtf(((float)? - (float)?) * ((float)? - (float)?) + (((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30f))))) + ?"
+          ],
+          "changes": [
+            {
+              "from": "FP64",
+              "ops": [
+                3,
+                1,
+                0,
+                2,
+                4,
+                9,
+                10,
+                11,
+                5,
+                6,
+                7,
+                8
+              ],
+              "to": "FP32"
+            }
+          ],
+          "id": "PT0_2",
+          "kind": "precision",
+          "outputs": [
+            0,
+            1,
+            2
+          ],
+          "reason": "not on the Pareto frontier of the site",
+          "status": "rejected",
+          "summary": "All FP64(20%) + FP32(80%): 4 x '*', 3 x '-', 2 x fma, '+', sqrt and '/' in float (12 of 15 operations)"
+        },
+        {
+          "c": [
+            "(double)((float)? - (float)?) * (double)((float)? * ((float)(1.0 / (double)sqrtf(((float)? - (float)?) * ((float)? - (float)?) + (((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30f)) * ((float)(1.0 / (double)sqrtf(((float)? - (float)?) * ((float)? - (float)?) + (((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30f)) * (float)(1.0 / (double)sqrtf(((float)? - (float)?) * ((float)? - (float)?) + (((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30f))))) + ?",
+            "(double)((float)? - (float)?) * (double)((float)? * ((float)(1.0 / (double)sqrtf(((float)? - (float)?) * ((float)? - (float)?) + (((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30f)) * ((float)(1.0 / (double)sqrtf(((float)? - (float)?) * ((float)? - (float)?) + (((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30f)) * (float)(1.0 / (double)sqrtf(((float)? - (float)?) * ((float)? - (float)?) + (((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30f))))) + ?",
+            "(double)((float)? - (float)?) * (double)((float)? * ((float)(1.0 / (double)sqrtf(((float)? - (float)?) * ((float)? - (float)?) + (((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30f)) * ((float)(1.0 / (double)sqrtf(((float)? - (float)?) * ((float)? - (float)?) + (((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30f)) * (float)(1.0 / (double)sqrtf(((float)? - (float)?) * ((float)? - (float)?) + (((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30f))))) + ?"
+          ],
+          "changes": [
+            {
+              "from": "FP64",
+              "ops": [
+                3,
+                1,
+                0,
+                2,
+                4,
+                9,
+                10,
+                11,
+                5,
+                6,
+                7
+              ],
+              "to": "FP32"
+            }
+          ],
+          "id": "PT0_3",
+          "kind": "precision",
+          "outputs": [
+            0,
+            1,
+            2
+          ],
+          "reason": "not on the Pareto frontier of the site",
+          "status": "rejected",
+          "summary": "All FP64(30%) + FP32(70%): 4 x '*', 3 x '-', 2 x fma, '+' and sqrt in float (11 of 15 operations)"
+        },
+        {
+          "c": [
+            "(double)((float)? - (float)?) * (double)((float)? * ((float)(1.0 / sqrt((double)(((float)? - (float)?) * ((float)? - (float)?) + (((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?))) + 1e-30)) * ((float)(1.0 / sqrt((double)(((float)? - (float)?) * ((float)? - (float)?) + (((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?))) + 1e-30)) * (float)(1.0 / sqrt((double)(((float)? - (float)?) * ((float)? - (float)?) + (((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?))) + 1e-30))))) + ?",
+            "(double)((float)? - (float)?) * (double)((float)? * ((float)(1.0 / sqrt((double)(((float)? - (float)?) * ((float)? - (float)?) + (((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?))) + 1e-30)) * ((float)(1.0 / sqrt((double)(((float)? - (float)?) * ((float)? - (float)?) + (((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?))) + 1e-30)) * (float)(1.0 / sqrt((double)(((float)? - (float)?) * ((float)? - (float)?) + (((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?))) + 1e-30))))) + ?",
+            "(double)((float)? - (float)?) * (double)((float)? * ((float)(1.0 / sqrt((double)(((float)? - (float)?) * ((float)? - (float)?) + (((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?))) + 1e-30)) * ((float)(1.0 / sqrt((double)(((float)? - (float)?) * ((float)? - (float)?) + (((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?))) + 1e-30)) * (float)(1.0 / sqrt((double)(((float)? - (float)?) * ((float)? - (float)?) + (((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?))) + 1e-30))))) + ?"
+          ],
+          "changes": [
+            {
+              "from": "FP64",
+              "ops": [
+                3,
+                1,
+                0,
+                2,
+                4,
+                9,
+                10,
+                11,
+                5
+              ],
+              "to": "FP32"
+            }
+          ],
+          "id": "PT0_4",
+          "kind": "precision",
+          "outputs": [
+            0,
+            1,
+            2
+          ],
+          "reason": "not on the Pareto frontier of the site",
+          "status": "rejected",
+          "summary": "All FP64(40%) + FP32(60%): 4 x '*', 3 x '-' and 2 x fma in float (9 of 15 operations)"
+        },
+        {
+          "c": [
+            "(double)((float)? - (float)?) * (double)((float)? * ((float)(1.0 / sqrt((double)((float)? - (float)?) * (double)((float)? - (float)?) + (double)(((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30)) * ((float)(1.0 / sqrt((double)((float)? - (float)?) * (double)((float)? - (float)?) + (double)(((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30)) * (float)(1.0 / sqrt((double)((float)? - (float)?) * (double)((float)? - (float)?) + (double)(((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30))))) + ?",
+            "(double)((float)? - (float)?) * (double)((float)? * ((float)(1.0 / sqrt((double)((float)? - (float)?) * (double)((float)? - (float)?) + (double)(((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30)) * ((float)(1.0 / sqrt((double)((float)? - (float)?) * (double)((float)? - (float)?) + (double)(((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30)) * (float)(1.0 / sqrt((double)((float)? - (float)?) * (double)((float)? - (float)?) + (double)(((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30))))) + ?",
+            "(double)((float)? - (float)?) * (double)((float)? * ((float)(1.0 / sqrt((double)((float)? - (float)?) * (double)((float)? - (float)?) + (double)(((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30)) * ((float)(1.0 / sqrt((double)((float)? - (float)?) * (double)((float)? - (float)?) + (double)(((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30)) * (float)(1.0 / sqrt((double)((float)? - (float)?) * (double)((float)? - (float)?) + (double)(((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30))))) + ?"
+          ],
+          "changes": [
+            {
+              "from": "FP64",
+              "ops": [
+                3,
+                1,
+                0,
+                2,
+                4,
+                9,
+                10,
+                11
+              ],
+              "to": "FP32"
+            }
+          ],
+          "id": "PT0_5",
+          "kind": "precision",
+          "outputs": [
+            0,
+            1,
+            2
+          ],
+          "reason": "not on the Pareto frontier of the site",
+          "status": "rejected",
+          "summary": "All FP64(50%) + FP32(50%): 4 x '*', 3 x '-' and fma in float (8 of 15 operations)"
+        },
+        {
+          "c": [
+            "(double)((float)? - (float)?) * (? * (1.0 / sqrt((double)((float)? - (float)?) * (double)((float)? - (float)?) + (double)(((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30) * (double)((float)(1.0 / sqrt((double)((float)? - (float)?) * (double)((float)? - (float)?) + (double)(((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30)) * (float)(1.0 / sqrt((double)((float)? - (float)?) * (double)((float)? - (float)?) + (double)(((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30))))) + ?",
+            "(double)((float)? - (float)?) * (? * (1.0 / sqrt((double)((float)? - (float)?) * (double)((float)? - (float)?) + (double)(((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30) * (double)((float)(1.0 / sqrt((double)((float)? - (float)?) * (double)((float)? - (float)?) + (double)(((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30)) * (float)(1.0 / sqrt((double)((float)? - (float)?) * (double)((float)? - (float)?) + (double)(((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30))))) + ?",
+            "(double)((float)? - (float)?) * (? * (1.0 / sqrt((double)((float)? - (float)?) * (double)((float)? - (float)?) + (double)(((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30) * (double)((float)(1.0 / sqrt((double)((float)? - (float)?) * (double)((float)? - (float)?) + (double)(((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30)) * (float)(1.0 / sqrt((double)((float)? - (float)?) * (double)((float)? - (float)?) + (double)(((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30))))) + ?"
+          ],
+          "changes": [
+            {
+              "from": "FP64",
+              "ops": [
+                3,
+                1,
+                0,
+                2,
+                4,
+                9
+              ],
+              "to": "FP32"
+            }
+          ],
+          "id": "PT0_6",
+          "kind": "precision",
+          "outputs": [
+            0,
+            1,
+            2
+          ],
+          "reason": "not on the Pareto frontier of the site",
+          "status": "rejected",
+          "summary": "All FP64(60%) + FP32(40%): '*', '-', '-', '-', fma and '*' in float (6 of 15 operations)"
+        },
+        {
+          "c": [
+            "(double)((float)? - (float)?) * (? * (1.0 / sqrt((double)((float)? - (float)?) * (double)((float)? - (float)?) + (double)(((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30) * (1.0 / sqrt((double)((float)? - (float)?) * (double)((float)? - (float)?) + (double)(((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30) * (1.0 / sqrt((double)((float)? - (float)?) * (double)((float)? - (float)?) + (double)(((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30))))) + ?",
+            "(double)((float)? - (float)?) * (? * (1.0 / sqrt((double)((float)? - (float)?) * (double)((float)? - (float)?) + (double)(((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30) * (1.0 / sqrt((double)((float)? - (float)?) * (double)((float)? - (float)?) + (double)(((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30) * (1.0 / sqrt((double)((float)? - (float)?) * (double)((float)? - (float)?) + (double)(((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30))))) + ?",
+            "(double)((float)? - (float)?) * (? * (1.0 / sqrt((double)((float)? - (float)?) * (double)((float)? - (float)?) + (double)(((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30) * (1.0 / sqrt((double)((float)? - (float)?) * (double)((float)? - (float)?) + (double)(((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30) * (1.0 / sqrt((double)((float)? - (float)?) * (double)((float)? - (float)?) + (double)(((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30))))) + ?"
+          ],
+          "changes": [
+            {
+              "from": "FP64",
+              "ops": [
+                3,
+                1,
+                0,
+                2,
+                4
+              ],
+              "to": "FP32"
+            }
+          ],
+          "id": "PT0_7",
+          "kind": "precision",
+          "outputs": [
+            0,
+            1,
+            2
+          ],
+          "reason": "not on the Pareto frontier of the site",
+          "status": "rejected",
+          "summary": "All FP64(70%) + FP32(30%): '*', '-', '-', '-' and fma in float (5 of 15 operations)"
+        },
+        {
+          "c": [
+            "(double)((float)? - (float)?) * (? * (1.0 / sqrt((? - ?) * (? - ?) + ((double)((float)? - (float)?) * (double)((float)? - (float)?) + (double)(((float)? - (float)?) * ((float)? - (float)?))) + 1e-30) * (1.0 / sqrt((? - ?) * (? - ?) + ((double)((float)? - (float)?) * (double)((float)? - (float)?) + (double)(((float)? - (float)?) * ((float)? - (float)?))) + 1e-30) * (1.0 / sqrt((? - ?) * (? - ?) + ((double)((float)? - (float)?) * (double)((float)? - (float)?) + (double)(((float)? - (float)?) * ((float)? - (float)?))) + 1e-30))))) + ?",
+            "(double)((float)? - (float)?) * (? * (1.0 / sqrt((? - ?) * (? - ?) + ((double)((float)? - (float)?) * (double)((float)? - (float)?) + (double)(((float)? - (float)?) * ((float)? - (float)?))) + 1e-30) * (1.0 / sqrt((? - ?) * (? - ?) + ((double)((float)? - (float)?) * (double)((float)? - (float)?) + (double)(((float)? - (float)?) * ((float)? - (float)?))) + 1e-30) * (1.0 / sqrt((? - ?) * (? - ?) + ((double)((float)? - (float)?) * (double)((float)? - (float)?) + (double)(((float)? - (float)?) * ((float)? - (float)?))) + 1e-30))))) + ?",
+            "(? - ?) * (? * (1.0 / sqrt((? - ?) * (? - ?) + ((double)((float)? - (float)?) * (double)((float)? - (float)?) + (double)(((float)? - (float)?) * ((float)? - (float)?))) + 1e-30) * (1.0 / sqrt((? - ?) * (? - ?) + ((double)((float)? - (float)?) * (double)((float)? - (float)?) + (double)(((float)? - (float)?) * ((float)? - (float)?))) + 1e-30) * (1.0 / sqrt((? - ?) * (? - ?) + ((double)((float)? - (float)?) * (double)((float)? - (float)?) + (double)(((float)? - (float)?) * ((float)? - (float)?))) + 1e-30))))) + ?"
+          ],
+          "changes": [
+            {
+              "from": "FP64",
+              "ops": [
+                3,
+                1,
+                0
+              ],
+              "to": "FP32"
+            }
+          ],
+          "id": "PT0_8",
+          "kind": "precision",
+          "outputs": [
+            0,
+            1,
+            2
+          ],
+          "reason": "not on the Pareto frontier of the site",
+          "status": "rejected",
+          "summary": "All FP64(80%) + FP32(20%): '*', '-' and '-' in float (3 of 15 operations)"
+        },
+        {
+          "c": [
+            "(? - ?) * (? * (1.0 / sqrt((? - ?) * (? - ?) + ((? - ?) * (? - ?) + (double)(((float)? - (float)?) * ((float)? - (float)?))) + 1e-30) * (1.0 / sqrt((? - ?) * (? - ?) + ((? - ?) * (? - ?) + (double)(((float)? - (float)?) * ((float)? - (float)?))) + 1e-30) * (1.0 / sqrt((? - ?) * (? - ?) + ((? - ?) * (? - ?) + (double)(((float)? - (float)?) * ((float)? - (float)?))) + 1e-30))))) + ?",
+            "(double)((float)? - (float)?) * (? * (1.0 / sqrt((? - ?) * (? - ?) + ((? - ?) * (? - ?) + (double)(((float)? - (float)?) * ((float)? - (float)?))) + 1e-30) * (1.0 / sqrt((? - ?) * (? - ?) + ((? - ?) * (? - ?) + (double)(((float)? - (float)?) * ((float)? - (float)?))) + 1e-30) * (1.0 / sqrt((? - ?) * (? - ?) + ((? - ?) * (? - ?) + (double)(((float)? - (float)?) * ((float)? - (float)?))) + 1e-30))))) + ?",
+            "(? - ?) * (? * (1.0 / sqrt((? - ?) * (? - ?) + ((? - ?) * (? - ?) + (double)(((float)? - (float)?) * ((float)? - (float)?))) + 1e-30) * (1.0 / sqrt((? - ?) * (? - ?) + ((? - ?) * (? - ?) + (double)(((float)? - (float)?) * ((float)? - (float)?))) + 1e-30) * (1.0 / sqrt((? - ?) * (? - ?) + ((? - ?) * (? - ?) + (double)(((float)? - (float)?) * ((float)? - (float)?))) + 1e-30))))) + ?"
+          ],
+          "changes": [
+            {
+              "from": "FP64",
+              "ops": [
+                3,
+                1
+              ],
+              "to": "FP32"
+            }
+          ],
+          "id": "PT0_9",
+          "kind": "precision",
+          "outputs": [
+            0,
+            1,
+            2
+          ],
+          "reason": "not on the Pareto frontier of the site",
+          "status": "rejected",
+          "summary": "All FP64(90%) + FP32(10%): '*' and '-' in float (2 of 15 operations)"
+        },
+        {
+          "c": [
+            "(? - ?) * (? * (1.0 / (double)sqrtf((float)((? - ?) * (? - ?) + ((? - ?) * (? - ?) + (? - ?) * (? - ?)) + 1e-30)) * (1.0 / (double)sqrtf((float)((? - ?) * (? - ?) + ((? - ?) * (? - ?) + (? - ?) * (? - ?)) + 1e-30)) * (1.0 / (double)sqrtf((float)((? - ?) * (? - ?) + ((? - ?) * (? - ?) + (? - ?) * (? - ?)) + 1e-30)))))) + ?",
+            "(? - ?) * (? * (1.0 / (double)sqrtf((float)((? - ?) * (? - ?) + ((? - ?) * (? - ?) + (? - ?) * (? - ?)) + 1e-30)) * (1.0 / (double)sqrtf((float)((? - ?) * (? - ?) + ((? - ?) * (? - ?) + (? - ?) * (? - ?)) + 1e-30)) * (1.0 / (double)sqrtf((float)((? - ?) * (? - ?) + ((? - ?) * (? - ?) + (? - ?) * (? - ?)) + 1e-30)))))) + ?",
+            "(? - ?) * (? * (1.0 / (double)sqrtf((float)((? - ?) * (? - ?) + ((? - ?) * (? - ?) + (? - ?) * (? - ?)) + 1e-30)) * (1.0 / (double)sqrtf((float)((? - ?) * (? - ?) + ((? - ?) * (? - ?) + (? - ?) * (? - ?)) + 1e-30)) * (1.0 / (double)sqrtf((float)((? - ?) * (? - ?) + ((? - ?) * (? - ?) + (? - ?) * (? - ?)) + 1e-30)))))) + ?"
+          ],
+          "changes": [
+            {
+              "from": "FP64",
+              "ops": [
+                7
+              ],
+              "to": "FP32"
+            }
+          ],
+          "id": "PT0_10",
+          "kind": "precision",
+          "outputs": [
+            0,
+            1,
+            2
+          ],
+          "reason": "not on the Pareto frontier of the site",
+          "status": "rejected",
+          "summary": "Funcs FP64(0%) + FP32(100%): sqrt in float (1 of 15 operations)"
+        },
+        {
+          "changes": [
+            {
+              "from": "FP64",
+              "ops": [
+                3,
+                1,
+                0,
+                2,
+                4,
+                9,
+                10,
+                11,
+                5,
+                6,
+                7,
+                8,
+                12,
+                13,
+                14
+              ],
+              "to": "Expansion2"
+            }
+          ],
+          "id": "PT0_11",
+          "kind": "expansion",
+          "outputs": [
+            0,
+            1,
+            2
+          ],
+          "reason": "part of the most accurate solution within the cost budget",
+          "status": "applied",
+          "summary": "All FP64(0%) + Expansion2(100%): 4 x '*', 3 x '-', 5 x fma, '+', sqrt and '/' in a 2-component float expansion (15 of 15 operations)"
+        },
+        {
+          "changes": [
+            {
+              "from": "FP64",
+              "ops": [
+                3,
+                1,
+                0,
+                2,
+                4,
+                9,
+                10,
+                11,
+                5,
+                6,
+                7,
+                8,
+                12,
+                13
+              ],
+              "to": "Expansion2"
+            }
+          ],
+          "id": "PT0_12",
+          "kind": "expansion",
+          "outputs": [
+            0,
+            1,
+            2
+          ],
+          "reason": "on the Pareto frontier; -poseidon-apply-rewrites=PT0_12 applies it",
+          "status": "pareto",
+          "summary": "All FP64(10%) + Expansion2(90%): 4 x '*', 3 x '-', 4 x fma, '+', sqrt and '/' in a 2-component float expansion (14 of 15 operations)"
+        },
+        {
+          "changes": [
+            {
+              "from": "FP64",
+              "ops": [
+                3,
+                1,
+                0,
+                2,
+                4,
+                9,
+                10,
+                11,
+                5,
+                6,
+                7,
+                8
+              ],
+              "to": "Expansion2"
+            }
+          ],
+          "id": "PT0_13",
+          "kind": "expansion",
+          "outputs": [
+            0,
+            1,
+            2
+          ],
+          "reason": "on the Pareto frontier; -poseidon-apply-rewrites=PT0_13 applies it",
+          "status": "pareto",
+          "summary": "All FP64(20%) + Expansion2(80%): 4 x '*', 3 x '-', 2 x fma, '+', sqrt and '/' in a 2-component float expansion (12 of 15 operations)"
+        },
+        {
+          "changes": [
+            {
+              "from": "FP64",
+              "ops": [
+                3,
+                1,
+                0,
+                2,
+                4,
+                9,
+                10,
+                11,
+                5,
+                6,
+                7
+              ],
+              "to": "Expansion2"
+            }
+          ],
+          "id": "PT0_14",
+          "kind": "expansion",
+          "outputs": [
+            0,
+            1,
+            2
+          ],
+          "reason": "the subgraph takes one precision assignment, and PT0_11 was selected",
+          "status": "rejected",
+          "summary": "All FP64(30%) + Expansion2(70%): 4 x '*', 3 x '-', 2 x fma, '+' and sqrt in a 2-component float expansion (11 of 15 operations)"
+        },
+        {
+          "changes": [
+            {
+              "from": "FP64",
+              "ops": [
+                3,
+                1,
+                0,
+                2,
+                4,
+                9,
+                10,
+                11,
+                5
+              ],
+              "to": "Expansion2"
+            }
+          ],
+          "id": "PT0_15",
+          "kind": "expansion",
+          "outputs": [
+            0,
+            1,
+            2
+          ],
+          "reason": "the subgraph takes one precision assignment, and PT0_11 was selected",
+          "status": "rejected",
+          "summary": "All FP64(40%) + Expansion2(60%): 4 x '*', 3 x '-' and 2 x fma in a 2-component float expansion (9 of 15 operations)"
+        },
+        {
+          "changes": [
+            {
+              "from": "FP64",
+              "ops": [
+                3,
+                1,
+                0,
+                2,
+                4,
+                9,
+                10,
+                11
+              ],
+              "to": "Expansion2"
+            }
+          ],
+          "id": "PT0_16",
+          "kind": "expansion",
+          "outputs": [
+            0,
+            1,
+            2
+          ],
+          "reason": "the subgraph takes one precision assignment, and PT0_11 was selected",
+          "status": "rejected",
+          "summary": "All FP64(50%) + Expansion2(50%): 4 x '*', 3 x '-' and fma in a 2-component float expansion (8 of 15 operations)"
+        },
+        {
+          "changes": [
+            {
+              "from": "FP64",
+              "ops": [
+                3,
+                1,
+                0,
+                2,
+                4,
+                9
+              ],
+              "to": "Expansion2"
+            }
+          ],
+          "id": "PT0_17",
+          "kind": "expansion",
+          "outputs": [
+            0,
+            1,
+            2
+          ],
+          "reason": "the subgraph takes one precision assignment, and PT0_11 was selected",
+          "status": "rejected",
+          "summary": "All FP64(60%) + Expansion2(40%): '*', '-', '-', '-', fma and '*' in a 2-component float expansion (6 of 15 operations)"
+        },
+        {
+          "changes": [
+            {
+              "from": "FP64",
+              "ops": [
+                3,
+                1,
+                0,
+                2,
+                4
+              ],
+              "to": "Expansion2"
+            }
+          ],
+          "id": "PT0_18",
+          "kind": "expansion",
+          "outputs": [
+            0,
+            1,
+            2
+          ],
+          "reason": "the subgraph takes one precision assignment, and PT0_11 was selected",
+          "status": "rejected",
+          "summary": "All FP64(70%) + Expansion2(30%): '*', '-', '-', '-' and fma in a 2-component float expansion (5 of 15 operations)"
+        },
+        {
+          "changes": [
+            {
+              "from": "FP64",
+              "ops": [
+                3,
+                1,
+                0
+              ],
+              "to": "Expansion2"
+            }
+          ],
+          "id": "PT0_19",
+          "kind": "expansion",
+          "outputs": [
+            0,
+            1,
+            2
+          ],
+          "reason": "the subgraph takes one precision assignment, and PT0_11 was selected",
+          "status": "rejected",
+          "summary": "All FP64(80%) + Expansion2(20%): '*', '-' and '-' in a 2-component float expansion (3 of 15 operations)"
+        },
+        {
+          "changes": [
+            {
+              "from": "FP64",
+              "ops": [
+                3,
+                1
+              ],
+              "to": "Expansion2"
+            }
+          ],
+          "id": "PT0_20",
+          "kind": "expansion",
+          "outputs": [
+            0,
+            1,
+            2
+          ],
+          "reason": "the subgraph takes one precision assignment, and PT0_11 was selected",
+          "status": "rejected",
+          "summary": "All FP64(90%) + Expansion2(10%): '*' and '-' in a 2-component float expansion (2 of 15 operations)"
+        },
+        {
+          "changes": [
+            {
+              "from": "FP64",
+              "ops": [
+                7
+              ],
+              "to": "Expansion2"
+            }
+          ],
+          "id": "PT0_21",
+          "kind": "expansion",
+          "outputs": [
+            0,
+            1,
+            2
+          ],
+          "reason": "on the Pareto frontier; -poseidon-apply-rewrites=PT0_21 applies it",
+          "status": "pareto",
+          "summary": "Funcs FP64(0%) + Expansion2(100%): sqrt in a 2-component float expansion (1 of 15 operations)"
+        },
+        {
+          "c": [
+            "(double)(((float)? - (float)?) * ((float)? * (1.0f / sqrtf(((float)? - (float)?) * ((float)? - (float)?) + (((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30f) * (1.0f / sqrtf(((float)? - (float)?) * ((float)? - (float)?) + (((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30f) * (1.0f / sqrtf(((float)? - (float)?) * ((float)? - (float)?) + (((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30f))))) + (float)?)",
+            "(double)(((float)? - (float)?) * ((float)? * (1.0f / sqrtf(((float)? - (float)?) * ((float)? - (float)?) + (((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30f) * (1.0f / sqrtf(((float)? - (float)?) * ((float)? - (float)?) + (((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30f) * (1.0f / sqrtf(((float)? - (float)?) * ((float)? - (float)?) + (((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30f))))) + (float)?)",
+            "(double)(((float)? - (float)?) * ((float)? * (1.0f / sqrtf(((float)? - (float)?) * ((float)? - (float)?) + (((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30f) * (1.0f / sqrtf(((float)? - (float)?) * ((float)? - (float)?) + (((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30f) * (1.0f / sqrtf(((float)? - (float)?) * ((float)? - (float)?) + (((float)? - (float)?) * ((float)? - (float)?) + ((float)? - (float)?) * ((float)? - (float)?)) + 1e-30f))))) + (float)?)"
+          ],
+          "changes": [
+            {
+              "from": "FP64",
+              "ops": [
+                3,
+                1,
+                0,
+                2,
+                4,
+                9,
+                10,
+                11,
+                5,
+                6,
+                7,
+                8,
+                12,
+                13,
+                14
+              ],
+              "to": "FP32"
+            }
+          ],
+          "id": "PT0_22",
+          "kind": "precision",
+          "outputs": [
+            0,
+            1,
+            2
+          ],
+          "reason": "not on the Pareto frontier of the site",
+          "status": "rejected",
+          "summary": "All Expansion2(0%) + FP32(100%): 4 x '*', 3 x '-', 5 x fma, '+', sqrt and '/' in float (15 of 15 operations)"
+        },
+        {
+          "changes": [
+            {
+              "from": "FP64",
+              "ops": [
+                14
+              ],
+              "to": "Expansion2"
+            },
+            {
+              "from": "FP64",
+              "ops": [
+                3,
+                1,
+                0,
+                2,
+                4,
+                9,
+                10,
+                11,
+                5,
+                6,
+                7,
+                8,
+                12,
+                13
+              ],
+              "to": "FP32"
+            }
+          ],
+          "id": "PT0_23",
+          "kind": "expansion",
+          "outputs": [
+            0,
+            1,
+            2
+          ],
+          "reason": "on the Pareto frontier; -poseidon-apply-rewrites=PT0_23 applies it",
+          "status": "pareto",
+          "summary": "All Expansion2(10%) + FP32(90%): fma in a 2-component float expansion and 4 x '*', 3 x '-', 4 x fma, '+', sqrt and '/' in float (15 of 15 operations)"
+        },
+        {
+          "changes": [
+            {
+              "from": "FP64",
+              "ops": [
+                12,
+                13,
+                14
+              ],
+              "to": "Expansion2"
+            },
+            {
+              "from": "FP64",
+              "ops": [
+                3,
+                1,
+                0,
+                2,
+                4,
+                9,
+                10,
+                11,
+                5,
+                6,
+                7,
+                8
+              ],
+              "to": "FP32"
+            }
+          ],
+          "id": "PT0_24",
+          "kind": "expansion",
+          "outputs": [
+            0,
+            1,
+            2
+          ],
+          "reason": "on the Pareto frontier; -poseidon-apply-rewrites=PT0_24 applies it",
+          "status": "pareto",
+          "summary": "All Expansion2(20%) + FP32(80%): fma, fma and fma in a 2-component float expansion and 4 x '*', 3 x '-', 2 x fma, '+', sqrt and '/' in float (15 of 15 operations)"
+        },
+        {
+          "changes": [
+            {
+              "from": "FP64",
+              "ops": [
+                8,
+                12,
+                13,
+                14
+              ],
+              "to": "Expansion2"
+            },
+            {
+              "from": "FP64",
+              "ops": [
+                3,
+                1,
+                0,
+                2,
+                4,
+                9,
+                10,
+                11,
+                5,
+                6,
+                7
+              ],
+              "to": "FP32"
+            }
+          ],
+          "id": "PT0_25",
+          "kind": "expansion",
+          "outputs": [
+            0,
+            1,
+            2
+          ],
+          "reason": "the subgraph takes one precision assignment, and PT0_11 was selected",
+          "status": "rejected",
+          "summary": "All Expansion2(30%) + FP32(70%): '/', fma, fma and fma in a 2-component float expansion and 4 x '*', 3 x '-', 2 x fma, '+' and sqrt in float (15 of 15 operations)"
+        },
+        {
+          "changes": [
+            {
+              "from": "FP64",
+              "ops": [
+                6,
+                7,
+                8,
+                12,
+                13,
+                14
+              ],
+              "to": "Expansion2"
+            },
+            {
+              "from": "FP64",
+              "ops": [
+                3,
+                1,
+                0,
+                2,
+                4,
+                9,
+                10,
+                11,
+                5
+              ],
+              "to": "FP32"
+            }
+          ],
+          "id": "PT0_26",
+          "kind": "expansion",
+          "outputs": [
+            0,
+            1,
+            2
+          ],
+          "reason": "on the Pareto frontier; -poseidon-apply-rewrites=PT0_26 applies it",
+          "status": "pareto",
+          "summary": "All Expansion2(40%) + FP32(60%): '+', sqrt, '/', fma, fma and fma in a 2-component float expansion and 4 x '*', 3 x '-' and 2 x fma in float (15 of 15 operations)"
+        },
+        {
+          "changes": [
+            {
+              "from": "FP64",
+              "ops": [
+                5,
+                6,
+                7,
+                8,
+                12,
+                13,
+                14
+              ],
+              "to": "Expansion2"
+            },
+            {
+              "from": "FP64",
+              "ops": [
+                3,
+                1,
+                0,
+                2,
+                4,
+                9,
+                10,
+                11
+              ],
+              "to": "FP32"
+            }
+          ],
+          "id": "PT0_27",
+          "kind": "expansion",
+          "outputs": [
+            0,
+            1,
+            2
+          ],
+          "reason": "on the Pareto frontier; -poseidon-apply-rewrites=PT0_27 applies it",
+          "status": "pareto",
+          "summary": "All Expansion2(50%) + FP32(50%): 4 x fma, '+', sqrt and '/' in a 2-component float expansion and 4 x '*', 3 x '-' and fma in float (15 of 15 operations)"
+        },
+        {
+          "changes": [
+            {
+              "from": "FP64",
+              "ops": [
+                10,
+                11,
+                5,
+                6,
+                7,
+                8,
+                12,
+                13,
+                14
+              ],
+              "to": "Expansion2"
+            },
+            {
+              "from": "FP64",
+              "ops": [
+                3,
+                1,
+                0,
+                2,
+                4,
+                9
+              ],
+              "to": "FP32"
+            }
+          ],
+          "id": "PT0_28",
+          "kind": "expansion",
+          "outputs": [
+            0,
+            1,
+            2
+          ],
+          "reason": "the subgraph takes one precision assignment, and PT0_11 was selected",
+          "status": "rejected",
+          "summary": "All Expansion2(60%) + FP32(40%): 2 x '*', 4 x fma, '+', sqrt and '/' in a 2-component float expansion and '*', '-', '-', '-', fma and '*' in float (15 of 15 operations)"
+        },
+        {
+          "changes": [
+            {
+              "from": "FP64",
+              "ops": [
+                9,
+                10,
+                11,
+                5,
+                6,
+                7,
+                8,
+                12,
+                13,
+                14
+              ],
+              "to": "Expansion2"
+            },
+            {
+              "from": "FP64",
+              "ops": [
+                3,
+                1,
+                0,
+                2,
+                4
+              ],
+              "to": "FP32"
+            }
+          ],
+          "id": "PT0_29",
+          "kind": "expansion",
+          "outputs": [
+            0,
+            1,
+            2
+          ],
+          "reason": "the subgraph takes one precision assignment, and PT0_11 was selected",
+          "status": "rejected",
+          "summary": "All Expansion2(70%) + FP32(30%): 3 x '*', 4 x fma, '+', sqrt and '/' in a 2-component float expansion and '*', '-', '-', '-' and fma in float (15 of 15 operations)"
+        },
+        {
+          "changes": [
+            {
+              "from": "FP64",
+              "ops": [
+                2,
+                4,
+                9,
+                10,
+                11,
+                5,
+                6,
+                7,
+                8,
+                12,
+                13,
+                14
+              ],
+              "to": "Expansion2"
+            },
+            {
+              "from": "FP64",
+              "ops": [
+                3,
+                1,
+                0
+              ],
+              "to": "FP32"
+            }
+          ],
+          "id": "PT0_30",
+          "kind": "expansion",
+          "outputs": [
+            0,
+            1,
+            2
+          ],
+          "reason": "the subgraph takes one precision assignment, and PT0_11 was selected",
+          "status": "rejected",
+          "summary": "All Expansion2(80%) + FP32(20%): '-', 5 x fma, 3 x '*', '+', sqrt and '/' in a 2-component float expansion and '*', '-' and '-' in float (15 of 15 operations)"
+        },
+        {
+          "changes": [
+            {
+              "from": "FP64",
+              "ops": [
+                0,
+                2,
+                4,
+                9,
+                10,
+                11,
+                5,
+                6,
+                7,
+                8,
+                12,
+                13,
+                14
+              ],
+              "to": "Expansion2"
+            },
+            {
+              "from": "FP64",
+              "ops": [
+                3,
+                1
+              ],
+              "to": "FP32"
+            }
+          ],
+          "id": "PT0_31",
+          "kind": "expansion",
+          "outputs": [
+            0,
+            1,
+            2
+          ],
+          "reason": "the subgraph takes one precision assignment, and PT0_11 was selected",
+          "status": "rejected",
+          "summary": "All Expansion2(90%) + FP32(10%): 2 x '-', 5 x fma, 3 x '*', '+', sqrt and '/' in a 2-component float expansion and '*' and '-' in float (15 of 15 operations)"
+        },
+        {
+          "c": [
+            "(? - ?) * (? * (1.0 / (double)sqrtf((float)((? - ?) * (? - ?) + ((? - ?) * (? - ?) + (? - ?) * (? - ?)) + 1e-30)) * (1.0 / (double)sqrtf((float)((? - ?) * (? - ?) + ((? - ?) * (? - ?) + (? - ?) * (? - ?)) + 1e-30)) * (1.0 / (double)sqrtf((float)((? - ?) * (? - ?) + ((? - ?) * (? - ?) + (? - ?) * (? - ?)) + 1e-30)))))) + ?",
+            "(? - ?) * (? * (1.0 / (double)sqrtf((float)((? - ?) * (? - ?) + ((? - ?) * (? - ?) + (? - ?) * (? - ?)) + 1e-30)) * (1.0 / (double)sqrtf((float)((? - ?) * (? - ?) + ((? - ?) * (? - ?) + (? - ?) * (? - ?)) + 1e-30)) * (1.0 / (double)sqrtf((float)((? - ?) * (? - ?) + ((? - ?) * (? - ?) + (? - ?) * (? - ?)) + 1e-30)))))) + ?",
+            "(? - ?) * (? * (1.0 / (double)sqrtf((float)((? - ?) * (? - ?) + ((? - ?) * (? - ?) + (? - ?) * (? - ?)) + 1e-30)) * (1.0 / (double)sqrtf((float)((? - ?) * (? - ?) + ((? - ?) * (? - ?) + (? - ?) * (? - ?)) + 1e-30)) * (1.0 / (double)sqrtf((float)((? - ?) * (? - ?) + ((? - ?) * (? - ?) + (? - ?) * (? - ?)) + 1e-30)))))) + ?"
+          ],
+          "changes": [
+            {
+              "from": "FP64",
+              "ops": [
+                7
+              ],
+              "to": "FP32"
+            }
+          ],
+          "id": "PT0_32",
+          "kind": "precision",
+          "outputs": [
+            0,
+            1,
+            2
+          ],
+          "reason": "not on the Pareto frontier of the site",
+          "status": "rejected",
+          "summary": "Funcs Expansion2(0%) + FP32(100%): sqrt in float (1 of 15 operations)"
+        },
+        {
+          "changes": [
+            {
+              "from": "FP64",
+              "ops": [
+                6,
+                7,
+                8
+              ],
+              "to": "Expansion2"
+            },
+            {
+              "from": "FP64",
+              "ops": [
+                3,
+                1,
+                0,
+                2,
+                4,
+                9,
+                10,
+                11,
+                5
+              ],
+              "to": "FP32"
+            }
+          ],
+          "id": "PT0_33",
+          "kind": "expansion",
+          "outputs": [
+            0,
+            1,
+            2
+          ],
+          "reason": "the subgraph takes one precision assignment, and PT0_11 was selected",
+          "status": "rejected",
+          "summary": "All FP64(20%) + Expansion2(20%) + FP32(60%): '+', sqrt and '/' in a 2-component float expansion and 4 x '*', 3 x '-' and 2 x fma in float (12 of 15 operations)"
+        },
+        {
+          "changes": [
+            {
+              "from": "FP64",
+              "ops": [
+                10,
+                11,
+                5,
+                6,
+                7,
+                8
+              ],
+              "to": "Expansion2"
+            },
+            {
+              "from": "FP64",
+              "ops": [
+                3,
+                1,
+                0,
+                2,
+                4,
+                9
+              ],
+              "to": "FP32"
+            }
+          ],
+          "id": "PT0_34",
+          "kind": "expansion",
+          "outputs": [
+            0,
+            1,
+            2
+          ],
+          "reason": "the subgraph takes one precision assignment, and PT0_11 was selected",
+          "status": "rejected",
+          "summary": "All FP64(20%) + Expansion2(40%) + FP32(40%): '*', '*', fma, '+', sqrt and '/' in a 2-component float expansion and '*', '-', '-', '-', fma and '*' in float (12 of 15 operations)"
+        },
+        {
+          "changes": [
+            {
+              "from": "FP64",
+              "ops": [
+                2,
+                4,
+                9,
+                10,
+                11,
+                5,
+                6,
+                7,
+                8
+              ],
+              "to": "Expansion2"
+            },
+            {
+              "from": "FP64",
+              "ops": [
+                3,
+                1,
+                0
+              ],
+              "to": "FP32"
+            }
+          ],
+          "id": "PT0_35",
+          "kind": "expansion",
+          "outputs": [
+            0,
+            1,
+            2
+          ],
+          "reason": "the subgraph takes one precision assignment, and PT0_11 was selected",
+          "status": "rejected",
+          "summary": "All FP64(20%) + Expansion2(60%) + FP32(20%): '-', 2 x fma, 3 x '*', '+', sqrt and '/' in a 2-component float expansion and '*', '-' and '-' in float (12 of 15 operations)"
+        },
+        {
+          "changes": [
+            {
+              "from": "FP64",
+              "ops": [
+                10,
+                11,
+                5
+              ],
+              "to": "Expansion2"
+            },
+            {
+              "from": "FP64",
+              "ops": [
+                3,
+                1,
+                0,
+                2,
+                4,
+                9
+              ],
+              "to": "FP32"
+            }
+          ],
+          "id": "PT0_36",
+          "kind": "expansion",
+          "outputs": [
+            0,
+            1,
+            2
+          ],
+          "reason": "the subgraph takes one precision assignment, and PT0_11 was selected",
+          "status": "rejected",
+          "summary": "All FP64(40%) + Expansion2(20%) + FP32(40%): '*', '*' and fma in a 2-component float expansion and '*', '-', '-', '-', fma and '*' in float (9 of 15 operations)"
+        },
+        {
+          "changes": [
+            {
+              "from": "FP64",
+              "ops": [
+                2,
+                4,
+                9,
+                10,
+                11,
+                5
+              ],
+              "to": "Expansion2"
+            },
+            {
+              "from": "FP64",
+              "ops": [
+                3,
+                1,
+                0
+              ],
+              "to": "FP32"
+            }
+          ],
+          "id": "PT0_37",
+          "kind": "expansion",
+          "outputs": [
+            0,
+            1,
+            2
+          ],
+          "reason": "the subgraph takes one precision assignment, and PT0_11 was selected",
+          "status": "rejected",
+          "summary": "All FP64(40%) + Expansion2(40%) + FP32(20%): '-', fma, '*', '*', '*' and fma in a 2-component float expansion and '*', '-' and '-' in float (9 of 15 operations)"
+        },
+        {
+          "changes": [
+            {
+              "from": "FP64",
+              "ops": [
+                2,
+                4,
+                9
+              ],
+              "to": "Expansion2"
+            },
+            {
+              "from": "FP64",
+              "ops": [
+                3,
+                1,
+                0
+              ],
+              "to": "FP32"
+            }
+          ],
+          "id": "PT0_38",
+          "kind": "expansion",
+          "outputs": [
+            0,
+            1,
+            2
+          ],
+          "reason": "the subgraph takes one precision assignment, and PT0_11 was selected",
+          "status": "rejected",
+          "summary": "All FP64(60%) + Expansion2(20%) + FP32(20%): '-', fma and '*' in a 2-component float expansion and '*', '-' and '-' in float (6 of 15 operations)"
+        }
+      ],
+      "cost": 0.99999999999714284,
+      "executions": 65280,
+      "id": "S0",
+      "inputs": [
+        {
+          "max": 7.5905763335797634,
+          "min": -14.991604799121765,
+          "type": "double"
+        },
+        {
+          "max": 7.5905763335797634,
+          "min": -14.991604799121765,
+          "type": "double"
+        },
+        {
+          "max": 0.00390625,
+          "min": 0.00390625,
+          "type": "double"
+        },
+        {
+          "max": 0.5129802069831102,
+          "min": -0.61683648958378956,
+          "type": "double"
+        },
+        {
+          "max": 0.64656088190773953,
+          "min": -0.85669421439310989,
+          "type": "double"
+        },
+        {
+          "max": 36.760573094049015,
+          "min": -5.2573819772210459,
+          "type": "double"
+        },
+        {
+          "max": 36.760573094049015,
+          "min": -5.2573819772210459,
+          "type": "double"
+        },
+        {
+          "max": 1.8013155290800629,
+          "min": -1.5755977207614678,
+          "type": "double"
+        },
+        {
+          "max": 9.1885187189915296,
+          "min": -23.694382859615363,
+          "type": "double"
+        },
+        {
+          "max": 9.1885187189915296,
+          "min": -23.694382859615363,
+          "type": "double"
+        }
+      ],
+      "kind": "subgraph",
+      "ops": [
+        {
+          "executions": 65280,
+          "gradient": 133.86743631348727,
+          "max": 22.582181132701528,
+          "min": -22.582181132701528,
+          "opcode": "-",
+          "sensitivity": 108.20541638255935,
+          "type": "double"
+        },
+        {
+          "executions": 65280,
+          "gradient": 17.559360282992934,
+          "max": 42.017955071270059,
+          "min": -42.017955071270059,
+          "opcode": "-",
+          "sensitivity": 102.28068841205587,
+          "type": "double"
+        },
+        {
+          "executions": 65280,
+          "gradient": -192.58540710606539,
+          "max": 32.882901578606891,
+          "min": -32.882901578606891,
+          "opcode": "-",
+          "sensitivity": 111.88380249082958,
+          "type": "double"
+        },
+        {
+          "executions": 65280,
+          "gradient": -1.6257274827884046e-12,
+          "max": 1765.5085483712692,
+          "min": 7.3949690694096953e-10,
+          "opcode": "*",
+          "sensitivity": 65.440394669805926,
+          "type": "double"
+        },
+        {
+          "executions": 65280,
+          "gradient": -1.6248393043687045e-12,
+          "max": 2063.5729285462367,
+          "min": 3.9074917291420053e-05,
+          "opcode": "fma",
+          "sensitivity": 135.77515728662721,
+          "type": "double"
+        },
+        {
+          "executions": 65280,
+          "gradient": -1.6248393043687045e-12,
+          "max": 2895.6266431923032,
+          "min": 0.0023416752587871507,
+          "opcode": "fma",
+          "sensitivity": 210.13041747929572,
+          "type": "double"
+        },
+        {
+          "executions": 65280,
+          "gradient": -1.6257274827884046e-12,
+          "max": 2895.6266431923032,
+          "min": 0.0023416752587871507,
+          "opcode": "+",
+          "sensitivity": 210.13041747929574,
+          "type": "double"
+        },
+        {
+          "executions": 65280,
+          "gradient": -5.1619194758444759e-13,
+          "max": 53.811027152362584,
+          "min": 0.048390859248283145,
+          "opcode": "sqrt",
+          "sensitivity": 420.26083495859143,
+          "type": "double"
+        },
+        {
+          "executions": 65280,
+          "gradient": 2.604080145962584e-14,
+          "max": 20.665059797124368,
+          "min": 0.018583551604925922,
+          "opcode": "/",
+          "sensitivity": 420.26083495859149,
+          "type": "double"
+        },
+        {
+          "executions": 65280,
+          "gradient": -8.7888030186888955e-14,
+          "max": 427.04469641872583,
+          "min": 0.0003453483902529448,
+          "opcode": "*",
+          "sensitivity": 140.08694498619937,
+          "type": "double"
+        },
+        {
+          "executions": 65280,
+          "gradient": 9.886536034287019e-14,
+          "max": 8824.9041875377916,
+          "min": 6.4177996319436962e-06,
+          "opcode": "*",
+          "sensitivity": 140.08694498619937,
+          "type": "double"
+        },
+        {
+          "executions": 65280,
+          "gradient": 2.440003754600184e-11,
+          "max": 34.472281982569498,
+          "min": 2.5069529812280063e-08,
+          "opcode": "*",
+          "sensitivity": 140.0869449861994,
+          "type": "double"
+        },
+        {
+          "executions": 65280,
+          "gradient": 65280,
+          "max": 0.5135115593484294,
+          "min": -0.61683648958378956,
+          "opcode": "fma",
+          "sensitivity": 4460.1608018989191,
+          "type": "double"
+        },
+        {
+          "executions": 65280,
+          "gradient": 65280,
+          "max": 0.64656088190773953,
+          "min": -0.85669421439310989,
+          "opcode": "fma",
+          "sensitivity": 4553.0093016946621,
+          "type": "double"
+        },
+        {
+          "executions": 65280,
+          "gradient": 65280,
+          "max": 1.8013155290800629,
+          "min": -1.5757322591570866,
+          "opcode": "fma",
+          "sensitivity": 5298.1646756451928,
+          "type": "double"
+        }
+      ],
+      "original": {
+        "c": [
+          "(? - ?) * (? * (1.0 / sqrt((? - ?) * (? - ?) + ((? - ?) * (? - ?) + (? - ?) * (? - ?)) + 1e-30) * (1.0 / sqrt((? - ?) * (? - ?) + ((? - ?) * (? - ?) + (? - ?) * (? - ?)) + 1e-30) * (1.0 / sqrt((? - ?) * (? - ?) + ((? - ?) * (? - ?) + (? - ?) * (? - ?)) + 1e-30))))) + ?",
+          "(? - ?) * (? * (1.0 / sqrt((? - ?) * (? - ?) + ((? - ?) * (? - ?) + (? - ?) * (? - ?)) + 1e-30) * (1.0 / sqrt((? - ?) * (? - ?) + ((? - ?) * (? - ?) + (? - ?) * (? - ?)) + 1e-30) * (1.0 / sqrt((? - ?) * (? - ?) + ((? - ?) * (? - ?) + (? - ?) * (? - ?)) + 1e-30))))) + ?",
+          "(? - ?) * (? * (1.0 / sqrt((? - ?) * (? - ?) + ((? - ?) * (? - ?) + (? - ?) * (? - ?)) + 1e-30) * (1.0 / sqrt((? - ?) * (? - ?) + ((? - ?) * (? - ?) + (? - ?) * (? - ?)) + 1e-30) * (1.0 / sqrt((? - ?) * (? - ?) + ((? - ?) * (? - ?) + (? - ?) * (? - ?)) + 1e-30))))) + ?"
+        ]
+      },
+      "outputs": [
+        {
+          "c": "(? - ?) * (? * (1.0 / sqrt((? - ?) * (? - ?) + ((? - ?) * (? - ?) + (? - ?) * (? - ?)) + 1e-30) * (1.0 / sqrt((? - ?) * (? - ?) + ((? - ?) * (? - ?) + (? - ?) * (? - ?)) + 1e-30) * (1.0 / sqrt((? - ?) * (? - ?) + ((? - ?) * (? - ?) + (? - ?) * (? - ?)) + 1e-30))))) + ?",
+          "inputs": [
+            0,
+            1,
+            2,
+            3,
+            5,
+            6,
+            8,
+            9
+          ],
+          "ops": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "type": "double"
+        },
+        {
+          "c": "(? - ?) * (? * (1.0 / sqrt((? - ?) * (? - ?) + ((? - ?) * (? - ?) + (? - ?) * (? - ?)) + 1e-30) * (1.0 / sqrt((? - ?) * (? - ?) + ((? - ?) * (? - ?) + (? - ?) * (? - ?)) + 1e-30) * (1.0 / sqrt((? - ?) * (? - ?) + ((? - ?) * (? - ?) + (? - ?) * (? - ?)) + 1e-30))))) + ?",
+          "inputs": [
+            0,
+            1,
+            2,
+            4,
+            5,
+            6,
+            8,
+            9
+          ],
+          "ops": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            13
+          ],
+          "type": "double"
+        },
+        {
+          "c": "(? - ?) * (? * (1.0 / sqrt((? - ?) * (? - ?) + ((? - ?) * (? - ?) + (? - ?) * (? - ?)) + 1e-30) * (1.0 / sqrt((? - ?) * (? - ?) + ((? - ?) * (? - ?) + (? - ?) * (? - ?)) + 1e-30) * (1.0 / sqrt((? - ?) * (? - ?) + ((? - ?) * (? - ?) + (? - ?) * (? - ?)) + 1e-30))))) + ?",
+          "inputs": [
+            0,
+            1,
+            2,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "ops": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            14
+          ],
+          "type": "double"
+        }
+      ]
+    }
+  ],
+  "target": {
+    "budget": -0.76869270782573706,
+    "cost_model": "/m/replay_pack.new/cost_models/genga_x1e6/cm_native_x1e6.csv",
+    "from_cache": true,
+    "selector": "dp"
+  }
+}

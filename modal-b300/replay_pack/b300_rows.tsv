@@ -1,0 +1,7 @@
+id	bench	cost_model	select	paper	saved_pick	accepted
+t1-force-b300	genga_nbody	genga_x1e6/cm_native_x1e6.csv	match=_Z12nbody_kernelPK7double4P7double3i:PT0=All FP64(0%) + Expansion2(100%)	force kernel: two-component expansion (4.26x, L2 1.765e-13)	two-component expansion at budget -2030469120 (configuration by name not banked)	
+t1-drift-b300	genga_nbody	genga_x1e6/cm_native_x1e6.csv	match=genga-drift-algebraic	drift kernel: expansion + algebraic (5.65x, Edrift 4.674074e-08)	expansion + algebraic at budget -788521472 (configuration by name not banked)	
+t1-ozp7-b300	ozp	cm_sm_103_B300SXM6AC_ef7c8e4b.csv	tau=1e-7	Ozaki-II nm = 9 (16.94x, RMSD 3.04e-8)	_Z10matmul_optPdPKdS1_:M0=ozaki-ii nm=9 wmma m16n16k16 s8/s32	_Z10matmul_optPdPKdS1_:M0=ozaki-ii nm=8 wmma m16n16k16 s8/s32
+t1-ozp6-b300	ozp	cm_sm_103_B300SXM6AC_ef7c8e4b.csv	tau=1e-6	FP16TCEC (33.5x, RMSD 1.7e-7)	_Z10matmul_optPdPKdS1_:M0=tcec-dispatch wmma m16n16k16 f16/f32	
+t1-rchfsi-b300	chase_eigensolver	cm_sm_103_B300SXM6AC_ef7c8e4b.csv	match=_Z8hemm_optPdPKdS1_dd:M0=tcec n=2 wmma m16n16k16 bf16/f32	BF16TCEC on the filter only (2.18x, 64 of 64 locked)	_Z8hemm_optPdPKdS1_dd:M0=tcec n=2 wmma m16n16k16 bf16/f32	
+t1-ozp7-b300-paper	ozp	cm_sm_103_B300SXM6AC_ef7c8e4b.csv	pin=_Z10matmul_optPdPKdS1_:M0=ozaki-ii nm=9 wmma m16n16k16 s8/s32	Ozaki-II nm = 9 (16.94x, RMSD 3.04e-8): the paper's configuration by name, next to t1-ozp7-b300 (the solver's pick at tau = 1e-7)	_Z10matmul_optPdPKdS1_:M0=ozaki-ii nm=9 wmma m16n16k16 s8/s32	

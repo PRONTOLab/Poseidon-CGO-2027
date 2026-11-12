@@ -1,0 +1,595 @@
+{
+  "candidate_outputs": [],
+  "candidate_subgraphs": [
+    {
+      "candidates": [
+        {
+          "accuracy_cost_delta": 0.002832089154054902,
+          "computation_cost_delta": -14306369723.850239,
+          "description": "All FP64(0%) + FP32(100%)",
+          "id": "PT0_0"
+        },
+        {
+          "accuracy_cost_delta": 0.002832089154054902,
+          "computation_cost_delta": -14306369723.850239,
+          "description": "All Expansion2(0%) + FP32(100%)",
+          "id": "PT0_22"
+        },
+        {
+          "accuracy_cost_delta": 0.001267432669916906,
+          "computation_cost_delta": -14194125074.680321,
+          "description": "All Expansion2(10%) + FP32(90%)",
+          "id": "PT0_23"
+        },
+        {
+          "accuracy_cost_delta": 3.7903628912172448e-07,
+          "computation_cost_delta": -13983718874.23488,
+          "description": "All Expansion2(20%) + FP32(80%)",
+          "id": "PT0_24"
+        },
+        {
+          "accuracy_cost_delta": 3.7903628912172448e-07,
+          "computation_cost_delta": -13847371473.4848,
+          "description": "All Expansion2(30%) + FP32(70%)",
+          "id": "PT0_25"
+        },
+        {
+          "accuracy_cost_delta": 3.5221964545206889e-07,
+          "computation_cost_delta": -13542488603.20512,
+          "description": "All Expansion2(40%) + FP32(60%)",
+          "id": "PT0_26"
+        },
+        {
+          "accuracy_cost_delta": 3.4334155071157704e-07,
+          "computation_cost_delta": -13444327051.9296,
+          "description": "All Expansion2(50%) + FP32(50%)",
+          "id": "PT0_27"
+        },
+        {
+          "accuracy_cost_delta": 0.0012674326708949242,
+          "computation_cost_delta": -12834497793.99552,
+          "description": "All FP64(10%) + FP32(90%)",
+          "id": "PT0_1"
+        },
+        {
+          "accuracy_cost_delta": 8.8654170699939828e-11,
+          "computation_cost_delta": -11193483210.209263,
+          "description": "All FP64(0%) + Expansion2(100%)",
+          "id": "PT0_11"
+        },
+        {
+          "accuracy_cost_delta": 3.7903875332823666e-07,
+          "computation_cost_delta": -10844826938.983681,
+          "description": "All FP64(20%) + FP32(80%)",
+          "id": "PT0_2"
+        },
+        {
+          "accuracy_cost_delta": 3.7903875332823666e-07,
+          "computation_cost_delta": -10844826938.983681,
+          "description": "All FP64(30%) + FP32(70%)",
+          "id": "PT0_3"
+        },
+        {
+          "accuracy_cost_delta": 3.5222131116726244e-07,
+          "computation_cost_delta": -10403596667.95392,
+          "description": "All FP64(20%) + Expansion2(20%) + FP32(60%)",
+          "id": "PT0_33"
+        },
+        {
+          "accuracy_cost_delta": 3.2546635751989901e-07,
+          "computation_cost_delta": -9943916609.3107071,
+          "description": "All Expansion2(60%) + FP32(40%)",
+          "id": "PT0_28"
+        },
+        {
+          "accuracy_cost_delta": 2.9951956759946448e-07,
+          "computation_cost_delta": -9908704490.2271881,
+          "description": "All Expansion2(70%) + FP32(30%)",
+          "id": "PT0_29"
+        },
+        {
+          "accuracy_cost_delta": 3.9632163136620806e-11,
+          "computation_cost_delta": -7814268279.8476629,
+          "description": "All FP64(10%) + Expansion2(90%)",
+          "id": "PT0_12"
+        },
+        {
+          "accuracy_cost_delta": 2.1001396349957457e-07,
+          "computation_cost_delta": -7678325497.0342236,
+          "description": "All Expansion2(80%) + FP32(20%)",
+          "id": "PT0_30"
+        },
+        {
+          "accuracy_cost_delta": 3.2546927820945795e-07,
+          "computation_cost_delta": -5788189300.2739115,
+          "description": "All FP64(20%) + Expansion2(40%) + FP32(40%)",
+          "id": "PT0_34"
+        },
+        {
+          "accuracy_cost_delta": 1.7858618191234515e-07,
+          "computation_cost_delta": -5546108055.1167984,
+          "description": "All Expansion2(90%) + FP32(10%)",
+          "id": "PT0_31"
+        },
+        {
+          "accuracy_cost_delta": 7.7135563561481213e-15,
+          "computation_cost_delta": -4015415975.604465,
+          "description": "All FP64(20%) + Expansion2(80%)",
+          "id": "PT0_13"
+        },
+        {
+          "accuracy_cost_delta": 1.5328902820241831e-07,
+          "computation_cost_delta": -2913432453.5808001,
+          "description": "Funcs FP64(0%) + FP32(100%)",
+          "id": "PT0_10"
+        },
+        {
+          "accuracy_cost_delta": 1.5328902820241831e-07,
+          "computation_cost_delta": -2913432453.5808001,
+          "description": "Funcs Expansion2(0%) + FP32(100%)",
+          "id": "PT0_32"
+        },
+        {
+          "accuracy_cost_delta": 2.1001648653448158e-07,
+          "computation_cost_delta": -2512804363.1590252,
+          "description": "All FP64(20%) + Expansion2(60%) + FP32(20%)",
+          "id": "PT0_35"
+        },
+        {
+          "accuracy_cost_delta": 3.5222131116726244e-07,
+          "computation_cost_delta": -1788351988.9958365,
+          "description": "All FP64(40%) + FP32(60%)",
+          "id": "PT0_4"
+        },
+        {
+          "accuracy_cost_delta": 3.4334448789871199e-07,
+          "computation_cost_delta": -1270553063.8387172,
+          "description": "All FP64(50%) + FP32(50%)",
+          "id": "PT0_5"
+        },
+        {
+          "accuracy_cost_delta": 6.552375829416146e-15,
+          "computation_cost_delta": -261319803.80159867,
+          "description": "Funcs FP64(0%) + Expansion2(100%)",
+          "id": "PT0_21"
+        },
+        {
+          "accuracy_cost_delta": 1.7858590895932367e-07,
+          "computation_cost_delta": 398949352.9804821,
+          "description": "All FP64(90%) + FP32(10%)",
+          "id": "PT0_9"
+        },
+        {
+          "accuracy_cost_delta": 2.9952409616420793e-07,
+          "computation_cost_delta": 760547830.06080413,
+          "description": "All FP64(70%) + FP32(30%)",
+          "id": "PT0_7"
+        },
+        {
+          "accuracy_cost_delta": 2.1001649355642707e-07,
+          "computation_cost_delta": 838648054.09920287,
+          "description": "All FP64(80%) + FP32(20%)",
+          "id": "PT0_8"
+        },
+        {
+          "accuracy_cost_delta": 3.2546927820945795e-07,
+          "computation_cost_delta": 1197188404.3161643,
+          "description": "All FP64(60%) + FP32(40%)",
+          "id": "PT0_6"
+        },
+        {
+          "accuracy_cost_delta": 7.6306148899529802e-15,
+          "computation_cost_delta": 3013051025.4720163,
+          "description": "All FP64(30%) + Expansion2(70%)",
+          "id": "PT0_14"
+        },
+        {
+          "accuracy_cost_delta": 3.8740576501980484e-15,
+          "computation_cost_delta": 4592992795.7632008,
+          "description": "All FP64(90%) + Expansion2(10%)",
+          "id": "PT0_20"
+        },
+        {
+          "accuracy_cost_delta": 3.2546927820945795e-07,
+          "computation_cost_delta": 5314917018.1785583,
+          "description": "All FP64(40%) + Expansion2(20%) + FP32(40%)",
+          "id": "PT0_36"
+        },
+        {
+          "accuracy_cost_delta": 2.7647155398380363e-16,
+          "computation_cost_delta": 7094716574.9529629,
+          "description": "All FP64(40%) + Expansion2(60%)",
+          "id": "PT0_15"
+        },
+        {
+          "accuracy_cost_delta": 3.846410494799668e-15,
+          "computation_cost_delta": 7514353948.8345346,
+          "description": "All FP64(50%) + Expansion2(50%)",
+          "id": "PT0_16"
+        },
+        {
+          "accuracy_cost_delta": 2.1001649339400003e-07,
+          "computation_cost_delta": 7984296586.8159914,
+          "description": "All FP64(60%) + Expansion2(20%) + FP32(20%)",
+          "id": "PT0_38"
+        },
+        {
+          "accuracy_cost_delta": 3.9293519609948091e-15,
+          "computation_cost_delta": 8174702763.6377668,
+          "description": "All FP64(80%) + Expansion2(20%)",
+          "id": "PT0_19"
+        },
+        {
+          "accuracy_cost_delta": 2.1001648719758133e-07,
+          "computation_cost_delta": 8597328187.3984089,
+          "description": "All FP64(40%) + Expansion2(40%) + FP32(20%)",
+          "id": "PT0_37"
+        },
+        {
+          "accuracy_cost_delta": 3.846410494799668e-15,
+          "computation_cost_delta": 11336775357.63072,
+          "description": "All FP64(70%) + Expansion2(30%)",
+          "id": "PT0_18"
+        },
+        {
+          "accuracy_cost_delta": 3.9846462717915698e-15,
+          "computation_cost_delta": 14303515922.568943,
+          "description": "All FP64(60%) + Expansion2(40%)",
+          "id": "PT0_17"
+        }
+      ],
+      "initial_accuracy_cost": 0,
+      "initial_computation_cost": 223065.46872,
+      "num_candidates": 39
+    }
+  ],
+  "cost_range_max": 0,
+  "cost_range_min": -0.98246469628623345,
+  "function": "preprocess__Z12nbody_kernelPK7double4P7double3i_poseidon_body",
+  "num_pareto_points": 10,
+  "pareto_points": [
+    {
+      "accuracy_cost": 0.002832089154054902,
+      "computation_cost": -0.98246469628623345,
+      "steps": [
+        {
+          "candidate_index": 0,
+          "changes": [
+            {
+              "affected_instructions": [
+                "  %73 = fmul double %71, %71, !enzyme_active !59, !poseidon.prof.idx !109",
+                "  %71 = fsub double %68, %15, !enzyme_active !59, !poseidon.prof.idx !107",
+                "  %70 = fsub double %69, %13, !enzyme_active !59, !poseidon.prof.idx !106",
+                "  %72 = fsub double %66, %17, !enzyme_active !59, !poseidon.prof.idx !108",
+                "  %74 = tail call double @llvm.fmuladd.f64(double %70, double %70, double %73) #20, !enzyme_active !59, !poseidon.prof.idx !110",
+                "  %79 = fmul double %78, %78, !enzyme_active !59, !poseidon.prof.idx !114",
+                "  %80 = fmul double %78, %79, !enzyme_active !59, !poseidon.prof.idx !115",
+                "  %81 = fmul double %59, %80, !enzyme_active !59, !poseidon.prof.idx !116",
+                "  %75 = tail call double @llvm.fmuladd.f64(double %72, double %72, double %74) #20, !enzyme_active !59, !poseidon.prof.idx !111",
+                "  %76 = fadd double %75, 1.000000e-30, !enzyme_active !59, !poseidon.prof.idx !112",
+                "  %77 = tail call noundef double @__nv_sqrt(double noundef %76) #21, !enzyme_active !59, !poseidon.prof.idx !113",
+                "  %78 = fdiv double 1.000000e+00, %77, !enzyme_active !59, !poseidon.prof.idx !60",
+                "  %82 = tail call double @llvm.fmuladd.f64(double %70, double %81, double %52) #20, !enzyme_active !59, !poseidon.prof.idx !117",
+                "  %83 = tail call double @llvm.fmuladd.f64(double %71, double %81, double %51) #20, !enzyme_active !59, !poseidon.prof.idx !118",
+                "  %84 = tail call double @llvm.fmuladd.f64(double %72, double %81, double %50) #20, !enzyme_active !59, !poseidon.prof.idx !119"
+              ],
+              "from": "FP64",
+              "num_operations": 15,
+              "source_locations": [],
+              "to": "FP32"
+            }
+          ],
+          "description": "All FP64(0%) + FP32(100%)",
+          "type": "precision_change"
+        }
+      ]
+    },
+    {
+      "accuracy_cost": 0.001267432669916906,
+      "computation_cost": -0.97475649301038714,
+      "steps": [
+        {
+          "candidate_index": 23,
+          "changes": [
+            {
+              "affected_instructions": [
+                "  %84 = tail call double @llvm.fmuladd.f64(double %72, double %81, double %50) #20, !enzyme_active !59, !poseidon.prof.idx !119"
+              ],
+              "from": "FP64",
+              "num_operations": 1,
+              "source_locations": [],
+              "to": "Expansion2"
+            },
+            {
+              "affected_instructions": [
+                "  %73 = fmul double %71, %71, !enzyme_active !59, !poseidon.prof.idx !109",
+                "  %71 = fsub double %68, %15, !enzyme_active !59, !poseidon.prof.idx !107",
+                "  %70 = fsub double %69, %13, !enzyme_active !59, !poseidon.prof.idx !106",
+                "  %72 = fsub double %66, %17, !enzyme_active !59, !poseidon.prof.idx !108",
+                "  %74 = tail call double @llvm.fmuladd.f64(double %70, double %70, double %73) #20, !enzyme_active !59, !poseidon.prof.idx !110",
+                "  %79 = fmul double %78, %78, !enzyme_active !59, !poseidon.prof.idx !114",
+                "  %80 = fmul double %78, %79, !enzyme_active !59, !poseidon.prof.idx !115",
+                "  %81 = fmul double %59, %80, !enzyme_active !59, !poseidon.prof.idx !116",
+                "  %75 = tail call double @llvm.fmuladd.f64(double %72, double %72, double %74) #20, !enzyme_active !59, !poseidon.prof.idx !111",
+                "  %76 = fadd double %75, 1.000000e-30, !enzyme_active !59, !poseidon.prof.idx !112",
+                "  %77 = tail call noundef double @__nv_sqrt(double noundef %76) #21, !enzyme_active !59, !poseidon.prof.idx !113",
+                "  %78 = fdiv double 1.000000e+00, %77, !enzyme_active !59, !poseidon.prof.idx !60",
+                "  %82 = tail call double @llvm.fmuladd.f64(double %70, double %81, double %52) #20, !enzyme_active !59, !poseidon.prof.idx !117",
+                "  %83 = tail call double @llvm.fmuladd.f64(double %71, double %81, double %51) #20, !enzyme_active !59, !poseidon.prof.idx !118"
+              ],
+              "from": "FP64",
+              "num_operations": 14,
+              "source_locations": [],
+              "to": "FP32"
+            }
+          ],
+          "description": "All Expansion2(10%) + FP32(90%)",
+          "type": "precision_change"
+        }
+      ]
+    },
+    {
+      "accuracy_cost": 3.7903628912172448e-07,
+      "computation_cost": -0.96030721850065892,
+      "steps": [
+        {
+          "candidate_index": 24,
+          "changes": [
+            {
+              "affected_instructions": [
+                "  %82 = tail call double @llvm.fmuladd.f64(double %70, double %81, double %52) #20, !enzyme_active !59, !poseidon.prof.idx !117",
+                "  %83 = tail call double @llvm.fmuladd.f64(double %71, double %81, double %51) #20, !enzyme_active !59, !poseidon.prof.idx !118",
+                "  %84 = tail call double @llvm.fmuladd.f64(double %72, double %81, double %50) #20, !enzyme_active !59, !poseidon.prof.idx !119"
+              ],
+              "from": "FP64",
+              "num_operations": 3,
+              "source_locations": [],
+              "to": "Expansion2"
+            },
+            {
+              "affected_instructions": [
+                "  %73 = fmul double %71, %71, !enzyme_active !59, !poseidon.prof.idx !109",
+                "  %71 = fsub double %68, %15, !enzyme_active !59, !poseidon.prof.idx !107",
+                "  %70 = fsub double %69, %13, !enzyme_active !59, !poseidon.prof.idx !106",
+                "  %72 = fsub double %66, %17, !enzyme_active !59, !poseidon.prof.idx !108",
+                "  %74 = tail call double @llvm.fmuladd.f64(double %70, double %70, double %73) #20, !enzyme_active !59, !poseidon.prof.idx !110",
+                "  %79 = fmul double %78, %78, !enzyme_active !59, !poseidon.prof.idx !114",
+                "  %80 = fmul double %78, %79, !enzyme_active !59, !poseidon.prof.idx !115",
+                "  %81 = fmul double %59, %80, !enzyme_active !59, !poseidon.prof.idx !116",
+                "  %75 = tail call double @llvm.fmuladd.f64(double %72, double %72, double %74) #20, !enzyme_active !59, !poseidon.prof.idx !111",
+                "  %76 = fadd double %75, 1.000000e-30, !enzyme_active !59, !poseidon.prof.idx !112",
+                "  %77 = tail call noundef double @__nv_sqrt(double noundef %76) #21, !enzyme_active !59, !poseidon.prof.idx !113",
+                "  %78 = fdiv double 1.000000e+00, %77, !enzyme_active !59, !poseidon.prof.idx !60"
+              ],
+              "from": "FP64",
+              "num_operations": 12,
+              "source_locations": [],
+              "to": "FP32"
+            }
+          ],
+          "description": "All Expansion2(20%) + FP32(80%)",
+          "type": "precision_change"
+        }
+      ]
+    },
+    {
+      "accuracy_cost": 3.5221964545206889e-07,
+      "computation_cost": -0.93000650828759734,
+      "steps": [
+        {
+          "candidate_index": 26,
+          "changes": [
+            {
+              "affected_instructions": [
+                "  %76 = fadd double %75, 1.000000e-30, !enzyme_active !59, !poseidon.prof.idx !112",
+                "  %77 = tail call noundef double @__nv_sqrt(double noundef %76) #21, !enzyme_active !59, !poseidon.prof.idx !113",
+                "  %78 = fdiv double 1.000000e+00, %77, !enzyme_active !59, !poseidon.prof.idx !60",
+                "  %82 = tail call double @llvm.fmuladd.f64(double %70, double %81, double %52) #20, !enzyme_active !59, !poseidon.prof.idx !117",
+                "  %83 = tail call double @llvm.fmuladd.f64(double %71, double %81, double %51) #20, !enzyme_active !59, !poseidon.prof.idx !118",
+                "  %84 = tail call double @llvm.fmuladd.f64(double %72, double %81, double %50) #20, !enzyme_active !59, !poseidon.prof.idx !119"
+              ],
+              "from": "FP64",
+              "num_operations": 6,
+              "source_locations": [],
+              "to": "Expansion2"
+            },
+            {
+              "affected_instructions": [
+                "  %73 = fmul double %71, %71, !enzyme_active !59, !poseidon.prof.idx !109",
+                "  %71 = fsub double %68, %15, !enzyme_active !59, !poseidon.prof.idx !107",
+                "  %70 = fsub double %69, %13, !enzyme_active !59, !poseidon.prof.idx !106",
+                "  %72 = fsub double %66, %17, !enzyme_active !59, !poseidon.prof.idx !108",
+                "  %74 = tail call double @llvm.fmuladd.f64(double %70, double %70, double %73) #20, !enzyme_active !59, !poseidon.prof.idx !110",
+                "  %79 = fmul double %78, %78, !enzyme_active !59, !poseidon.prof.idx !114",
+                "  %80 = fmul double %78, %79, !enzyme_active !59, !poseidon.prof.idx !115",
+                "  %81 = fmul double %59, %80, !enzyme_active !59, !poseidon.prof.idx !116",
+                "  %75 = tail call double @llvm.fmuladd.f64(double %72, double %72, double %74) #20, !enzyme_active !59, !poseidon.prof.idx !111"
+              ],
+              "from": "FP64",
+              "num_operations": 9,
+              "source_locations": [],
+              "to": "FP32"
+            }
+          ],
+          "description": "All Expansion2(40%) + FP32(60%)",
+          "type": "precision_change"
+        }
+      ]
+    },
+    {
+      "accuracy_cost": 3.4334155071157704e-07,
+      "computation_cost": -0.92326543691636886,
+      "steps": [
+        {
+          "candidate_index": 27,
+          "changes": [
+            {
+              "affected_instructions": [
+                "  %75 = tail call double @llvm.fmuladd.f64(double %72, double %72, double %74) #20, !enzyme_active !59, !poseidon.prof.idx !111",
+                "  %76 = fadd double %75, 1.000000e-30, !enzyme_active !59, !poseidon.prof.idx !112",
+                "  %77 = tail call noundef double @__nv_sqrt(double noundef %76) #21, !enzyme_active !59, !poseidon.prof.idx !113",
+                "  %78 = fdiv double 1.000000e+00, %77, !enzyme_active !59, !poseidon.prof.idx !60",
+                "  %82 = tail call double @llvm.fmuladd.f64(double %70, double %81, double %52) #20, !enzyme_active !59, !poseidon.prof.idx !117",
+                "  %83 = tail call double @llvm.fmuladd.f64(double %71, double %81, double %51) #20, !enzyme_active !59, !poseidon.prof.idx !118",
+                "  %84 = tail call double @llvm.fmuladd.f64(double %72, double %81, double %50) #20, !enzyme_active !59, !poseidon.prof.idx !119"
+              ],
+              "from": "FP64",
+              "num_operations": 7,
+              "source_locations": [],
+              "to": "Expansion2"
+            },
+            {
+              "affected_instructions": [
+                "  %73 = fmul double %71, %71, !enzyme_active !59, !poseidon.prof.idx !109",
+                "  %71 = fsub double %68, %15, !enzyme_active !59, !poseidon.prof.idx !107",
+                "  %70 = fsub double %69, %13, !enzyme_active !59, !poseidon.prof.idx !106",
+                "  %72 = fsub double %66, %17, !enzyme_active !59, !poseidon.prof.idx !108",
+                "  %74 = tail call double @llvm.fmuladd.f64(double %70, double %70, double %73) #20, !enzyme_active !59, !poseidon.prof.idx !110",
+                "  %79 = fmul double %78, %78, !enzyme_active !59, !poseidon.prof.idx !114",
+                "  %80 = fmul double %78, %79, !enzyme_active !59, !poseidon.prof.idx !115",
+                "  %81 = fmul double %59, %80, !enzyme_active !59, !poseidon.prof.idx !116"
+              ],
+              "from": "FP64",
+              "num_operations": 8,
+              "source_locations": [],
+              "to": "FP32"
+            }
+          ],
+          "description": "All Expansion2(50%) + FP32(50%)",
+          "type": "precision_change"
+        }
+      ]
+    },
+    {
+      "accuracy_cost": 8.8654170699939828e-11,
+      "computation_cost": -0.76869270782573706,
+      "steps": [
+        {
+          "candidate_index": 11,
+          "changes": [
+            {
+              "affected_instructions": [
+                "  %73 = fmul double %71, %71, !enzyme_active !59, !poseidon.prof.idx !109",
+                "  %71 = fsub double %68, %15, !enzyme_active !59, !poseidon.prof.idx !107",
+                "  %70 = fsub double %69, %13, !enzyme_active !59, !poseidon.prof.idx !106",
+                "  %72 = fsub double %66, %17, !enzyme_active !59, !poseidon.prof.idx !108",
+                "  %74 = tail call double @llvm.fmuladd.f64(double %70, double %70, double %73) #20, !enzyme_active !59, !poseidon.prof.idx !110",
+                "  %79 = fmul double %78, %78, !enzyme_active !59, !poseidon.prof.idx !114",
+                "  %80 = fmul double %78, %79, !enzyme_active !59, !poseidon.prof.idx !115",
+                "  %81 = fmul double %59, %80, !enzyme_active !59, !poseidon.prof.idx !116",
+                "  %75 = tail call double @llvm.fmuladd.f64(double %72, double %72, double %74) #20, !enzyme_active !59, !poseidon.prof.idx !111",
+                "  %76 = fadd double %75, 1.000000e-30, !enzyme_active !59, !poseidon.prof.idx !112",
+                "  %77 = tail call noundef double @__nv_sqrt(double noundef %76) #21, !enzyme_active !59, !poseidon.prof.idx !113",
+                "  %78 = fdiv double 1.000000e+00, %77, !enzyme_active !59, !poseidon.prof.idx !60",
+                "  %82 = tail call double @llvm.fmuladd.f64(double %70, double %81, double %52) #20, !enzyme_active !59, !poseidon.prof.idx !117",
+                "  %83 = tail call double @llvm.fmuladd.f64(double %71, double %81, double %51) #20, !enzyme_active !59, !poseidon.prof.idx !118",
+                "  %84 = tail call double @llvm.fmuladd.f64(double %72, double %81, double %50) #20, !enzyme_active !59, !poseidon.prof.idx !119"
+              ],
+              "from": "FP64",
+              "num_operations": 15,
+              "source_locations": [],
+              "to": "Expansion2"
+            }
+          ],
+          "description": "All FP64(0%) + Expansion2(100%)",
+          "type": "precision_change"
+        }
+      ]
+    },
+    {
+      "accuracy_cost": 3.9632163136620806e-11,
+      "computation_cost": -0.53663108535005921,
+      "steps": [
+        {
+          "candidate_index": 12,
+          "changes": [
+            {
+              "affected_instructions": [
+                "  %73 = fmul double %71, %71, !enzyme_active !59, !poseidon.prof.idx !109",
+                "  %71 = fsub double %68, %15, !enzyme_active !59, !poseidon.prof.idx !107",
+                "  %70 = fsub double %69, %13, !enzyme_active !59, !poseidon.prof.idx !106",
+                "  %72 = fsub double %66, %17, !enzyme_active !59, !poseidon.prof.idx !108",
+                "  %74 = tail call double @llvm.fmuladd.f64(double %70, double %70, double %73) #20, !enzyme_active !59, !poseidon.prof.idx !110",
+                "  %79 = fmul double %78, %78, !enzyme_active !59, !poseidon.prof.idx !114",
+                "  %80 = fmul double %78, %79, !enzyme_active !59, !poseidon.prof.idx !115",
+                "  %81 = fmul double %59, %80, !enzyme_active !59, !poseidon.prof.idx !116",
+                "  %75 = tail call double @llvm.fmuladd.f64(double %72, double %72, double %74) #20, !enzyme_active !59, !poseidon.prof.idx !111",
+                "  %76 = fadd double %75, 1.000000e-30, !enzyme_active !59, !poseidon.prof.idx !112",
+                "  %77 = tail call noundef double @__nv_sqrt(double noundef %76) #21, !enzyme_active !59, !poseidon.prof.idx !113",
+                "  %78 = fdiv double 1.000000e+00, %77, !enzyme_active !59, !poseidon.prof.idx !60",
+                "  %82 = tail call double @llvm.fmuladd.f64(double %70, double %81, double %52) #20, !enzyme_active !59, !poseidon.prof.idx !117",
+                "  %83 = tail call double @llvm.fmuladd.f64(double %71, double %81, double %51) #20, !enzyme_active !59, !poseidon.prof.idx !118"
+              ],
+              "from": "FP64",
+              "num_operations": 14,
+              "source_locations": [],
+              "to": "Expansion2"
+            }
+          ],
+          "description": "All FP64(10%) + Expansion2(90%)",
+          "type": "precision_change"
+        }
+      ]
+    },
+    {
+      "accuracy_cost": 7.7135563561481213e-15,
+      "computation_cost": -0.27575160669206605,
+      "steps": [
+        {
+          "candidate_index": 13,
+          "changes": [
+            {
+              "affected_instructions": [
+                "  %73 = fmul double %71, %71, !enzyme_active !59, !poseidon.prof.idx !109",
+                "  %71 = fsub double %68, %15, !enzyme_active !59, !poseidon.prof.idx !107",
+                "  %70 = fsub double %69, %13, !enzyme_active !59, !poseidon.prof.idx !106",
+                "  %72 = fsub double %66, %17, !enzyme_active !59, !poseidon.prof.idx !108",
+                "  %74 = tail call double @llvm.fmuladd.f64(double %70, double %70, double %73) #20, !enzyme_active !59, !poseidon.prof.idx !110",
+                "  %79 = fmul double %78, %78, !enzyme_active !59, !poseidon.prof.idx !114",
+                "  %80 = fmul double %78, %79, !enzyme_active !59, !poseidon.prof.idx !115",
+                "  %81 = fmul double %59, %80, !enzyme_active !59, !poseidon.prof.idx !116",
+                "  %75 = tail call double @llvm.fmuladd.f64(double %72, double %72, double %74) #20, !enzyme_active !59, !poseidon.prof.idx !111",
+                "  %76 = fadd double %75, 1.000000e-30, !enzyme_active !59, !poseidon.prof.idx !112",
+                "  %77 = tail call noundef double @__nv_sqrt(double noundef %76) #21, !enzyme_active !59, !poseidon.prof.idx !113",
+                "  %78 = fdiv double 1.000000e+00, %77, !enzyme_active !59, !poseidon.prof.idx !60"
+              ],
+              "from": "FP64",
+              "num_operations": 12,
+              "source_locations": [],
+              "to": "Expansion2"
+            }
+          ],
+          "description": "All FP64(20%) + Expansion2(80%)",
+          "type": "precision_change"
+        }
+      ]
+    },
+    {
+      "accuracy_cost": 6.552375829416146e-15,
+      "computation_cost": -0.017945676424099527,
+      "steps": [
+        {
+          "candidate_index": 21,
+          "changes": [
+            {
+              "affected_instructions": [
+                "  %77 = tail call noundef double @__nv_sqrt(double noundef %76) #21, !enzyme_active !59, !poseidon.prof.idx !113"
+              ],
+              "from": "FP64",
+              "num_operations": 1,
+              "source_locations": [],
+              "to": "Expansion2"
+            }
+          ],
+          "description": "Funcs FP64(0%) + Expansion2(100%)",
+          "type": "precision_change"
+        }
+      ]
+    },
+    {
+      "accuracy_cost": 0,
+      "computation_cost": 0,
+      "steps": []
+    }
+  ]
+}

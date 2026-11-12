@@ -1,0 +1,206 @@
+{
+  "function": {
+    "ir": "preprocess__Z10matmul_optPdPKdS1__poseidon_body",
+    "name": "matmul_opt(double*, double const*, double const*)",
+    "symbol": "_Z10matmul_optPdPKdS1_"
+  },
+  "result": {
+    "applied": [
+      "M0_12"
+    ],
+    "cost_after": 0.054433000077150767,
+    "cost_before": 1.0000000000886264
+  },
+  "schema": "poseidon-explain/1",
+  "subgraphs": [
+    {
+      "alternatives": [
+        {
+          "cost_delta": -0.93714000009410636,
+          "id": "M0_0",
+          "kind": "matmul",
+          "reason": "dominated by M0_12, which costs no more and is at least as accurate",
+          "status": "rejected",
+          "summary": "wmma m16n16k16 f16/f16"
+        },
+        {
+          "cost_delta": -0.93714499988727262,
+          "id": "M0_1",
+          "kind": "matmul",
+          "reason": "dominated by M0_12, which costs no more and is at least as accurate",
+          "status": "rejected",
+          "summary": "wmma m16n16k16 f16/f32"
+        },
+        {
+          "cost_delta": -0.93718600008877651,
+          "id": "M0_2",
+          "kind": "matmul",
+          "modelled_domain_error": 5.992194386663841e-05,
+          "reason": "dominated by M0_12, which costs no more and is at least as accurate",
+          "status": "rejected",
+          "summary": "wmma m16n16k16 bf16/f32"
+        },
+        {
+          "cost_delta": -0.89993999989617601,
+          "id": "M0_3",
+          "kind": "matmul",
+          "modelled_domain_error": 7.332758877118949e-06,
+          "reason": "dominated by M0_12, which costs no more and is at least as accurate",
+          "status": "rejected",
+          "summary": "wmma m16n16k8 tf32/f32"
+        },
+        {
+          "cost_delta": -0.91967700001563735,
+          "id": "M0_4",
+          "kind": "matmul",
+          "reason": "dominated by M0_12, which costs no more and is at least as accurate",
+          "status": "rejected",
+          "summary": "tcec n=2 wmma m16n16k16 f16/f32"
+        },
+        {
+          "cost_delta": -0.8864859999228567,
+          "id": "M0_5",
+          "kind": "matmul",
+          "reason": "dominated by M0_12, which costs no more and is at least as accurate",
+          "status": "rejected",
+          "summary": "tcec n=3 wmma m16n16k16 f16/f32"
+        },
+        {
+          "cost_delta": -0.80662199997347472,
+          "id": "M0_6",
+          "kind": "matmul",
+          "reason": "dominated by M0_12, which costs no more and is at least as accurate",
+          "status": "rejected",
+          "summary": "tcec n=5 wmma m16n16k16 f16/f32"
+        },
+        {
+          "cost_delta": -0.91887200010890913,
+          "id": "M0_7",
+          "kind": "matmul",
+          "modelled_domain_error": 5.6058601214269631e-07,
+          "reason": "dominated by M0_12, which costs no more and is at least as accurate",
+          "status": "rejected",
+          "summary": "tcec n=2 wmma m16n16k16 bf16/f32"
+        },
+        {
+          "cost_delta": -0.8308319998889615,
+          "id": "M0_8",
+          "kind": "matmul",
+          "modelled_domain_error": 5.1752867008139441e-07,
+          "reason": "dominated by M0_12, which costs no more and is at least as accurate",
+          "status": "rejected",
+          "summary": "tcec n=2 wmma m16n16k8 tf32/f32"
+        },
+        {
+          "cost_delta": -0.74112899996973636,
+          "id": "M0_9",
+          "kind": "matmul",
+          "modelled_domain_error": 5.1729505517226921e-07,
+          "reason": "dominated by M0_12, which costs no more and is at least as accurate",
+          "status": "rejected",
+          "summary": "tcec n=3 wmma m16n16k8 tf32/f32"
+        },
+        {
+          "cost_delta": -0.55211800010486545,
+          "id": "M0_10",
+          "kind": "matmul",
+          "modelled_domain_error": 5.1729505517226921e-07,
+          "reason": "dominated by M0_12, which costs no more and is at least as accurate",
+          "status": "rejected",
+          "summary": "tcec n=5 wmma m16n16k8 tf32/f32"
+        },
+        {
+          "cost_delta": -0.95140299994422539,
+          "id": "M0_11",
+          "kind": "matmul",
+          "modelled_domain_error": 2.929992442323466e-08,
+          "reason": "the subgraph takes one precision assignment, and M0_12 was selected",
+          "status": "rejected",
+          "summary": "ozaki-ii nm=8 wmma m16n16k16 s8/s32"
+        },
+        {
+          "cost_delta": -0.94556700001147576,
+          "id": "M0_12",
+          "kind": "matmul",
+          "modelled_domain_error": 1.8334465321738416e-09,
+          "reason": "selected by -poseidon-apply-rewrites",
+          "status": "applied",
+          "summary": "ozaki-ii nm=9 wmma m16n16k16 s8/s32"
+        },
+        {
+          "cost_delta": -0.94076099993974105,
+          "id": "M0_13",
+          "kind": "matmul",
+          "modelled_domain_error": 1.1459312954575654e-10,
+          "reason": "the subgraph takes one precision assignment, and M0_12 was selected",
+          "status": "rejected",
+          "summary": "ozaki-ii nm=10 wmma m16n16k16 s8/s32"
+        },
+        {
+          "cost_delta": -0.93485099999592214,
+          "id": "M0_14",
+          "kind": "matmul",
+          "modelled_domain_error": 7.1587430957195092e-12,
+          "reason": "the subgraph takes one precision assignment, and M0_12 was selected",
+          "status": "rejected",
+          "summary": "ozaki-ii nm=11 wmma m16n16k16 s8/s32"
+        },
+        {
+          "cost_delta": -0.93006500000044334,
+          "id": "M0_15",
+          "kind": "matmul",
+          "modelled_domain_error": 4.4743199812773155e-13,
+          "reason": "the subgraph takes one precision assignment, and M0_12 was selected",
+          "status": "rejected",
+          "summary": "ozaki-ii nm=12 wmma m16n16k16 s8/s32"
+        },
+        {
+          "cost_delta": -0.92501999996622231,
+          "id": "M0_16",
+          "kind": "matmul",
+          "modelled_domain_error": 2.7847917668145918e-14,
+          "reason": "the subgraph takes one precision assignment, and M0_12 was selected",
+          "status": "rejected",
+          "summary": "ozaki-ii nm=13 wmma m16n16k16 s8/s32"
+        },
+        {
+          "cost_delta": -0.91932399988957003,
+          "id": "M0_17",
+          "kind": "matmul",
+          "modelled_domain_error": 3.4559110823921801e-15,
+          "reason": "the subgraph takes one precision assignment, and M0_12 was selected",
+          "status": "rejected",
+          "summary": "ozaki-ii nm=14 wmma m16n16k16 s8/s32"
+        },
+        {
+          "cost_delta": -0.97433699991916201,
+          "id": "M0_18",
+          "kind": "matmul",
+          "modelled_domain_error": 1.3706686139982662e-07,
+          "reason": "the subgraph takes one precision assignment, and M0_12 was selected",
+          "status": "rejected",
+          "summary": "tcec-dispatch wmma m16n16k16 f16/f32"
+        },
+        {
+          "cost_delta": -0.45700699998722405,
+          "id": "M0_19",
+          "kind": "matmul",
+          "modelled_domain_error": 9.8811119870273084e-16,
+          "reason": "the subgraph takes one precision assignment, and M0_12 was selected",
+          "status": "rejected",
+          "summary": "native-dgemm cublas f64/f64"
+        }
+      ],
+      "cost": 1.0000000000886264,
+      "executions": 536870912,
+      "id": "M0",
+      "kind": "matmul",
+      "shape": "512x512x512"
+    }
+  ],
+  "target": {
+    "budget": 0,
+    "cost_model": "/m/replay_pack.new/cost_models/cm_sm_103_B300SXM6AC_ef7c8e4b.csv",
+    "selector": "manual"
+  }
+}

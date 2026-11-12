@@ -1,0 +1,23 @@
+	Command being timed: "/m/.solve-work/tc/poseidon-build/Poseidon/bin/poseidon-clang++ -x cuda --cuda-gpu-arch=sm_103 --cuda-path=/usr/local/cuda-13.1 -fcuda-rdc -O3 -L/usr/local/cuda-13.1/lib64 -lstdc++ -lm -fno-unroll-loops -DKEPLER_ROLLED -poseidon-profile-use=./profiles/kepler -poseidon-enable-herbie=1 -poseidon-min-uses-split=2 -poseidon-min-ops-split=10 -poseidon-herbie-num-threads=4 -poseidon-herbie-num-pts=256 -poseidon-herbie-num-enodes=2000 -poseidon-herbie-num-iters=3 -poseidon-herbie-timeout=300 -poseidon-herbie-num-taylor-terms=2,4 -poseidon-early-prune=false -poseidon-cache=cache_b300_kep -poseidon-herbie-binary=/m/.solve-work/tc/herbie/bin/herbie -poseidon-enable-pt -poseidon-num-samples=1024 -poseidon-loose-coverage -poseidon-cost-model=/m/replay_pack.new/cost_models/genga_x1e6/cm_native_x1e6.csv -poseidon-report-path=/m/replay_pack.new/rows/t1-drift-b300/frontier_explain -poseidon-cost-budget=0 genga_kepler.cu -o /m/.solve-work/tmp/t1-drift-b300-b0.exe"
+	User time (seconds): 455.98
+	System time (seconds): 25.84
+	Percent of CPU this job got: 196%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 4:05.61
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 4344940
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 35
+	Minor (reclaiming a frame) page faults: 14131629
+	Voluntary context switches: 39079
+	Involuntary context switches: 1339
+	Swaps: 0
+	File system inputs: 5560
+	File system outputs: 238680
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

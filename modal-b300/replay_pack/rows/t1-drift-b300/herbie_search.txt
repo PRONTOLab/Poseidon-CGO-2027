@@ -1,0 +1,4 @@
+herbie_search_wall_s=246
+max_rss_kb_of_one_process=4344940
+container_memory_peak_bytes=9672757248
+[poseidon] Herbie answers: 16 fresh, 0 from the cache, 0 replayed

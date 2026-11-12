@@ -1,0 +1,1 @@
+_Z10matmul_optPdPKdS1_:M0=ozaki-ii nm=8 wmma m16n16k16 s8/s32

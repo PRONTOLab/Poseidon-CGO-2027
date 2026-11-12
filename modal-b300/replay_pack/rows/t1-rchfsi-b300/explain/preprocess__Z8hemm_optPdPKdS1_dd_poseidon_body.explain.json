@@ -1,0 +1,739 @@
+{
+  "function": {
+    "ir": "preprocess__Z8hemm_optPdPKdS1_dd_poseidon_body",
+    "name": "hemm_opt(double*, double const*, double const*, double, double)",
+    "symbol": "_Z8hemm_optPdPKdS1_dd"
+  },
+  "pareto": [
+    {
+      "applied": [
+        "M0_2"
+      ],
+      "budget": -0.93751268360194007,
+      "cost": -0.10528150029830793,
+      "modelled_rel_error": 41.549249351132502
+    },
+    {
+      "applied": [
+        "M0_2"
+      ],
+      "budget": -0.9375095996164442,
+      "cost": -0.10527841631281208,
+      "modelled_rel_error": 5.221261620121151
+    },
+    {
+      "applied": [
+        "M0_2"
+      ],
+      "budget": -0.93619571413845459,
+      "cost": -0.10396453083482253,
+      "modelled_rel_error": 0.087299099671610633
+    },
+    {
+      "applied": [
+        "M0_2"
+      ],
+      "budget": -0.93369919612625785,
+      "cost": -0.10146801282262571,
+      "modelled_rel_error": 0.087169302922906353
+    },
+    {
+      "applied": [
+        "M0_2"
+      ],
+      "budget": -0.93133173116268875,
+      "cost": -0.09910054785905667,
+      "modelled_rel_error": 0.086947324924708885
+    },
+    {
+      "applied": [
+        "M0_2"
+      ],
+      "budget": -0.928835213150492,
+      "cost": -0.09660402984685984,
+      "modelled_rel_error": 0.086817528176004605
+    },
+    {
+      "applied": [
+        "M0_2"
+      ],
+      "budget": -0.92453839228899637,
+      "cost": -0.092307208985364306,
+      "modelled_rel_error": 0.086817528173670763
+    },
+    {
+      "applied": [
+        "M0_2"
+      ],
+      "budget": -0.92397123017472604,
+      "cost": -0.09174004687109398,
+      "modelled_rel_error": 0.086725117939654969
+    },
+    {
+      "applied": [
+        "M0_2"
+      ],
+      "budget": -0.91967440931323052,
+      "cost": -0.087443226009598432,
+      "modelled_rel_error": 0.086725117937321128
+    },
+    {
+      "applied": [
+        "M0_2"
+      ],
+      "budget": -0.915377588451735,
+      "cost": -0.083146405148102898,
+      "modelled_rel_error": 0.086725117936719595
+    },
+    {
+      "applied": [
+        "M0_2"
+      ],
+      "budget": -0.90888354645562375,
+      "cost": -0.076652363151991601,
+      "modelled_rel_error": 0.085666175739694914
+    },
+    {
+      "applied": [
+        "M0_2"
+      ],
+      "budget": -0.90638702844342689,
+      "cost": -0.074155845139794771,
+      "modelled_rel_error": 0.085536378990990633
+    },
+    {
+      "applied": [
+        "M0_2"
+      ],
+      "budget": -0.90537182848312925,
+      "cost": -0.073140645179497088,
+      "modelled_rel_error": 0.085432141665457706
+    },
+    {
+      "applied": [
+        "M0_2"
+      ],
+      "budget": -0.90401956347985779,
+      "cost": -0.071788380176225727,
+      "modelled_rel_error": 0.085314400992793166
+    },
+    {
+      "applied": [
+        "M0_2"
+      ],
+      "budget": -0.90287531047093239,
+      "cost": -0.070644127167300258,
+      "modelled_rel_error": 0.085302344916753425
+    },
+    {
+      "applied": [
+        "M0_2"
+      ],
+      "budget": -0.90152304546766104,
+      "cost": -0.069291862164028897,
+      "modelled_rel_error": 0.085184604244088885
+    },
+    {
+      "applied": [
+        "M0_2"
+      ],
+      "budget": -0.90050784550736329,
+      "cost": -0.068276662203731228,
+      "modelled_rel_error": 0.085080366918555958
+    },
+    {
+      "applied": [
+        "M0_2"
+      ],
+      "budget": -0.89801132749516654,
+      "cost": -0.065780144191534398,
+      "modelled_rel_error": 0.084950570169851677
+    },
+    {
+      "applied": [
+        "M0_2"
+      ],
+      "budget": -0.89511939512993077,
+      "cost": -0.06288821182629864,
+      "modelled_rel_error": 0.084935740669076026
+    },
+    {
+      "applied": [
+        "M0_2"
+      ],
+      "budget": -0.89314734451940059,
+      "cost": -0.060916161215768531,
+      "modelled_rel_error": 0.084858159933502028
+    },
+    {
+      "applied": [
+        "M0_2"
+      ],
+      "budget": -0.89025541215416493,
+      "cost": -0.05802422885053278,
+      "modelled_rel_error": 0.084843330432726391
+    },
+    {
+      "applied": [
+        "M0_2"
+      ],
+      "budget": -0.88669916582437591,
+      "cost": -0.054467982520743856,
+      "modelled_rel_error": 0.084842390750068844
+    },
+    {
+      "applied": [
+        "M0_2"
+      ],
+      "budget": -0.88505936615111069,
+      "cost": -0.05282818284747863,
+      "modelled_rel_error": 0.084842329005851841
+    },
+    {
+      "applied": [
+        "M0_2"
+      ],
+      "budget": -0.88076254528961517,
+      "cost": -0.048531361985983096,
+      "modelled_rel_error": 0.084842329003517999
+    },
+    {
+      "applied": [
+        "M0_2"
+      ],
+      "budget": -0.87646572442811965,
+      "cost": -0.044234541124487554,
+      "modelled_rel_error": 0.084842329002916467
+    },
+    {
+      "applied": [
+        "M0_7"
+      ],
+      "budget": -0.8699066577505169,
+      "cost": -0.037675474446884773,
+      "modelled_rel_error": 0.084842283736614094
+    },
+    {
+      "applied": [
+        "M0_2"
+      ],
+      "budget": -0.86702062976033345,
+      "cost": -0.034789446456701303,
+      "modelled_rel_error": 0.0023270193783430531
+    },
+    {
+      "applied": [
+        "M0_2"
+      ],
+      "budget": -0.86215664678456749,
+      "cost": -0.029925463480935433,
+      "modelled_rel_error": 0.0019752446314413095
+    },
+    {
+      "applied": [
+        "M0_2"
+      ],
+      "budget": -0.85785982592307197,
+      "cost": -0.025628642619439895,
+      "modelled_rel_error": 0.0019752446291074611
+    },
+    {
+      "applied": [
+        "M0_2"
+      ],
+      "budget": -0.85729266380880165,
+      "cost": -0.025061480505169566,
+      "modelled_rel_error": 0.0018828343950916717
+    },
+    {
+      "applied": [
+        "M0_2"
+      ],
+      "budget": -0.85299584294730613,
+      "cost": -0.020764659643674025,
+      "modelled_rel_error": 0.0018828343927578231
+    },
+    {
+      "applied": [
+        "M0_2"
+      ],
+      "budget": -0.84869902208581061,
+      "cost": -0.016467838782178487,
+      "modelled_rel_error": 0.0018828343921562932
+    },
+    {
+      "applied": [
+        "M0_7"
+      ],
+      "budget": -0.84213995540820785,
+      "cost": -0.0099087721045757037,
+      "modelled_rel_error": 0.0018827891258539227
+    },
+    {
+      "applied": [
+        "M0_2"
+      ],
+      "budget": -0.83970846207750249,
+      "cost": -0.0074772787738703614,
+      "modelled_rel_error": 0.00069409544642733188
+    },
+    {
+      "applied": [
+        "M0_2"
+      ],
+      "budget": -0.83619674410500799,
+      "cost": -0.0039655608013758562,
+      "modelled_rel_error": 0.00046006137219011472
+    },
+    {
+      "applied": [
+        "M0_2"
+      ],
+      "budget": -0.83484447910173665,
+      "cost": -0.0026132957981044934,
+      "modelled_rel_error": 0.00034232069952558846
+    },
+    {
+      "applied": [
+        "M0_2"
+      ],
+      "budget": -0.83133276112924215,
+      "cost": 0.00089842217439001183,
+      "modelled_rel_error": 0.00010828662528837136
+    },
+    {
+      "applied": [
+        "M0_2"
+      ],
+      "budget": -0.82844082876400638,
+      "cost": 0.0037903545396257626,
+      "modelled_rel_error": 9.3457124512724658e-05
+    },
+    {
+      "applied": [
+        "M0_2"
+      ],
+      "budget": -0.82646877815347619,
+      "cost": 0.0057624051501558799,
+      "modelled_rel_error": 1.5876388938733486e-05
+    },
+    {
+      "applied": [
+        "M0_2"
+      ],
+      "budget": -0.82357684578824042,
+      "cost": 0.0086543375153916302,
+      "modelled_rel_error": 1.0468881630867646e-06
+    },
+    {
+      "applied": [
+        "M0_2"
+      ],
+      "budget": -0.82002059945845152,
+      "cost": 0.012210583845180553,
+      "modelled_rel_error": 1.0720550553618969e-07
+    },
+    {
+      "applied": [
+        "M0_2"
+      ],
+      "budget": -0.8183807997851863,
+      "cost": 0.013850383518445777,
+      "modelled_rel_error": 4.546128854104766e-08
+    },
+    {
+      "applied": [
+        "M0_2"
+      ],
+      "budget": -0.81408397892369078,
+      "cost": 0.018147204379941315,
+      "modelled_rel_error": 4.5458954692665748e-08
+    },
+    {
+      "applied": [
+        "M0_2"
+      ],
+      "budget": -0.80978715806219526,
+      "cost": 0.022444025241436853,
+      "modelled_rel_error": 4.5458353162689452e-08
+    },
+    {
+      "applied": [
+        "M0_7"
+      ],
+      "budget": -0.8032280913845925,
+      "cost": 0.029003091919039638,
+      "modelled_rel_error": 1.9205079215527391e-10
+    },
+    {
+      "applied": [
+        "M0_7"
+      ],
+      "budget": -0.79893127052309698,
+      "cost": 0.033299912780535179,
+      "modelled_rel_error": 1.8971694377335674e-10
+    },
+    {
+      "applied": [
+        "M0_7"
+      ],
+      "budget": -0.79463444966160135,
+      "cost": 0.037596733642030714,
+      "modelled_rel_error": 1.8911541379706271e-10
+    },
+    {
+      "applied": [
+        "M0_7"
+      ],
+      "budget": -0.76885352536258178,
+      "cost": 0.063377657941050353,
+      "modelled_rel_error": 1.7925970028221786e-10
+    },
+    {
+      "applied": [
+        "M0_7"
+      ],
+      "budget": -0.76455670450108626,
+      "cost": 0.067674478802545887,
+      "modelled_rel_error": 1.7692585190030068e-10
+    },
+    {
+      "applied": [
+        "M0_7"
+      ],
+      "budget": -0.76025988363959063,
+      "cost": 0.071971299664041435,
+      "modelled_rel_error": 1.7632432192400665e-10,
+      "selected": true
+    },
+    {
+      "applied": [
+        "M0_8"
+      ],
+      "budget": -0.73038521413923241,
+      "cost": 0.10184596916439966,
+      "modelled_rel_error": 3.2717836122305777e-11
+    },
+    {
+      "applied": [
+        "M0_8"
+      ],
+      "budget": -0.72608839327773689,
+      "cost": 0.10614279002589519,
+      "modelled_rel_error": 3.0383987740388626e-11
+    },
+    {
+      "applied": [
+        "M0_8"
+      ],
+      "budget": -0.72179157241624137,
+      "cost": 0.11043961088739074,
+      "modelled_rel_error": 2.9782457764094581e-11
+    },
+    {
+      "applied": [
+        "M0_8"
+      ],
+      "budget": -0.69601064811722169,
+      "cost": 0.13622053518641036,
+      "modelled_rel_error": 1.9926744249249743e-11
+    },
+    {
+      "applied": [
+        "M0_8"
+      ],
+      "budget": -0.69171382725572617,
+      "cost": 0.14051735604790591,
+      "modelled_rel_error": 1.7592895867332591e-11
+    },
+    {
+      "applied": [
+        "M0_8"
+      ],
+      "budget": -0.68741700639423065,
+      "cost": 0.14481417690940146,
+      "modelled_rel_error": 1.6991365891038539e-11
+    },
+    {
+      "applied": [
+        "M0_9"
+      ],
+      "budget": -0.61319819009840648,
+      "cost": 0.21903299320522565,
+      "modelled_rel_error": 1.6683293553143355e-11
+    },
+    {
+      "applied": [],
+      "budget": -0.042968207745001791,
+      "cost": 0.78926297555863034,
+      "modelled_rel_error": 1.5726470231267241e-11
+    },
+    {
+      "applied": [],
+      "budget": -0.038671386883506256,
+      "cost": 0.79355979642012586,
+      "modelled_rel_error": 1.3392621849350089e-11
+    },
+    {
+      "applied": [],
+      "budget": -0.034374566022010715,
+      "cost": 0.79785661728162138,
+      "modelled_rel_error": 1.279109187305604e-11
+    },
+    {
+      "applied": [],
+      "budget": -0.0085936417229910776,
+      "cost": 0.82363754158064106,
+      "modelled_rel_error": 2.9353783582112024e-12
+    },
+    {
+      "applied": [],
+      "budget": -0.0042968208614955388,
+      "cost": 0.82793436244213658,
+      "modelled_rel_error": 6.015299762940496e-13
+    },
+    {
+      "applied": [],
+      "budget": 0,
+      "cost": 0.8322311833036321,
+      "modelled_rel_error": 0
+    }
+  ],
+  "result": {
+    "applied": [
+      "M0_7"
+    ],
+    "cost_after": 0.071971299664041435,
+    "cost_before": 0.8322311833036321,
+    "modelled_rel_error": 1.7632432192400665e-10,
+    "modelled_rel_error_as_written": 0
+  },
+  "schema": "poseidon-explain/1",
+  "subgraphs": [
+    {
+      "alternatives": [],
+      "cost": 0.0048473000931544318,
+      "executions": 922746880,
+      "id": "S0",
+      "inputs": [
+        {
+          "max": 0,
+          "min": 0,
+          "type": "double"
+        },
+        {
+          "max": 3.7167763170998245,
+          "min": -3.0695879045389134,
+          "type": "double"
+        },
+        {
+          "max": 0.069204767394242112,
+          "min": 0.059059842564220456,
+          "type": "double"
+        },
+        {
+          "max": 16.615866887898555,
+          "min": -1.5970607263921326,
+          "type": "double"
+        },
+        {
+          "max": 0.085623182395587999,
+          "min": -0.087970731129029825,
+          "type": "double"
+        },
+        {
+          "max": 1.5659650331277,
+          "min": -1.3866602324667368,
+          "type": "double"
+        }
+      ],
+      "kind": "subgraph",
+      "left_as_written": "the algebraic search is disabled",
+      "ops": [
+        {
+          "executions": 1802240,
+          "gradient": 33034.95321106683,
+          "max": 0,
+          "min": -0,
+          "opcode": "*",
+          "sensitivity": 0,
+          "type": "double"
+        },
+        {
+          "executions": 1802240,
+          "gradient": 33034.953211066793,
+          "max": 0.1072636900607267,
+          "min": -0.095839636625174238,
+          "opcode": "fma",
+          "sensitivity": 617.79410829911149,
+          "type": "double"
+        },
+        {
+          "executions": 922746880,
+          "gradient": 1170480.4512844896,
+          "max": 1.5659650331277,
+          "min": -1.3866602324667368,
+          "opcode": "fma",
+          "sensitivity": 190732.27359535906,
+          "type": "double"
+        }
+      ],
+      "original": {
+        "c": [
+          "? * (? * ? + ?) + ? * ?",
+          "? * ? + ?"
+        ]
+      },
+      "outputs": [
+        {
+          "c": "? * (? * ? + ?) + ? * ?",
+          "inputs": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "ops": [
+            0,
+            1,
+            2
+          ],
+          "type": "double"
+        },
+        {
+          "c": "? * ? + ?",
+          "inputs": [
+            3,
+            4,
+            5
+          ],
+          "ops": [
+            2
+          ],
+          "type": "double"
+        }
+      ]
+    },
+    {
+      "alternatives": [
+        {
+          "cost_delta": -0.77537453244033749,
+          "id": "M0_0",
+          "kind": "matmul",
+          "modelled_error": 3882602515184033,
+          "reason": "dominated by M0_2, which costs no more and is at least as accurate",
+          "status": "rejected",
+          "summary": "wmma m16n16k16 f16/f16"
+        },
+        {
+          "cost_delta": -0.77537866928717214,
+          "id": "M0_1",
+          "kind": "matmul",
+          "modelled_error": 3882602515184033,
+          "reason": "dominated by M0_2, which costs no more and is at least as accurate",
+          "status": "rejected",
+          "summary": "wmma m16n16k16 f16/f32"
+        },
+        {
+          "cost_delta": -0.77541259204018453,
+          "id": "M0_2",
+          "kind": "matmul",
+          "modelled_domain_error": 0.0023930786057702672,
+          "modelled_error": 4.5445562070816396e-08,
+          "reason": "on the Pareto frontier; -poseidon-apply-rewrites=M0_2,,,, applies it",
+          "status": "pareto",
+          "summary": "wmma m16n16k16 bf16/f32"
+        },
+        {
+          "cost_delta": -0.7445958519662037,
+          "id": "M0_3",
+          "kind": "matmul",
+          "modelled_domain_error": 0.00028966801009708244,
+          "modelled_error": 5.7327964511044859e-09,
+          "reason": "dominated by M0_7, which costs no more and is at least as accurate",
+          "status": "rejected",
+          "summary": "wmma m16n16k8 tf32/f32"
+        },
+        {
+          "cost_delta": -0.76092592750686838,
+          "id": "M0_4",
+          "kind": "matmul",
+          "modelled_error": 3882602515184033,
+          "reason": "dominated by M0_2, which costs no more and is at least as accurate",
+          "status": "rejected",
+          "summary": "tcec n=2 wmma m16n16k16 f16/f32"
+        },
+        {
+          "cost_delta": -0.73346422915521492,
+          "id": "M0_5",
+          "kind": "matmul",
+          "modelled_error": 3882602515184033,
+          "reason": "dominated by M0_7, which costs no more and is at least as accurate",
+          "status": "rejected",
+          "summary": "tcec n=3 wmma m16n16k16 f16/f32"
+        },
+        {
+          "cost_delta": -0.6673860425591841,
+          "id": "M0_6",
+          "kind": "matmul",
+          "modelled_error": 3882602515184033,
+          "reason": "dominated by M0_7, which costs no more and is at least as accurate",
+          "status": "rejected",
+          "summary": "tcec n=5 wmma m16n16k16 f16/f32"
+        },
+        {
+          "cost_delta": -0.76025988363959063,
+          "id": "M0_7",
+          "kind": "matmul",
+          "modelled_domain_error": 9.1979096865731603e-06,
+          "modelled_error": 1.7632432192400665e-10,
+          "reason": "part of the most accurate solution within the cost budget",
+          "status": "applied",
+          "summary": "tcec n=2 wmma m16n16k16 bf16/f32"
+        },
+        {
+          "cost_delta": -0.68741700639423065,
+          "id": "M0_8",
+          "kind": "matmul",
+          "modelled_domain_error": 7.8376048728358519e-07,
+          "modelled_error": 1.6991365891038539e-11,
+          "reason": "on the Pareto frontier; -poseidon-apply-rewrites=M0_8,,, applies it",
+          "status": "pareto",
+          "summary": "tcec n=2 wmma m16n16k8 tf32/f32"
+        },
+        {
+          "cost_delta": -0.61319819009840648,
+          "id": "M0_9",
+          "kind": "matmul",
+          "modelled_domain_error": 7.5927330772339147e-07,
+          "modelled_error": 1.6683293553143355e-11,
+          "reason": "on the Pareto frontier; -poseidon-apply-rewrites=M0_9 applies it",
+          "status": "pareto",
+          "summary": "tcec n=3 wmma m16n16k8 tf32/f32"
+        },
+        {
+          "cost_delta": -0.45681353489218879,
+          "id": "M0_10",
+          "kind": "matmul",
+          "modelled_domain_error": 7.5927330772339147e-07,
+          "modelled_error": 1.6683293553143355e-11,
+          "reason": "dominated by M0_9, which costs no more and is at least as accurate",
+          "status": "rejected",
+          "summary": "tcec n=5 wmma m16n16k8 tf32/f32"
+        }
+      ],
+      "cost": 0.82738388321047762,
+      "executions": 922746880,
+      "id": "M0",
+      "kind": "matmul",
+      "shape": "512x64x512"
+    }
+  ],
+  "target": {
+    "budget": -0.76025988363959063,
+    "cost_model": "/m/replay_pack.new/cost_models/cm_sm_103_B300SXM6AC_ef7c8e4b.csv",
+    "selector": "joint"
+  }
+}

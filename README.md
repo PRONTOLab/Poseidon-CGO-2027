@@ -13,6 +13,7 @@ tensor-core emulation.
 |---|---|
 | `cgo2027/` | The artifact: the four benchmarks, the shipped RTX 5090 cost model, profiles, Herbie answers, scripts, `run_artifact.sh`. Start with `cgo2027/README.md`; what a reviewer should see is `cgo2027/EXPECTED_RESULTS.md`. |
 | `cgo2027/docker/Dockerfile` | One image with every dependency, built from this directory (below). |
+| `modal-b300/` | Optional: measures the paper's B300 rows on one NVIDIA B300 at Modal (`modal-b300/README.md`). |
 | `cgo2027/LICENSES.md` | Licences and provenance of everything in this repository. |
 | `sources/Enzyme` | Git submodule, the compiler: the Enzyme repository (https://github.com/EnzymeAD/Enzyme) at commit `9e2e0572931248b4610940f2906e583914f9913e`; Poseidon is `enzyme/Poseidon`. Apache License 2.0 with LLVM Exceptions. |
 | `sources/cuMpSGEMM` | Git submodule: cuMpSGEMM (https://github.com/enp1s0/cuMpSGEMM) at commit `42dd92ea1c0e3d603bbb3f8f354f53e0967a9f4b` with its three submodules at the commits it records: the error-corrected tensor-core GEMM the compiler's TCEC runtime calls. |

@@ -1,0 +1,13 @@
+{
+  "key": {
+    "format": "1",
+    "source file": "ozp_poseidon.cu",
+    "unit": "B16F35E07E4FD783"
+  },
+  "value": {
+    "host dispatch": [
+      "_Z10matmul_optPdPKdS1_ 0 1 2 2048 1 8 2048 2048 2048 2048 2048 2048 0 0 0 0"
+    ],
+    "profile generation": []
+  }
+}

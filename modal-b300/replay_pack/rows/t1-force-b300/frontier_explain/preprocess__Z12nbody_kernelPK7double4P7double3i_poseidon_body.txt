@@ -1,0 +1,89 @@
+=== Poseidon Report: preprocess__Z12nbody_kernelPK7double4P7double3i_poseidon_body ===
+Pareto table: 10 points, cost range [-9.824647e-01, 0.000000e+00]
+Candidate outputs: 0, Candidate subgraphs: 1
+
+
+Subgraph #0: 39 candidates (Δcost, Δacc; sorted by Δcost)
+  [PT0_0] All FP64(0%) + FP32(100%): Δcost=-1.430637e+10 Δacc=2.832089e-03
+  [PT0_22] All Expansion2(0%) + FP32(100%): Δcost=-1.430637e+10 Δacc=2.832089e-03
+  [PT0_23] All Expansion2(10%) + FP32(90%): Δcost=-1.419413e+10 Δacc=1.267433e-03
+  [PT0_24] All Expansion2(20%) + FP32(80%): Δcost=-1.398372e+10 Δacc=3.790363e-07
+  [PT0_25] All Expansion2(30%) + FP32(70%): Δcost=-1.384737e+10 Δacc=3.790363e-07
+  [PT0_26] All Expansion2(40%) + FP32(60%): Δcost=-1.354249e+10 Δacc=3.522196e-07
+  [PT0_27] All Expansion2(50%) + FP32(50%): Δcost=-1.344433e+10 Δacc=3.433416e-07
+  [PT0_1] All FP64(10%) + FP32(90%): Δcost=-1.283450e+10 Δacc=1.267433e-03
+  [PT0_11] All FP64(0%) + Expansion2(100%): Δcost=-1.119348e+10 Δacc=8.865417e-11
+  [PT0_2] All FP64(20%) + FP32(80%): Δcost=-1.084483e+10 Δacc=3.790388e-07
+  [PT0_3] All FP64(30%) + FP32(70%): Δcost=-1.084483e+10 Δacc=3.790388e-07
+  [PT0_33] All FP64(20%) + Expansion2(20%) + FP32(60%): Δcost=-1.040360e+10 Δacc=3.522213e-07
+  [PT0_28] All Expansion2(60%) + FP32(40%): Δcost=-9.943917e+09 Δacc=3.254664e-07
+  [PT0_29] All Expansion2(70%) + FP32(30%): Δcost=-9.908704e+09 Δacc=2.995196e-07
+  [PT0_12] All FP64(10%) + Expansion2(90%): Δcost=-7.814268e+09 Δacc=3.963216e-11
+  [PT0_30] All Expansion2(80%) + FP32(20%): Δcost=-7.678325e+09 Δacc=2.100140e-07
+  [PT0_34] All FP64(20%) + Expansion2(40%) + FP32(40%): Δcost=-5.788189e+09 Δacc=3.254693e-07
+  [PT0_31] All Expansion2(90%) + FP32(10%): Δcost=-5.546108e+09 Δacc=1.785862e-07
+  [PT0_13] All FP64(20%) + Expansion2(80%): Δcost=-4.015416e+09 Δacc=7.713556e-15
+  [PT0_10] Funcs FP64(0%) + FP32(100%): Δcost=-2.913432e+09 Δacc=1.532890e-07
+  [PT0_32] Funcs Expansion2(0%) + FP32(100%): Δcost=-2.913432e+09 Δacc=1.532890e-07
+  [PT0_35] All FP64(20%) + Expansion2(60%) + FP32(20%): Δcost=-2.512804e+09 Δacc=2.100165e-07
+  [PT0_4] All FP64(40%) + FP32(60%): Δcost=-1.788352e+09 Δacc=3.522213e-07
+  [PT0_5] All FP64(50%) + FP32(50%): Δcost=-1.270553e+09 Δacc=3.433445e-07
+  [PT0_21] Funcs FP64(0%) + Expansion2(100%): Δcost=-2.613198e+08 Δacc=6.552376e-15
+  [PT0_9] All FP64(90%) + FP32(10%): Δcost=3.989494e+08 Δacc=1.785859e-07
+  [PT0_7] All FP64(70%) + FP32(30%): Δcost=7.605478e+08 Δacc=2.995241e-07
+  [PT0_8] All FP64(80%) + FP32(20%): Δcost=8.386481e+08 Δacc=2.100165e-07
+  [PT0_6] All FP64(60%) + FP32(40%): Δcost=1.197188e+09 Δacc=3.254693e-07
+  [PT0_14] All FP64(30%) + Expansion2(70%): Δcost=3.013051e+09 Δacc=7.630615e-15
+  [PT0_20] All FP64(90%) + Expansion2(10%): Δcost=4.592993e+09 Δacc=3.874058e-15
+  [PT0_36] All FP64(40%) + Expansion2(20%) + FP32(40%): Δcost=5.314917e+09 Δacc=3.254693e-07
+  [PT0_15] All FP64(40%) + Expansion2(60%): Δcost=7.094717e+09 Δacc=2.764716e-16
+  [PT0_16] All FP64(50%) + Expansion2(50%): Δcost=7.514354e+09 Δacc=3.846410e-15
+  [PT0_38] All FP64(60%) + Expansion2(20%) + FP32(20%): Δcost=7.984297e+09 Δacc=2.100165e-07
+  [PT0_19] All FP64(80%) + Expansion2(20%): Δcost=8.174703e+09 Δacc=3.929352e-15
+  [PT0_37] All FP64(40%) + Expansion2(40%) + FP32(20%): Δcost=8.597328e+09 Δacc=2.100165e-07
+  [PT0_18] All FP64(70%) + Expansion2(30%): Δcost=1.133678e+10 Δacc=3.846410e-15
+  [PT0_17] All FP64(60%) + Expansion2(40%): Δcost=1.430352e+10 Δacc=3.984646e-15
+
+--- Pareto Point #0: Cost=-9.824647e-01, Accuracy=2.832089e-03 ---
+  [Precision] All FP64(0%) + FP32(100%) (#0)
+    FP64 -> FP32 for 15 operations
+
+--- Pareto Point #1: Cost=-9.747565e-01, Accuracy=1.267433e-03 ---
+  [Precision] All Expansion2(10%) + FP32(90%) (#23)
+    FP64 -> Expansion2 for 1 operations
+    FP64 -> FP32 for 14 operations
+
+--- Pareto Point #2: Cost=-9.603072e-01, Accuracy=3.790363e-07 ---
+  [Precision] All Expansion2(20%) + FP32(80%) (#24)
+    FP64 -> Expansion2 for 3 operations
+    FP64 -> FP32 for 12 operations
+
+--- Pareto Point #3: Cost=-9.300065e-01, Accuracy=3.522196e-07 ---
+  [Precision] All Expansion2(40%) + FP32(60%) (#26)
+    FP64 -> Expansion2 for 6 operations
+    FP64 -> FP32 for 9 operations
+
+--- Pareto Point #4: Cost=-9.232654e-01, Accuracy=3.433416e-07 ---
+  [Precision] All Expansion2(50%) + FP32(50%) (#27)
+    FP64 -> Expansion2 for 7 operations
+    FP64 -> FP32 for 8 operations
+
+--- Pareto Point #5: Cost=-7.686927e-01, Accuracy=8.865417e-11 ---
+  [Precision] All FP64(0%) + Expansion2(100%) (#11)
+    FP64 -> Expansion2 for 15 operations
+
+--- Pareto Point #6: Cost=-5.366311e-01, Accuracy=3.963216e-11 ---
+  [Precision] All FP64(10%) + Expansion2(90%) (#12)
+    FP64 -> Expansion2 for 14 operations
+
+--- Pareto Point #7: Cost=-2.757516e-01, Accuracy=7.713556e-15 ---
+  [Precision] All FP64(20%) + Expansion2(80%) (#13)
+    FP64 -> Expansion2 for 12 operations
+
+--- Pareto Point #8: Cost=-1.794568e-02, Accuracy=6.552376e-15 ---
+  [Precision] Funcs FP64(0%) + Expansion2(100%) (#21)
+    FP64 -> Expansion2 for 1 operations
+
+--- Pareto Point #9: Cost=0.000000e+00, Accuracy=0.000000e+00 ---
+  (no changes)
+

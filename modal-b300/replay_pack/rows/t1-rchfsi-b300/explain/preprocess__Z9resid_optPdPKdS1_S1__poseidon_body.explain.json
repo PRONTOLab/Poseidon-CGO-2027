@@ -1,0 +1,675 @@
+{
+  "function": {
+    "ir": "preprocess__Z9resid_optPdPKdS1_S1__poseidon_body",
+    "name": "resid_opt(double*, double const*, double const*, double const*)",
+    "symbol": "_Z9resid_optPdPKdS1_S1_"
+  },
+  "pareto": [
+    {
+      "applied": [
+        "M0_2"
+      ],
+      "budget": -0.93751268360194007,
+      "cost": -0.8620018709480296,
+      "modelled_rel_error": 41.549249351132502
+    },
+    {
+      "applied": [
+        "M0_1"
+      ],
+      "budget": -0.9375095996164442,
+      "cost": -0.86199878696253385,
+      "modelled_rel_error": 5.221261620121151
+    },
+    {
+      "applied": [
+        "M0_4"
+      ],
+      "budget": -0.93619571413845459,
+      "cost": -0.86068490148454424,
+      "modelled_rel_error": 0.087299099671610633
+    },
+    {
+      "applied": [
+        "M0_5"
+      ],
+      "budget": -0.93369919612625785,
+      "cost": -0.85818838347234738,
+      "modelled_rel_error": 0.087169302922906353
+    },
+    {
+      "applied": [
+        "M0_4"
+      ],
+      "budget": -0.93133173116268875,
+      "cost": -0.85582091850877839,
+      "modelled_rel_error": 0.086947324924708885
+    },
+    {
+      "applied": [
+        "M0_5"
+      ],
+      "budget": -0.928835213150492,
+      "cost": -0.85332440049658154,
+      "modelled_rel_error": 0.086817528176004605
+    },
+    {
+      "applied": [
+        "M0_5"
+      ],
+      "budget": -0.92453839228899637,
+      "cost": -0.84902757963508602,
+      "modelled_rel_error": 0.086817528173670763
+    },
+    {
+      "applied": [
+        "M0_5"
+      ],
+      "budget": -0.92397123017472604,
+      "cost": -0.84846041752081569,
+      "modelled_rel_error": 0.086725117939654969
+    },
+    {
+      "applied": [
+        "M0_5"
+      ],
+      "budget": -0.91967440931323052,
+      "cost": -0.84416359665932017,
+      "modelled_rel_error": 0.086725117937321128
+    },
+    {
+      "applied": [
+        "M0_5"
+      ],
+      "budget": -0.915377588451735,
+      "cost": -0.83986677579782465,
+      "modelled_rel_error": 0.086725117936719595
+    },
+    {
+      "applied": [
+        "M0_4"
+      ],
+      "budget": -0.90888354645562375,
+      "cost": -0.83337273380171328,
+      "modelled_rel_error": 0.085666175739694914
+    },
+    {
+      "applied": [
+        "M0_5"
+      ],
+      "budget": -0.90638702844342689,
+      "cost": -0.83087621578951654,
+      "modelled_rel_error": 0.085536378990990633
+    },
+    {
+      "applied": [
+        "M0_4"
+      ],
+      "budget": -0.90537182848312925,
+      "cost": -0.82986101582921878,
+      "modelled_rel_error": 0.085432141665457706
+    },
+    {
+      "applied": [
+        "M0_4"
+      ],
+      "budget": -0.90401956347985779,
+      "cost": -0.82850875082594744,
+      "modelled_rel_error": 0.085314400992793166
+    },
+    {
+      "applied": [
+        "M0_5"
+      ],
+      "budget": -0.90287531047093239,
+      "cost": -0.82736449781702204,
+      "modelled_rel_error": 0.085302344916753425
+    },
+    {
+      "applied": [
+        "M0_5"
+      ],
+      "budget": -0.90152304546766104,
+      "cost": -0.82601223281375058,
+      "modelled_rel_error": 0.085184604244088885
+    },
+    {
+      "applied": [
+        "M0_4"
+      ],
+      "budget": -0.90050784550736329,
+      "cost": -0.82499703285345294,
+      "modelled_rel_error": 0.085080366918555958
+    },
+    {
+      "applied": [
+        "M0_5"
+      ],
+      "budget": -0.89801132749516654,
+      "cost": -0.82250051484125608,
+      "modelled_rel_error": 0.084950570169851677
+    },
+    {
+      "applied": [
+        "M0_5"
+      ],
+      "budget": -0.89511939512993077,
+      "cost": -0.81960858247602042,
+      "modelled_rel_error": 0.084935740669076026
+    },
+    {
+      "applied": [
+        "M0_5"
+      ],
+      "budget": -0.89314734451940059,
+      "cost": -0.81763653186549023,
+      "modelled_rel_error": 0.084858159933502028
+    },
+    {
+      "applied": [
+        "M0_5"
+      ],
+      "budget": -0.89025541215416493,
+      "cost": -0.81474459950025446,
+      "modelled_rel_error": 0.084843330432726391
+    },
+    {
+      "applied": [
+        "M0_5"
+      ],
+      "budget": -0.88669916582437591,
+      "cost": -0.81118835317046556,
+      "modelled_rel_error": 0.084842390750068844
+    },
+    {
+      "applied": [
+        "M0_5"
+      ],
+      "budget": -0.88505936615111069,
+      "cost": -0.80954855349720034,
+      "modelled_rel_error": 0.084842329005851841
+    },
+    {
+      "applied": [
+        "M0_5"
+      ],
+      "budget": -0.88076254528961517,
+      "cost": -0.80525173263570482,
+      "modelled_rel_error": 0.084842329003517999
+    },
+    {
+      "applied": [
+        "M0_5"
+      ],
+      "budget": -0.87646572442811965,
+      "cost": -0.8009549117742093,
+      "modelled_rel_error": 0.084842329002916467
+    },
+    {
+      "applied": [
+        "M0_5"
+      ],
+      "budget": -0.8699066577505169,
+      "cost": -0.79439584509660655,
+      "modelled_rel_error": 0.084842283736614094
+    },
+    {
+      "applied": [],
+      "budget": -0.86702062976033345,
+      "cost": -0.79150981710642299,
+      "modelled_rel_error": 0.0023270193783430531
+    },
+    {
+      "applied": [],
+      "budget": -0.86215664678456749,
+      "cost": -0.78664583413065714,
+      "modelled_rel_error": 0.0019752446314413095
+    },
+    {
+      "applied": [],
+      "budget": -0.85785982592307197,
+      "cost": -0.78234901326916162,
+      "modelled_rel_error": 0.0019752446291074611
+    },
+    {
+      "applied": [],
+      "budget": -0.85729266380880165,
+      "cost": -0.78178185115489129,
+      "modelled_rel_error": 0.0018828343950916717
+    },
+    {
+      "applied": [],
+      "budget": -0.85299584294730613,
+      "cost": -0.77748503029339577,
+      "modelled_rel_error": 0.0018828343927578231
+    },
+    {
+      "applied": [],
+      "budget": -0.84869902208581061,
+      "cost": -0.77318820943190025,
+      "modelled_rel_error": 0.0018828343921562932
+    },
+    {
+      "applied": [],
+      "budget": -0.84213995540820785,
+      "cost": -0.76662914275429739,
+      "modelled_rel_error": 0.0018827891258539227
+    },
+    {
+      "applied": [],
+      "budget": -0.83970846207750249,
+      "cost": -0.76419764942359214,
+      "modelled_rel_error": 0.00069409544642733188
+    },
+    {
+      "applied": [],
+      "budget": -0.83619674410500799,
+      "cost": -0.76068593145109753,
+      "modelled_rel_error": 0.00046006137219011472
+    },
+    {
+      "applied": [],
+      "budget": -0.83484447910173665,
+      "cost": -0.75933366644782618,
+      "modelled_rel_error": 0.00034232069952558846
+    },
+    {
+      "applied": [],
+      "budget": -0.83133276112924215,
+      "cost": -0.75582194847533168,
+      "modelled_rel_error": 0.00010828662528837136
+    },
+    {
+      "applied": [],
+      "budget": -0.82844082876400638,
+      "cost": -0.75293001611009591,
+      "modelled_rel_error": 9.3457124512724658e-05
+    },
+    {
+      "applied": [],
+      "budget": -0.82646877815347619,
+      "cost": -0.75095796549956584,
+      "modelled_rel_error": 1.5876388938733486e-05
+    },
+    {
+      "applied": [],
+      "budget": -0.82357684578824042,
+      "cost": -0.74806603313433007,
+      "modelled_rel_error": 1.0468881630867646e-06
+    },
+    {
+      "applied": [],
+      "budget": -0.82002059945845152,
+      "cost": -0.74450978680454116,
+      "modelled_rel_error": 1.0720550553618969e-07
+    },
+    {
+      "applied": [],
+      "budget": -0.8183807997851863,
+      "cost": -0.74286998713127594,
+      "modelled_rel_error": 4.546128854104766e-08
+    },
+    {
+      "applied": [],
+      "budget": -0.81408397892369078,
+      "cost": -0.73857316626978042,
+      "modelled_rel_error": 4.5458954692665748e-08
+    },
+    {
+      "applied": [],
+      "budget": -0.80978715806219526,
+      "cost": -0.7342763454082849,
+      "modelled_rel_error": 4.5458353162689452e-08
+    },
+    {
+      "applied": [],
+      "budget": -0.8032280913845925,
+      "cost": -0.72771727873068204,
+      "modelled_rel_error": 1.9205079215527391e-10
+    },
+    {
+      "applied": [],
+      "budget": -0.79893127052309698,
+      "cost": -0.72342045786918652,
+      "modelled_rel_error": 1.8971694377335674e-10
+    },
+    {
+      "applied": [],
+      "budget": -0.79463444966160135,
+      "cost": -0.719123637007691,
+      "modelled_rel_error": 1.8911541379706271e-10
+    },
+    {
+      "applied": [],
+      "budget": -0.76885352536258178,
+      "cost": -0.69334271270867143,
+      "modelled_rel_error": 1.7925970028221786e-10
+    },
+    {
+      "applied": [],
+      "budget": -0.76455670450108626,
+      "cost": -0.6890458918471758,
+      "modelled_rel_error": 1.7692585190030068e-10
+    },
+    {
+      "applied": [],
+      "budget": -0.76025988363959063,
+      "cost": -0.68474907098568027,
+      "modelled_rel_error": 1.7632432192400665e-10,
+      "selected": true
+    },
+    {
+      "applied": [],
+      "budget": -0.73038521413923241,
+      "cost": -0.65487440148532206,
+      "modelled_rel_error": 3.2717836122305777e-11
+    },
+    {
+      "applied": [],
+      "budget": -0.72608839327773689,
+      "cost": -0.65057758062382653,
+      "modelled_rel_error": 3.0383987740388626e-11
+    },
+    {
+      "applied": [],
+      "budget": -0.72179157241624137,
+      "cost": -0.64628075976233101,
+      "modelled_rel_error": 2.9782457764094581e-11
+    },
+    {
+      "applied": [],
+      "budget": -0.69601064811722169,
+      "cost": -0.62049983546331133,
+      "modelled_rel_error": 1.9926744249249743e-11
+    },
+    {
+      "applied": [],
+      "budget": -0.69171382725572617,
+      "cost": -0.61620301460181581,
+      "modelled_rel_error": 1.7592895867332591e-11
+    },
+    {
+      "applied": [],
+      "budget": -0.68741700639423065,
+      "cost": -0.61190619374032029,
+      "modelled_rel_error": 1.6991365891038539e-11
+    },
+    {
+      "applied": [],
+      "budget": -0.61319819009840648,
+      "cost": -0.53768737744449602,
+      "modelled_rel_error": 1.6683293553143355e-11
+    },
+    {
+      "applied": [],
+      "budget": -0.042968207745001791,
+      "cost": 0.03254260490890859,
+      "modelled_rel_error": 1.5726470231267241e-11
+    },
+    {
+      "applied": [],
+      "budget": -0.038671386883506256,
+      "cost": 0.036839425770404124,
+      "modelled_rel_error": 1.3392621849350089e-11
+    },
+    {
+      "applied": [],
+      "budget": -0.034374566022010715,
+      "cost": 0.041136246631899666,
+      "modelled_rel_error": 1.279109187305604e-11
+    },
+    {
+      "applied": [],
+      "budget": -0.0085936417229910776,
+      "cost": 0.066917170930919298,
+      "modelled_rel_error": 2.9353783582112024e-12
+    },
+    {
+      "applied": [],
+      "budget": -0.0042968208614955388,
+      "cost": 0.071213991792414846,
+      "modelled_rel_error": 6.015299762940496e-13
+    },
+    {
+      "applied": [],
+      "budget": 0,
+      "cost": 0.075510812653910381,
+      "modelled_rel_error": 0
+    }
+  ],
+  "result": {
+    "applied": [],
+    "cost_after": 0.075510812653910381,
+    "cost_before": 0.075510812653910381,
+    "modelled_rel_error": 1.7632432192400665e-10,
+    "modelled_rel_error_as_written": 0
+  },
+  "schema": "poseidon-explain/1",
+  "subgraphs": [
+    {
+      "alternatives": [],
+      "cost": 0.00029409607749910027,
+      "executions": 83886080,
+      "id": "S0",
+      "inputs": [
+        {
+          "max": 20.700984632665833,
+          "min": 0.10000000000000028,
+          "type": "double"
+        },
+        {
+          "max": 0.22503179130901532,
+          "min": -0.18161533577249531,
+          "type": "double"
+        },
+        {
+          "max": 16.615866887898555,
+          "min": -1.5970607263921326,
+          "type": "double"
+        },
+        {
+          "max": 0.22503179130901532,
+          "min": -0.18161533577249531,
+          "type": "double"
+        },
+        {
+          "max": 3.7396914304867837,
+          "min": -3.3172174363988001,
+          "type": "double"
+        }
+      ],
+      "kind": "subgraph",
+      "left_as_written": "the algebraic search is disabled",
+      "ops": [
+        {
+          "executions": 163840,
+          "gradient": 3.2510373568840549,
+          "max": -0.10000000000000028,
+          "min": -20.700984632665833,
+          "opcode": "neg",
+          "sensitivity": 17900.924223922935,
+          "type": "double"
+        },
+        {
+          "executions": 163840,
+          "gradient": 32768,
+          "max": 1.5191478267080567,
+          "min": -1.4180951561890343,
+          "opcode": "fma",
+          "sensitivity": 9174.3928872542747,
+          "type": "double"
+        },
+        {
+          "executions": 83886080,
+          "gradient": 16777216,
+          "max": 3.7396914304867837,
+          "min": -3.3172174363988001,
+          "opcode": "fma",
+          "sensitivity": 6325797.7048718398,
+          "type": "double"
+        }
+      ],
+      "original": {
+        "c": [
+          "-? * ? + (? * ? + ?)",
+          "? * ? + ?"
+        ]
+      },
+      "outputs": [
+        {
+          "c": "-? * ? + (? * ? + ?)",
+          "inputs": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "ops": [
+            0,
+            1,
+            2
+          ],
+          "type": "double"
+        },
+        {
+          "c": "? * ? + ?",
+          "inputs": [
+            2,
+            3,
+            4
+          ],
+          "ops": [
+            2
+          ],
+          "type": "double"
+        }
+      ]
+    },
+    {
+      "alternatives": [
+        {
+          "cost_delta": -0.070488593818669149,
+          "id": "M0_0",
+          "kind": "matmul",
+          "modelled_domain_error": 0.0047543535927748563,
+          "modelled_error": 682.86354423153114,
+          "reason": "dominated by M0_2, which costs no more and is at least as accurate",
+          "status": "rejected",
+          "summary": "wmma m16n16k16 f16/f16"
+        },
+        {
+          "cost_delta": -0.070488969856110778,
+          "id": "M0_1",
+          "kind": "matmul",
+          "modelled_domain_error": 3.781284900951657e-05,
+          "modelled_error": 5.2189346007428083,
+          "reason": "on the Pareto frontier; -poseidon-apply-rewrites=M0_1,,, applies it",
+          "status": "pareto",
+          "summary": "wmma m16n16k16 f16/f32"
+        },
+        {
+          "cost_delta": -0.070492053841606631,
+          "id": "M0_2",
+          "kind": "matmul",
+          "modelled_domain_error": 0.00030762107516416125,
+          "modelled_error": 41.546922331754153,
+          "reason": "on the Pareto frontier; -poseidon-apply-rewrites=M0_2,,, applies it",
+          "status": "pareto",
+          "summary": "wmma m16n16k16 bf16/f32"
+        },
+        {
+          "cost_delta": -0.067690532056242619,
+          "id": "M0_3",
+          "kind": "matmul",
+          "modelled_domain_error": 3.781284900951657e-05,
+          "modelled_error": 5.2189358999792681,
+          "reason": "dominated by M0_1, which costs no more and is at least as accurate",
+          "status": "rejected",
+          "summary": "wmma m16n16k8 tf32/f32"
+        },
+        {
+          "cost_delta": -0.06917508437812124,
+          "id": "M0_4",
+          "kind": "matmul",
+          "modelled_domain_error": 5.9287007373819677e-07,
+          "modelled_error": 0.084972080293267582,
+          "reason": "on the Pareto frontier; -poseidon-apply-rewrites=M0_4,,, applies it",
+          "status": "pareto",
+          "summary": "tcec n=2 wmma m16n16k16 f16/f32"
+        },
+        {
+          "cost_delta": -0.06667856636592441,
+          "id": "M0_5",
+          "kind": "matmul",
+          "modelled_domain_error": 5.8737028010897445e-07,
+          "modelled_error": 0.084842283544563302,
+          "reason": "on the Pareto frontier; -poseidon-apply-rewrites=M0_5,,, applies it",
+          "status": "pareto",
+          "summary": "tcec n=3 wmma m16n16k16 f16/f32"
+        },
+        {
+          "cost_delta": -0.06067145849355797,
+          "id": "M0_6",
+          "kind": "matmul",
+          "modelled_domain_error": 5.8737028010897445e-07,
+          "modelled_error": 0.084842283544563302,
+          "reason": "dominated by M0_5, which costs no more and is at least as accurate",
+          "status": "rejected",
+          "summary": "tcec n=5 wmma m16n16k16 f16/f32"
+        },
+        {
+          "cost_delta": -0.069114534955413115,
+          "id": "M0_7",
+          "kind": "matmul",
+          "modelled_domain_error": 1.3197047529478713e-06,
+          "modelled_error": 0.18426680793739966,
+          "reason": "dominated by M0_4, which costs no more and is at least as accurate",
+          "status": "rejected",
+          "summary": "tcec n=2 wmma m16n16k16 bf16/f32"
+        },
+        {
+          "cost_delta": -0.062492455146519917,
+          "id": "M0_8",
+          "kind": "matmul",
+          "modelled_domain_error": 5.9287007373819677e-07,
+          "modelled_error": 0.084972080293267582,
+          "reason": "dominated by M0_4, which costs no more and is at least as accurate",
+          "status": "rejected",
+          "summary": "tcec n=2 wmma m16n16k8 tf32/f32"
+        },
+        {
+          "cost_delta": -0.055745289929859353,
+          "id": "M0_9",
+          "kind": "matmul",
+          "modelled_domain_error": 5.8737028010897445e-07,
+          "modelled_error": 0.084842283544563302,
+          "reason": "dominated by M0_5, which costs no more and is at least as accurate",
+          "status": "rejected",
+          "summary": "tcec n=3 wmma m16n16k8 tf32/f32"
+        },
+        {
+          "cost_delta": -0.041528503270875525,
+          "id": "M0_10",
+          "kind": "matmul",
+          "modelled_domain_error": 5.8737028010897445e-07,
+          "modelled_error": 0.084842283544563302,
+          "reason": "dominated by M0_5, which costs no more and is at least as accurate",
+          "status": "rejected",
+          "summary": "tcec n=5 wmma m16n16k8 tf32/f32"
+        }
+      ],
+      "cost": 0.075216716576411283,
+      "executions": 83886080,
+      "id": "M0",
+      "kind": "matmul",
+      "left_as_written": "no alternative lowers the modelled error within the cost budget -0.76026",
+      "shape": "512x64x512"
+    }
+  ],
+  "target": {
+    "budget": -0.76025988363959063,
+    "cost_model": "/m/replay_pack.new/cost_models/cm_sm_103_B300SXM6AC_ef7c8e4b.csv",
+    "selector": "joint"
+  }
+}

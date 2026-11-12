@@ -1,0 +1,341 @@
+genga_nbody.cu:56:28: warning: 'double4' is deprecated: use double4_16a or double4_32a [-Wdeprecated-declarations]
+   56 | __device__ void accEncFull(double4 x4i, double4 x4j, double3 &ac, double &test, int i, int j, double MinMass, int UseTestParticles){
+      |                            ^
+/usr/local/cuda-13.1/include/vector_types.h:561:43: note: 'double4' has been explicitly marked deprecated here
+  561 | typedef __device_builtin__ struct double4 __VECTOR_TYPE_DEPRECATED__("use double4_16a or double4_32a") double4;
+      |                                           ^
+/usr/local/cuda-13.1/include/vector_types.h:146:57: note: expanded from macro '__VECTOR_TYPE_DEPRECATED__'
+  146 | # define __VECTOR_TYPE_DEPRECATED__(msg) __attribute__((deprecated(msg)))
+      |                                                         ^
+genga_nbody.cu:56:41: warning: 'double4' is deprecated: use double4_16a or double4_32a [-Wdeprecated-declarations]
+   56 | __device__ void accEncFull(double4 x4i, double4 x4j, double3 &ac, double &test, int i, int j, double MinMass, int UseTestParticles){
+      |                                         ^
+/usr/local/cuda-13.1/include/vector_types.h:561:43: note: 'double4' has been explicitly marked deprecated here
+  561 | typedef __device_builtin__ struct double4 __VECTOR_TYPE_DEPRECATED__("use double4_16a or double4_32a") double4;
+      |                                           ^
+/usr/local/cuda-13.1/include/vector_types.h:146:57: note: expanded from macro '__VECTOR_TYPE_DEPRECATED__'
+  146 | # define __VECTOR_TYPE_DEPRECATED__(msg) __attribute__((deprecated(msg)))
+      |                                                         ^
+genga_nbody.cu:100:29: warning: 'double4' is deprecated: use double4_16a or double4_32a [-Wdeprecated-declarations]
+  100 | void computeBodyAccel(const double4* __restrict__ pos,
+      |                             ^
+/usr/local/cuda-13.1/include/vector_types.h:561:43: note: 'double4' has been explicitly marked deprecated here
+  561 | typedef __device_builtin__ struct double4 __VECTOR_TYPE_DEPRECATED__("use double4_16a or double4_32a") double4;
+      |                                           ^
+/usr/local/cuda-13.1/include/vector_types.h:146:57: note: expanded from macro '__VECTOR_TYPE_DEPRECATED__'
+  146 | # define __VECTOR_TYPE_DEPRECATED__(msg) __attribute__((deprecated(msg)))
+      |                                                         ^
+genga_nbody.cu:103:23: warning: 'double4' is deprecated: use double4_16a or double4_32a [-Wdeprecated-declarations]
+  103 |     extern __shared__ double4 sharedPos[];
+      |                       ^
+/usr/local/cuda-13.1/include/vector_types.h:561:43: note: 'double4' has been explicitly marked deprecated here
+  561 | typedef __device_builtin__ struct double4 __VECTOR_TYPE_DEPRECATED__("use double4_16a or double4_32a") double4;
+      |                                           ^
+/usr/local/cuda-13.1/include/vector_types.h:146:57: note: expanded from macro '__VECTOR_TYPE_DEPRECATED__'
+  146 | # define __VECTOR_TYPE_DEPRECATED__(msg) __attribute__((deprecated(msg)))
+      |                                                         ^
+genga_nbody.cu:108:5: warning: 'double4' is deprecated: use double4_16a or double4_32a [-Wdeprecated-declarations]
+  108 |     double4 myPos = pos[i];
+      |     ^
+/usr/local/cuda-13.1/include/vector_types.h:561:43: note: 'double4' has been explicitly marked deprecated here
+  561 | typedef __device_builtin__ struct double4 __VECTOR_TYPE_DEPRECATED__("use double4_16a or double4_32a") double4;
+      |                                           ^
+/usr/local/cuda-13.1/include/vector_types.h:146:57: note: expanded from macro '__VECTOR_TYPE_DEPRECATED__'
+  146 | # define __VECTOR_TYPE_DEPRECATED__(msg) __attribute__((deprecated(msg)))
+      |                                                         ^
+genga_nbody.cu:130:25: warning: 'double4' is deprecated: use double4_16a or double4_32a [-Wdeprecated-declarations]
+  130 | void nbody_kernel(const double4* __restrict__ pos,
+      |                         ^
+/usr/local/cuda-13.1/include/vector_types.h:561:43: note: 'double4' has been explicitly marked deprecated here
+  561 | typedef __device_builtin__ struct double4 __VECTOR_TYPE_DEPRECATED__("use double4_16a or double4_32a") double4;
+      |                                           ^
+/usr/local/cuda-13.1/include/vector_types.h:146:57: note: expanded from macro '__VECTOR_TYPE_DEPRECATED__'
+  146 | # define __VECTOR_TYPE_DEPRECATED__(msg) __attribute__((deprecated(msg)))
+      |                                                         ^
+genga_nbody.cu:138:29: warning: 'double4' is deprecated: use double4_16a or double4_32a [-Wdeprecated-declarations]
+  138 | void nbody_force_gold(const double4* __restrict__ pos,
+      |                             ^
+/usr/local/cuda-13.1/include/vector_types.h:561:43: note: 'double4' has been explicitly marked deprecated here
+  561 | typedef __device_builtin__ struct double4 __VECTOR_TYPE_DEPRECATED__("use double4_16a or double4_32a") double4;
+      |                                           ^
+/usr/local/cuda-13.1/include/vector_types.h:146:57: note: expanded from macro '__VECTOR_TYPE_DEPRECATED__'
+  146 | # define __VECTOR_TYPE_DEPRECATED__(msg) __attribute__((deprecated(msg)))
+      |                                                         ^
+genga_nbody.cu:152:24: warning: 'double4' is deprecated: use double4_16a or double4_32a [-Wdeprecated-declarations]
+  152 | static void plummer_ic(double4 *pos, double3 *vel, int N) {
+      |                        ^
+/usr/local/cuda-13.1/include/vector_types.h:561:43: note: 'double4' has been explicitly marked deprecated here
+  561 | typedef __device_builtin__ struct double4 __VECTOR_TYPE_DEPRECATED__("use double4_16a or double4_32a") double4;
+      |                                           ^
+/usr/local/cuda-13.1/include/vector_types.h:146:57: note: expanded from macro '__VECTOR_TYPE_DEPRECATED__'
+  146 | # define __VECTOR_TYPE_DEPRECATED__(msg) __attribute__((deprecated(msg)))
+      |                                                         ^
+genga_nbody.cu:180:40: warning: 'double4' is deprecated: use double4_16a or double4_32a [-Wdeprecated-declarations]
+  180 | static double compute_energy_f64(const double4 *pos, const double3 *vel, int N) {
+      |                                        ^
+/usr/local/cuda-13.1/include/vector_types.h:561:43: note: 'double4' has been explicitly marked deprecated here
+  561 | typedef __device_builtin__ struct double4 __VECTOR_TYPE_DEPRECATED__("use double4_16a or double4_32a") double4;
+      |                                           ^
+/usr/local/cuda-13.1/include/vector_types.h:146:57: note: expanded from macro '__VECTOR_TYPE_DEPRECATED__'
+  146 | # define __VECTOR_TYPE_DEPRECATED__(msg) __attribute__((deprecated(msg)))
+      |                                                         ^
+genga_nbody.cu:213:5: warning: 'double4' is deprecated: use double4_16a or double4_32a [-Wdeprecated-declarations]
+  213 |     double4 *h_pos = new double4[N];
+      |     ^
+/usr/local/cuda-13.1/include/vector_types.h:561:43: note: 'double4' has been explicitly marked deprecated here
+  561 | typedef __device_builtin__ struct double4 __VECTOR_TYPE_DEPRECATED__("use double4_16a or double4_32a") double4;
+      |                                           ^
+/usr/local/cuda-13.1/include/vector_types.h:146:57: note: expanded from macro '__VECTOR_TYPE_DEPRECATED__'
+  146 | # define __VECTOR_TYPE_DEPRECATED__(msg) __attribute__((deprecated(msg)))
+      |                                                         ^
+genga_nbody.cu:213:26: warning: 'double4' is deprecated: use double4_16a or double4_32a [-Wdeprecated-declarations]
+  213 |     double4 *h_pos = new double4[N];
+      |                          ^
+/usr/local/cuda-13.1/include/vector_types.h:561:43: note: 'double4' has been explicitly marked deprecated here
+  561 | typedef __device_builtin__ struct double4 __VECTOR_TYPE_DEPRECATED__("use double4_16a or double4_32a") double4;
+      |                                           ^
+/usr/local/cuda-13.1/include/vector_types.h:146:57: note: expanded from macro '__VECTOR_TYPE_DEPRECATED__'
+  146 | # define __VECTOR_TYPE_DEPRECATED__(msg) __attribute__((deprecated(msg)))
+      |                                                         ^
+genga_nbody.cu:233:5: warning: 'double4' is deprecated: use double4_16a or double4_32a [-Wdeprecated-declarations]
+  233 |     double4 *d_pos;
+      |     ^
+/usr/local/cuda-13.1/include/vector_types.h:561:43: note: 'double4' has been explicitly marked deprecated here
+  561 | typedef __device_builtin__ struct double4 __VECTOR_TYPE_DEPRECATED__("use double4_16a or double4_32a") double4;
+      |                                           ^
+/usr/local/cuda-13.1/include/vector_types.h:146:57: note: expanded from macro '__VECTOR_TYPE_DEPRECATED__'
+  146 | # define __VECTOR_TYPE_DEPRECATED__(msg) __attribute__((deprecated(msg)))
+      |                                                         ^
+genga_nbody.cu:235:36: warning: 'double4' is deprecated: use double4_16a or double4_32a [-Wdeprecated-declarations]
+  235 |     cudaMalloc(&d_pos,  N * sizeof(double4));
+      |                                    ^
+/usr/local/cuda-13.1/include/vector_types.h:561:43: note: 'double4' has been explicitly marked deprecated here
+  561 | typedef __device_builtin__ struct double4 __VECTOR_TYPE_DEPRECATED__("use double4_16a or double4_32a") double4;
+      |                                           ^
+/usr/local/cuda-13.1/include/vector_types.h:146:57: note: expanded from macro '__VECTOR_TYPE_DEPRECATED__'
+  146 | # define __VECTOR_TYPE_DEPRECATED__(msg) __attribute__((deprecated(msg)))
+      |                                                         ^
+genga_nbody.cu:238:41: warning: 'double4' is deprecated: use double4_16a or double4_32a [-Wdeprecated-declarations]
+  238 |     cudaMemcpy(d_pos, h_pos, N * sizeof(double4), cudaMemcpyHostToDevice);
+      |                                         ^
+/usr/local/cuda-13.1/include/vector_types.h:561:43: note: 'double4' has been explicitly marked deprecated here
+  561 | typedef __device_builtin__ struct double4 __VECTOR_TYPE_DEPRECATED__("use double4_16a or double4_32a") double4;
+      |                                           ^
+/usr/local/cuda-13.1/include/vector_types.h:146:57: note: expanded from macro '__VECTOR_TYPE_DEPRECATED__'
+  146 | # define __VECTOR_TYPE_DEPRECATED__(msg) __attribute__((deprecated(msg)))
+      |                                                         ^
+genga_nbody.cu:241:36: warning: 'double4' is deprecated: use double4_16a or double4_32a [-Wdeprecated-declarations]
+  241 |     int smem = BLOCK_SIZE * sizeof(double4);
+      |                                    ^
+/usr/local/cuda-13.1/include/vector_types.h:561:43: note: 'double4' has been explicitly marked deprecated here
+  561 | typedef __device_builtin__ struct double4 __VECTOR_TYPE_DEPRECATED__("use double4_16a or double4_32a") double4;
+      |                                           ^
+/usr/local/cuda-13.1/include/vector_types.h:146:57: note: expanded from macro '__VECTOR_TYPE_DEPRECATED__'
+  146 | # define __VECTOR_TYPE_DEPRECATED__(msg) __attribute__((deprecated(msg)))
+      |                                                         ^
+genga_nbody.cu:249:49: warning: 'double4' is deprecated: use double4_16a or double4_32a [-Wdeprecated-declarations]
+  249 |             cudaMemcpy(d_pos, h_pos, N * sizeof(double4), cudaMemcpyHostToDevice);
+      |                                                 ^
+/usr/local/cuda-13.1/include/vector_types.h:561:43: note: 'double4' has been explicitly marked deprecated here
+  561 | typedef __device_builtin__ struct double4 __VECTOR_TYPE_DEPRECATED__("use double4_16a or double4_32a") double4;
+      |                                           ^
+/usr/local/cuda-13.1/include/vector_types.h:146:57: note: expanded from macro '__VECTOR_TYPE_DEPRECATED__'
+  146 | # define __VECTOR_TYPE_DEPRECATED__(msg) __attribute__((deprecated(msg)))
+      |                                                         ^
+[poseidon] GPU mode active for preprocess__Z12nbody_kernelPK7double4P7double3i_poseidon_body
+[poseidon] Starting Floodfill for preprocess__Z12nbody_kernelPK7double4P7double3i_poseidon_body
+[poseidon] PT Function identified:   %77 = tail call noundef double @__nv_sqrt(double noundef %76) #21, !enzyme_active !59, !poseidon.prof.idx !113
+##### Finished synthesizing candidates for 1 of 1 subgraphs! #####
+[poseidon] narrowed shared staging buffer @sharedPos (4 loads, 0 stores, stride 32->16)
+[poseidon] narrowed shared staging buffer @sharedPos (4 loads, 0 stores, stride 32->16)
+[poseidon] narrowed shared staging buffer @sharedPos (4 loads, 0 stores, stride 32->16)
+[poseidon] narrowed shared staging buffer @sharedPos (4 loads, 0 stores, stride 32->16)
+[poseidon] narrowed shared staging buffer @sharedPos (4 loads, 0 stores, stride 32->16)
+[poseidon] narrowed shared staging buffer @sharedPos (4 loads, 0 stores, stride 32->16)
+[poseidon] narrowed shared staging buffer @sharedPos (4 loads, 0 stores, stride 32->16)
+[poseidon] narrowed shared staging buffer @sharedPos (4 loads, 0 stores, stride 32->16)
+[poseidon] narrowed shared staging buffer @sharedPos (4 loads, 0 stores, stride 32->16)
+[poseidon] narrowed shared staging buffer @sharedPos (4 loads, 0 stores, stride 32->16)
+[poseidon] narrowed shared staging buffer @sharedPos (4 loads, 0 stores, stride 32->16)
+[poseidon] narrowed shared staging buffer @sharedPos (4 loads, 0 stores, stride 32->16)
+[poseidon] narrowed shared staging buffer @sharedPos (4 loads, 0 stores, stride 32->16)
+Starting accuracy DP solver with cost budget: 0.000000e+00 of the site's profiled cost
+Solving the DP for preprocess__Z12nbody_kernelPK7double4P7double3i_poseidon_body.
+[poseidon] narrowed shared staging buffer @sharedPos (4 loads, 0 stores, stride 32->16)
+[poseidon] narrowed shared staging buffer @sharedPos (4 loads, 0 stores, stride 32->16)
+[poseidon] narrowed shared staging buffer @sharedPos (4 loads, 0 stores, stride 32->16)
+[poseidon] narrowed shared staging buffer @sharedPos (4 loads, 0 stores, stride 32->16)
+[poseidon] narrowed shared staging buffer @sharedPos (4 loads, 0 stores, stride 32->16)
+[poseidon] narrowed shared staging buffer @sharedPos (4 loads, 0 stores, stride 32->16)
+[poseidon] narrowed shared staging buffer @sharedPos (4 loads, 0 stores, stride 32->16)
+[poseidon] narrowed shared staging buffer @sharedPos (4 loads, 0 stores, stride 32->16)
+[poseidon] narrowed shared staging buffer @sharedPos (4 loads, 0 stores, stride 32->16)
+[poseidon] narrowed shared staging buffer @sharedPos (4 loads, 0 stores, stride 32->16)
+[poseidon] narrowed shared staging buffer @sharedPos (4 loads, 0 stores, stride 32->16)
+[poseidon] narrowed shared staging buffer @sharedPos (4 loads, 0 stores, stride 32->16)
+[poseidon] narrowed shared staging buffer @sharedPos (4 loads, 0 stores, stride 32->16)
+##### Finished processing 1 of 1 CSs #####
+Current DP table sizes: 10
+DP table for preprocess__Z12nbody_kernelPK7double4P7double3i_poseidon_body cached to file.
+Poseidon JSON report written to /m/replay_pack.new/rows/t1-force-b300/frontier_explain/preprocess__Z12nbody_kernelPK7double4P7double3i_poseidon_body.json
+Poseidon text report written to /m/replay_pack.new/rows/t1-force-b300/frontier_explain/preprocess__Z12nbody_kernelPK7double4P7double3i_poseidon_body.txt
+Poseidon curated rewrites written to /m/replay_pack.new/rows/t1-force-b300/frontier_explain/preprocess__Z12nbody_kernelPK7double4P7double3i_poseidon_body_rewrites.json
+Critical computation cost range: [-9.824647e-01, 0.000000e+00]
+DP table contains 10 entries.
+Total candidate compositions: 4.000000e+01
+WARNING: No-op solution (utilized cost budget = 0) is considered Pareto-optimal.
+Minimum accuracy cost within budget: 0.000000e+00
+Computation cost budget used: 0.000000e+00
+Poseidon explanation written to /m/replay_pack.new/rows/t1-force-b300/frontier_explain/preprocess__Z12nbody_kernelPK7double4P7double3i_poseidon_body.explain.json
+[poseidon] pin: 
+[poseidon] Finished optimizing preprocess__Z12nbody_kernelPK7double4P7double3i_poseidon_body
+genga_nbody.cu:130:6: warning: Poseidon: Poseidon returned false (no change) for preprocess__Z12nbody_kernelPK7double4P7double3i_poseidon_body
+  130 | void nbody_kernel(const double4* __restrict__ pos,
+      |      ^
+[poseidon] no rewrite applied for preprocess__Z12nbody_kernelPK7double4P7double3i_poseidon_body; calling original body _Z12nbody_kernelPK7double4P7double3i_poseidon_body (bit-transparent no-op)
+17 warnings generated when compiling for sm_103.
+genga_nbody.cu:56:28: warning: 'double4' is deprecated: use double4_16a or double4_32a [-Wdeprecated-declarations]
+   56 | __device__ void accEncFull(double4 x4i, double4 x4j, double3 &ac, double &test, int i, int j, double MinMass, int UseTestParticles){
+      |                            ^
+/usr/local/cuda-13.1/include/vector_types.h:561:43: note: 'double4' has been explicitly marked deprecated here
+  561 | typedef __device_builtin__ struct double4 __VECTOR_TYPE_DEPRECATED__("use double4_16a or double4_32a") double4;
+      |                                           ^
+/usr/local/cuda-13.1/include/vector_types.h:146:57: note: expanded from macro '__VECTOR_TYPE_DEPRECATED__'
+  146 | # define __VECTOR_TYPE_DEPRECATED__(msg) __attribute__((deprecated(msg)))
+      |                                                         ^
+genga_nbody.cu:56:41: warning: 'double4' is deprecated: use double4_16a or double4_32a [-Wdeprecated-declarations]
+   56 | __device__ void accEncFull(double4 x4i, double4 x4j, double3 &ac, double &test, int i, int j, double MinMass, int UseTestParticles){
+      |                                         ^
+/usr/local/cuda-13.1/include/vector_types.h:561:43: note: 'double4' has been explicitly marked deprecated here
+  561 | typedef __device_builtin__ struct double4 __VECTOR_TYPE_DEPRECATED__("use double4_16a or double4_32a") double4;
+      |                                           ^
+/usr/local/cuda-13.1/include/vector_types.h:146:57: note: expanded from macro '__VECTOR_TYPE_DEPRECATED__'
+  146 | # define __VECTOR_TYPE_DEPRECATED__(msg) __attribute__((deprecated(msg)))
+      |                                                         ^
+genga_nbody.cu:100:29: warning: 'double4' is deprecated: use double4_16a or double4_32a [-Wdeprecated-declarations]
+  100 | void computeBodyAccel(const double4* __restrict__ pos,
+      |                             ^
+/usr/local/cuda-13.1/include/vector_types.h:561:43: note: 'double4' has been explicitly marked deprecated here
+  561 | typedef __device_builtin__ struct double4 __VECTOR_TYPE_DEPRECATED__("use double4_16a or double4_32a") double4;
+      |                                           ^
+/usr/local/cuda-13.1/include/vector_types.h:146:57: note: expanded from macro '__VECTOR_TYPE_DEPRECATED__'
+  146 | # define __VECTOR_TYPE_DEPRECATED__(msg) __attribute__((deprecated(msg)))
+      |                                                         ^
+genga_nbody.cu:103:23: warning: 'double4' is deprecated: use double4_16a or double4_32a [-Wdeprecated-declarations]
+  103 |     extern __shared__ double4 sharedPos[];
+      |                       ^
+/usr/local/cuda-13.1/include/vector_types.h:561:43: note: 'double4' has been explicitly marked deprecated here
+  561 | typedef __device_builtin__ struct double4 __VECTOR_TYPE_DEPRECATED__("use double4_16a or double4_32a") double4;
+      |                                           ^
+/usr/local/cuda-13.1/include/vector_types.h:146:57: note: expanded from macro '__VECTOR_TYPE_DEPRECATED__'
+  146 | # define __VECTOR_TYPE_DEPRECATED__(msg) __attribute__((deprecated(msg)))
+      |                                                         ^
+genga_nbody.cu:108:5: warning: 'double4' is deprecated: use double4_16a or double4_32a [-Wdeprecated-declarations]
+  108 |     double4 myPos = pos[i];
+      |     ^
+/usr/local/cuda-13.1/include/vector_types.h:561:43: note: 'double4' has been explicitly marked deprecated here
+  561 | typedef __device_builtin__ struct double4 __VECTOR_TYPE_DEPRECATED__("use double4_16a or double4_32a") double4;
+      |                                           ^
+/usr/local/cuda-13.1/include/vector_types.h:146:57: note: expanded from macro '__VECTOR_TYPE_DEPRECATED__'
+  146 | # define __VECTOR_TYPE_DEPRECATED__(msg) __attribute__((deprecated(msg)))
+      |                                                         ^
+genga_nbody.cu:130:25: warning: 'double4' is deprecated: use double4_16a or double4_32a [-Wdeprecated-declarations]
+  130 | void nbody_kernel(const double4* __restrict__ pos,
+      |                         ^
+/usr/local/cuda-13.1/include/vector_types.h:561:43: note: 'double4' has been explicitly marked deprecated here
+  561 | typedef __device_builtin__ struct double4 __VECTOR_TYPE_DEPRECATED__("use double4_16a or double4_32a") double4;
+      |                                           ^
+/usr/local/cuda-13.1/include/vector_types.h:146:57: note: expanded from macro '__VECTOR_TYPE_DEPRECATED__'
+  146 | # define __VECTOR_TYPE_DEPRECATED__(msg) __attribute__((deprecated(msg)))
+      |                                                         ^
+genga_nbody.cu:138:29: warning: 'double4' is deprecated: use double4_16a or double4_32a [-Wdeprecated-declarations]
+  138 | void nbody_force_gold(const double4* __restrict__ pos,
+      |                             ^
+/usr/local/cuda-13.1/include/vector_types.h:561:43: note: 'double4' has been explicitly marked deprecated here
+  561 | typedef __device_builtin__ struct double4 __VECTOR_TYPE_DEPRECATED__("use double4_16a or double4_32a") double4;
+      |                                           ^
+/usr/local/cuda-13.1/include/vector_types.h:146:57: note: expanded from macro '__VECTOR_TYPE_DEPRECATED__'
+  146 | # define __VECTOR_TYPE_DEPRECATED__(msg) __attribute__((deprecated(msg)))
+      |                                                         ^
+genga_nbody.cu:152:24: warning: 'double4' is deprecated: use double4_16a or double4_32a [-Wdeprecated-declarations]
+  152 | static void plummer_ic(double4 *pos, double3 *vel, int N) {
+      |                        ^
+/usr/local/cuda-13.1/include/vector_types.h:561:43: note: 'double4' has been explicitly marked deprecated here
+  561 | typedef __device_builtin__ struct double4 __VECTOR_TYPE_DEPRECATED__("use double4_16a or double4_32a") double4;
+      |                                           ^
+/usr/local/cuda-13.1/include/vector_types.h:146:57: note: expanded from macro '__VECTOR_TYPE_DEPRECATED__'
+  146 | # define __VECTOR_TYPE_DEPRECATED__(msg) __attribute__((deprecated(msg)))
+      |                                                         ^
+genga_nbody.cu:180:40: warning: 'double4' is deprecated: use double4_16a or double4_32a [-Wdeprecated-declarations]
+  180 | static double compute_energy_f64(const double4 *pos, const double3 *vel, int N) {
+      |                                        ^
+/usr/local/cuda-13.1/include/vector_types.h:561:43: note: 'double4' has been explicitly marked deprecated here
+  561 | typedef __device_builtin__ struct double4 __VECTOR_TYPE_DEPRECATED__("use double4_16a or double4_32a") double4;
+      |                                           ^
+/usr/local/cuda-13.1/include/vector_types.h:146:57: note: expanded from macro '__VECTOR_TYPE_DEPRECATED__'
+  146 | # define __VECTOR_TYPE_DEPRECATED__(msg) __attribute__((deprecated(msg)))
+      |                                                         ^
+genga_nbody.cu:213:5: warning: 'double4' is deprecated: use double4_16a or double4_32a [-Wdeprecated-declarations]
+  213 |     double4 *h_pos = new double4[N];
+      |     ^
+/usr/local/cuda-13.1/include/vector_types.h:561:43: note: 'double4' has been explicitly marked deprecated here
+  561 | typedef __device_builtin__ struct double4 __VECTOR_TYPE_DEPRECATED__("use double4_16a or double4_32a") double4;
+      |                                           ^
+/usr/local/cuda-13.1/include/vector_types.h:146:57: note: expanded from macro '__VECTOR_TYPE_DEPRECATED__'
+  146 | # define __VECTOR_TYPE_DEPRECATED__(msg) __attribute__((deprecated(msg)))
+      |                                                         ^
+genga_nbody.cu:213:26: warning: 'double4' is deprecated: use double4_16a or double4_32a [-Wdeprecated-declarations]
+  213 |     double4 *h_pos = new double4[N];
+      |                          ^
+/usr/local/cuda-13.1/include/vector_types.h:561:43: note: 'double4' has been explicitly marked deprecated here
+  561 | typedef __device_builtin__ struct double4 __VECTOR_TYPE_DEPRECATED__("use double4_16a or double4_32a") double4;
+      |                                           ^
+/usr/local/cuda-13.1/include/vector_types.h:146:57: note: expanded from macro '__VECTOR_TYPE_DEPRECATED__'
+  146 | # define __VECTOR_TYPE_DEPRECATED__(msg) __attribute__((deprecated(msg)))
+      |                                                         ^
+genga_nbody.cu:233:5: warning: 'double4' is deprecated: use double4_16a or double4_32a [-Wdeprecated-declarations]
+  233 |     double4 *d_pos;
+      |     ^
+/usr/local/cuda-13.1/include/vector_types.h:561:43: note: 'double4' has been explicitly marked deprecated here
+  561 | typedef __device_builtin__ struct double4 __VECTOR_TYPE_DEPRECATED__("use double4_16a or double4_32a") double4;
+      |                                           ^
+/usr/local/cuda-13.1/include/vector_types.h:146:57: note: expanded from macro '__VECTOR_TYPE_DEPRECATED__'
+  146 | # define __VECTOR_TYPE_DEPRECATED__(msg) __attribute__((deprecated(msg)))
+      |                                                         ^
+genga_nbody.cu:235:36: warning: 'double4' is deprecated: use double4_16a or double4_32a [-Wdeprecated-declarations]
+  235 |     cudaMalloc(&d_pos,  N * sizeof(double4));
+      |                                    ^
+/usr/local/cuda-13.1/include/vector_types.h:561:43: note: 'double4' has been explicitly marked deprecated here
+  561 | typedef __device_builtin__ struct double4 __VECTOR_TYPE_DEPRECATED__("use double4_16a or double4_32a") double4;
+      |                                           ^
+/usr/local/cuda-13.1/include/vector_types.h:146:57: note: expanded from macro '__VECTOR_TYPE_DEPRECATED__'
+  146 | # define __VECTOR_TYPE_DEPRECATED__(msg) __attribute__((deprecated(msg)))
+      |                                                         ^
+genga_nbody.cu:238:41: warning: 'double4' is deprecated: use double4_16a or double4_32a [-Wdeprecated-declarations]
+  238 |     cudaMemcpy(d_pos, h_pos, N * sizeof(double4), cudaMemcpyHostToDevice);
+      |                                         ^
+/usr/local/cuda-13.1/include/vector_types.h:561:43: note: 'double4' has been explicitly marked deprecated here
+  561 | typedef __device_builtin__ struct double4 __VECTOR_TYPE_DEPRECATED__("use double4_16a or double4_32a") double4;
+      |                                           ^
+/usr/local/cuda-13.1/include/vector_types.h:146:57: note: expanded from macro '__VECTOR_TYPE_DEPRECATED__'
+  146 | # define __VECTOR_TYPE_DEPRECATED__(msg) __attribute__((deprecated(msg)))
+      |                                                         ^
+genga_nbody.cu:241:36: warning: 'double4' is deprecated: use double4_16a or double4_32a [-Wdeprecated-declarations]
+  241 |     int smem = BLOCK_SIZE * sizeof(double4);
+      |                                    ^
+/usr/local/cuda-13.1/include/vector_types.h:561:43: note: 'double4' has been explicitly marked deprecated here
+  561 | typedef __device_builtin__ struct double4 __VECTOR_TYPE_DEPRECATED__("use double4_16a or double4_32a") double4;
+      |                                           ^
+/usr/local/cuda-13.1/include/vector_types.h:146:57: note: expanded from macro '__VECTOR_TYPE_DEPRECATED__'
+  146 | # define __VECTOR_TYPE_DEPRECATED__(msg) __attribute__((deprecated(msg)))
+      |                                                         ^
+genga_nbody.cu:249:49: warning: 'double4' is deprecated: use double4_16a or double4_32a [-Wdeprecated-declarations]
+  249 |             cudaMemcpy(d_pos, h_pos, N * sizeof(double4), cudaMemcpyHostToDevice);
+      |                                                 ^
+/usr/local/cuda-13.1/include/vector_types.h:561:43: note: 'double4' has been explicitly marked deprecated here
+  561 | typedef __device_builtin__ struct double4 __VECTOR_TYPE_DEPRECATED__("use double4_16a or double4_32a") double4;
+      |                                           ^
+/usr/local/cuda-13.1/include/vector_types.h:146:57: note: expanded from macro '__VECTOR_TYPE_DEPRECATED__'
+  146 | # define __VECTOR_TYPE_DEPRECATED__(msg) __attribute__((deprecated(msg)))
+      |                                                         ^
+16 warnings generated when compiling for host.

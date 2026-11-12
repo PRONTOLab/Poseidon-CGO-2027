@@ -1,0 +1,712 @@
+{
+  "function": {
+    "ir": "preprocess__Z8gram_optPdPKd_poseidon_body",
+    "name": "gram_opt(double*, double const*)",
+    "symbol": "_Z8gram_optPdPKd"
+  },
+  "pareto": [
+    {
+      "applied": [
+        "M0_18"
+      ],
+      "budget": -0.93751268360194007,
+      "cost": -0.92811059400270257,
+      "modelled_rel_error": 41.549249351132502
+    },
+    {
+      "applied": [
+        "M0_18"
+      ],
+      "budget": -0.9375095996164442,
+      "cost": -0.9281075100172067,
+      "modelled_rel_error": 5.221261620121151
+    },
+    {
+      "applied": [
+        "M0_18"
+      ],
+      "budget": -0.93619571413845459,
+      "cost": -0.92679362453921721,
+      "modelled_rel_error": 0.087299099671610633
+    },
+    {
+      "applied": [
+        "M0_18"
+      ],
+      "budget": -0.93369919612625785,
+      "cost": -0.92429710652702035,
+      "modelled_rel_error": 0.087169302922906353
+    },
+    {
+      "applied": [
+        "M0_18"
+      ],
+      "budget": -0.93133173116268875,
+      "cost": -0.92192964156345136,
+      "modelled_rel_error": 0.086947324924708885
+    },
+    {
+      "applied": [
+        "M0_18"
+      ],
+      "budget": -0.928835213150492,
+      "cost": -0.91943312355125451,
+      "modelled_rel_error": 0.086817528176004605
+    },
+    {
+      "applied": [
+        "M0_18"
+      ],
+      "budget": -0.92453839228899637,
+      "cost": -0.91513630268975898,
+      "modelled_rel_error": 0.086817528173670763
+    },
+    {
+      "applied": [
+        "M0_19"
+      ],
+      "budget": -0.92397123017472604,
+      "cost": -0.91456914057548866,
+      "modelled_rel_error": 0.086725117939654969
+    },
+    {
+      "applied": [
+        "M0_19"
+      ],
+      "budget": -0.91967440931323052,
+      "cost": -0.91027231971399303,
+      "modelled_rel_error": 0.086725117937321128
+    },
+    {
+      "applied": [],
+      "budget": -0.915377588451735,
+      "cost": -0.90597549885249751,
+      "modelled_rel_error": 0.086725117936719595
+    },
+    {
+      "applied": [
+        "M0_18"
+      ],
+      "budget": -0.90888354645562375,
+      "cost": -0.89948145685638625,
+      "modelled_rel_error": 0.085666175739694914
+    },
+    {
+      "applied": [
+        "M0_18"
+      ],
+      "budget": -0.90638702844342689,
+      "cost": -0.89698493884418939,
+      "modelled_rel_error": 0.085536378990990633
+    },
+    {
+      "applied": [
+        "M0_18"
+      ],
+      "budget": -0.90537182848312925,
+      "cost": -0.89596973888389175,
+      "modelled_rel_error": 0.085432141665457706
+    },
+    {
+      "applied": [
+        "M0_18"
+      ],
+      "budget": -0.90401956347985779,
+      "cost": -0.89461747388062041,
+      "modelled_rel_error": 0.085314400992793166
+    },
+    {
+      "applied": [
+        "M0_18"
+      ],
+      "budget": -0.90287531047093239,
+      "cost": -0.8934732208716949,
+      "modelled_rel_error": 0.085302344916753425
+    },
+    {
+      "applied": [
+        "M0_18"
+      ],
+      "budget": -0.90152304546766104,
+      "cost": -0.89212095586842355,
+      "modelled_rel_error": 0.085184604244088885
+    },
+    {
+      "applied": [
+        "M0_18"
+      ],
+      "budget": -0.90050784550736329,
+      "cost": -0.89110575590812591,
+      "modelled_rel_error": 0.085080366918555958
+    },
+    {
+      "applied": [
+        "M0_18"
+      ],
+      "budget": -0.89801132749516654,
+      "cost": -0.88860923789592905,
+      "modelled_rel_error": 0.084950570169851677
+    },
+    {
+      "applied": [
+        "M0_18"
+      ],
+      "budget": -0.89511939512993077,
+      "cost": -0.88571730553069328,
+      "modelled_rel_error": 0.084935740669076026
+    },
+    {
+      "applied": [
+        "M0_19"
+      ],
+      "budget": -0.89314734451940059,
+      "cost": -0.8837452549201632,
+      "modelled_rel_error": 0.084858159933502028
+    },
+    {
+      "applied": [
+        "M0_19"
+      ],
+      "budget": -0.89025541215416493,
+      "cost": -0.88085332255492743,
+      "modelled_rel_error": 0.084843330432726391
+    },
+    {
+      "applied": [
+        "M0_19"
+      ],
+      "budget": -0.88669916582437591,
+      "cost": -0.87729707622513853,
+      "modelled_rel_error": 0.084842390750068844
+    },
+    {
+      "applied": [
+        "M0_19"
+      ],
+      "budget": -0.88505936615111069,
+      "cost": -0.87565727655187331,
+      "modelled_rel_error": 0.084842329005851841
+    },
+    {
+      "applied": [
+        "M0_19"
+      ],
+      "budget": -0.88076254528961517,
+      "cost": -0.87136045569037779,
+      "modelled_rel_error": 0.084842329003517999
+    },
+    {
+      "applied": [],
+      "budget": -0.87646572442811965,
+      "cost": -0.86706363482888216,
+      "modelled_rel_error": 0.084842329002916467
+    },
+    {
+      "applied": [
+        "M0_19"
+      ],
+      "budget": -0.8699066577505169,
+      "cost": -0.8605045681512794,
+      "modelled_rel_error": 0.084842283736614094
+    },
+    {
+      "applied": [
+        "M0_18"
+      ],
+      "budget": -0.86702062976033345,
+      "cost": -0.85761854016109595,
+      "modelled_rel_error": 0.0023270193783430531
+    },
+    {
+      "applied": [
+        "M0_18"
+      ],
+      "budget": -0.86215664678456749,
+      "cost": -0.85275455718533011,
+      "modelled_rel_error": 0.0019752446314413095
+    },
+    {
+      "applied": [
+        "M0_18"
+      ],
+      "budget": -0.85785982592307197,
+      "cost": -0.84845773632383459,
+      "modelled_rel_error": 0.0019752446291074611
+    },
+    {
+      "applied": [
+        "M0_19"
+      ],
+      "budget": -0.85729266380880165,
+      "cost": -0.84789057420956426,
+      "modelled_rel_error": 0.0018828343950916717
+    },
+    {
+      "applied": [
+        "M0_19"
+      ],
+      "budget": -0.85299584294730613,
+      "cost": -0.84359375334806863,
+      "modelled_rel_error": 0.0018828343927578231
+    },
+    {
+      "applied": [],
+      "budget": -0.84869902208581061,
+      "cost": -0.83929693248657311,
+      "modelled_rel_error": 0.0018828343921562932
+    },
+    {
+      "applied": [
+        "M0_19"
+      ],
+      "budget": -0.84213995540820785,
+      "cost": -0.83273786580897036,
+      "modelled_rel_error": 0.0018827891258539227
+    },
+    {
+      "applied": [
+        "M0_18"
+      ],
+      "budget": -0.83970846207750249,
+      "cost": -0.830306372478265,
+      "modelled_rel_error": 0.00069409544642733188
+    },
+    {
+      "applied": [
+        "M0_18"
+      ],
+      "budget": -0.83619674410500799,
+      "cost": -0.8267946545057705,
+      "modelled_rel_error": 0.00046006137219011472
+    },
+    {
+      "applied": [
+        "M0_18"
+      ],
+      "budget": -0.83484447910173665,
+      "cost": -0.82544238950249915,
+      "modelled_rel_error": 0.00034232069952558846
+    },
+    {
+      "applied": [
+        "M0_18"
+      ],
+      "budget": -0.83133276112924215,
+      "cost": -0.82193067153000465,
+      "modelled_rel_error": 0.00010828662528837136
+    },
+    {
+      "applied": [
+        "M0_18"
+      ],
+      "budget": -0.82844082876400638,
+      "cost": -0.81903873916476888,
+      "modelled_rel_error": 9.3457124512724658e-05
+    },
+    {
+      "applied": [
+        "M0_19"
+      ],
+      "budget": -0.82646877815347619,
+      "cost": -0.81706668855423881,
+      "modelled_rel_error": 1.5876388938733486e-05
+    },
+    {
+      "applied": [
+        "M0_19"
+      ],
+      "budget": -0.82357684578824042,
+      "cost": -0.81417475618900303,
+      "modelled_rel_error": 1.0468881630867646e-06
+    },
+    {
+      "applied": [
+        "M0_19"
+      ],
+      "budget": -0.82002059945845152,
+      "cost": -0.81061850985921413,
+      "modelled_rel_error": 1.0720550553618969e-07
+    },
+    {
+      "applied": [
+        "M0_19"
+      ],
+      "budget": -0.8183807997851863,
+      "cost": -0.80897871018594891,
+      "modelled_rel_error": 4.546128854104766e-08
+    },
+    {
+      "applied": [
+        "M0_19"
+      ],
+      "budget": -0.81408397892369078,
+      "cost": -0.80468188932445328,
+      "modelled_rel_error": 4.5458954692665748e-08
+    },
+    {
+      "applied": [],
+      "budget": -0.80978715806219526,
+      "cost": -0.80038506846295776,
+      "modelled_rel_error": 4.5458353162689452e-08
+    },
+    {
+      "applied": [
+        "M0_19"
+      ],
+      "budget": -0.8032280913845925,
+      "cost": -0.79382600178535501,
+      "modelled_rel_error": 1.9205079215527391e-10
+    },
+    {
+      "applied": [
+        "M0_19"
+      ],
+      "budget": -0.79893127052309698,
+      "cost": -0.78952918092385949,
+      "modelled_rel_error": 1.8971694377335674e-10
+    },
+    {
+      "applied": [],
+      "budget": -0.79463444966160135,
+      "cost": -0.78523236006236397,
+      "modelled_rel_error": 1.8911541379706271e-10
+    },
+    {
+      "applied": [
+        "M0_19"
+      ],
+      "budget": -0.76885352536258178,
+      "cost": -0.75945143576334428,
+      "modelled_rel_error": 1.7925970028221786e-10
+    },
+    {
+      "applied": [
+        "M0_19"
+      ],
+      "budget": -0.76455670450108626,
+      "cost": -0.75515461490184876,
+      "modelled_rel_error": 1.7692585190030068e-10
+    },
+    {
+      "applied": [],
+      "budget": -0.76025988363959063,
+      "cost": -0.75085779404035324,
+      "modelled_rel_error": 1.7632432192400665e-10
+    },
+    {
+      "applied": [
+        "M0_19"
+      ],
+      "budget": -0.73038521413923241,
+      "cost": -0.72098312453999502,
+      "modelled_rel_error": 3.2717836122305777e-11
+    },
+    {
+      "applied": [
+        "M0_19"
+      ],
+      "budget": -0.72608839327773689,
+      "cost": -0.7166863036784995,
+      "modelled_rel_error": 3.0383987740388626e-11
+    },
+    {
+      "applied": [],
+      "budget": -0.72179157241624137,
+      "cost": -0.71238948281700387,
+      "modelled_rel_error": 2.9782457764094581e-11
+    },
+    {
+      "applied": [
+        "M0_19"
+      ],
+      "budget": -0.69601064811722169,
+      "cost": -0.6866085585179843,
+      "modelled_rel_error": 1.9926744249249743e-11
+    },
+    {
+      "applied": [
+        "M0_19"
+      ],
+      "budget": -0.69171382725572617,
+      "cost": -0.68231173765648878,
+      "modelled_rel_error": 1.7592895867332591e-11
+    },
+    {
+      "applied": [],
+      "budget": -0.68741700639423065,
+      "cost": -0.67801491679499315,
+      "modelled_rel_error": 1.6991365891038539e-11
+    },
+    {
+      "applied": [],
+      "budget": -0.61319819009840648,
+      "cost": -0.60379610049916899,
+      "modelled_rel_error": 1.6683293553143355e-11
+    },
+    {
+      "applied": [
+        "M0_19"
+      ],
+      "budget": -0.042968207745001791,
+      "cost": -0.03356611814576433,
+      "modelled_rel_error": 1.5726470231267241e-11
+    },
+    {
+      "applied": [
+        "M0_19"
+      ],
+      "budget": -0.038671386883506256,
+      "cost": -0.029269297284268792,
+      "modelled_rel_error": 1.3392621849350089e-11
+    },
+    {
+      "applied": [],
+      "budget": -0.034374566022010715,
+      "cost": -0.024972476422773254,
+      "modelled_rel_error": 1.279109187305604e-11
+    },
+    {
+      "applied": [
+        "M0_19"
+      ],
+      "budget": -0.0085936417229910776,
+      "cost": 0.00080844787624638232,
+      "modelled_rel_error": 2.9353783582112024e-12
+    },
+    {
+      "applied": [
+        "M0_19"
+      ],
+      "budget": -0.0042968208614955388,
+      "cost": 0.005105268737741921,
+      "modelled_rel_error": 6.015299762940496e-13
+    },
+    {
+      "applied": [],
+      "budget": 0,
+      "cost": 0.0094020895992374606,
+      "modelled_rel_error": 0,
+      "selected": true
+    }
+  ],
+  "result": {
+    "applied": [],
+    "cost_after": 0.0094020895992374606,
+    "cost_before": 0.0094020895992374606,
+    "modelled_rel_error": 0,
+    "modelled_rel_error_as_written": 0
+  },
+  "schema": "poseidon-explain/1",
+  "subgraphs": [
+    {
+      "alternatives": [
+        {
+          "cost_delta": -0.0088110742273336436,
+          "id": "M0_0",
+          "kind": "matmul",
+          "modelled_error": 1.0961421333004541e+25,
+          "reason": "dominated by M0_18, which costs no more and is at least as accurate",
+          "status": "rejected",
+          "summary": "wmma m16n16k16 f16/f16"
+        },
+        {
+          "cost_delta": -0.008811121204827797,
+          "id": "M0_1",
+          "kind": "matmul",
+          "modelled_error": 1.0961421333004541e+25,
+          "reason": "dominated by M0_18, which costs no more and is at least as accurate",
+          "status": "rejected",
+          "summary": "wmma m16n16k16 f16/f32"
+        },
+        {
+          "cost_delta": -0.0088115068117589779,
+          "id": "M0_2",
+          "kind": "matmul",
+          "modelled_domain_error": 0.0027636457791770453,
+          "modelled_error": 1.0701330286758348,
+          "reason": "dominated by M0_18, which costs no more and is at least as accurate",
+          "status": "rejected",
+          "summary": "wmma m16n16k16 bf16/f32"
+        },
+        {
+          "cost_delta": -0.008461316561402428,
+          "id": "M0_3",
+          "kind": "matmul",
+          "modelled_domain_error": 0.00034691960200395336,
+          "modelled_error": 0.1342958246083103,
+          "reason": "dominated by M0_18, which costs no more and is at least as accurate",
+          "status": "rejected",
+          "summary": "wmma m16n16k8 tf32/f32"
+        },
+        {
+          "cost_delta": -0.0086468854928930545,
+          "id": "M0_4",
+          "kind": "matmul",
+          "modelled_error": 1.0961421333004541e+25,
+          "reason": "dominated by M0_18, which costs no more and is at least as accurate",
+          "status": "rejected",
+          "summary": "tcec n=2 wmma m16n16k16 f16/f32"
+        },
+        {
+          "cost_delta": -0.0083348207413684507,
+          "id": "M0_5",
+          "kind": "matmul",
+          "modelled_error": 1.0961421333004541e+25,
+          "reason": "dominated by M0_18, which costs no more and is at least as accurate",
+          "status": "rejected",
+          "summary": "tcec n=3 wmma m16n16k16 f16/f32"
+        },
+        {
+          "cost_delta": -0.0075839322573226465,
+          "id": "M0_6",
+          "kind": "matmul",
+          "modelled_error": 1.0961421333004541e+25,
+          "reason": "dominated by M0_18, which costs no more and is at least as accurate",
+          "status": "rejected",
+          "summary": "tcec n=5 wmma m16n16k16 f16/f32"
+        },
+        {
+          "cost_delta": -0.0086393168966126897,
+          "id": "M0_7",
+          "kind": "matmul",
+          "modelled_domain_error": 1.0869010648938696e-05,
+          "modelled_error": 0.0042076701588530472,
+          "reason": "dominated by M0_18, which costs no more and is at least as accurate",
+          "status": "rejected",
+          "summary": "tcec n=2 wmma m16n16k16 bf16/f32"
+        },
+        {
+          "cost_delta": -0.007811556920501039,
+          "id": "M0_8",
+          "kind": "matmul",
+          "modelled_domain_error": 8.1861915999271459e-07,
+          "modelled_error": 0.0003180546298431206,
+          "reason": "dominated by M0_18, which costs no more and is at least as accurate",
+          "status": "rejected",
+          "summary": "tcec n=2 wmma m16n16k8 tf32/f32"
+        },
+        {
+          "cost_delta": -0.0069681612684184685,
+          "id": "M0_9",
+          "kind": "matmul",
+          "modelled_domain_error": 7.8830738371761863e-07,
+          "modelled_error": 0.00030933004505516844,
+          "reason": "dominated by M0_18, which costs no more and is at least as accurate",
+          "status": "rejected",
+          "summary": "tcec n=3 wmma m16n16k8 tf32/f32"
+        },
+        {
+          "cost_delta": -0.0051910629088594406,
+          "id": "M0_10",
+          "kind": "matmul",
+          "modelled_domain_error": 7.8830738371761863e-07,
+          "modelled_error": 0.00030933004505516844,
+          "reason": "dominated by M0_18, which costs no more and is at least as accurate",
+          "status": "rejected",
+          "summary": "tcec n=5 wmma m16n16k8 tf32/f32"
+        },
+        {
+          "cost_delta": 0.019840364614378703,
+          "id": "M0_11",
+          "kind": "matmul",
+          "modelled_domain_error": 2.2353765659971959e-08,
+          "modelled_error": 9.0657745042738292e-06,
+          "reason": "neither cheaper nor more accurate than as written",
+          "status": "rejected",
+          "summary": "ozaki-ii nm=8 wmma m16n16k16 s8/s32"
+        },
+        {
+          "cost_delta": 0.023352082804361608,
+          "id": "M0_12",
+          "kind": "matmul",
+          "modelled_domain_error": 1.4146811078158392e-09,
+          "modelled_error": 5.7055984936090383e-07,
+          "reason": "neither cheaper nor more accurate than as written",
+          "status": "rejected",
+          "summary": "ozaki-ii nm=9 wmma m16n16k16 s8/s32"
+        },
+        {
+          "cost_delta": 0.026244014952108961,
+          "id": "M0_13",
+          "kind": "matmul",
+          "modelled_domain_error": 8.786444638920916e-11,
+          "modelled_error": 3.5523499102174736e-08,
+          "reason": "neither cheaper nor more accurate than as written",
+          "status": "rejected",
+          "summary": "ozaki-ii nm=10 wmma m16n16k16 s8/s32"
+        },
+        {
+          "cost_delta": 0.02980026149938628,
+          "id": "M0_14",
+          "kind": "matmul",
+          "modelled_domain_error": 1.0213970396150685e-11,
+          "modelled_error": 4.0524311556433543e-09,
+          "reason": "neither cheaper nor more accurate than as written",
+          "status": "rejected",
+          "summary": "ozaki-ii nm=11 wmma m16n16k16 s8/s32"
+        },
+        {
+          "cost_delta": 0.032680159144071054,
+          "id": "M0_15",
+          "kind": "matmul",
+          "modelled_domain_error": 6.8471644782882609e-13,
+          "modelled_error": 2.7790729709577196e-10,
+          "reason": "neither cheaper nor more accurate than as written",
+          "status": "rejected",
+          "summary": "ozaki-ii nm=12 wmma m16n16k16 s8/s32"
+        },
+        {
+          "cost_delta": 0.035715905713053692,
+          "id": "M0_16",
+          "kind": "matmul",
+          "modelled_domain_error": 4.2419448864161095e-14,
+          "modelled_error": 1.7312049346917116e-11,
+          "reason": "neither cheaper nor more accurate than as written",
+          "status": "rejected",
+          "summary": "ozaki-ii nm=13 wmma m16n16k16 s8/s32"
+        },
+        {
+          "cost_delta": 0.039143381076668149,
+          "id": "M0_17",
+          "kind": "matmul",
+          "modelled_domain_error": 2.85838998331433e-15,
+          "modelled_error": 1.143450152106518e-12,
+          "reason": "neither cheaper nor more accurate than as written",
+          "status": "rejected",
+          "summary": "ozaki-ii nm=14 wmma m16n16k16 s8/s32"
+        },
+        {
+          "cost_delta": -0.0091608038372614064,
+          "id": "M0_18",
+          "kind": "matmul",
+          "modelled_domain_error": 2.3811946084762282e-07,
+          "modelled_error": 9.2410236951167866e-05,
+          "reason": "on the Pareto frontier; -poseidon-apply-rewrites=M0_18,, applies it",
+          "status": "pareto",
+          "summary": "tcec-dispatch wmma m16n16k16 f16/f32"
+        },
+        {
+          "cost_delta": -0.0042968208614955388,
+          "id": "M0_19",
+          "kind": "matmul",
+          "modelled_domain_error": 1.5162505494628473e-15,
+          "modelled_error": 6.015299762940496e-13,
+          "reason": "on the Pareto frontier; -poseidon-apply-rewrites=M0_19,, applies it",
+          "status": "pareto",
+          "summary": "native-dgemm cublas f64/f64"
+        }
+      ],
+      "cost": 0.0094020895992374606,
+      "executions": 10485760,
+      "id": "M0",
+      "kind": "matmul",
+      "left_as_written": "no alternative lowers the modelled error within the cost budget 0",
+      "shape": "64x64x512"
+    }
+  ],
+  "target": {
+    "budget": 0,
+    "cost_model": "/m/replay_pack.new/cost_models/cm_sm_103_B300SXM6AC_ef7c8e4b.csv",
+    "selector": "joint"
+  }
+}

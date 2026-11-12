@@ -1,0 +1,1 @@
+_Z10matmul_optPdPKdS1_:M0=tcec-dispatch wmma m16n16k16 f16/f32
