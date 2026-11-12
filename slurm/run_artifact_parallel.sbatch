@@ -28,7 +28,7 @@
 # Herbie answers reach the job as run_artifact.sbatch's header describes.
 #
 #   export POSEIDON_BUILD=/path/to/Enzyme/build
-#   cd /path/to/cgo2027
+#   cd /path/to/Poseidon-CGO-2027
 #
 #   # CSCS Alps / Daint (4x GH200 per node); the uenv supplies CUDA, gcc,
 #   # cmake and ninja. The node is allocated whole, so all four GPUs are used.

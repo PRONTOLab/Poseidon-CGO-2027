@@ -63,7 +63,7 @@ step_poseidon() { ex -e LLVM_PREFIX="$LLVM_TREE" -e JOBS="$JOBS" "$CTR" bash /op
 step_smoke()    { ex -e SMOKE_NO_GPU=1 "$CTR" bash /opt/poseidon-b300/smoke.sh /toolchain/smoke-out; }
 step_picks() {
   ex "$CTR" bash -c 'set -e; rm -rf /work && mkdir -p /work/tmp && tar -C /work -xzf /bundle/artifact.tar.gz
-    cd /work/cgo2027 && export POSEIDON_BUILD=/toolchain/poseidon-build TMPDIR=/work/tmp PY=$(command -v python3)
+    cd /work/artifact && export POSEIDON_BUILD=/toolchain/poseidon-build TMPDIR=/work/tmp PY=$(command -v python3)
     ./run_artifact.sh --picks; rc=$?; cat picks_check/picks.tsv; exit $rc'
 }
 # GENGA's B300 path on the CPU: a cost model that is not byte-identical to the
@@ -73,7 +73,7 @@ step_picks() {
 # (GENGA_HERBIE=run) from the shipped profile, and its configuration compared
 # with the expected one.
 step_herbierun() {
-  ex "$CTR" bash -c 'cd /work/cgo2027 || exit 1
+  ex "$CTR" bash -c 'cd /work/artifact || exit 1
     export POSEIDON_BUILD=/toolchain/poseidon-build TMPDIR=/work/tmp POSEIDON_ARTIFACT_NO_GPU=1 \
            PROFILES=shipped GENGA_HERBIE=run HERBIE=/toolchain/herbie/bin/herbie
     { cat cost_models/cm_sm_120_RTX5090.csv; echo "# local test copy"; } > /work/cm_sm_120_localtest.csv

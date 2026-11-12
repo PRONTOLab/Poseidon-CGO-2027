@@ -28,7 +28,7 @@ if [ ! -f "$PACK/picks_b300.tsv" ] && [ -f "$BUNDLE/replay_pack.tar.gz" ]; then
 fi
 NO_GPU="${REPLAY_NO_GPU:-0}"
 NUM_RUNS="${NUM_RUNS:-5}"
-ART="$WORK/cgo2027"
+ART="$WORK/artifact"
 ROWS="$PACK/b300_rows.tsv"; CMDIR="$PACK/cost_models"
 log() { echo "[replay $(date -u +%H:%M:%S)] $*"; }
 [ -f "$PACK/picks_b300.tsv" ] || { log "no replay pack at $PACK"; exit 99; }

@@ -6,7 +6,7 @@
 # Every input has a default inside the repository:
 #   --compiler-repo <git checkout of the Enzyme repository>   (default: ../sources/Enzyme)
 #   --compiler-commit <rev>                                   (default: HEAD of that checkout)
-#   --artifact <cgo2027 artifact directory>                   (default: ../cgo2027)
+#   --artifact <artifact directory>                           (default: .., the repository root)
 #   --cumpsgemm-repo <enp1s0/cuMpSGEMM with its submodules>   (default: ../sources/cuMpSGEMM)
 #   --cumpsgemm-commit <rev>                                  (default: HEAD of that checkout)
 #   --with-herbie           also bundle Herbie (../sources/herbie with
@@ -25,7 +25,8 @@
 #                        GENGA drift and unified solves search with
 #   cumpsgemm-src.tar.gz cuMpSGEMM at <cumpsgemm-commit> with its submodules,
 #                        under cuMpSGEMM/ (the error-corrected GEMM backend)
-#   artifact.tar.gz      the artifact directory under cgo2027/, without what its
+#   artifact.tar.gz      the repository under artifact/, without sources/ and
+#                        modal/ and without what its
 #                        .gitignore files exclude (run outputs, caches, build
 #                        products, machine pins, result tarballs) and without a
 #                        few compile-only scratch files (list below)
@@ -44,7 +45,7 @@ HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 OUT="$HERE/bundle"
 PACK="$HERE/replay_pack"
 CUMPS_REPO="$HERE/../sources/cuMpSGEMM" CUMPS_COMMIT="HEAD"
-COMPILER_REPO="$HERE/../sources/Enzyme" COMPILER_COMMIT="HEAD" ARTIFACT="$HERE/../cgo2027"
+COMPILER_REPO="$HERE/../sources/Enzyme" COMPILER_COMMIT="HEAD" ARTIFACT="$HERE/.."
 WITH_HERBIE=0 HERBIE_REPO="$HERE/../sources/herbie" HERBIE_PATCH="$HERE/../sources/herbie-num-taylor-terms.patch"
 
 usage() { sed -n '2,36p' "$0"; exit 2; }
@@ -117,9 +118,14 @@ rm -rf "$TMP/cumps"
 # compile-only scratch outputs the port's patch excluded.
 EXTRA='build*/
 herbie_input_*
-matmulacc_*
 launches_*
-.venv/'
+.venv/
+/sources/
+/modal/
+/.git
+/.git/
+/.gitmodules
+/.dockerignore'
 python3 -I - "$ARTIFACT" "$TMP/artifact.list" "$EXTRA" <<'PY'
 import os, re, sys
 
@@ -230,7 +236,7 @@ for gone in local.env cost_models/target.env; do
 done
 
 # Reproducible member metadata: fixed owner, sorted list, the files' own mtimes.
-tar -C "$ARTIFACT" --transform 's,^,cgo2027/,' --owner=0 --group=0 --numeric-owner \
+tar -C "$ARTIFACT" --transform 's,^,artifact/,' --owner=0 --group=0 --numeric-owner \
     --no-recursion -cf - -T "$TMP/artifact.list" | gzip -n -9 > "$TMP/artifact.tar.gz"
 ART_FILES="$(wc -l < "$TMP/artifact.list")"
 

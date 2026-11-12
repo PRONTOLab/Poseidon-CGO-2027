@@ -14,7 +14,7 @@ next to the compiler's current pick there (nm = 8).
 Everything is in `poseidon_b300.py`, which runs the scripts in `remote/`
 inside Modal containers. `make_bundle.sh` writes `bundle/`, what the app
 uploads: the compiler source (`../sources/Enzyme`), the cuMpSGEMM source
-(`../sources/cuMpSGEMM`), the artifact (`../cgo2027`), the replay pack
+(`../sources/cuMpSGEMM`), the artifact (the repository itself), the replay pack
 (`replay_pack/`), and a `MANIFEST` with their checksums. The compiler is built
 with the cuMpSGEMM error-corrected GEMM backend, as the paper's B300 runs
 were. `solve_b300_locally.sh`, `b300_inputs/` (the saved B300 cost models) and
@@ -36,7 +36,7 @@ Run them from this directory. Use one run id for all of them, so that every
 result lands in one directory (any name; `b300-1` below).
 
 ```sh
-# 0. Make the bundle from this clone (again after the submodules or cgo2027/ change).
+# 0. Make the bundle from this clone (again after the submodules or the artifact change).
 ./make_bundle.sh
 
 # 1. Build the compiler (CPU only, no GPU; compiles LLVM once, then cuMpSGEMM

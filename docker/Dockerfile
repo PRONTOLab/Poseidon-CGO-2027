@@ -1,13 +1,12 @@
 # One image with everything the artifact needs: CUDA 12.9, LLVM at the pinned
 # commit (clang, lld; X86 and NVPTX), cuMpSGEMM, the Poseidon compiler built
 # from the sources/Enzyme submodule, Python with numpy and matplotlib, and the
-# artifact at /artifact/cgo2027 with POSEIDON_BUILD and PY preset.
+# artifact at /artifact with POSEIDON_BUILD and PY preset.
 #
-# Build from the repository root (the directory that holds cgo2027/ and
-# sources/), cloned with its submodules (git clone --recursive, or
-# git submodule update --init --recursive):
+# Build from the repository root, cloned with its submodules (git clone
+# --recursive, or git submodule update --init --recursive):
 #
-#   docker build -f cgo2027/docker/Dockerfile -t poseidon-cgo2027 .
+#   docker build -f docker/Dockerfile -t poseidon-cgo2027 .
 #
 # Run on the GPU (Docker with the NVIDIA Container Toolkit):
 #
@@ -134,16 +133,21 @@ RUN set -eux; \
     du -sh /opt/poseidon/build; \
     ls -l /opt/poseidon/build/Poseidon/bin/poseidon-clang++ /opt/poseidon/build/Poseidon/lib/Poseidon-*.so
 
+# ---- the artifact, without the submodules the stages above were built from ----
+FROM base AS artifact
+COPY . /artifact
+RUN rm -rf /artifact/sources
+
 # ---- the image ---------------------------------------------------------------
 FROM base
 COPY --from=llvm /opt/llvm /opt/llvm
 COPY --from=poseidon /opt/poseidon /opt/poseidon
-COPY cgo2027 /artifact/cgo2027
+COPY --from=artifact /artifact /artifact
 # cuMpSGEMM carries sm_80 code and PTX, which the driver compiles for the GPU
 # on first use; a large cache keeps that result across the artifact's runs.
 ENV POSEIDON_BUILD=/opt/poseidon/build \
     PY=/opt/py/bin/python \
     CUDA_CACHE_MAXSIZE=4294967296 \
     PATH=/opt/poseidon/build/Poseidon/bin:/opt/llvm/bin:/opt/py/bin:/usr/local/cuda/bin:$PATH
-WORKDIR /artifact/cgo2027
+WORKDIR /artifact
 CMD ["/bin/bash"]

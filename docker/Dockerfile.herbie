@@ -7,8 +7,8 @@
 # Build from the repository root (cloned with its submodules), after the main
 # image:
 #
-#   docker build -f cgo2027/docker/Dockerfile -t poseidon-cgo2027 .
-#   docker build -f cgo2027/docker/Dockerfile.herbie -t poseidon-cgo2027:herbie .
+#   docker build -f docker/Dockerfile -t poseidon-cgo2027 .
+#   docker build -f docker/Dockerfile.herbie -t poseidon-cgo2027:herbie .
 #
 # Herbie is built from the sources/herbie submodule (upstream Herbie 73ba1fe76)
 # with sources/herbie-num-taylor-terms.patch applied (the --num-taylor-terms

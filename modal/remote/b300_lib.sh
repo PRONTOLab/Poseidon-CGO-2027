@@ -2,7 +2,7 @@
 # b300_lib.sh: one compile of one B300 row with the artifact's own flags, shared
 # by the local solve (solve_rows.sh) and the replay on the B300 (replay.sh), so
 # both compile with the same command line. Source it after setting:
-#   ART       the unpacked artifact (…/cgo2027)
+#   ART       the unpacked artifact (…/artifact)
 #   CMDIR     directory holding the saved B300 cost models
 #   ROWS      b300_rows.tsv
 # The rows read the profiles the artifact ships (PROFILES=shipped). GENGA rows

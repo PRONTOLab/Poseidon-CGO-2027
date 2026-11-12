@@ -166,13 +166,13 @@ step "8. the artifact's preflight"
 mkdir -p "$W/art" && tar -C "$W/art" -xzf "$BUNDLE/artifact.tar.gz"
 export POSEIDON_BUILD="$BUILD"
 if [ "$NO_GPU" = 1 ]; then
-  if ( cd "$W/art/cgo2027" && POSEIDON_ARTIFACT_NO_GPU=1 GPU_ARCH="$ARCH" bash scripts/detect.sh export ) | tee preflight.out; then
+  if ( cd "$W/art/artifact" && POSEIDON_ARTIFACT_NO_GPU=1 GPU_ARCH="$ARCH" bash scripts/detect.sh export ) | tee preflight.out; then
     ok "detect.sh export (no GPU)"
   else
     bad "detect.sh export"
   fi
 else
-  if ( cd "$W/art/cgo2027" && GPU_ID=0 ./run_artifact.sh --check ) 2>&1 | tee preflight.out; then
+  if ( cd "$W/art/artifact" && GPU_ID=0 ./run_artifact.sh --check ) 2>&1 | tee preflight.out; then
     ok "run_artifact.sh --check"
   else
     bad "run_artifact.sh --check"

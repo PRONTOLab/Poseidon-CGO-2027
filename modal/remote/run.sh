@@ -37,7 +37,7 @@ BENCHES="${BENCHES:-fig2_drift genga_nbody ozp chase_eigensolver}"
 GENGA_HERBIE_MODE="${GENGA_HERBIE:-auto}"
 DEADLINE="${DEADLINE:-0}"
 DEADLINE_MARGIN="${DEADLINE_MARGIN:-2700}"
-ART="$WORK/cgo2027"
+ART="$WORK/artifact"
 STATE="$OUT/state"
 log() { echo "[run $(date -u +%Y-%m-%dT%H:%M:%SZ)] $*"; }
 

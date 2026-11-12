@@ -7,7 +7,7 @@ the origin listed.
 
 ## The artifact's own files
 
-Everything in `cgo2027/` not listed under "Third-party code" below was written
+Everything in this repository outside `sources/` that is not listed under "Third-party code" below was written
 for this artifact: the driver and pipeline scripts, Makefiles, the benchmark
 drivers and harnesses around the ported kernels, the plotting scripts, the
 documentation, and the data (cost models, profiles, Herbie answers, golden
@@ -16,7 +16,7 @@ code.
 
 Licence of these files: **TODO (owner): choose and add a top-level `LICENSE`.**
 
-## Third-party code in `cgo2027/`
+## Third-party code in the repository
 
 ### `benchmarks/fig2_drift/mX_real/` (whole directory)
 

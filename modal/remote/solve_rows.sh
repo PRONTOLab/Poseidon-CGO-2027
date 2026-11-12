@@ -44,7 +44,7 @@ rm -rf "$W/art" "$OUT.new" && mkdir -p "$W/art" "$W/tmp"
 if [ $# -gt 0 ] && [ -f "$OUT/picks_b300.tsv" ]; then cp -a "$OUT" "$OUT.new"; fi
 mkdir -p "$OUT.new/rows" "$OUT.new/cost_models"
 tar -C "$W/art" -xzf "$BUNDLE/artifact.tar.gz"
-ART="$W/art/cgo2027"
+ART="$W/art/artifact"
 CMDIR="$OUT.new/cost_models"
 cp "$M"/b300_inputs/*.csv "$CMDIR/"
 export POSEIDON_BUILD="$TC/poseidon-build" POSEIDON_ARTIFACT_NO_GPU=1 TMPDIR="$W/tmp" CUDA_VISIBLE_DEVICES=

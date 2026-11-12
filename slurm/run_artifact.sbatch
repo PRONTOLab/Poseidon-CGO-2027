@@ -22,7 +22,7 @@
 # submitting shell's environment to the job, or pin it in local.env.
 #
 #   export POSEIDON_BUILD=/path/to/Enzyme/build
-#   cd /path/to/cgo2027
+#   cd /path/to/Poseidon-CGO-2027
 #
 #   # NERSC Perlmutter (A100)
 #   sbatch -A <account> -C gpu -q regular --gpus-per-node=1 -c 32 \

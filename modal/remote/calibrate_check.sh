@@ -23,7 +23,7 @@ if grep -q '^POSEIDON_TCEC_USE_CUMPSGEMM:BOOL=ON' "$TC/poseidon-build/CMakeCache
 fi
 T0=$(date +%s)
 "$PCAL" --gpu 0 --out "$OUT/fresh" --force "${CUMPS_ARG[@]}" \
-  --profile "$WORK/calib/cgo2027/benchmarks/ozp/profiles/surrogate512" \
+  --profile "$WORK/calib/artifact/benchmarks/ozp/profiles/surrogate512" \
   --ozaki-rect 112x112x2048,2048x112x2048 2>&1 | tee "$OUT/calibrate.log"
 rc=${PIPESTATUS[0]}
 echo "calibration_s $(( $(date +%s) - T0 )) exit $rc" | tee -a "$OUT/calibrate.log"

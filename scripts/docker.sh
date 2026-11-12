@@ -21,7 +21,7 @@
 set -euo pipefail
 ART="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 SRCS="$(bash "$ART/scripts/detect.sh" sources)" || exit 1
-CTX="$(dirname "$SRCS")"   # the build context: the directory holding sources/
+CTX="$ART"   # the build context: the repository root
 usage() { awk 'NR > 1 && /^#/ { sub(/^# ?/, ""); print; next } NR > 1 { exit }' "$0"; }
 die() { echo "docker.sh: $*" >&2; exit 1; }
 [ $# -gt 0 ] || { usage >&2; exit 1; }

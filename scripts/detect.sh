@@ -40,7 +40,7 @@ warn() { echo "detect.sh: warning: $*" >&2; }
 
 # The repository's submodules (the compiler, cuMpSGEMM, Herbie) and the Herbie
 # patch; every script that builds from them asks for this path here.
-SOURCES_DIR="$ART/../sources"
+SOURCES_DIR="$ART/sources"
 
 # The RTX 5090 model the paper's decisions were solved with, and the Herbie
 # platform generated from it, ship with the artifact.
