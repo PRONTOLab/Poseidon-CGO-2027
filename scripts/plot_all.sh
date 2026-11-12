@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# plot_all.sh — regenerate EVERY paper figure, from one entry point.
+# plot_all.sh: regenerate EVERY paper figure, from one entry point.
 #
 #   ./scripts/plot_all.sh          # all figures into figures/
 #   ./scripts/plot_all.sh ozp      # just one benchmark's figures

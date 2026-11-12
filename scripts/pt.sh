@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# pt.sh — phase timer for the compilation-overhead measurement.
+# pt.sh: phase timer for the compilation-overhead measurement.
 #
 #   pt.sh <phase> <detail> -- <cmd...>
 #

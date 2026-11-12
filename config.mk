@@ -1,4 +1,4 @@
-# config.mk — shared configuration for all Poseidon-GPU artifact benchmarks.
+# config.mk: shared configuration for all Poseidon-GPU artifact benchmarks.
 #
 # Nothing here is machine-specific. Every value is resolved by
 # scripts/detect.sh with this precedence:

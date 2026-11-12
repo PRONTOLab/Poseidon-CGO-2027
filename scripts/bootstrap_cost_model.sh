@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# bootstrap_cost_model.sh — make sure THIS GPU has a cost model before any
+# bootstrap_cost_model.sh: make sure THIS GPU has a cost model before any
 # experiment runs.
 #
 #   bash scripts/bootstrap_cost_model.sh               # shipped model on sm_120, else measure

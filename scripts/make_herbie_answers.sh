@@ -11,9 +11,9 @@
 # are benchmarks/genga_nbody/herbie_answers/ (RTX 5090) and
 # devices/<device>/herbie_answers/; compare them with diff -r: the question
 # records are deterministic, an answer's text carries Herbie's run date and
-# time. HERBIE_ANSWERS=<dir> replays a pack, e.g.
-#   HERBIE_ANSWERS=$PWD/herbie_answers_gh200 scripts/check_picks.sh t1-drift-gh200
-# after copying it over devices/gh200/herbie_answers.
+# time. check_picks.sh takes a row's answers from its device's shipped pack, so
+# to replay a new pack copy it over that one, e.g. herbie_answers_gh200/ over
+# devices/gh200/herbie_answers/, then: scripts/check_picks.sh t1-drift-gh200
 #
 # Needs a Herbie that accepts --num-taylor-terms (HERBIE=<binary>, else the
 # one the compiler was configured with; scripts/build_toolchain.sh

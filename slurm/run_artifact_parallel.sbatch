@@ -60,7 +60,7 @@ module load cudatoolkit 2>/dev/null || true
 module load python 2>/dev/null || true
 
 cd "${SLURM_SUBMIT_DIR:?submit this script from the artifact root}"
-[ -x ./run_artifact.sh ] || { echo "run_artifact.sh not found — submit from the artifact root" >&2; exit 1; }
+[ -x ./run_artifact.sh ] || { echo "run_artifact.sh not found: submit from the artifact root" >&2; exit 1; }
 
 # The devices this job owns. Slurm publishes them in CUDA_VISIBLE_DEVICES when
 # it constrains the job to a subset of the node's GPUs, and sets nothing at all

@@ -45,8 +45,8 @@
 # first (3 min on a GH200), and the GENGA drift and unified steps then need
 # Herbie answers for that model: HERBIE_ANSWERS=<answer pack> or
 # GENGA_HERBIE=run with a Herbie on the machine (README: Choices), exported
-# like POSEIDON_BUILD. Without either, genga_nbody stops at its drift step and
-# the other benchmarks still run.
+# like POSEIDON_BUILD. Without either, genga_nbody skips its drift frontier,
+# drift time series and unified solve with a note, and the rest runs.
 #
 # Everything (cost-model microbenchmark first, then the benchmarks) runs
 # inside this one allocation; the binaries execute directly on the allocated
@@ -59,7 +59,7 @@ module load cudatoolkit 2>/dev/null || true
 module load python 2>/dev/null || true
 
 cd "${SLURM_SUBMIT_DIR:?submit this script from the artifact root}"
-[ -x ./run_artifact.sh ] || { echo "run_artifact.sh not found — submit from the artifact root" >&2; exit 1; }
+[ -x ./run_artifact.sh ] || { echo "run_artifact.sh not found: submit from the artifact root" >&2; exit 1; }
 
 # Inside an allocation the allocation is the authority on which device to use.
 # detect.sh reads GPU_ID before CUDA_VISIBLE_DEVICES and local.env sets GPU_ID,

@@ -12,8 +12,8 @@
 # point.
 #
 # Options after the row id go to poseidon-explain: --format
-# report|source|diff|remarks|fpcore|json (default report), --all (every
-# alternative), --max N, --function <name>. The compile's log and the
+# report|remarks|json (default report), --all (every alternative), --max N,
+# --function <name>. The compile's log and the
 # explanation files stay in explain/<row>/ (report.txt: the default report).
 #
 #   scripts/explain.sh --list             # every row id, per device

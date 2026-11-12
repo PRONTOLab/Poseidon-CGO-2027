@@ -9,9 +9,11 @@
 #       ./run_artifact.sh in the container on the GPU (--gpus all, or
 #       GPU_ID=<n> for one); results land in ./out on the host
 #   scripts/docker.sh picks [--device rtx5090|b300|gh200|all]
-#       ./run_artifact.sh --picks in the container, without a GPU
+#       ./run_artifact.sh --picks in the container, without a GPU; the
+#       per-row logs and picks.tsv land in ./out/picks_check
 #   scripts/docker.sh explain <row> [poseidon-explain options...]
-#       ./run_artifact.sh --explain <row> in the container, without a GPU
+#       ./run_artifact.sh --explain <row> in the container, without a GPU;
+#       the report, compile log and JSON land in ./out/explain/<row>
 #   scripts/docker.sh shell
 #       an interactive shell in the container on the GPU
 #
@@ -40,6 +42,12 @@ have_image() {
 }
 GPU_ARGS=(--gpus all)
 [ -n "${GPU_ID:-}" ] && GPU_ARGS=(--gpus "device=$GPU_ID")
+# The variables of README: Configuration and Choices that a run reads, handed
+# to the container when they are set here.
+ENV_ARGS=()
+for v in BENCHES GENGA_HERBIE PROFILES SURROGATE_SIZES NUM_RUNS PARALLEL_GPUS; do
+  [ -n "${!v:-}" ] && ENV_ARGS+=(-e "$v=${!v}")
+done
 ctr() {   # <docker run options...> -- <command...>
   local opts=()
   while [ "$1" != -- ]; do opts+=("$1"); shift; done; shift
@@ -57,17 +65,22 @@ case "$CMD" in
     exit 0 ;;
   run)
     have_image; mkdir -p "$PWD/out"
-    ctr -it "${GPU_ARGS[@]}" -v "$PWD/out:/out" -- \
+    ctr -it "${GPU_ARGS[@]}" "${ENV_ARGS[@]}" -v "$PWD/out:/out" -- \
       bash -c './run_artifact.sh "$@"; rc=$?; cp results_*.tar.gz /out/ 2>/dev/null; exit $rc' run_artifact "$@" ;;
   picks)
-    have_image
-    ctr -- ./run_artifact.sh --picks "$@" ;;
+    have_image; mkdir -p "$PWD/out"
+    ctr -v "$PWD/out:/out" -- \
+      bash -c './run_artifact.sh --picks "$@"; rc=$?; rm -rf /out/picks_check; cp -r picks_check /out/ 2>/dev/null; exit $rc' picks "$@" ;;
   explain)
     have_image
     [ $# -gt 0 ] || die "explain needs a row id (scripts/docker.sh explain --list names them)"
-    ctr -- ./run_artifact.sh --explain "$@" ;;
+    mkdir -p "$PWD/out"
+    ctr -v "$PWD/out:/out" -- \
+      bash -c './run_artifact.sh --explain "$@"; rc=$?; [ -d explain ] && { mkdir -p /out/explain; cp -r explain/. /out/explain/; }; exit $rc' explain "$@" ;;
   shell)
-    have_image
-    ctr -it "${GPU_ARGS[@]}" -v "$PWD/out:/out" -- bash ;;
+    have_image; mkdir -p "$PWD/out"
+    # On the GPU when this machine has one; a shell without it otherwise.
+    command -v nvidia-smi > /dev/null 2>&1 || GPU_ARGS=()
+    ctr -it "${GPU_ARGS[@]}" "${ENV_ARGS[@]}" -v "$PWD/out:/out" -- bash ;;
   *) usage >&2; die "unknown command '$CMD'" ;;
 esac

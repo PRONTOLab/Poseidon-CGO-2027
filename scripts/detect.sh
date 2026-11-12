@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# detect.sh — single source of truth for artifact configuration.
+# detect.sh: single source of truth for artifact configuration.
 #
 # Both config.mk (via the generated .detected.mk fragment) and env.sh (via
 # `detect.sh export`) resolve every knob through this script, so make targets
@@ -151,7 +151,7 @@ resolve_gpu_arch() {   # $1 = gpu id
     model_arch "${COST_MODEL:-$SHIPPED_COST_MODEL}"; return
   fi
   command -v nvidia-smi >/dev/null 2>&1 ||
-    fail "nvidia-smi not found; set GPU_ARCH (e.g. sm_80) — on a cluster, run inside a GPU allocation"
+    fail "nvidia-smi not found; set GPU_ARCH (e.g. sm_80); on a cluster, run inside a GPU allocation"
   local cc
   cc="$(nvidia-smi -i "$1" --query-gpu=compute_cap --format=csv,noheader 2>/dev/null | head -1 | tr -d ' ')"
   [ -n "$cc" ] || fail "cannot query compute capability of GPU '$1' (no GPU visible? wrong GPU_ID? on a cluster login node, run inside a GPU allocation or set GPU_ARCH)"

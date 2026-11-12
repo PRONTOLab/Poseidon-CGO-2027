@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate the tables of EXPECTED_RESULTS.md from expected/picks.tsv and
+"""Generate the tables of EXPECTED_RESULTS.md from expected/picks*.tsv and
 expected/claims.tsv, the one place the artifact's expected numbers and
 decisions are written.
 
@@ -10,7 +10,8 @@ Only the text between `<!-- BEGIN GENERATED <name> -->` and
 `<!-- END GENERATED <name> -->` is rewritten; the prose around it is not.
 
 expected/picks.tsv   one row per decision: id, bench, select, what (in words), pin
-                     (see scripts/expected.sh)
+                     (see scripts/expected.sh); picks_b300.tsv and picks_gh200.tsv
+                     the same for the saved B300 and GH200 cost models
 expected/claims.tsv  one row per checked quantity:
   id         claim id (a picks.tsv id when the claim is about a decision row)
   section    required | b300 | gh200
@@ -35,8 +36,8 @@ def _rows(name):
         return list(csv.DictReader(f, delimiter="\t"))
 
 
-def load_picks():
-    return _rows("picks.tsv")
+def load_picks(device="rtx5090"):
+    return _rows("picks.tsv" if device == "rtx5090" else "picks_%s.tsv" % device)
 
 
 def load_claims():
@@ -71,8 +72,8 @@ def md_escape(text):
     return text.replace("|", "\\|")
 
 
-def decisions_table(picks):
-    out = ["| Row | Selected by | Configuration (shipped RTX 5090 model) | Compiler's names (`[poseidon] pin:`) |",
+def decisions_table(picks, model):
+    out = ["| Row | Selected by | Configuration (%s) | Compiler's names (`[poseidon] pin:`) |" % model,
            "|---|---|---|---|"]
     for p in picks:
         sel = p["select"]
@@ -104,9 +105,11 @@ def claims_table(claims, section):
 
 
 def render():
-    picks, claims = load_picks(), load_claims()
+    claims = load_claims()
     return {
-        "decisions": decisions_table(picks),
+        "decisions": decisions_table(load_picks(), "shipped RTX 5090 model"),
+        "decisions_b300": decisions_table(load_picks("b300"), "saved B300 model"),
+        "decisions_gh200": decisions_table(load_picks("gh200"), "saved GH200 model"),
         "required": claims_table(claims, "required"),
         "b300": claims_table(claims, "b300"),
         "gh200": claims_table(claims, "gh200"),

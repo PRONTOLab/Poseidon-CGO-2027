@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# run_artifact.sh — single-command reproduction driver.
+# run_artifact.sh: single-command reproduction driver.
 #
 #   ./run_artifact.sh                  # preflight + cost model + full paper
 #                                      #   pipeline + results bundle (hours)
@@ -138,7 +138,7 @@ echo "==== preflight ===="
   else echo "  COST_MODEL    = none yet for $GPU_ARCH: the bootstrap measures this GPU"; fi
   "$PY" -c 'import numpy, matplotlib'
 ) || {
-  echo "preflight FAILED — fix the reported item (environment variable or local.env pin; README: Configuration)." >&2
+  echo "preflight FAILED: fix the reported item (environment variable or local.env pin; README: Configuration)." >&2
   echo "On a cluster login node with no GPU visible, run inside a GPU allocation (slurm/run_artifact.sbatch)." >&2
   exit 1
 }

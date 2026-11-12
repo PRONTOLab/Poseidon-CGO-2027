@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# env.sh — artifact-wide environment (the shell twin of config.mk). Source it;
+# env.sh: artifact-wide environment (the shell twin of config.mk). Source it;
 # never execute it. Exports: POSEIDON_ROOT CLANG CUDA GPU_ARCH GPU_ID PY
 # POSEIDON_CLANGXX POSEIDON_CALIBRATE POSEIDON_INC OZAKI_RT TCEC_RT DIRECT_RT
 # COST_MODEL.
