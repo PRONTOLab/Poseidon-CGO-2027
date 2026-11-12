@@ -1,7 +1,7 @@
 # genga_nbody: GENGA force and drift kernels
 
-Judge your numbers against rows `genga-*` of
-[`../../EXPECTED_RESULTS.md`](../../EXPECTED_RESULTS.md).
+Rows `genga-*` of [`../../EXPECTED_RESULTS.md`](../../EXPECTED_RESULTS.md)
+hold the expected numbers of this benchmark.
 
 GENGA is a production GPU N-body integrator. The benchmark drives two of its
 kernels through Poseidon, one per elementwise rewrite technique:
@@ -64,12 +64,12 @@ step of the whole artifact: about 120 points, each timed and integrated for
 - `../../figures/genga_drift_timeseries.pdf` (Fig. 4): orbital-energy drift
   against step count for FP64, the naive FP32 downcast and Poseidon.
 
-`make figures` falls back to `golden/rtx5090/` when you have not run a step,
+`make figures` falls back to `golden/rtx5090/` for a step that has not run,
 so it works without a GPU.
 
 ## Inputs it reads
 
-- **Cost model:** your GPU's model scaled by 1e6 (`../../cost_models/x1e6/`
+- **Cost model:** the GPU's model scaled by 1e6 (`../../cost_models/x1e6/`
   for the shipped RTX 5090 model, else derived into `measured/`). A uniform
   scale leaves every decision unchanged.
 - **Herbie:** the drift and unified solves replay `herbie_answers/<kernel>/`
@@ -85,5 +85,5 @@ so it works without a GPU.
 
 On a GPU priced with its own measured cost model, no shipped answers apply:
 the drift frontier, the drift time series and the unified solve print
-`[skip] ...: SKIPPED, not failed.` unless you set `GENGA_HERBIE=run` (with a
-Herbie that accepts `--num-taylor-terms`) or `HERBIE_ANSWERS=<pack>`.
+`[skip] ...: SKIPPED, not failed.` unless `GENGA_HERBIE=run` (with a Herbie
+that accepts `--num-taylor-terms`) or `HERBIE_ANSWERS=<pack>` is set.

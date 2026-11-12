@@ -1,7 +1,7 @@
 # fig2_drift: the paper's Fig. 1
 
-Judge your numbers against rows `fig2-*` of
-[`../../EXPECTED_RESULTS.md`](../../EXPECTED_RESULTS.md).
+Rows `fig2-*` of [`../../EXPECTED_RESULTS.md`](../../EXPECTED_RESULTS.md)
+hold the expected numbers of this benchmark.
 
 The introduction's figure (`intro_drift.pdf`). A long leapfrog integration of
 a harmonic oscillator (k = 1, dt = 1/128) runs three ways (FP64, FP32, and a
@@ -32,13 +32,13 @@ GPU 3xFP32 emulation           2.620 ms     2.09x
   final drift @  1048576 steps: fp32=1.07e-05  fp64=2.20e-14  3xfp32=1.61e-20
 ```
 
-The CPU timings run on one thread and move with the load of your machine; the
+The CPU timings run on one thread and move with the load of the machine; the
 row `fig2-gpu` gives them a 15% tolerance.
 
 ## Reference data
 
 `drift.csv.reference` is the paper's `drift.csv`: the mean drift over 4096
-oscillators at power-of-2 step checkpoints. Your `drift.csv` must match its
+oscillators at power-of-2 step checkpoints. A run's `drift.csv` must match its
 drift columns bit for bit, because the integration is deterministic and
 independent of the device:
 

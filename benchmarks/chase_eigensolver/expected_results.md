@@ -1,7 +1,7 @@
 # chase_eigensolver: R-ChFSI
 
-Judge your numbers against rows `rchfsi-*` of
-[`../../EXPECTED_RESULTS.md`](../../EXPECTED_RESULTS.md).
+Rows `rchfsi-*` of [`../../EXPECTED_RESULTS.md`](../../EXPECTED_RESULTS.md)
+hold the expected numbers of this benchmark.
 
 R-ChFSI (arXiv:2503.22652) is a dense Hermitian eigensolver that performs a
 residual-based Chebyshev-filtered subspace iteration. `chase_real.cu` ports it

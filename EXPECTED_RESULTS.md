@@ -1,16 +1,16 @@
 # Expected results
 
-Use this file to judge your run, row by row. Each table's heading names the
-command that checks it. You check the decision tables without a GPU. The
-number tables need the GPU they were measured on: an RTX 5090 (or another
-compute capability 12.0 card) for the first set, a B300 or a GH200 for the
-Table 1 sets.
+This file is what a run is judged against, row by row. Each table's heading
+names the command that checks it. The decision tables are checked at compile
+time, on any machine. The number tables need the GPU they were measured on:
+an RTX 5090 (or another compute capability 12.0 card) for the first set, a
+B300 or a GH200 for the Table 1 sets.
 
 The values come from `expected/picks*.tsv` (the decisions) and
 `expected/claims.tsv` (the numbers, their tolerances and the recorded
-measurement behind each). Read those files if you want the values in a
-machine-readable form; `python3 scripts/expected_results.py --check` confirms
-that the tables below match them.
+measurement behind each). Those files hold the values in machine-readable
+form; `python3 scripts/expected_results.py --check` confirms that the tables
+below match them.
 
 ## How to judge a row
 
@@ -28,7 +28,7 @@ A row is reproduced when three things hold.
    Every row must print `SAME`. In a GPU run, each row prints
    `[expected] <row>: the compiler applied the configuration of EXPECTED_RESULTS.md`,
    and the results bundle collects these lines in `expected_picks.txt`.
-2. **Accuracy.** Your value is within the row's tolerance. Where the
+2. **Accuracy.** The measured value is within the row's tolerance. Where the
    computation is deterministic it reproduces to the printed digit: GENGA's L2
    and energy drift, R-ChFSI's eigenvalue L2 and locked count, and the fig2
    drift file bit for bit. ozp's density-matrix RMSD reproduces to about 0.5%:
@@ -36,20 +36,20 @@ A row is reproduced when three things hold.
    reduces with atomics. Repeated runs on the RTX 5090 reproduced every
    accuracy column this way.
 3. **Speedup.** On an idle RTX 5090 at stock clocks, as the average of 5 runs,
-   your value is within 10% of `Expected` (R-ChFSI: about 4%). Repeated runs
-   of the same binaries landed within -8% to +5%. A GPU that cannot sustain
-   its boost clock slows the FP64 baselines disproportionately and inflates
-   the ratios: rerun on an idle, cool GPU.
+   the measured value is within 10% of `Expected` (R-ChFSI: about 4%).
+   Repeated runs of the same binaries landed within -8% to +5%. A GPU that
+   cannot sustain its boost clock slows the FP64 baselines disproportionately
+   and inflates the ratios; the remedy is a rerun on an idle, cool GPU.
 
-To list your run's values claim by claim, run this on its results directory
-(on the container route, unpack the bundle from `./out` into `results/` first):
+This lists a run's values claim by claim, from its results directory (on the
+container route, the bundle from `./out` is unpacked into `results/` first):
 
 ```sh
 python3 scripts/expected_from_run.py results/<GPU>_<arch>_<timestamp> mine --dry
 ```
 
-Each output line is `<claim>[<k>]`, your value and the file it came from;
-`[0]` is the claim's first row in the tables below, `[1]` its second.
+Each output line is `<claim>[<k>]`, the measured value and the file it came
+from; `[0]` is the claim's first row in the tables below, `[1]` its second.
 
 In the number tables, `Expected` is one run of this artifact on an RTX 5090,
 `Source` names the line of its recorded output under
@@ -68,10 +68,8 @@ found and checks the model against it with `poseidon-calibrate --check`.
 - On an RTX 5090, every row below applies as stated.
 - On another compute capability 12.0 card, the decisions are the same (they
   are the RTX 5090 model's) and the accuracy columns hold within the same
-  tolerances. The speedups are your card's own: check each row's claim, not
+  tolerances. The speedups are that card's own: each row's claim applies, not
   the 10% band.
-
-You need neither a B300 nor a GH200 for these rows.
 
 ### Decisions (check: `./run_artifact.sh --picks`, no GPU)
 
@@ -85,8 +83,8 @@ after `[poseidon] pin:`; `expected/picks.tsv` holds the full value, which
 filter `H·Z`, `gram` the Gram product, `rrhv` and `rrproj` the two
 Rayleigh-Ritz products, `resid` the residual.
 
-To read why the compiler chose a row's configuration and what it rejected,
-run `./run_artifact.sh --explain <row>` (no GPU).
+`./run_artifact.sh --explain <row>` (no GPU) prints why the compiler chose a
+row's configuration and what it rejected.
 
 <!-- BEGIN GENERATED decisions -->
 | Row | Selected by | Configuration (shipped RTX 5090 model) | Compiler's names (`[poseidon] pin:`) |
@@ -123,13 +121,13 @@ run `./run_artifact.sh --explain <row>` (no GPU).
 | `genga-force-expoff`: with expansion disabled, near-FP64 accuracy needs FP64 | most accurate point below FP64 cost, expansion off | none below 1e-12 (Fig. 3 left, dashed) | L2 4.091316e-08 at 1.329x | L2 exact, speedup 10% | `benchmarks/genga_nbody/golden/rtx5090/force_mfoff.tsv:5` | `cd benchmarks/genga_nbody && make force force-mfoff` |
 | `genga-drift-naive`: the naive FP32 downcast of the drift kernel | energy drift (20k steps) | 1.4e-4 | 1.380877e-04 | exact | `benchmarks/genga_nbody/golden/rtx5090/kepler_herbieoff_g0.tsv:2` | `cd benchmarks/genga_nbody && make kepler kepler-herbieoff` |
 |  | speedup over FP64 | (Fig. 3 right) | 9.731x | 10% | `benchmarks/genga_nbody/golden/rtx5090/kepler_herbieoff_g0.tsv:2` |  |
-| `genga-drift-algebraic`: algebraic rewrites keep the FP32 drift kernel near-FP64: 3000x more accurate than the downcast at 5.4x | energy drift (20k steps) | 4.7e-8 (Table 1: 4.655009e-08) | 2.977160e-08 | printed digit | `benchmarks/genga_nbody/golden/rtx5090/kepler_full_g0.tsv:90` | `cd benchmarks/genga_nbody && make kepler` |
-|  | speedup over FP64 | 5.4x (Table 1: 5.48x) | 5.613x | 10% | `benchmarks/genga_nbody/golden/rtx5090/kepler_full_g0.tsv:90` |  |
+| `genga-drift-algebraic`: algebraic rewrites keep the FP32 drift kernel near-FP64: 3000x more accurate than the downcast at 5.4x | energy drift (20k steps) | 4.7e-8 (Table 1: 4.655009e-08) | 2.977160e-08 | printed digit | `benchmarks/genga_nbody/golden/rtx5090/kepler_full_g0.tsv:127` | `cd benchmarks/genga_nbody && make kepler` |
+|  | speedup over FP64 | 5.4x (Table 1: 5.48x) | 5.613x | 10% | `benchmarks/genga_nbody/golden/rtx5090/kepler_full_g0.tsv:127` |  |
 | `genga-drift-ablation`: the algebraic rewrite against the naive downcast: the rewritten FP32 kernel has far less energy drift | energy drift, naive downcast (genga-drift-naive) / algebraic configuration (genga-drift-algebraic), with the speedup of each | 800x (ablation paragraph); 3000x (1.4e-4 vs 4.7e-8, results paragraph) | 4638x (1.380877e-04 at 9.731x vs 2.977160e-08 at 5.613x) | printed digit | `benchmarks/genga_nbody/golden/rtx5090/kepler_herbieoff_g0.tsv, benchmarks/genga_nbody/golden/rtx5090/kepler_full_g0.tsv` | `cd benchmarks/genga_nbody && make kepler kepler-herbieoff` |
 | `genga-drift-timeseries`: the downcast drifts away, the rewritten kernel stays near FP64 over 5e5 steps | naive FP32 drift at 5e5 steps | 3e-3 | 2.856903e-03 | exact | `benchmarks/genga_nbody/golden/rtx5090/kepler_timeseries.tsv:10` | `cd benchmarks/genga_nbody && make kepler kepler-herbieoff timeseries` |
 |  | Poseidon drift at 5e5 steps | 6e-7 (4500x below naive) | 1.702847e-07 (16777x below naive) | printed digit | `benchmarks/genga_nbody/golden/rtx5090/kepler_timeseries.tsv:10` |  |
-| `genga-unified`: one solve over force and drift: expansion on the force, algebraic rewrites on the drift, FP64-grade at 4.4x | L2 vs FP64 (position and velocity, one step) | 2.8e-14 | 2.777272e-14 | FP64-grade (below 1e-13); then printed digit | `benchmarks/genga_nbody/golden/rtx5090/unified.tsv:19` | `cd benchmarks/genga_nbody && make unified` |
-|  | speedup over FP64 | 4.4x | 5.831x | 10% | `benchmarks/genga_nbody/golden/rtx5090/unified.tsv:19` |  |
+| `genga-unified`: one solve over force and drift: expansion on the force, algebraic rewrites on the drift, FP64-grade at 4.4x | L2 vs FP64 (position and velocity, one step) | 2.8e-14 | 2.777272e-14 | FP64-grade (below 1e-13); then printed digit | `benchmarks/genga_nbody/golden/rtx5090/unified.tsv:21` | `cd benchmarks/genga_nbody && make unified` |
+|  | speedup over FP64 | 4.4x | 5.831x | 10% | `benchmarks/genga_nbody/golden/rtx5090/unified.tsv:21` |  |
 | `ozp-tau1e-7`: tau = 1e-7 picks an Ozaki-II configuration (paper: nm = 9, 24.3x over FP64, 14.0x over cuBLAS DGEMM; this compiler: nm = 8) | deployed RMSD vs the exact projector | 3.0e-8 | 1.375262e-08 | 0.5% (atomics) | `benchmarks/ozp/golden/rtx5090/autopick.tsv:3` | `cd benchmarks/ozp && bash scripts/run_autopick.sh 1e-7` |
 |  | speedup over scalar FP64 | 24.3x | 27.396x | 10% | `benchmarks/ozp/golden/rtx5090/autopick.tsv:3` |  |
 |  | speedup over cuBLAS DGEMM | 14.0x | 15.760x | 10% | `benchmarks/ozp/golden/rtx5090/autopick.tsv:3` |  |
@@ -153,7 +151,7 @@ run `./run_artifact.sh --explain <row>` (no GPU).
 | `rchfsi-blind`: sensitivity-blind solve at the same cost: no eigenpair locks | locked / speedup over FP64 | 0 of 64 / 0.28x | 0 of 64 / 0.277x | locked exact; speedup about 4% run to run (observed, shared machine) | `benchmarks/chase_eigensolver/golden/rtx5090/ablation_knee.tsv:3` | `cd benchmarks/chase_eigensolver && bash scripts/run_ladder.sh` |
 <!-- END GENERATED required -->
 
-`ozp-tau-interval` needs no GPU: `./run_artifact.sh --explain ozp-tau1e-7 --all`
+`ozp-tau-interval` is a compile-time check: `./run_artifact.sh --explain ozp-tau1e-7 --all`
 prints the modelled domain error of each Ozaki-II candidate (`nm=8`: 2.3e-08,
 `nm=9`: 1.5e-09).
 
@@ -168,9 +166,9 @@ configuration the paper reports:
   model follows it: tau = 1e-7 picks `nm = 8` (paper: `nm = 9`) and tau = 1e-12
   picks `nm = 12` (paper: `nm = 13`), one modulus fewer, so faster. The paper's
   configurations are frontier points of `make dispatch` (`dispatch_rungs.tsv`).
-  To compile one by name, pass
+  The flag
   `-poseidon-apply-rewrites=_Z10matmul_optPdPKdS1_:M0=ozaki-ii nm=9 wmma m16n16k16 s8/s32`
-  (`nm=13` likewise).
+  compiles one by name (`nm=13` likewise).
 - **`genga-drift-algebraic`.** The algebraic configuration has two parts:
   Herbie's rewrite of the Newton-step subgraph into a binary32 expression
   (`R13`; its numerator is the paper's 4-term series, its denominator a series
@@ -220,7 +218,7 @@ and `ozp-tau1e-6` (FP16TCEC, 30.8x at the paper's RMSD 1.67e-7; paper 26.7x).
 
 ## B300 and GH200 (the paper's Table 1)
 
-You can check these decisions on any machine, without a GPU. The repository
+These decisions are checked at compile time, on any machine. The repository
 ships the cost models the paper's B300 and GH200 columns were decided with
 (`devices/b300/cost_models/`, `devices/gh200/cost_models/`) and the Herbie
 answers their GENGA drift rows replay (`devices/*/herbie_answers/`). The
@@ -262,12 +260,12 @@ frontier point measured on a GH200 for the paper's band "energy drift <= 5e-8"
 
 ### Numbers on a B300 or a GH200
 
-To measure these you need the GPU. On it, a run measures the GPU's own cost
-model first and every decision and number is then that GPU's own: compare
-them with the paper's values qualitatively (which product is rewritten, and
+Measuring these takes the GPU itself. On it, a run measures the GPU's own cost
+model first, and every decision and number is then that GPU's own: they
+compare with the paper's values qualitatively (which product is rewritten, and
 that the accuracy target is met), not cell by cell. Where two candidates are
-priced close together, a model measured on your GPU can order them
-differently from the saved one, and the decision can differ there.
+priced close together, a freshly measured model can order them differently
+from the saved one, and the decision can differ there.
 
 The B300 rows can also be measured on one B300 at Modal with the decisions
 above, compiled by name: [`modal/README.md`](modal/README.md) has the
@@ -297,14 +295,15 @@ commands and the values measured on 2026-11-12.
 | `t1-rchfsi-gh200`: R-ChFSI: BF16 filter + FP64 tensor cores on the sensitive products | speedup / locked | 5.80x / 64 of 64 | (that GPU's run) | reduced precision only on the filter; 64 of 64 locked | paper Table 1 |  |
 <!-- END GENERATED gh200 -->
 
-## If you change a default
+## Changing a default
 
-**Cost model.** `./run_artifact.sh --calibrate` measures your card instead of
-using the shipped RTX 5090 model (`poseidon-calibrate`; delete
-`cost_models/target.env` to return). The decisions are then that model's own:
-frontier sweeps enumerate its frontier, accuracy-target rows pick against its
-prices, and each row's `[expected]` line says that it was decided with your
-model and not compared. What still holds is the paper's qualitative claims:
+**Cost model.** `./run_artifact.sh --calibrate` measures the card instead of
+using the shipped RTX 5090 model (`poseidon-calibrate`; deleting
+`cost_models/target.env` returns to it). The decisions are then that model's
+own: frontier sweeps enumerate its frontier, accuracy-target rows pick against
+its prices, and each row's `[expected]` line says that it was decided with the
+run's model and not compared. What still holds is the paper's qualitative
+claims:
 
 - each accuracy-target decision is accepted by the accuracy model at its target;
 - the sensitivity-guided R-ChFSI solve rewrites the filter before any other
@@ -320,10 +319,10 @@ without starting Herbie, whichever Herbie the compiler was built with; a
 question the answers do not hold stops the compile. The answers were searched
 for the shipped RTX 5090 model (an answer is keyed by the device family of the
 cost model and by its Herbie platform), and with it they reproduce the GENGA
-decisions exactly. On another device, search (`GENGA_HERBIE=run`) or replay an
-answer pack made for that device (`HERBIE_ANSWERS=<dir>`).
+decisions exactly. On another device the solves search (`GENGA_HERBIE=run`) or
+replay an answer pack made for that device (`HERBIE_ANSWERS=<dir>`).
 
-`GENGA_HERBIE=run` searches with Herbie (`HERBIE=<binary>` optional) from your
+`GENGA_HERBIE=run` searches with Herbie (`HERBIE=<binary>` optional) from the
 run's profile: about 10 minutes and up to 13 GB of memory per solve. Its
 answers can differ from the shipped ones (Herbie's search is randomized by
 seed and sample, and a fresh profile changes the questions' ranges); what
@@ -335,15 +334,14 @@ except `genga-drift-algebraic`, `genga-drift-ablation`, the Poseidon column of
 `genga-drift-timeseries` and `genga-unified`, which need the 4-term series of
 the Newton step.
 
-**Profiles.** By default (`PROFILES=fresh`) every benchmark profiles on your
-GPU and solves from that profile, except the GENGA drift and unified solves
-in replay mode, which read the shipped profiles the answers were searched for
-(the profiling step prints whether your fresh profile has the same ranges).
-`PROFILES=shipped` makes every solve read `benchmarks/*/profiles/`, the
-profiles the decisions above were made from. Value ranges and counts in a
-profile are deterministic; its sums and condition numbers are accumulated
-with atomics and move in the last digits, which no decision above is close
-to.
+**Profiles.** By default (`PROFILES=fresh`) every benchmark profiles on the
+run's GPU and solves from that profile, except the GENGA drift and unified
+solves in replay mode, which read the shipped profiles the answers were
+searched for (the profiling step prints whether the fresh profile has the same
+ranges). `PROFILES=shipped` makes every solve read `benchmarks/*/profiles/`,
+the profiles the decisions above were made from. Value ranges and counts in a
+profile are deterministic; its sums and condition numbers are accumulated with
+atomics and move in the last digits, which no decision above is close to.
 
 **Everything at once.** `./run_artifact.sh --from-scratch` uses none of the
 shipped inputs (README: "Run from scratch"); the three paragraphs above say

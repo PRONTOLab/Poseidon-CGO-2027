@@ -1,20 +1,19 @@
 # Poseidon: CGO 2027 artifact
 
-With this repository you check the evaluation of the paper. Poseidon is a
-profile-guided compiler pass that rewrites GPU floating-point kernels under an
-accuracy target you give it: algebraic rewrites, precision changes,
-floating-point expansions, tensor-core raising and tensor-core emulation.
+This repository reproduces the evaluation of the paper. Poseidon is a
+profile-guided compiler pass that rewrites GPU floating-point kernels under a
+given accuracy target: algebraic rewrites, precision changes, floating-point
+expansions, tensor-core raising and tensor-core emulation.
 
-You do not need the authors' GPU. Every compiler decision of the paper is a
-compile-time function of a profile, a cost model and the compiler, and the
-repository ships all three for the three GPUs of the paper (RTX 5090, B300,
-GH200). On any x86-64 machine with Docker you can check every decision and
-read why the compiler made it, without a GPU. With an NVIDIA GPU you can then
-rerun the benchmarks and measure.
+Every compiler decision of the paper is a compile-time function of a profile,
+a cost model and the compiler, and the repository ships all three for the
+three GPUs of the paper (RTX 5090, B300, GH200). Any x86-64 machine with
+Docker checks every decision and shows why the compiler made it. An NVIDIA GPU
+then reruns the benchmarks and measures.
 
-## Pick your route
+## Routes
 
-| Route | You need | Time | What you check |
+| Route | Needs | Time | Checks |
 |---|---|---|---|
 | [Decisions, no GPU](#2-check-every-decision-without-a-gpu) | x86-64 machine with Docker | 14 min image build, then about 1 min (16 min without the shipped caches) | all 25 decisions of the paper (RTX 5090, B300, GH200), and why each was made |
 | [Figures from the shipped data](#redraw-the-figures-without-a-gpu) | the same | seconds | every figure redraws from the recorded RTX 5090 run |
@@ -23,7 +22,7 @@ rerun the benchmarks and measure.
 | [Another NVIDIA GPU](#another-nvidia-gpu) | any NVIDIA GPU of compute capability 7.5 or newer | as above, plus up to 30 min to measure the GPU | the same pipeline on that GPU's own cost model |
 | [B300 at Modal](#a-b300-at-modal) | a Modal account with B300 access | about 50 min | the paper's B300 rows, measured |
 | [Slurm system](#a-slurm-system) | a GPU node | 1 h 36 min on a four-GH200 node | the full pipeline in one batch job |
-| [From scratch](#5-run-from-scratch) | a GPU and a Herbie build | hours (not timed end to end) | everything recomputed, nothing precomputed |
+| [From scratch](#5-run-from-scratch) | a GPU and a Herbie build | hours (not timed end to end) | every shipped input recomputed |
 
 Every time above is from a recorded run unless the section says otherwise.
 
@@ -48,12 +47,14 @@ sources/herbie      Herbie 73ba1fe76f97d4cdb852a602addd82e3a983b209
 sources/herbie-num-taylor-terms.patch   adds the --num-taylor-terms option to it
 ```
 
-Then choose the container (A) or a build from source (B).
+The toolchain then comes from the container (A) or from a build from source
+(B).
 
 ### A. Container
 
-You need Docker. For the GPU steps you also need the NVIDIA Container Toolkit
-and a driver for CUDA 12.9 or newer. Build the image from the repository root:
+The container needs Docker; the GPU steps also need the NVIDIA Container
+Toolkit and a driver for CUDA 12.9 or newer. Build the image from the
+repository root:
 
 ```sh
 scripts/docker.sh build          # image poseidon-cgo2027
@@ -80,25 +81,25 @@ scripts/docker.sh build --build-arg CUDA_ARCHS=90-real   # e.g. an H100 or a GH2
 ```
 
 `scripts/docker.sh` runs every step of this README in the container:
-`picks` and `explain` need no GPU; `run` and `shell` use the GPU (`--gpus all`,
-or `GPU_ID=<n>` for one) and put the results bundle into `./out`. Containers
-are capped at `MEMORY` (default `24g`).
+`picks` and `explain` compile only, on any machine; `run` and `shell` use the
+GPU (`--gpus all`, or `GPU_ID=<n>` for one) and put the results bundle into
+`./out`. Containers are capped at `MEMORY` (default `24g`).
 
 ### B. From source
 
-You need CMake 3.24 or newer, Ninja, git, a C++17 compiler, the CUDA toolkit
-(12.x or 13.x), MPFR and GMP (`libmpfr-dev libgmp-dev`), zlib, zstd, libxml2
-and liblzma development files, and Python 3 with numpy and matplotlib. Run,
-from the repository root:
+The build needs CMake 3.24 or newer, Ninja, git, a C++17 compiler, the CUDA
+toolkit (12.x or 13.x), MPFR and GMP (`libmpfr-dev libgmp-dev`), zlib, zstd,
+libxml2 and liblzma development files, and Python 3 with numpy and matplotlib.
+From the repository root:
 
 ```sh
 scripts/build_toolchain.sh --prefix $PWD/toolchain
-# no GPU visible on this machine: add --cuda-archs 120-real (or your GPU's)
+# no GPU visible on this machine: add --cuda-archs 120-real (or the target GPU's)
 # an LLVM 9d618fc already built: add --llvm <its install or build tree>
 ```
 
 It builds LLVM, cuMpSGEMM and the compiler into the prefix, resumes after the
-last finished step when you rerun it, and prints the line to use at the end:
+last finished step when rerun, and prints the line to use at the end:
 
 ```sh
 export POSEIDON_BUILD=$PWD/toolchain/poseidon-build PY=<a python with numpy and matplotlib>
@@ -128,8 +129,8 @@ scripts/docker.sh picks --device all
 
 This compiles each decision row of the paper for its device, from the shipped
 profile and that device's saved cost model, and compares the configuration the
-compiler applied with the expected one. It took 66 seconds. You should see
-(the CUDA container banner and a "NVIDIA Driver was not detected" warning come
+compiler applied with the expected one. It took 66 seconds. It prints (the
+CUDA container banner and a "NVIDIA Driver was not detected" warning come
 first; both are expected without a GPU):
 
 ```text
@@ -155,19 +156,19 @@ t1-ozp7-b300             SAME               2s  table hits 0, table MISSES 1 (de
 wrote picks_check/picks.tsv
 ```
 
-Read it like this:
+In this output:
 
 - `SAME`: the compiler applied exactly the configuration of
   [`EXPECTED_RESULTS.md`](EXPECTED_RESULTS.md). That file names each row's
   configuration in words. A row that is not `SAME` prints `DIFFERENT` or
   `COMPILE-FAILED`, and the command exits with status 1.
 - The last column says what the shipped solve caches did. They only save time.
-  `table MISSES 1 (device)` means the compile solved that table itself; it
-  cannot change a decision.
+  `table MISSES 1 (device)` means the compile solved that table itself; the
+  decision is the same either way.
 - `--device rtx5090`, `b300` or `gh200` checks one device. Without `--device`
   only the RTX 5090 rows are checked.
 
-To confirm that the caches decide nothing, solve every row yourself:
+To confirm that the caches only save time, solve every row without them:
 
 ```sh
 scripts/docker.sh picks --device all --no-shipped-cache
@@ -187,7 +188,7 @@ It compiles the one row as `--picks` does and prints, for each FP subgraph,
 the candidates the compiler considered, the one it applied and why it rejected
 the others, each with its modelled error and its cost change (a share of the
 profiled cost). It took 2.5 seconds. For row `ozp-tau1e-7` (the density-matrix
-GEMM of ozp under the accuracy target 1e-7) you should see:
+GEMM of ozp under the accuracy target 1e-7) it prints:
 
 ```text
 == ozp-tau1e-7: Ozaki-II, 8 moduli (host-dispatched); the paper's nm = 9 is the pin _Z10matmul_optPdPKdS1_:M0=ozaki-ii nm=9 wmma m16n16k16 s8/s32
@@ -207,11 +208,11 @@ GEMM of ozp under the accuracy target 1e-7) you should see:
 
 The FP16, BF16 and TF32 tensor-core raises are cheaper but their modelled
 error is above the target, so the compiler takes the cheapest Ozaki-II
-configuration that meets it. Add `--all` to see every candidate, for example
+configuration that meets it. `--all` lists every candidate, for example
 `M0_12 ... 1.5e-09 ... ozaki-ii nm=9 ... a cheaper candidate also meets the target`.
 
-Now explain the same product on the GH200, whose FP64 tensor cores make a
-native DGEMM the cheapest candidate that meets the target:
+The same product on the GH200, whose FP64 tensor cores make a native DGEMM
+the cheapest candidate that meets the target:
 
 ```sh
 scripts/docker.sh explain t1-ozp7-gh200
@@ -241,7 +242,7 @@ options: `--all`, `--max N`, `--function <name>`, `--format json`,
 ### Keep the files
 
 `scripts/docker.sh picks` and `explain` also leave their files in `./out` on
-your machine: `out/picks_check/` (one compile log per row and `picks.tsv`) and
+the host: `out/picks_check/` (one compile log per row and `picks.tsv`) and
 `out/explain/<row>/` (`report.txt`, the compile log, JSON). The files belong
 to root, as is usual for Docker.
 
@@ -255,20 +256,20 @@ docker run --rm -v "$PWD/out:/out" poseidon-cgo2027 bash -c './scripts/plot_all.
 
 Each plotting script falls back to the recorded RTX 5090 run in
 `benchmarks/*/golden/rtx5090/` when the benchmark has not run on this machine.
-You get `intro_drift.pdf` (Fig. 1), `genga_force_drift.pdf` (Fig. 3),
-`genga_drift_timeseries.pdf` (Fig. 4), `ozp_convergence.pdf` (Fig. 5),
-`ozp_surrogate.pdf` and `rchfsi_residuals.pdf` (Fig. 6). `plot_all.sh`
-overwrites `figures/`, and a redraw is not byte-identical to an earlier one
-(matplotlib stamps a creation date).
+The redraw writes `intro_drift.pdf` (Fig. 1), `genga_force_drift.pdf`
+(Fig. 3), `genga_drift_timeseries.pdf` (Fig. 4), `ozp_convergence.pdf`
+(Fig. 5), `ozp_surrogate.pdf` and `rchfsi_residuals.pdf` (Fig. 6).
+`plot_all.sh` overwrites `figures/`, and a redraw is not byte-identical to an
+earlier one (matplotlib stamps a creation date).
 
-With no GPU, this is as far as you can go: you have checked every decision of
-the paper and can read the measured numbers behind them in
+This completes the route without a GPU: every decision of the paper is
+checked, and the measured numbers behind the decisions are in
 `benchmarks/*/golden/rtx5090/`, which [`EXPECTED_RESULTS.md`](EXPECTED_RESULTS.md)
 cites row by row. Timing and accuracy need a GPU.
 
 ## 3. Kick the tires on an RTX 5090 (about 16 minutes)
 
-Check your GPU first. The shipped RTX 5090 cost model applies when this prints
+Check the GPU first. The shipped RTX 5090 cost model applies when this prints
 `12.0` (the GeForce RTX 50 series and the RTX PRO Blackwell workstation cards,
 on which FP64 runs at 1/64 of the FP32 rate):
 
@@ -276,7 +277,7 @@ on which FP64 runs at 1/64 of the FP32 rate):
 nvidia-smi --query-gpu=name,compute_cap --format=csv
 ```
 
-Any other GPU: go to [Another NVIDIA GPU](#another-nvidia-gpu).
+[Another NVIDIA GPU](#another-nvidia-gpu) covers any other GPU.
 
 ```sh
 scripts/docker.sh run --check    # preflight: toolchain and GPU, nothing runs
@@ -298,7 +299,7 @@ From source, the same is `./run_artifact.sh --check` and
 ```
 
 `--quick` took 944 seconds in the container on an RTX 5090. It checks the
-shipped cost model against your GPU (`[bootstrap] cost model: the shipped RTX
+shipped cost model against the GPU (`[bootstrap] cost model: the shipped RTX
 5090 model (cm_sm_120_RTX5090.csv)`), runs one smoke test per benchmark, and
 ends with:
 
@@ -330,13 +331,13 @@ GPU 3xFP32 emulation           2.620 ms     2.09x
 OPT eigval L2 vs planted = 1.230509e-11 (locked 64/64)
 ```
 
-These are smoke tests, not paper measurements. What to check: every
+These are smoke tests, not paper measurements. In a good run every
 `[expected]` line says "applied the configuration", every benchmark says `OK`,
 the accuracy values match the ones above, and the speedups are near them. A
-run on a GPU that is busy or throttled shows lower ratios (see
-[Troubleshooting](#troubleshooting)).
+run on a GPU that is busy or throttled shows ratios away from them
+([Troubleshooting](#troubleshooting)).
 
-You can also run one benchmark's smoke test by itself:
+One benchmark's smoke test also runs by itself:
 
 ```sh
 cd benchmarks/fig2_drift        && make all        # builds, runs, plots Fig. 1
@@ -351,15 +352,16 @@ cd ../chase_eigensolver         && ./quick.sh      # profile, the rchfsi-knee so
 scripts/docker.sh run            # from source: ./run_artifact.sh
 ```
 
-This runs, in order: the preflight, the cost model of your GPU, the four
+This runs, in order: the preflight, the cost model of the GPU, the four
 benchmarks one after another (each assumes the GPU to itself), the figures,
-and the results bundle. A failing benchmark does not stop the others; the end
-of the run lists the failures. Expect about 2.5 hours on an RTX 5090: that is
-the sum of the recorded parts of a run, not one timed run. The longest step is
-GENGA's drift frontier (about 120 points, each timed and integrated for 20k
-steps), then ozp's surrogate sweep, whose `N = 8192` leg is FP64-bound.
+and the results bundle. After a failing benchmark the others still run; the
+end of the run lists the failures. The run takes about 2.5 hours on an RTX
+5090: that is the sum of the recorded parts of a run, not one timed run. The
+longest step is GENGA's drift frontier (about 120 points, each timed and
+integrated for 20k steps), then ozp's surrogate sweep, whose `N = 8192` leg is
+FP64-bound.
 
-To run part of it, set the variable in front of either form of the command
+A variable in front of either form of the command runs part of it
 (`scripts/docker.sh run` hands these variables to the container):
 
 ```sh
@@ -368,9 +370,9 @@ SURROGATE_SIZES="1024 2048 4096" ./run_artifact.sh    # skip ozp's N = 8192 leg
 PARALLEL_GPUS="0 1 2 3" ./run_artifact.sh             # one benchmark per GPU
 ```
 
-### Compare your numbers with the paper's, claim by claim
+### Compare the run's numbers with the paper's, claim by claim
 
-Unpack the bundle and print every number your run measured, keyed by the claim
+Unpack the bundle and print every number the run measured, keyed by the claim
 it belongs to:
 
 ```sh
@@ -379,10 +381,10 @@ python3 scripts/expected_from_run.py results/RTX5090_sm_120_<timestamp> mine --d
 ```
 
 From source, the run already left the directory `results/<GPU>_<arch>_<timestamp>/`
-next to the bundle; skip the `tar` line.
+next to the bundle, so the second line alone suffices.
 
-Each line is `<claim>[<metric>]`, your value, and the file it came from.
-`--dry` writes nothing. The quick run's bundle printed:
+Each line is `<claim>[<metric>]`, the measured value, and the file it came
+from. `--dry` only prints. The quick run's bundle printed:
 
 ```text
 fig2-gpu[0]	2.09x faster (5.471 -> 2.620 ms)	benchmarks/fig2_drift/golden/mine/fig2_drift.log
@@ -394,16 +396,16 @@ ozp-tau1e-7[2]	15.699x	benchmarks/ozp/golden/mine/autopick.tsv:2
 ```
 
 The third column names where a run without `--dry` would copy the data; the
-value came from your bundle's `data/` directory. A full run prints every claim.
+value came from the bundle's `data/` directory. A full run prints every claim.
 
-Then open [`EXPECTED_RESULTS.md`](EXPECTED_RESULTS.md) and compare each line
-with the claim's `Expected` cell and `Tolerance`; metric `[0]` is the claim's
+Each line compares with the claim's `Expected` cell and `Tolerance` in
+[`EXPECTED_RESULTS.md`](EXPECTED_RESULTS.md); metric `[0]` is the claim's
 first row, `[1]` its second. A claim is reproduced when:
 
 1. its decision is the expected one: the run's `[expected]` lines (collected
    in the bundle's `expected_picks.txt`) say "applied the configuration". A
    line that says `DIFFERENT configuration` prints the expected and the
-   applied configuration below it; see [Troubleshooting](#troubleshooting);
+   applied configuration below it ([Troubleshooting](#troubleshooting));
 2. its accuracy matches to the printed digit where the computation is
    deterministic (GENGA, R-ChFSI, the fig2 drift file), and to about 0.5% for
    ozp's RMSD (its purification reduces with atomics);
@@ -418,7 +420,7 @@ under "Where the configuration differs" and "Where the numbers differ".
 
 ### Where each paper result comes from
 
-| Paper result | Command (in the benchmark directory) | Your data |
+| Paper result | Command (in the benchmark directory) | Data |
 |---|---|---|
 | Fig. 1, intro drift | `benchmarks/fig2_drift`: `make all` | `drift.csv`, `figures/intro_drift.pdf` |
 | Fig. 3 left, GENGA force frontier and expansion-off ablation | `benchmarks/genga_nbody`: `make force force-mfoff` | `force_full_g0.tsv`, `force_mfoff.tsv` |
@@ -436,11 +438,11 @@ Each benchmark writes its tables into its own directory as TSV files with one
 header row. Frontier tables record each point's share of the profiled cost
 (`budget`) and the configuration applied there (`pin`). The exception is
 `benchmarks/ozp/traj_*.tsv`: per-iteration traces, two columns
-`iteration<TAB>value`. To run one benchmark step by step, follow its
-`expected_results.md`.
+`iteration<TAB>value`. Each benchmark's `expected_results.md` gives its
+pipeline step by step.
 
 At the end, `run_artifact.sh` collects everything into a directory named for
-your GPU and tars it as `results_<GPU>_<arch>_<timestamp>.tar.gz`:
+the GPU and tars it as `results_<GPU>_<arch>_<timestamp>.tar.gz`:
 
 ```text
 results/<GPU>_<arch>_<timestamp>/
@@ -454,29 +456,29 @@ results/<GPU>_<arch>_<timestamp>/
   data/<bench>/traces/    per-run stdout captures
 ```
 
-To redraw the figures from a bundle elsewhere, run a plotting script with
-`--out` (GENGA: `--out-dir`) and `--data-dir` / `--trace-dir`. The scripts:
+A plotting script redraws its figures from a bundle elsewhere with `--out`
+(GENGA: `--out-dir`) and `--data-dir` / `--trace-dir`. The scripts:
 `benchmarks/fig2_drift/plot_drift.py` (Fig. 1),
 `benchmarks/genga_nbody/genga_figures.py` (Fig. 3, Fig. 4),
 `benchmarks/ozp/plot_ozp.py` (Fig. 5), `benchmarks/ozp/plot_surrogate.py`, and
 `benchmarks/chase_eigensolver/plot_chase.py` (Fig. 6).
 
-## If you do not have an RTX 5090
+## Without an RTX 5090
 
 ### No GPU at all
 
-Do [section 2](#2-check-every-decision-without-a-gpu). It checks every
-decision of the paper, for all three GPUs, and redraws the figures from the
-recorded runs. The recorded measurements behind every number are in
+[Section 2](#2-check-every-decision-without-a-gpu) checks every decision of
+the paper, for all three GPUs, and redraws the figures from the recorded
+runs. The recorded measurements behind every number are in
 `benchmarks/*/golden/rtx5090/`, cited line by line in
 [`EXPECTED_RESULTS.md`](EXPECTED_RESULTS.md).
 
 ### Another NVIDIA GPU
 
-Build the image for your GPU's architecture
+Build the image for the GPU's architecture
 (`scripts/docker.sh build --build-arg CUDA_ARCHS=<cc>-real`, e.g. `90-real`),
-or build from source on the machine with the GPU. Then run the same commands
-as on an RTX 5090:
+or build from source on the machine with the GPU. The commands are then the
+same as on an RTX 5090:
 
 ```sh
 scripts/docker.sh run --quick    # or the full run: scripts/docker.sh run
@@ -484,12 +486,12 @@ scripts/docker.sh run --quick    # or the full run: scripts/docker.sh run
 
 On a GPU other than compute capability 12.0 the run does this differently:
 
-- It first measures your GPU's cost model with `poseidon-calibrate`, into
+- It first measures the GPU's cost model with `poseidon-calibrate`, into
   `cost_models/measured/`, recorded in `cost_models/target.env` for every later
   build. This took 3 min 25 s on a GH200 and 4 minutes on a B300; the scripts
   allow 15 to 30 minutes. `./run_artifact.sh --bootstrap-only` does only this
   step.
-- Every decision is then your GPU's own. The run says so before the benchmarks:
+- Every decision is then that GPU's own. The run says so before the benchmarks:
 
   ```text
   NOTE: this run prices with a cost model measured on this device (<model>.csv).
@@ -501,17 +503,17 @@ On a GPU other than compute capability 12.0 the run does this differently:
   `not compared`.
 - GENGA's drift frontier, drift time series and unified solve are skipped,
   with a `[skip] ...: SKIPPED, not failed.` note: they need Herbie answers for
-  your GPU's cost model. To run them, search with Herbie (build the image with
+  the GPU's cost model. They run with a Herbie search (the image built with
   `scripts/docker.sh build --herbie`, then `GENGA_HERBIE=run` in
-  `scripts/docker.sh shell`), or replay an answer pack made for your model
-  (`HERBIE_ANSWERS=<dir>`, see [Choices](#choices)).
+  `scripts/docker.sh shell`), or with an answer pack made for that model
+  (`HERBIE_ANSWERS=<dir>`; [Choices](#choices)).
 - After the benchmarks the run checks the shipped decisions of all three
   devices compile-only (`--picks --device all`; a quick run checks the RTX 5090
   rows) and prints `==== this GPU priced with its own model ====` with the
   result.
 
-Your speedups are your GPU's; the 10% band of `EXPECTED_RESULTS.md` is for an
-RTX 5090. Check the paper's qualitative claims instead:
+The speedups are that GPU's own; the 10% band of `EXPECTED_RESULTS.md` is for
+an RTX 5090. What carries over is the paper's qualitative claims:
 
 - each accuracy-target decision of ozp meets its target;
 - the sensitivity-guided R-ChFSI solve rewrites the filter before any other
@@ -539,9 +541,9 @@ them, and lists the numbers measured on 2026-11-12 to compare with.
 
 ### A Slurm system
 
-Submit from the repository root, inside a GPU allocation. The wrapper carries
-only site-neutral directives; give the queue, node feature, GPU count, core
-count and software environment on the command line:
+The job is submitted from the repository root, inside a GPU allocation. The
+wrapper carries only site-neutral directives; the queue, node feature, GPU
+count, core count and software environment go on the command line:
 
 ```sh
 export POSEIDON_BUILD=<the compiler's build tree>
@@ -556,13 +558,13 @@ four GH200s. [Slurm notes](#slurm-notes) has the site details.
 ## 5. Run from scratch
 
 By default the run reuses inputs the repository ships. Each one only saves
-time or pins a decision to the paper's, and you can regenerate each:
+time or pins a decision to the paper's, and each can be regenerated:
 
 | Shipped input | Where | Used by | Regenerate with |
 |---|---|---|---|
-| RTX 5090 cost model | `cost_models/cm_sm_120_RTX5090.csv` (+ `x1e6/`) | every run on a compute capability 12.0 GPU | `./run_artifact.sh --calibrate` (your GPU's own model) |
+| RTX 5090 cost model | `cost_models/cm_sm_120_RTX5090.csv` (+ `x1e6/`) | every run on a compute capability 12.0 GPU | `./run_artifact.sh --calibrate` (the GPU's own model) |
 | B300 and GH200 cost models | `devices/{b300,gh200}/cost_models/` | `--picks --device b300` / `gh200` | `--calibrate` on that GPU |
-| Profiles | `benchmarks/*/profiles/` | `--picks`, `--explain`, `PROFILES=shipped`, GENGA drift and unified in replay mode | nothing to do: a GPU run profiles on your GPU by default (`PROFILES=fresh`) |
+| Profiles | `benchmarks/*/profiles/` | `--picks`, `--explain`, `PROFILES=shipped`, GENGA drift and unified in replay mode | a GPU run profiles on its own GPU by default (`PROFILES=fresh`) |
 | Herbie answers | `benchmarks/genga_nbody/herbie_answers/`, `devices/{b300,gh200}/herbie_answers/` | GENGA drift and unified solves (`GENGA_HERBIE=replay`) | `GENGA_HERBIE=run`, or `scripts/make_herbie_answers.sh --device <d>` (no GPU) |
 | Solve caches (DP tables, matrix-product accuracy memos) | `devices/<device>/caches/` | `--picks`, `--explain` | `--no-shipped-cache`, or `scripts/make_caches.sh --device <d>` (no GPU) |
 
@@ -572,10 +574,10 @@ To use none of them:
 ./run_artifact.sh --from-scratch            # or: ./run_artifact.sh --quick --from-scratch
 ```
 
-It measures your GPU's cost model, profiles every benchmark on your GPU,
+It measures the GPU's cost model, profiles every benchmark on that GPU,
 searches every GENGA drift and unified subgraph with Herbie, and removes every
 earlier solve cache. It needs a Herbie that accepts `--num-taylor-terms` and
-stops with the instructions if there is none. Build one of these:
+stops with the instructions if there is none. Either of these builds one:
 
 ```sh
 scripts/docker.sh build --herbie                              # image poseidon-cgo2027:herbie; docker.sh then uses it
@@ -583,13 +585,13 @@ scripts/build_toolchain.sh --with-herbie --prefix $PWD/toolchain   # needs Racke
 ```
 
 Both build Herbie from the `sources/herbie` submodule with
-`sources/herbie-num-taylor-terms.patch` applied. In the container run
-`./run_artifact.sh --from-scratch` from `scripts/docker.sh shell`. A Herbie
-search takes about 10 minutes and up to 13 GB of memory per solve. A complete
-from-scratch run has not been timed; its decisions can differ from the
-shipped ones where Herbie's randomized search or your profile changes the
-candidates, and [`EXPECTED_RESULTS.md`](EXPECTED_RESULTS.md) (under "If you
-change a default") lists what is still promised.
+`sources/herbie-num-taylor-terms.patch` applied. In the container,
+`./run_artifact.sh --from-scratch` runs from `scripts/docker.sh shell`. A
+Herbie search takes about 10 minutes and up to 13 GB of memory per solve. A
+complete from-scratch run has not been timed; its decisions can differ from
+the shipped ones where Herbie's randomized search or the fresh profile changes
+the candidates, and [`EXPECTED_RESULTS.md`](EXPECTED_RESULTS.md) (under
+"Changing a default") lists what is still promised.
 
 To regenerate one input without a GPU:
 
@@ -599,13 +601,15 @@ scripts/make_caches.sh --device all              # recompute the shipped solve c
 ```
 
 `make_herbie_answers.sh` writes `herbie_answers_<device>/` in the repository
-root. Compare it with the shipped pack (`devices/<device>/herbie_answers/`, or
-`benchmarks/genga_nbody/herbie_answers/` for the RTX 5090) with `diff -r`: the
-question records are deterministic, and an answer's text carries Herbie's run
-date and time. To check the row's decision with your answers, copy your pack
-over the shipped one and run `scripts/check_picks.sh t1-drift-gh200`.
+root. `diff -r` compares it with the shipped pack
+(`devices/<device>/herbie_answers/`, or
+`benchmarks/genga_nbody/herbie_answers/` for the RTX 5090): the question
+records are deterministic, and an answer's text carries Herbie's run date and
+time. With the new pack copied over the shipped one,
+`scripts/check_picks.sh t1-drift-gh200` checks the row's decision with the new
+answers.
 
-## 6. Use Poseidon on a kernel of your own
+## 6. Use Poseidon on another kernel
 
 Mark the kernel, profile it once, compile it with an accuracy target:
 
@@ -623,8 +627,8 @@ poseidon-clang++ $CUDA_FLAGS -poseidon-profile-use -poseidon-tau=1e-7 app.cu -o 
 
 `poseidon-clang++` is on `PATH` in the container. The annotated kernel's whole
 body is the optimization unit, and profile generation supplies its own shadow
-buffers. Call `poseidon_metric("<name>", value)` once at the end of the
-profiling run, and the same run measures each site's condition number against
+buffers. One call of `poseidon_metric("<name>", value)` at the end of the
+profiling run makes the same run measure each site's condition number against
 that quantity. The manual is
 `sources/Enzyme/enzyme/Poseidon/README.md` (in the container:
 `/opt/poseidon/src/enzyme/Poseidon/README.md`): its "Use" section has every way
@@ -641,27 +645,27 @@ prints the configuration it applied as a `[poseidon] pin: <value>` line that
 ## Troubleshooting
 
 **`--check` without a GPU fails** with `detect.sh: error: nvidia-smi not found`.
-That is expected: `--check` checks the GPU. Without a GPU use `--picks` and
-`--explain`, which need none.
+That is expected: `--check` checks the GPU. `--picks` and `--explain` are the
+modes for a machine without one.
 
-**A row of `--picks` is `DIFFERENT` or `COMPILE-FAILED`.** Read its
-`picks_check/<row>.log` ([Keep the files](#keep-the-files)). Check that the
-driver and the plugin come from one build tree (next item). The shipped
-decisions were solved on x86-64; on another host architecture the shipped
-caches are not used, and the accuracy model's arithmetic can round
+**A row of `--picks` is `DIFFERENT` or `COMPILE-FAILED`.** Its
+`picks_check/<row>.log` ([Keep the files](#keep-the-files)) holds the compile
+log. The driver and the plugin must come from one build tree (next item). The
+shipped decisions were solved on x86-64; on another host architecture the
+shipped caches are not used, and the accuracy model's arithmetic can round
 differently in the last digits.
 
 **The driver, the plugin and the profiler runtimes must come from the same
 build tree.** `poseidon-clang++` takes the plugin and the runtimes from the
 tree it runs from, and `scripts/detect.sh` resolves the driver from
 `POSEIDON_BUILD`, so the default path is consistent. Two symptoms appear when
-you introduce a second compiler tree by hand (a second checkout, a plugin
+a second compiler tree is introduced by hand (a second checkout, a plugin
 copied in, `POSEIDON_PLUGIN` set in the environment):
 
 - An empty solve: the compile succeeds, the solve enumerates one budget or
   none, and the log reports every site as `uncovered` and skipped under
   `-poseidon-loose-coverage`. The profile was written by a different plugin,
-  whose site keys do not match. Profile again with this compiler.
+  whose site keys do not match. Profiling again with this compiler fixes it.
 - `nvlink: Prototype doesn't match` for a profiler entry point: the plugin
   emits calls against one revision of the profiler runtime while the link takes
   another tree's archive.
@@ -669,29 +673,31 @@ copied in, `POSEIDON_PLUGIN` set in the environment):
 `./run_artifact.sh --check` prints the driver and the plugin (with its md5) it
 resolved.
 
-**Speedups well below `Expected`.** A GPU that cannot sustain its boost
-clock slows the FP64 baselines disproportionately and moves the ratios. Rerun
-on an idle, cool GPU at stock clocks. R-ChFSI also moves with the host CPU:
-part of its time is host-driven library calls (about 4% run to run).
+**Speedups far from `Expected`.** A GPU that cannot sustain its boost
+clock slows the FP64 baselines disproportionately and inflates the ratios. The
+remedy is a rerun on an idle, cool GPU at stock clocks. R-ChFSI also moves
+with the host CPU: part of its time is host-driven library calls (about 4% run
+to run).
 
 **`run_artifact: refusing to start`** with a list of pids: a benchmark of this
 repository is already running in `benchmarks/`. Two copies overwrite each
-other's outputs and share the GPU. Stop the listed processes, or pass `--force`
-if they belong to another copy you know about.
+other's outputs and share the GPU. Stopping the listed processes clears the
+refusal; `--force` overrides it when they belong to another copy of the
+repository.
 
-**`[skip] ...: SKIPPED, not failed.`** in GENGA's log: your run prices with a
-measured cost model, for which no Herbie answers ship. See
-[Another NVIDIA GPU](#another-nvidia-gpu).
+**`[skip] ...: SKIPPED, not failed.`** in GENGA's log: the run prices with a
+measured cost model, for which no Herbie answers ship
+([Another NVIDIA GPU](#another-nvidia-gpu)).
 
 **`clang++: warning: CUDA version is newer than the latest partially supported
-version`** on every compile: your CUDA toolkit is newer than the clang knows.
+version`** on every compile: the CUDA toolkit is newer than the clang knows.
 It is harmless.
 
 **`env.sh: no cost model for this device`** from a direct `make` or pipeline
-script on a GPU other than compute capability 12.0: measure it first with
-`./run_artifact.sh --bootstrap-only`.
+script on a GPU other than compute capability 12.0:
+`./run_artifact.sh --bootstrap-only` measures it first.
 
-**cuMpSGEMM's first use is slow.** Its PTX is compiled for your GPU by the
+**cuMpSGEMM's first use is slow.** Its PTX is compiled for the GPU by the
 driver on first use. `-v poseidon-cuda-cache:/root/.nv` on `docker run` keeps
 that result across containers.
 
@@ -712,11 +718,11 @@ Software (all of it is in the container):
 - CUDA 12.x or 13.x (cuBLAS, cuSOLVER), found through `CUDA_HOME` (module
   systems), `/usr/local/cuda*`, or `nvcc` on `PATH`. The paper used 12.9.
 - The LLVM build the Poseidon plugin is built against (auto-detected from the
-  build tree's CMakeCache; override with `CLANG`).
-- CMake and Ninja to build the compiler. Herbie only to search for algebraic
-  rewrites yourself (`GENGA_HERBIE=run`, `--from-scratch`).
-- Python with numpy and matplotlib for the plots (auto-detected; override
-  with `PY`).
+  build tree's CMakeCache; `CLANG` overrides it).
+- CMake and Ninja to build the compiler. Herbie only for a fresh search for
+  algebraic rewrites (`GENGA_HERBIE=run`, `--from-scratch`).
+- Python with numpy and matplotlib for the plots (auto-detected; `PY`
+  overrides it).
 
 ### Build from source, by hand
 
@@ -767,7 +773,7 @@ export POSEIDON_BUILD=$P/poseidon-build PY=<a python with numpy and matplotlib>
 ```
 
 - `CMAKE_CUDA_ARCHITECTURES=native` needs the GPU visible at configure time;
-  without one give it explicitly (`120-real` for the RTX 5090 class).
+  without one it takes an explicit value (`120-real` for the RTX 5090 class).
 - The image builds LLVM with Ubuntu's clang 18 and lld
   (`-DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ -DLLVM_USE_LINKER=lld`);
   any C++17 compiler works.
@@ -777,21 +783,21 @@ export POSEIDON_BUILD=$P/poseidon-build PY=<a python with numpy and matplotlib>
   the artifact replays the shipped answers and starts no Herbie, so the path
   may not exist. Leaving the option out makes CMake clone and build upstream
   Herbie (git, cargo and raco needed), which lacks the `--num-taylor-terms`
-  option the GENGA search uses. To search yourself, build Herbie from
+  option the GENGA search uses. A fresh search takes a Herbie built from
   `sources/herbie` with `sources/herbie-num-taylor-terms.patch` and the
   commands of `docker/Dockerfile.herbie` (Racket 8.15 and Rust 1.85.1), as
-  `scripts/build_toolchain.sh --with-herbie` does, and install it at that path.
+  `scripts/build_toolchain.sh --with-herbie` does, installed at that path.
 
 ### Configuration
 
-You edit nothing. `scripts/detect.sh` resolves every setting, in this order:
+`scripts/detect.sh` resolves every setting, in this order:
 
-1. your environment or the `make` command line (`GPU_ID=0 ./run_artifact.sh`,
+1. the environment or the `make` command line (`GPU_ID=0 ./run_artifact.sh`,
    `make CLANG=...`);
-2. `local.env` in the repository root: optional pins for a machine you use
+2. `local.env` in the repository root: optional pins for a machine used
    repeatedly, written as guards (`GPU_ID="${GPU_ID:-1}"`); not shipped;
-3. `cost_models/target.env`: written by the bootstrap when it measured your
-   GPU (the measured cost model and your GPU's architecture);
+3. `cost_models/target.env`: written by the bootstrap when it measured the
+   GPU (the measured cost model and the GPU's architecture);
 4. auto-detection from `POSEIDON_BUILD` (required): the source tree its
    CMakeCache names (for the public header and the GEMM runtime sources the
    reference arms compile), the driver and `poseidon-calibrate` of that build,
@@ -809,22 +815,22 @@ resolve them identically, through `config.mk` and `env.sh`, which share
 ### The cost model
 
 The solver's decisions come from a per-device cost model: reciprocal
-throughputs measured by `poseidon-calibrate`. The artifact never prices one
-device's code with another device's model in a GPU run.
+throughputs measured by `poseidon-calibrate`. In a GPU run the artifact prices
+a device's code with that device's own model.
 
 - On a compute capability 12.0 GPU the run uses the shipped
   `cost_models/cm_sm_120_RTX5090.csv`, measured on the RTX 5090 the paper ran
-  on. The bootstrap checks it against your GPU (`poseidon-calibrate --check`)
-  and never rewrites it. With it, every decision of `EXPECTED_RESULTS.md` is
+  on. The bootstrap checks it against the GPU (`poseidon-calibrate --check`)
+  and leaves it as shipped. With it, every decision of `EXPECTED_RESULTS.md` is
   reproduced exactly.
-- `./run_artifact.sh --calibrate` measures your GPU's own model instead (into
-  `cost_models/measured/`, recorded in `cost_models/target.env`; delete that
-  file to return to the shipped model). The decisions are then your card's own.
-- On any other GPU there is no default: `run_artifact.sh` measures it first.
-  The bootstrap passes the two inputs that belong to the artifact: the ozp
-  surrogate profile the in-kernel arm enumerates its candidates from, and
-  R-ChFSI's rectangular product shapes. A direct `make` or pipeline script on
-  such a GPU stops with the command to run.
+- `./run_artifact.sh --calibrate` measures the GPU's own model instead (into
+  `cost_models/measured/`, recorded in `cost_models/target.env`; deleting that
+  file returns to the shipped model). The decisions are then that card's own.
+- On any other GPU `run_artifact.sh` measures the model first. The bootstrap
+  passes the two inputs that belong to the artifact: the ozp surrogate profile
+  the in-kernel arm enumerates its candidates from, and R-ChFSI's rectangular
+  product shapes. A direct `make` or pipeline script on such a GPU stops with
+  the command to run.
 - `--picks` and `--explain` compile for the device of the row, with that
   device's saved model (`devices/devices.tsv`), on any machine.
 
@@ -838,9 +844,9 @@ platform generated from the scaled model.
 
 | Setting | Default | Alternative |
 |---|---|---|
-| cost model | the shipped RTX 5090 model on compute capability 12.0, else your GPU's measured model | `./run_artifact.sh --calibrate` (your GPU's own on any GPU) |
+| cost model | the shipped RTX 5090 model on compute capability 12.0, else the GPU's measured model | `./run_artifact.sh --calibrate` (the GPU's own on any GPU) |
 | Herbie (GENGA drift and unified) | `GENGA_HERBIE=replay`: the shipped answers, no Herbie process | `GENGA_HERBIE=run`: Herbie searches (`HERBIE=<binary>` optional); `HERBIE_ANSWERS=<dir>`: replay another answer pack |
-| profiles | `PROFILES=fresh`: profiled on your GPU (GENGA drift and unified in replay mode: the shipped profiles) | `PROFILES=shipped`: every solve reads `benchmarks/*/profiles/` |
+| profiles | `PROFILES=fresh`: profiled on the GPU (GENGA drift and unified in replay mode: the shipped profiles) | `PROFILES=shipped`: every solve reads `benchmarks/*/profiles/` |
 | solve caches | `--picks` and `--explain` start from `devices/<device>/caches/` | `--no-shipped-cache` (any mode) |
 
 An answer is keyed by the device family of the cost model and by its Herbie
@@ -850,7 +856,7 @@ replay an answer pack made for that device (`HERBIE_ANSWERS=<dir>`, a
 directory with `kepler/` and `unified/`). A Herbie question also carries the
 profiled value ranges and sensitivities, so in replay mode the GENGA drift and
 unified solves read the shipped profiles the answers were searched for, and
-each profiling step prints whether your fresh profile has the same ranges.
+each profiling step prints whether the fresh profile has the same ranges.
 `GENGA_HERBIE=run` searches from the fresh profile. It needs a Herbie that
 accepts `--num-taylor-terms` (the drift kernel's Newton-step rewrite is a
 4-term series, and Herbie's own cap is 2 terms); with a Herbie that does not,
@@ -860,12 +866,12 @@ ones that need the 4-term series (`EXPECTED_RESULTS.md` names them).
 
 ### Slurm notes
 
-- Put the repository and the compiler build tree on a filesystem the compute
-  nodes see (a scratch filesystem; `$HOME` is slow). Build the toolchain once
-  per system, in a batch job.
-- The job finds the compiler through `POSEIDON_BUILD`: export it before
-  `sbatch` (which hands your shell's environment to the job) or pin it in
-  `local.env`. Export `HERBIE_ANSWERS` or `GENGA_HERBIE` the same way.
+- The repository and the compiler build tree belong on a filesystem the
+  compute nodes see (a scratch filesystem; `$HOME` is slow). The toolchain is
+  built once per system, in a batch job.
+- The job finds the compiler through `POSEIDON_BUILD`, exported before
+  `sbatch` (which hands the shell's environment to the job) or pinned in
+  `local.env`. `HERBIE_ANSWERS` and `GENGA_HERBIE` travel the same way.
 - `module load cudatoolkit python` (the wrapper does this); CUDA is found
   through `CUDA_HOME`. Where the site supplies its toolchain another way (a
   Spack view, a CSCS uenv), whatever is already on `PATH` is used.
@@ -873,7 +879,7 @@ ones that need the 4-term series (`EXPECTED_RESULTS.md` names them).
   allocation; binaries run directly on the allocated GPU (no per-step `srun`).
 - Command-line options override the wrapper's `#SBATCH` directives, `-t`
   included. The default walltime is 12 h.
-- Do not set `GPU_ID`: the wrapper adopts Slurm's `CUDA_VISIBLE_DEVICES`,
+- `GPU_ID` stays unset: the wrapper adopts Slurm's `CUDA_VISIBLE_DEVICES`,
   which outranks a `local.env` pin left over from a workstation.
 - One GPU of one node (`--gpus-per-node=1`) is the intended shape for
   `run_artifact.sbatch`. On a node with several GPUs,
@@ -881,16 +887,18 @@ ones that need the 4-term series (`EXPECTED_RESULTS.md` names them).
 - The results come back as one `results_<GPU>_<arch>_<timestamp>.tar.gz` in the
   repository root.
 - CSCS Alps (GH200, aarch64), uenv `prgenv-gnu/25.11:v1`: the uenv supplies
-  gcc, CMake, Ninja and CUDA 12.9, but no MPFR (build it against the uenv's GMP
-  and pass `-DCMAKE_PREFIX_PATH=<mpfr>` to the compiler's configure) and a
-  python without numpy and matplotlib (make a venv and pin `PY` in
-  `local.env`). Build LLVM with `-DLLVM_TARGETS_TO_BUILD="AArch64;NVPTX"`.
-  Configure the compiler without cuMpSGEMM there (omit the two
-  `POSEIDON_*CUMPSGEMM*` options): at the pinned commit its library does not
-  link on that toolchain, and no GH200 decision of the paper uses the
-  error-corrected dispatch. Unless you build Racket and Rust there, there is no
-  Herbie: configure with `-DPOSEIDON_HERBIE_BINARY=<a path that does not exist>`
-  and give the GENGA steps an answer pack (`HERBIE_ANSWERS`).
+  gcc, CMake, Ninja and CUDA 12.9, but no MPFR (to be built against the uenv's
+  GMP and passed as `-DCMAKE_PREFIX_PATH=<mpfr>` to the compiler's configure)
+  and a python without numpy and matplotlib (a venv supplies both, pinned as
+  `PY` in `local.env`). LLVM is built with
+  `-DLLVM_TARGETS_TO_BUILD="AArch64;NVPTX"`.
+  The compiler is configured without cuMpSGEMM there (the two
+  `POSEIDON_*CUMPSGEMM*` options left out): at the pinned commit its library
+  does not link on that toolchain, and no GH200 decision of the paper uses the
+  error-corrected dispatch. Herbie there takes builds of Racket and Rust;
+  without them the compiler is configured with
+  `-DPOSEIDON_HERBIE_BINARY=<a path that does not exist>` and the GENGA steps
+  take an answer pack (`HERBIE_ANSWERS`).
 
 ### Determinism
 
@@ -925,7 +933,7 @@ Poseidon-CGO-2027/
                        and source); EXPECTED_RESULTS.md's tables are generated from them
   cost_models/         cm_sm_120_RTX5090.csv + .herbie.rkt: the RTX 5090 model; x1e6/: the same
                        in 1e6 units, as GENGA prices with it; measured/ + target.env: written
-                       when your GPU is measured
+                       when the GPU is measured
   devices/             devices.tsv: the devices --picks checks; b300/, gh200/: their saved cost
                        models and Herbie answers; <device>/caches/: the shipped solve caches
   benchmarks/
@@ -935,7 +943,7 @@ Poseidon-CGO-2027/
     chase_eigensolver/ R-ChFSI eigensolver (sensitivity-guided)
   scripts/
     detect.sh          configuration resolver (all auto-detection lives here)
-    bootstrap_cost_model.sh  the cost model of your GPU (check or measure)
+    bootstrap_cost_model.sh  the cost model of the GPU (check or measure)
     build_toolchain.sh LLVM, cuMpSGEMM, the compiler and optionally Herbie, resumable
     build_cumpsgemm.sh its cuMpSGEMM step alone
     docker.sh          build|run|picks|explain|shell in the container

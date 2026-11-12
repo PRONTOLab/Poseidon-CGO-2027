@@ -1,7 +1,7 @@
 # ozp: density-matrix purification
 
-Judge your numbers against rows `ozp-*` of
-[`../../EXPECTED_RESULTS.md`](../../EXPECTED_RESULTS.md).
+Rows `ozp-*` of [`../../EXPECTED_RESULTS.md`](../../EXPECTED_RESULTS.md)
+hold the expected numbers of this benchmark.
 
 ozp (Dawson, JCTC 2024) is a GPU quantum-chemistry application that computes
 a system's electronic structure by density-matrix purification, a fixed-point
@@ -85,7 +85,7 @@ What each step does:
   Ozaki-II with `nm = 8`, `9` and `10` against the chemistry threshold at every
   deploy `N`. Right: the speedup over scalar FP64 grows with `N`.
 
-`make figures` falls back to `golden/rtx5090/` when you have not run a step,
+`make figures` falls back to `golden/rtx5090/` for a step that has not run,
 so it works without a GPU.
 
 ## Inputs it reads

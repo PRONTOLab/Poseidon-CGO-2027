@@ -1,7 +1,7 @@
 # The paper's B300 rows on a B300 at Modal
 
-Use this route if you have a Modal account with access to NVIDIA B300 GPUs. It
-measures the B300 column of the paper's Table 1 (GENGA force and drift, ozp at
+This route needs a Modal account with access to NVIDIA B300 GPUs. It measures
+the B300 column of the paper's Table 1 (GENGA force and drift, ozp at
 tau = 1e-7 and 1e-6, R-ChFSI) on one B300, in about 50 minutes of stages.
 
 The decisions are the ones `./run_artifact.sh --picks --device b300` checks
@@ -9,24 +9,24 @@ on any machine without a GPU: the compiler decided each row with the saved
 B300 cost model, and `replay_pack/` holds those decisions. On the B300, each
 row is compiled by its configuration's name, with no solver run and no Herbie
 search (the GENGA drift row reads the Herbie answers searched for the saved
-B300 model), and measured against the artifact's baselines. You get six rows:
-the five Table 1 cells and `t1-ozp7-b300-paper`, the paper's ozp configuration
-at tau = 1e-7 (Ozaki-II `nm = 9`) compiled by name next to this compiler's
-decision there (`nm = 8`).
+B300 model), and measured against the artifact's baselines. The run measures
+six rows: the five Table 1 cells and `t1-ozp7-b300-paper`, the paper's ozp
+configuration at tau = 1e-7 (Ozaki-II `nm = 9`) compiled by name next to this
+compiler's decision there (`nm = 8`).
 
-## Before you start
+## Prerequisites
 
 - Python 3.10 or newer with the Modal client: `pip install modal`.
-- Log in to Modal once: `modal setup`.
+- A Modal login, made once: `modal setup`.
 - The repository cloned with its submodules (`git clone --recursive`, or
   `git submodule update --init --recursive` in a clone).
 
-Run every command below from this directory.
+Every command below runs from this directory.
 
 ## Run it
 
-Use one run id for all stages, so that every result lands in one directory
-(any name; `b300-1` below).
+One run id for all stages puts every result in one directory (any name;
+`b300-1` below).
 
 ```sh
 # 0. Pack what the app uploads into bundle/ (again whenever the submodules or the
@@ -41,7 +41,7 @@ modal run --detach poseidon_b300.py --stage build
 modal run poseidon_b300.py --stage smoke --run-id b300-1
 
 # 3. Optional: measure this B300's cost model and compare it with the saved one
-#    the decisions were made with. Nothing uses the fresh model.
+#    the decisions were made with. The fresh model serves this comparison only.
 modal run poseidon_b300.py --stage calibrate --run-id b300-1
 
 # 4. Compile the decided configurations and measure them.
@@ -73,12 +73,12 @@ Durations measured at Modal on 2026-11-12: build 26 minutes the first time
 - The build is stored in the Modal Volume `poseidon-b300-toolchain` and
   reused; a second build call finds it built, and a new compiler bundle
   rebuilds only the compiler.
-- Results go to the Volume `poseidon-b300-results`. Delete both Volumes when
-  you are done: `modal volume delete <name>`.
+- Results go to the Volume `poseidon-b300-results`. Both Volumes can be
+  deleted afterwards: `modal volume delete <name>`.
 - To see or stop a running call: the Modal dashboard, or `modal app list` and
   `modal app stop <app id>`.
 
-## What you get
+## Output
 
 ```text
 b300-1/
@@ -95,8 +95,8 @@ b300-1/
 
 ## Compare with the measured values
 
-Open `b300-1/replay/replay.tsv`. Every row should be `MEASURED`. One Modal
-B300 (NVIDIA B300 SXM6 AC, driver 610.57.04) gave, on 2026-11-12:
+In `b300-1/replay/replay.tsv` every row should be `MEASURED`. One Modal B300
+(NVIDIA B300 SXM6 AC, driver 610.57.04) gave, on 2026-11-12:
 
 | Row | Paper | Measured | Accuracy |
 |---|---|---|---|
@@ -107,8 +107,8 @@ B300 (NVIDIA B300 SXM6 AC, driver 610.57.04) gave, on 2026-11-12:
 | `t1-ozp6-b300` | 33.5x | 41.60x | RMSD 1.67e-7 |
 | `t1-rchfsi-b300` | 2.18x | 2.14x to 2.33x | 64 of 64 locked, L2 3.01e-15 |
 
-Expect the accuracy values to match and the speedups of the GENGA and ozp rows
-to land within a few percent: they repeated to 0.5% across containers. The
+The accuracy values should match, and the speedups of the GENGA and ozp rows
+should land within a few percent: they repeated to 0.5% across containers. The
 R-ChFSI row depends on the host Modal assigns: part of its time is host-driven
 library calls, and two containers gave 314.7 -> 147.2 ms (2.14x) and
 298.6 -> 128.4 ms (2.33x), each repeatable within its container to 2%.
@@ -128,13 +128,13 @@ would have been needed. The other rows are still measured, and the run stage
 ends with a non-zero exit status. `replay/rows/<row>/compile.log` says why.
 
 **The smoke stage** prints one `[smoke] OK` or `[smoke] FAILED` line per step
-and saves its log under `b300-1/smoke/`. Do not start the run stage after a
-failure. Steps: 1 nvidia-smi (no GPU, or not a B300); 2 the build's CUDA
-architecture against the device (the build is for compute capability 10.3);
-3 to 6 compile, profile, cost model and optimized compile of a small program
-(a toolchain problem; the log names the failing command); 8 the artifact's
-preflight. Step 7 (Herbie) is informational: the run stage does not use
-Herbie.
+and saves its log under `b300-1/smoke/`. The run stage should start only after
+the smoke stage passes. Steps: 1 nvidia-smi (no GPU, or not a B300); 2 the
+build's CUDA architecture against the device (the build is for compute
+capability 10.3); 3 to 6 compile, profile, cost model and optimized compile of
+a small program (a toolchain problem; the log names the failing command);
+8 the artifact's preflight. Step 7 (Herbie) is informational: the run stage
+does not use Herbie.
 
 **The build's log** is in the toolchain Volume:
 `modal volume ls poseidon-b300-toolchain logs`, then
@@ -152,7 +152,7 @@ modal run --detach poseidon_b300.py --stage full --run-id <id>
 ```
 
 Its results land under `<id>/full/`. It saves after each benchmark and resumes
-with the same id. Its decisions are this B300's own; compare them with the
+with the same id. Its decisions are this B300's own and compare with the
 table above qualitatively. There is no recorded run of this flow, so no
 duration is given.
 
@@ -165,5 +165,5 @@ duration is given.
   repository itself, the replay pack (`replay_pack/`) and a `MANIFEST` with
   their checksums.
 - `solve_b300_locally.sh`, `b300_inputs/` (the saved B300 cost models) and
-  `test/`: remake the replay pack on a machine without a B300. You do not need
-  them to run.
+  `test/`: remake the replay pack on a machine without a B300. The stages
+  above replay the shipped `replay_pack/`.
