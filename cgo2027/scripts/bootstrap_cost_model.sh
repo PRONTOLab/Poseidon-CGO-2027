@@ -4,6 +4,9 @@
 #
 #   bash scripts/bootstrap_cost_model.sh               # shipped model on sm_120, else measure
 #   bash scripts/bootstrap_cost_model.sh --calibrate   # measure this GPU even on sm_120
+#   bash scripts/bootstrap_cost_model.sh --calibrate --fresh-profile
+#                                                      # ... from an ozp profile made
+#                                                      #   here (run_artifact.sh --from-scratch)
 #
 # The solver's decisions come from a per-device cost model: running with
 # another device's CSV reproduces that device's picks. Three cases:
@@ -32,12 +35,14 @@ set -eo pipefail
 ART="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 POSEIDON_ARTIFACT_NO_MODEL=1 source "$ART/env.sh"
 
-MODE=auto
-case "${1:-}" in
-  --calibrate) MODE=calibrate ;;
-  "") ;;
-  *) echo "usage: $0 [--calibrate]" >&2; exit 2 ;;
-esac
+MODE=auto FRESH_PROFILE=0
+for _a in "$@"; do
+  case "$_a" in
+    --calibrate) MODE=calibrate ;;
+    --fresh-profile) FRESH_PROFILE=1 ;;
+    *) echo "usage: $0 [--calibrate [--fresh-profile]]" >&2; exit 2 ;;
+  esac
+done
 
 GPU_NAME="$(bash "$ART/scripts/detect.sh" gpu_name)"
 SHIPPED="$(bash "$ART/scripts/detect.sh" shipped_cost_model)"
@@ -68,6 +73,11 @@ else
   echo "[bootstrap] the compiler links its built-in TCEC backend; the TCEC row is measured against it"
 fi
 INK_PROF="$ART/benchmarks/ozp/profiles/surrogate512"
+if [ "$FRESH_PROFILE" = 1 ]; then
+  echo "[bootstrap] profiling ozp on this GPU for the in-kernel candidates (scripts/profile_only.sh)"
+  POSEIDON_ARTIFACT_NO_MODEL=1 bash "$ART/benchmarks/ozp/scripts/profile_only.sh"
+  INK_PROF="$ART/benchmarks/ozp/fpprofile"
+fi
 # R-ChFSI's Gram and Rayleigh-Ritz products at its deploy size (N = 2048,
 # NEV = 64): the compiler prices a native DGEMM call of compile-time extents
 # from the row measured at exactly those extents.

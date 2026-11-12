@@ -1,0 +1,22 @@
+{
+  "key": {
+    "K": "2048",
+    "M": "16",
+    "N": "16",
+    "TCEC backend": "cuMpSGEMM",
+    "accuracy model": "A66DEC37FBE2781C",
+    "confidence": "0.94999999999999996",
+    "exponent penalty": "1e+30",
+    "format": "1",
+    "gradient statistics": "5AB3509BBFCFF1AF",
+    "model": "getTcecLibraryAccuracyCost",
+    "operand statistics": "6E17F12233DECD69",
+    "samples": "128",
+    "sampling log bits": "0",
+    "seed": "239778888"
+  },
+  "value": {
+    "accuracy cost": "43987.317552921522",
+    "domain error": "2.2557045624711206e-07"
+  }
+}

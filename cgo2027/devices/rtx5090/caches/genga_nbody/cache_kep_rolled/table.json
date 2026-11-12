@@ -1,0 +1,5783 @@
+{
+  "functions": {
+    "preprocess__Z13kepler_kernelPK7double4S1_PS_S2_idd_poseidon_body": {
+      "baselineAccCost": 2.3254597163935211e-14,
+      "costToAccuracyMap": {
+        "-1500860517": 1.5718027962276916e-09,
+        "-1507334410": 1.5718032735833348e-09,
+        "-1513808304": 1.5718048708257178e-09,
+        "-1513992129": 1.5718073204721063e-09,
+        "-1514175954": 1.571810843695486e-09,
+        "-1660037106": 1.5719022692846957e-09,
+        "-1660220931": 1.5719047189310842e-09,
+        "-1660404756": 1.5719082421544639e-09,
+        "-1748994902": 5.3249641318178586e-09,
+        "-1749178727": 5.3249665814642471e-09,
+        "-1749362552": 5.3249701046876268e-09,
+        "-184348987": 9.350018723581952e-14,
+        "-184532812": 9.5949833624333269e-14,
+        "-184716637": 9.9473057004042164e-14,
+        "-217783945": 1.0965339614554712e-13,
+        "-217967770": 1.1210304253406087e-13,
+        "-218151595": 1.1562626591376976e-13,
+        "-231094346": 1.5872362611907043e-10,
+        "-231278171": 1.5872607576545895e-10,
+        "-231461996": 1.5872959898883866e-10,
+        "-25172398": -5.9728697682226439e-15,
+        "-31646291": -5.4955141249762025e-15,
+        "-38120185": -3.8982717420002324e-15,
+        "-38304010": -1.4486253534864837e-15,
+        "-38487835": 2.0745980262224115e-15,
+        "-5161274169": 9.703498997161832e-09,
+        "-5167748062": 9.703499474517475e-09,
+        "-5174221956": 9.7035010717598589e-09,
+        "-5174405781": 9.7035035214062474e-09,
+        "-5174589606": 9.7035070446296271e-09,
+        "-5320450758": 9.7035984702188359e-09,
+        "-5320634583": 9.7036009198652244e-09,
+        "-5320818408": 9.7036044430886041e-09,
+        "-5337121862": 8.234863912841118e-08,
+        "-5337305687": 8.2348641578057568e-08,
+        "-5337489512": 8.2348645101280948e-08,
+        "-5400434585": 9.0876655431547424e-08,
+        "-5400618410": 9.0876657881193813e-08,
+        "-5400802235": 9.0876661404417192e-08,
+        "-5406052985": 1.9758575329952703e-07,
+        "-5406236810": 1.9758575574917342e-07,
+        "-5406420635": 1.975857592723968e-07,
+        "-5434832005": 2.8418714333900224e-07,
+        "-5435015830": 2.8418714578864863e-07,
+        "-5435199655": 2.8418714931187201e-07,
+        "-5499861315": 3.3438278427824629e-07,
+        "-5500045140": 3.3438278672789268e-07,
+        "-5500228965": 3.3438279025111606e-07,
+        "-5536126752": 4.0080752103546851e-07,
+        "-5536310577": 4.0080752348511489e-07,
+        "-5536494402": 4.0080752700833827e-07,
+        "-5541745152": 5.0751661890344814e-07,
+        "-5541928977": 5.0751662135309453e-07,
+        "-5542112802": 5.0751662487631791e-07,
+        "-5544334539": 3.8937470160336882e-06,
+        "-5544518364": 3.8937470184833345e-06,
+        "-5544702189": 3.8937470220065579e-06,
+        "-5575006455": 3.9243976833546216e-06,
+        "-5575190280": 3.924397685804268e-06,
+        "-5575374105": 3.9243976893274914e-06,
+        "-5679771964": 3.9302778086362042e-06,
+        "-5679955789": 3.9302778110858506e-06,
+        "-5680139614": 3.9302778146090739e-06,
+        "-5839755756": 3.9308382026962984e-06,
+        "-5839939581": 3.9308382051459447e-06,
+        "-5840123406": 3.9308382086691681e-06,
+        "-58607356": 1.018033914150495e-14,
+        "-5977971300": 3.9308388387358914e-06,
+        "-5978155125": 3.9308388411855378e-06,
+        "-5978338950": 3.9308388447087612e-06,
+        "-6003147001": 3.9494948164979748e-06,
+        "-6003330826": 3.9494948189476212e-06,
+        "-6003514651": 3.9494948224708446e-06,
+        "-6008765401": 4.0562039143659545e-06,
+        "-6008949226": 4.0562039168156009e-06,
+        "-6009133051": 4.0562039203388242e-06,
+        "-6165818503": 4.1298624047846308e-06,
+        "-6166002328": 4.1298624072342772e-06,
+        "-6166186153": 4.1298624107575006e-06,
+        "-6190994204": 4.1483417072329954e-06,
+        "-6191178029": 4.1483417096826418e-06,
+        "-6191361854": 4.1483417132058652e-06,
+        "-6196612604": 4.2550508051009751e-06,
+        "-6196796429": 4.2550508075506215e-06,
+        "-6196980254": 4.2550508110738449e-06,
+        "-6208940188": 4.5171999010419308e-06,
+        "-6209124013": 4.5171999034915772e-06,
+        "-6209307838": 4.5171999070148005e-06,
+        "-6305704171": 4.5205472739128855e-06,
+        "-6305887996": 4.5205472763625319e-06,
+        "-6306071821": 4.5205472798857553e-06,
+        "-6311322571": 4.6272563717808652e-06,
+        "-6311506396": 4.6272563742305116e-06,
+        "-6311690221": 4.627256377753735e-06,
+        "-6369990268": 4.7127998192756367e-06,
+        "-6370174093": 4.7127998217252831e-06,
+        "-6370357918": 4.7127998252485065e-06,
+        "-6385052103": 4.7160467917769514e-06,
+        "-6385235928": 4.7160467942265978e-06,
+        "-6385419753": 4.7160467977498212e-06,
+        "-6493551374": 4.7193941646479062e-06,
+        "-6493735199": 4.7193941670975526e-06,
+        "-6493919024": 4.7193941706207759e-06,
+        "-6499169774": 4.8261032625158859e-06,
+        "-6499353599": 4.8261032649655323e-06,
+        "-6499537424": 4.8261032684887556e-06,
+        "-6504788174": 1.4954039319663803e-05,
+        "-6504971999": 1.4954039322113449e-05,
+        "-6505155824": 1.4954039325636673e-05,
+        "-6505266448": 3.2795214649149685e-05,
+        "-6505450273": 3.2795214651599331e-05,
+        "-6505634098": 3.2795214655122555e-05,
+        "-65081249": 1.0657694784751392e-14,
+        "-6516200175": 4.7382133296789135e-05,
+        "-6516384000": 4.7382133299238782e-05,
+        "-6516567825": 4.7382133302762005e-05,
+        "-6516678449": 6.5223308626275017e-05,
+        "-6516862274": 6.5223308628724664e-05,
+        "-6517046099": 6.5223308632247887e-05,
+        "-6521745975": 0.00040374381903546713,
+        "-6521929800": 0.00040374381903791678,
+        "-6522113625": 0.00040374381904144,
+        "-6522224249": 0.00042158499436495303,
+        "-6522408074": 0.00042158499436740268,
+        "-6522591899": 0.0004215849943709259,
+        "-6547206749": 0.0019383581000855929,
+        "-6547390574": 0.0019383581000880425,
+        "-6547574399": 0.0019383581000915657,
+        "-6552825149": 0.0019383582513205753,
+        "-6553008974": 0.0019383582513230249,
+        "-6553192799": 0.0019383582513265482,
+        "-6553303423": 0.0019561994266500612,
+        "-6553487248": 0.0019561994266525107,
+        "-6553671073": 0.0019561994266560339,
+        "-6562513948": 0.0027649183087456305,
+        "-6562697773": 0.0027649183087480804,
+        "-6562881598": 0.0027649183087516036,
+        "-6562992222": 0.0027827594840751165,
+        "-6563176047": 0.0027827594840775663,
+        "-6563359872": 0.0027827594840810896,
+        "-6564441748": 0.0043831474337946664,
+        "-6564625573": 0.0043831474337971158,
+        "-6564809398": 0.0043831474338006391,
+        "-6564920022": 0.0044009886091241519,
+        "-6565103847": 0.0044009886091266014,
+        "-6565287672": 0.0044009886091301246,
+        "-6566369548": 0.010066814051583103,
+        "-6566553373": 0.010066814051585552,
+        "-6566737198": 0.010066814051589075,
+        "-6566847822": 0.010084655226912589,
+        "-6567031647": 0.010084655226915039,
+        "-6567215472": 0.010084655226918562,
+        "-6581841635": 0.030615995821196472,
+        "-6582025460": 0.030615995821198925,
+        "-6582209285": 0.030615995821202446,
+        "-6582319909": 0.030633836996525957,
+        "-6582503734": 0.030633836996528409,
+        "-6582687559": 0.030633836996531931,
+        "-71555143": 1.2254937167727362e-14,
+        "-71738968": 1.4704583556241111e-14,
+        "-71922793": 1.8227806935950006e-14
+      },
+      "costToSolutionMap": {
+        "-1500860517": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "B135D3CFEFE89065",
+            "itemIndex": 12,
+            "itemType": "CO"
+          }
+        ],
+        "-1507334410": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "B135D3CFEFE89065",
+            "itemIndex": 12,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 26,
+            "candidateKey": "49E9CDAC47ACA687",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-1513808304": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "B135D3CFEFE89065",
+            "itemIndex": 12,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 24,
+            "candidateKey": "A1B748FD49D37016",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-1513992129": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "B135D3CFEFE89065",
+            "itemIndex": 12,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 24,
+            "candidateKey": "A1B748FD49D37016",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-1514175954": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "B135D3CFEFE89065",
+            "itemIndex": 12,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 24,
+            "candidateKey": "A1B748FD49D37016",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-1660037106": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "B135D3CFEFE89065",
+            "itemIndex": 12,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 14,
+            "candidateKey": "352B44ECA2B267CF",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-1660220931": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "B135D3CFEFE89065",
+            "itemIndex": 12,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 14,
+            "candidateKey": "352B44ECA2B267CF",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-1660404756": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "B135D3CFEFE89065",
+            "itemIndex": 12,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 14,
+            "candidateKey": "352B44ECA2B267CF",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-1748994902": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 11,
+            "candidateKey": "20F6F1B2B1D6CB4C",
+            "itemIndex": 6,
+            "itemType": "CS"
+          },
+          {
+            "candidateIndex": 14,
+            "candidateKey": "352B44ECA2B267CF",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-1749178727": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 11,
+            "candidateKey": "20F6F1B2B1D6CB4C",
+            "itemIndex": 6,
+            "itemType": "CS"
+          },
+          {
+            "candidateIndex": 14,
+            "candidateKey": "352B44ECA2B267CF",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-1749362552": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 11,
+            "candidateKey": "20F6F1B2B1D6CB4C",
+            "itemIndex": 6,
+            "itemType": "CS"
+          },
+          {
+            "candidateIndex": 14,
+            "candidateKey": "352B44ECA2B267CF",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-184348987": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 14,
+            "candidateKey": "352B44ECA2B267CF",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-184532812": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 14,
+            "candidateKey": "352B44ECA2B267CF",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-184716637": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 14,
+            "candidateKey": "352B44ECA2B267CF",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-217783945": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 12,
+            "candidateKey": "352B44ECA2B267CF",
+            "itemIndex": 6,
+            "itemType": "CS"
+          },
+          {
+            "candidateIndex": 14,
+            "candidateKey": "352B44ECA2B267CF",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-217967770": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 12,
+            "candidateKey": "352B44ECA2B267CF",
+            "itemIndex": 6,
+            "itemType": "CS"
+          },
+          {
+            "candidateIndex": 14,
+            "candidateKey": "352B44ECA2B267CF",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-218151595": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 12,
+            "candidateKey": "352B44ECA2B267CF",
+            "itemIndex": 6,
+            "itemType": "CS"
+          },
+          {
+            "candidateIndex": 14,
+            "candidateKey": "352B44ECA2B267CF",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-231094346": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 33,
+            "candidateKey": "FAD9B5B90DEB3B45",
+            "itemIndex": 6,
+            "itemType": "CS"
+          },
+          {
+            "candidateIndex": 14,
+            "candidateKey": "352B44ECA2B267CF",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-231278171": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 33,
+            "candidateKey": "FAD9B5B90DEB3B45",
+            "itemIndex": 6,
+            "itemType": "CS"
+          },
+          {
+            "candidateIndex": 14,
+            "candidateKey": "352B44ECA2B267CF",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-231461996": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 33,
+            "candidateKey": "FAD9B5B90DEB3B45",
+            "itemIndex": 6,
+            "itemType": "CS"
+          },
+          {
+            "candidateIndex": 14,
+            "candidateKey": "352B44ECA2B267CF",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-25172398": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          }
+        ],
+        "-31646291": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 26,
+            "candidateKey": "49E9CDAC47ACA687",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-38120185": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 24,
+            "candidateKey": "A1B748FD49D37016",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-38304010": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 24,
+            "candidateKey": "A1B748FD49D37016",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-38487835": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 24,
+            "candidateKey": "A1B748FD49D37016",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-5161274169": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          }
+        ],
+        "-5167748062": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 26,
+            "candidateKey": "49E9CDAC47ACA687",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-5174221956": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 24,
+            "candidateKey": "A1B748FD49D37016",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-5174405781": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 24,
+            "candidateKey": "A1B748FD49D37016",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-5174589606": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 24,
+            "candidateKey": "A1B748FD49D37016",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-5320450758": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 14,
+            "candidateKey": "352B44ECA2B267CF",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-5320634583": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 14,
+            "candidateKey": "352B44ECA2B267CF",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-5320818408": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 14,
+            "candidateKey": "352B44ECA2B267CF",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-5337121862": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 10,
+            "candidateKey": "D0321BFC2AB26F9E",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 11,
+            "candidateKey": "B47DF154C10CA578",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-5337305687": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 10,
+            "candidateKey": "D0321BFC2AB26F9E",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 11,
+            "candidateKey": "B47DF154C10CA578",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-5337489512": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 10,
+            "candidateKey": "D0321BFC2AB26F9E",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 11,
+            "candidateKey": "B47DF154C10CA578",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-5400434585": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 10,
+            "candidateKey": "D0321BFC2AB26F9E",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 35,
+            "candidateKey": "3AFCE7FBAF3FB4DF",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-5400618410": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 10,
+            "candidateKey": "D0321BFC2AB26F9E",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 35,
+            "candidateKey": "3AFCE7FBAF3FB4DF",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-5400802235": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 10,
+            "candidateKey": "D0321BFC2AB26F9E",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 35,
+            "candidateKey": "3AFCE7FBAF3FB4DF",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-5406052985": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 9,
+            "candidateKey": "A64ED0069B8D8DD6",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 10,
+            "candidateKey": "D0321BFC2AB26F9E",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 35,
+            "candidateKey": "3AFCE7FBAF3FB4DF",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-5406236810": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 9,
+            "candidateKey": "A64ED0069B8D8DD6",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 10,
+            "candidateKey": "D0321BFC2AB26F9E",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 35,
+            "candidateKey": "3AFCE7FBAF3FB4DF",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-5406420635": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 9,
+            "candidateKey": "A64ED0069B8D8DD6",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 10,
+            "candidateKey": "D0321BFC2AB26F9E",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 35,
+            "candidateKey": "3AFCE7FBAF3FB4DF",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-5434832005": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 40,
+            "candidateKey": "389C2E7C3322CCA",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-5435015830": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 40,
+            "candidateKey": "389C2E7C3322CCA",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-5435199655": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 40,
+            "candidateKey": "389C2E7C3322CCA",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-5499861315": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 11,
+            "candidateKey": "B47DF154C10CA578",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-5500045140": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 11,
+            "candidateKey": "B47DF154C10CA578",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-5500228965": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 11,
+            "candidateKey": "B47DF154C10CA578",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-5536126752": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 35,
+            "candidateKey": "3AFCE7FBAF3FB4DF",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-5536310577": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 35,
+            "candidateKey": "3AFCE7FBAF3FB4DF",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-5536494402": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 35,
+            "candidateKey": "3AFCE7FBAF3FB4DF",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-5541745152": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 9,
+            "candidateKey": "A64ED0069B8D8DD6",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 35,
+            "candidateKey": "3AFCE7FBAF3FB4DF",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-5541928977": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 9,
+            "candidateKey": "A64ED0069B8D8DD6",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 35,
+            "candidateKey": "3AFCE7FBAF3FB4DF",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-5542112802": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 9,
+            "candidateKey": "A64ED0069B8D8DD6",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 35,
+            "candidateKey": "3AFCE7FBAF3FB4DF",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-5544334539": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 10,
+            "candidateKey": "D0321BFC2AB26F9E",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 10,
+            "candidateKey": "8F8D4E92BCF6A634",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-5544518364": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 10,
+            "candidateKey": "D0321BFC2AB26F9E",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 10,
+            "candidateKey": "8F8D4E92BCF6A634",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-5544702189": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 10,
+            "candidateKey": "D0321BFC2AB26F9E",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 10,
+            "candidateKey": "8F8D4E92BCF6A634",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-5575006455": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 10,
+            "candidateKey": "D0321BFC2AB26F9E",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 32,
+            "candidateKey": "11FF70C80900A32C",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-5575190280": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 10,
+            "candidateKey": "D0321BFC2AB26F9E",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 32,
+            "candidateKey": "11FF70C80900A32C",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-5575374105": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 10,
+            "candidateKey": "D0321BFC2AB26F9E",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 32,
+            "candidateKey": "11FF70C80900A32C",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-5679771964": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 10,
+            "candidateKey": "D0321BFC2AB26F9E",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 31,
+            "candidateKey": "401EED92E98AFC56",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-5679955789": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 10,
+            "candidateKey": "D0321BFC2AB26F9E",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 31,
+            "candidateKey": "401EED92E98AFC56",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-5680139614": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 10,
+            "candidateKey": "D0321BFC2AB26F9E",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 31,
+            "candidateKey": "401EED92E98AFC56",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-5839755756": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "162A0DF5B136F695",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 30,
+            "candidateKey": "3ABEFA0739041C86",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-5839939581": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "162A0DF5B136F695",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 30,
+            "candidateKey": "3ABEFA0739041C86",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-5840123406": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "162A0DF5B136F695",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 30,
+            "candidateKey": "3ABEFA0739041C86",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-58607356": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 12,
+            "candidateKey": "352B44ECA2B267CF",
+            "itemIndex": 6,
+            "itemType": "CS"
+          }
+        ],
+        "-5977971300": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 10,
+            "candidateKey": "D0321BFC2AB26F9E",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 30,
+            "candidateKey": "3ABEFA0739041C86",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-5978155125": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 10,
+            "candidateKey": "D0321BFC2AB26F9E",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 30,
+            "candidateKey": "3ABEFA0739041C86",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-5978338950": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 10,
+            "candidateKey": "D0321BFC2AB26F9E",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 30,
+            "candidateKey": "3ABEFA0739041C86",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6003147001": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 10,
+            "candidateKey": "D0321BFC2AB26F9E",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "3A920D9F7A7E8699",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6003330826": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 10,
+            "candidateKey": "D0321BFC2AB26F9E",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "3A920D9F7A7E8699",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6003514651": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 10,
+            "candidateKey": "D0321BFC2AB26F9E",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "3A920D9F7A7E8699",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6008765401": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 9,
+            "candidateKey": "A64ED0069B8D8DD6",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 10,
+            "candidateKey": "D0321BFC2AB26F9E",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "3A920D9F7A7E8699",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6008949226": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 9,
+            "candidateKey": "A64ED0069B8D8DD6",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 10,
+            "candidateKey": "D0321BFC2AB26F9E",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "3A920D9F7A7E8699",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6009133051": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 9,
+            "candidateKey": "A64ED0069B8D8DD6",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 10,
+            "candidateKey": "D0321BFC2AB26F9E",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "3A920D9F7A7E8699",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6165818503": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 30,
+            "candidateKey": "3ABEFA0739041C86",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6166002328": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 30,
+            "candidateKey": "3ABEFA0739041C86",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6166186153": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 30,
+            "candidateKey": "3ABEFA0739041C86",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6190994204": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "3A920D9F7A7E8699",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6191178029": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "3A920D9F7A7E8699",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6191361854": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "3A920D9F7A7E8699",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6196612604": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 9,
+            "candidateKey": "A64ED0069B8D8DD6",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "3A920D9F7A7E8699",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6196796429": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 9,
+            "candidateKey": "A64ED0069B8D8DD6",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "3A920D9F7A7E8699",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6196980254": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 9,
+            "candidateKey": "A64ED0069B8D8DD6",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "3A920D9F7A7E8699",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6208940188": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 10,
+            "candidateKey": "D0321BFC2AB26F9E",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 7,
+            "candidateKey": "68A3037A7648DC83",
+            "itemIndex": 21,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6209124013": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 10,
+            "candidateKey": "D0321BFC2AB26F9E",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 7,
+            "candidateKey": "68A3037A7648DC83",
+            "itemIndex": 21,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6209307838": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 10,
+            "candidateKey": "D0321BFC2AB26F9E",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 7,
+            "candidateKey": "68A3037A7648DC83",
+            "itemIndex": 21,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6305704171": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 10,
+            "candidateKey": "D0321BFC2AB26F9E",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6305887996": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 10,
+            "candidateKey": "D0321BFC2AB26F9E",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6306071821": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 10,
+            "candidateKey": "D0321BFC2AB26F9E",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6311322571": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 9,
+            "candidateKey": "A64ED0069B8D8DD6",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 10,
+            "candidateKey": "D0321BFC2AB26F9E",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6311506396": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 9,
+            "candidateKey": "A64ED0069B8D8DD6",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 10,
+            "candidateKey": "D0321BFC2AB26F9E",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6311690221": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 9,
+            "candidateKey": "A64ED0069B8D8DD6",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 10,
+            "candidateKey": "D0321BFC2AB26F9E",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6369990268": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 3,
+            "candidateKey": "C96200DDCEBAEE22",
+            "itemIndex": 20,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6370174093": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 3,
+            "candidateKey": "C96200DDCEBAEE22",
+            "itemIndex": 20,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6370357918": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 3,
+            "candidateKey": "C96200DDCEBAEE22",
+            "itemIndex": 20,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6385052103": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 7,
+            "candidateKey": "68A3037A7648DC83",
+            "itemIndex": 21,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6385235928": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 7,
+            "candidateKey": "68A3037A7648DC83",
+            "itemIndex": 21,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6385419753": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 7,
+            "candidateKey": "68A3037A7648DC83",
+            "itemIndex": 21,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6493551374": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6493735199": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6493919024": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "5E6C855C9D745A41",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6499169774": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 9,
+            "candidateKey": "A64ED0069B8D8DD6",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6499353599": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 9,
+            "candidateKey": "A64ED0069B8D8DD6",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6499537424": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 9,
+            "candidateKey": "A64ED0069B8D8DD6",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6504788174": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 10,
+            "candidateKey": "13A4132B2A0D44AA",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6504971999": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 10,
+            "candidateKey": "13A4132B2A0D44AA",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6505155824": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 10,
+            "candidateKey": "13A4132B2A0D44AA",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6505266448": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 10,
+            "candidateKey": "13A4132B2A0D44AA",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "10EBCDF73DC51994",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6505450273": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 10,
+            "candidateKey": "13A4132B2A0D44AA",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "10EBCDF73DC51994",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6505634098": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 10,
+            "candidateKey": "13A4132B2A0D44AA",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "10EBCDF73DC51994",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-65081249": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 12,
+            "candidateKey": "352B44ECA2B267CF",
+            "itemIndex": 6,
+            "itemType": "CS"
+          },
+          {
+            "candidateIndex": 26,
+            "candidateKey": "49E9CDAC47ACA687",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6516200175": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "350901453196D079",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6516384000": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "350901453196D079",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6516567825": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "350901453196D079",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6516678449": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "350901453196D079",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "10EBCDF73DC51994",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6516862274": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "350901453196D079",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "10EBCDF73DC51994",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6517046099": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "350901453196D079",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "10EBCDF73DC51994",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6521745975": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 12,
+            "candidateKey": "E5DA1AACA8A6B6F4",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6521929800": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 12,
+            "candidateKey": "E5DA1AACA8A6B6F4",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6522113625": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 12,
+            "candidateKey": "E5DA1AACA8A6B6F4",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6522224249": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 12,
+            "candidateKey": "E5DA1AACA8A6B6F4",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "10EBCDF73DC51994",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6522408074": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 12,
+            "candidateKey": "E5DA1AACA8A6B6F4",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "10EBCDF73DC51994",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6522591899": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 12,
+            "candidateKey": "E5DA1AACA8A6B6F4",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "10EBCDF73DC51994",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6547206749": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 3,
+            "candidateKey": "968875E551860A77",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6547390574": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 3,
+            "candidateKey": "968875E551860A77",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6547574399": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 3,
+            "candidateKey": "968875E551860A77",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6552825149": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 4,
+            "candidateKey": "AE0CFB0FE377D36C",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6553008974": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 4,
+            "candidateKey": "AE0CFB0FE377D36C",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6553192799": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 4,
+            "candidateKey": "AE0CFB0FE377D36C",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6553303423": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 4,
+            "candidateKey": "AE0CFB0FE377D36C",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "10EBCDF73DC51994",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6553487248": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 4,
+            "candidateKey": "AE0CFB0FE377D36C",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "10EBCDF73DC51994",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6553671073": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 4,
+            "candidateKey": "AE0CFB0FE377D36C",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "10EBCDF73DC51994",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6562513948": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 14,
+            "candidateKey": "41E5441C721E5263",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6562697773": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 14,
+            "candidateKey": "41E5441C721E5263",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6562881598": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 14,
+            "candidateKey": "41E5441C721E5263",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6562992222": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 14,
+            "candidateKey": "41E5441C721E5263",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "10EBCDF73DC51994",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6563176047": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 14,
+            "candidateKey": "41E5441C721E5263",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "10EBCDF73DC51994",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6563359872": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 14,
+            "candidateKey": "41E5441C721E5263",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "10EBCDF73DC51994",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6564441748": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 15,
+            "candidateKey": "48CAE5962A8E189F",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6564625573": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 15,
+            "candidateKey": "48CAE5962A8E189F",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6564809398": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 15,
+            "candidateKey": "48CAE5962A8E189F",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6564920022": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 15,
+            "candidateKey": "48CAE5962A8E189F",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "10EBCDF73DC51994",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6565103847": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 15,
+            "candidateKey": "48CAE5962A8E189F",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "10EBCDF73DC51994",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6565287672": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 15,
+            "candidateKey": "48CAE5962A8E189F",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "10EBCDF73DC51994",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6566369548": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 7,
+            "candidateKey": "C69AFA9F627E9CD9",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6566553373": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 7,
+            "candidateKey": "C69AFA9F627E9CD9",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6566737198": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 7,
+            "candidateKey": "C69AFA9F627E9CD9",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6566847822": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 7,
+            "candidateKey": "C69AFA9F627E9CD9",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "10EBCDF73DC51994",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6567031647": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 7,
+            "candidateKey": "C69AFA9F627E9CD9",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "10EBCDF73DC51994",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6567215472": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 7,
+            "candidateKey": "C69AFA9F627E9CD9",
+            "itemIndex": 13,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "10EBCDF73DC51994",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6581841635": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "B22BD89CDFFFF6BC",
+            "itemIndex": 12,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6582025460": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "B22BD89CDFFFF6BC",
+            "itemIndex": 12,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6582209285": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "B22BD89CDFFFF6BC",
+            "itemIndex": 12,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6582319909": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "B22BD89CDFFFF6BC",
+            "itemIndex": 12,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "10EBCDF73DC51994",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6582503734": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "B22BD89CDFFFF6BC",
+            "itemIndex": 12,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "10EBCDF73DC51994",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6582687559": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "B22BD89CDFFFF6BC",
+            "itemIndex": 12,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 8,
+            "candidateKey": "10EBCDF73DC51994",
+            "itemIndex": 18,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-71555143": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "E6C8A6FF83795D72",
+            "itemIndex": 4,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 12,
+            "candidateKey": "352B44ECA2B267CF",
+            "itemIndex": 6,
+            "itemType": "CS"
+          },
+          {
+            "candidateIndex": 24,
+            "candidateKey": "A1B748FD49D37016",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-71738968": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "7A1C679E43D34B02",
+            "itemIndex": 2,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 12,
+            "candidateKey": "352B44ECA2B267CF",
+            "itemIndex": 6,
+            "itemType": "CS"
+          },
+          {
+            "candidateIndex": 24,
+            "candidateKey": "A1B748FD49D37016",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-71922793": [
+          {
+            "candidateIndex": 1,
+            "candidateKey": "F6036AE77D933554",
+            "itemIndex": 0,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "239E3B771402DBDA",
+            "itemIndex": 6,
+            "itemType": "CO"
+          },
+          {
+            "candidateIndex": 12,
+            "candidateKey": "352B44ECA2B267CF",
+            "itemIndex": 6,
+            "itemType": "CS"
+          },
+          {
+            "candidateIndex": 24,
+            "candidateKey": "A1B748FD49D37016",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ]
+      },
+      "key": {
+        "-poseidon-aggressive-dce": "0",
+        "-poseidon-arm-search-factor": "64",
+        "-poseidon-early-prune": "0",
+        "-poseidon-enable-herbie": "1",
+        "-poseidon-enable-multifloat": "1",
+        "-poseidon-enable-pt": "1",
+        "-poseidon-enable-three-tier": "1",
+        "-poseidon-expansion-components": "2",
+        "-poseidon-exponent-penalty": "1.0000000000000000e+30",
+        "-poseidon-freq-weighted-pricing": "0",
+        "-poseidon-herbie-array-grouping": "inputs",
+        "-poseidon-herbie-array-weights": "sensitivity",
+        "-poseidon-herbie-arrays": "1",
+        "-poseidon-herbie-num-enodes": "2000",
+        "-poseidon-herbie-num-iters": "3",
+        "-poseidon-herbie-num-pts": "256",
+        "-poseidon-herbie-num-taylor-terms": "2,4",
+        "-poseidon-herbie-pre-floor-bits": "0",
+        "-poseidon-inkernel-calibration": "0",
+        "-poseidon-loose-coverage": "1",
+        "-poseidon-max-broken-share": "1.0000000000000000e-02",
+        "-poseidon-max-expr-length": "10000",
+        "-poseidon-merge-shared-staging": "0",
+        "-poseidon-min-arm-samples": "32",
+        "-poseidon-min-ops-split": "10",
+        "-poseidon-min-uses-split": "2",
+        "-poseidon-narrow-multiview-staging": "0",
+        "-poseidon-narrow-param-staging": "0",
+        "-poseidon-num-samples": "1024",
+        "-poseidon-ozaki-host-dispatch": "1",
+        "-poseidon-raise-wmma": "1",
+        "-poseidon-random-seed": "239778888",
+        "-poseidon-reduction-subgraphs": "0",
+        "-poseidon-sample-log-bits": "0",
+        "-poseidon-split-calls": "",
+        "-poseidon-strict-mode": "0",
+        "-poseidon-two-tier-step": "10",
+        "Herbie binary": "",
+        "Herbie platform": "cuda-sm120 C047CD2A2082D5A3",
+        "TCEC backend": "cuMpSGEMM",
+        "candidate set": "6348E3BEFD04F8BC",
+        "compiler": "780A327D33EDB28A LLVM 24.0.0git",
+        "cost axis": "cost-model units times 2^(32 - log2 profiled cost)",
+        "cost model": "745551D625BDE07B",
+        "device": "sm_120",
+        "format": "1",
+        "function body": "CB734A2E06FFEFF9",
+        "profile": "BD4862E96B0BD175"
+      },
+      "profiledCost": 848971258.20185626
+    }
+  }
+}

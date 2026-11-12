@@ -3,7 +3,9 @@
 # cost_models/cm_sm_120_RTX5090.* and cost_models/x1e6/ (the RTX 5090 cost model
 # and its Herbie platforms), benchmarks/*/profiles/ (the profiles the expected
 # decisions were made from), benchmarks/genga_nbody/herbie_answers/ (Herbie's
-# answers, replayed by default) and expected/ (the expected decisions).
+# answers, replayed by default), expected/ (the expected decisions) and
+# devices/ (the B300 and GH200 models and Herbie answers, and every device's
+# shipped solve caches).
 local.env
 /cost_models/target.env
 /cost_models/measured/
@@ -12,6 +14,7 @@ local.env
 /cost_models/.build/
 .detected.mk*
 /picks_check/
+/explain/
 /benchmarks/*/cache*/
 /benchmarks/*/measured/
 /logs/
@@ -54,6 +57,8 @@ cumpsgemm_tcec_ref
 *.ozdispatch
 *.gap-*
 *.bak.*
+# The shipped DP tables (scripts/make_caches.sh).
+!/devices/*/caches/**/table.json
 # The RTX 5090 run EXPECTED_RESULTS.md cites lives whole under
 # benchmarks/<bench>/golden/rtx5090/, logs and drift file included.
 !/benchmarks/*/golden/**/*.log

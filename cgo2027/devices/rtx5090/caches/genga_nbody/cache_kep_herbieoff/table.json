@@ -1,0 +1,455 @@
+{
+  "functions": {
+    "preprocess__Z13kepler_kernelPK7double4S1_PS_S2_idd_poseidon_body": {
+      "baselineAccCost": 2.3254597163935211e-14,
+      "costToAccuracyMap": {
+        "-12947787": 2.0745980262224115e-15,
+        "-1564645915": 5.324870631630623e-09,
+        "-1571119808": 5.324871108986266e-09,
+        "-1577593702": 5.324872706228649e-09,
+        "-159176589": 9.9473057004042164e-14,
+        "-1723822504": 5.3249701046876268e-09,
+        "-192611547": 1.1562626591376976e-13,
+        "-205921948": 1.5872959898883866e-10,
+        "-232533749": 4.3861957196309339e-09,
+        "-3222347329": 1.2252167601058008e-07,
+        "-3228821222": 1.2252167648793572e-07,
+        "-3235295116": 1.225216780851781e-07,
+        "-33434958": 1.6153208909727594e-14,
+        "-3381523918": 1.2252177548363709e-07,
+        "-39908851": 1.6630564552974036e-14,
+        "-46382745": 1.8227806935950006e-14,
+        "-5092747459": 3.0208337092179076e-07,
+        "-5099221352": 3.020833713991464e-07,
+        "-5105695246": 3.020833729963888e-07,
+        "-5251924048": 3.0208347039484775e-07,
+        "-5288328198": 5.6479493334251357e-07,
+        "-5301275985": 5.647949342694376e-07,
+        "-5366305295": 5.7656701526363118e-07,
+        "-5431334605": 6.2676265620287523e-07,
+        "-5467600042": 6.9318739296009744e-07,
+        "-6097291793": 4.4222422767092599e-06,
+        "-6122467494": 4.4407215791576245e-06,
+        "-6425024664": 5.0117740365725353e-06,
+        "-6473893": 4.7735564324644141e-16,
+        "0": 0
+      },
+      "costToSolutionMap": {
+        "-12947787": [
+          {
+            "candidateIndex": 24,
+            "candidateKey": "A1B748FD49D37016",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-1564645915": [
+          {
+            "candidateIndex": 11,
+            "candidateKey": "20F6F1B2B1D6CB4C",
+            "itemIndex": 6,
+            "itemType": "CS"
+          }
+        ],
+        "-1571119808": [
+          {
+            "candidateIndex": 11,
+            "candidateKey": "20F6F1B2B1D6CB4C",
+            "itemIndex": 6,
+            "itemType": "CS"
+          },
+          {
+            "candidateIndex": 26,
+            "candidateKey": "49E9CDAC47ACA687",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-1577593702": [
+          {
+            "candidateIndex": 11,
+            "candidateKey": "20F6F1B2B1D6CB4C",
+            "itemIndex": 6,
+            "itemType": "CS"
+          },
+          {
+            "candidateIndex": 24,
+            "candidateKey": "A1B748FD49D37016",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-159176589": [
+          {
+            "candidateIndex": 14,
+            "candidateKey": "352B44ECA2B267CF",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-1723822504": [
+          {
+            "candidateIndex": 11,
+            "candidateKey": "20F6F1B2B1D6CB4C",
+            "itemIndex": 6,
+            "itemType": "CS"
+          },
+          {
+            "candidateIndex": 14,
+            "candidateKey": "352B44ECA2B267CF",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-192611547": [
+          {
+            "candidateIndex": 12,
+            "candidateKey": "352B44ECA2B267CF",
+            "itemIndex": 6,
+            "itemType": "CS"
+          },
+          {
+            "candidateIndex": 14,
+            "candidateKey": "352B44ECA2B267CF",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-205921948": [
+          {
+            "candidateIndex": 33,
+            "candidateKey": "FAD9B5B90DEB3B45",
+            "itemIndex": 6,
+            "itemType": "CS"
+          },
+          {
+            "candidateIndex": 14,
+            "candidateKey": "352B44ECA2B267CF",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-232533749": [
+          {
+            "candidateIndex": 32,
+            "candidateKey": "CC4B96D14091A1A8",
+            "itemIndex": 6,
+            "itemType": "CS"
+          },
+          {
+            "candidateIndex": 14,
+            "candidateKey": "352B44ECA2B267CF",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-3222347329": [
+          {
+            "candidateIndex": 10,
+            "candidateKey": "8F8D4E92BCF6A634",
+            "itemIndex": 6,
+            "itemType": "CS"
+          }
+        ],
+        "-3228821222": [
+          {
+            "candidateIndex": 10,
+            "candidateKey": "8F8D4E92BCF6A634",
+            "itemIndex": 6,
+            "itemType": "CS"
+          },
+          {
+            "candidateIndex": 26,
+            "candidateKey": "49E9CDAC47ACA687",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-3235295116": [
+          {
+            "candidateIndex": 10,
+            "candidateKey": "8F8D4E92BCF6A634",
+            "itemIndex": 6,
+            "itemType": "CS"
+          },
+          {
+            "candidateIndex": 24,
+            "candidateKey": "A1B748FD49D37016",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-33434958": [
+          {
+            "candidateIndex": 12,
+            "candidateKey": "352B44ECA2B267CF",
+            "itemIndex": 6,
+            "itemType": "CS"
+          }
+        ],
+        "-3381523918": [
+          {
+            "candidateIndex": 10,
+            "candidateKey": "8F8D4E92BCF6A634",
+            "itemIndex": 6,
+            "itemType": "CS"
+          },
+          {
+            "candidateIndex": 14,
+            "candidateKey": "352B44ECA2B267CF",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-39908851": [
+          {
+            "candidateIndex": 12,
+            "candidateKey": "352B44ECA2B267CF",
+            "itemIndex": 6,
+            "itemType": "CS"
+          },
+          {
+            "candidateIndex": 26,
+            "candidateKey": "49E9CDAC47ACA687",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-46382745": [
+          {
+            "candidateIndex": 12,
+            "candidateKey": "352B44ECA2B267CF",
+            "itemIndex": 6,
+            "itemType": "CS"
+          },
+          {
+            "candidateIndex": 24,
+            "candidateKey": "A1B748FD49D37016",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-5092747459": [
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 6,
+            "itemType": "CS"
+          }
+        ],
+        "-5099221352": [
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 6,
+            "itemType": "CS"
+          },
+          {
+            "candidateIndex": 26,
+            "candidateKey": "49E9CDAC47ACA687",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-5105695246": [
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 6,
+            "itemType": "CS"
+          },
+          {
+            "candidateIndex": 24,
+            "candidateKey": "A1B748FD49D37016",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-5251924048": [
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 6,
+            "itemType": "CS"
+          },
+          {
+            "candidateIndex": 14,
+            "candidateKey": "352B44ECA2B267CF",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-5288328198": [
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 6,
+            "itemType": "CS"
+          },
+          {
+            "candidateIndex": 13,
+            "candidateKey": "DD205913C4D5D0CF",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-5301275985": [
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 6,
+            "itemType": "CS"
+          },
+          {
+            "candidateIndex": 41,
+            "candidateKey": "56A0CA4A4C0DE304",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-5366305295": [
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 6,
+            "itemType": "CS"
+          },
+          {
+            "candidateIndex": 40,
+            "candidateKey": "389C2E7C3322CCA",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-5431334605": [
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 6,
+            "itemType": "CS"
+          },
+          {
+            "candidateIndex": 11,
+            "candidateKey": "B47DF154C10CA578",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-5467600042": [
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 6,
+            "itemType": "CS"
+          },
+          {
+            "candidateIndex": 35,
+            "candidateKey": "3AFCE7FBAF3FB4DF",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6097291793": [
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 6,
+            "itemType": "CS"
+          },
+          {
+            "candidateIndex": 30,
+            "candidateKey": "3ABEFA0739041C86",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6122467494": [
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 6,
+            "itemType": "CS"
+          },
+          {
+            "candidateIndex": 1,
+            "candidateKey": "3A920D9F7A7E8699",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6425024664": [
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 6,
+            "itemType": "CS"
+          },
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "-6473893": [
+          {
+            "candidateIndex": 26,
+            "candidateKey": "49E9CDAC47ACA687",
+            "itemIndex": 7,
+            "itemType": "CS"
+          }
+        ],
+        "0": []
+      },
+      "key": {
+        "-poseidon-aggressive-dce": "0",
+        "-poseidon-arm-search-factor": "64",
+        "-poseidon-early-prune": "1",
+        "-poseidon-enable-herbie": "0",
+        "-poseidon-enable-multifloat": "1",
+        "-poseidon-enable-pt": "1",
+        "-poseidon-enable-three-tier": "1",
+        "-poseidon-expansion-components": "2",
+        "-poseidon-exponent-penalty": "1.0000000000000000e+30",
+        "-poseidon-freq-weighted-pricing": "0",
+        "-poseidon-herbie-array-grouping": "inputs",
+        "-poseidon-herbie-array-weights": "sensitivity",
+        "-poseidon-herbie-arrays": "1",
+        "-poseidon-herbie-num-enodes": "8000",
+        "-poseidon-herbie-num-iters": "6",
+        "-poseidon-herbie-num-pts": "1024",
+        "-poseidon-herbie-num-taylor-terms": "",
+        "-poseidon-herbie-pre-floor-bits": "0",
+        "-poseidon-inkernel-calibration": "0",
+        "-poseidon-loose-coverage": "1",
+        "-poseidon-max-broken-share": "1.0000000000000000e-02",
+        "-poseidon-max-expr-length": "10000",
+        "-poseidon-merge-shared-staging": "0",
+        "-poseidon-min-arm-samples": "32",
+        "-poseidon-min-ops-split": "10",
+        "-poseidon-min-uses-split": "2",
+        "-poseidon-narrow-multiview-staging": "0",
+        "-poseidon-narrow-param-staging": "0",
+        "-poseidon-num-samples": "1024",
+        "-poseidon-ozaki-host-dispatch": "1",
+        "-poseidon-raise-wmma": "1",
+        "-poseidon-random-seed": "239778888",
+        "-poseidon-reduction-subgraphs": "0",
+        "-poseidon-sample-log-bits": "0",
+        "-poseidon-split-calls": "",
+        "-poseidon-strict-mode": "0",
+        "-poseidon-two-tier-step": "10",
+        "TCEC backend": "cuMpSGEMM",
+        "candidate set": "97F0597146289B98",
+        "compiler": "780A327D33EDB28A LLVM 24.0.0git",
+        "cost axis": "cost-model units times 2^(32 - log2 profiled cost)",
+        "cost model": "745551D625BDE07B",
+        "device": "sm_120",
+        "format": "1",
+        "function body": "CB734A2E06FFEFF9",
+        "profile": "BD4862E96B0BD175"
+      },
+      "profiledCost": 848971258.20185626
+    }
+  }
+}

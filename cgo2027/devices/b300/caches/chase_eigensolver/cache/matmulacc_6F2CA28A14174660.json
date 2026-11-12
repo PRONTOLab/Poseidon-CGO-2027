@@ -1,0 +1,26 @@
+{
+  "key": {
+    "K": "2048",
+    "M": "16",
+    "N": "16",
+    "accumulator format": "f32",
+    "accuracy model": "A66DEC37FBE2781C",
+    "confidence": "0.94999999999999996",
+    "exponent format": "f16",
+    "exponent penalty": "1e+30",
+    "format": "1",
+    "gradient statistics": "1DEECC4A4A4A39F3",
+    "input format": "f32",
+    "inputMantBits": "22",
+    "model": "getMatmulAccuracyCost",
+    "operand statistics": "D3298D2919803FA6",
+    "orderTileK": "0",
+    "samples": "128",
+    "sampling log bits": "0",
+    "seed": "239778888"
+  },
+  "value": {
+    "accuracy cost": "1e+30",
+    "domain error": "inf"
+  }
+}

@@ -5,11 +5,24 @@
 #                                      #   pipeline + results bundle (hours)
 #   ./run_artifact.sh --quick          # preflight + cost model + smoke tests
 #   ./run_artifact.sh --check          # preflight only (nothing runs on the GPU)
-#   ./run_artifact.sh --picks          # compile-only check of every decision in
-#                                      #   EXPECTED_RESULTS.md (no GPU needed)
+#   ./run_artifact.sh --picks          # compile-only check of every RTX 5090
+#                                      #   decision of EXPECTED_RESULTS.md (no GPU)
+#   ./run_artifact.sh --picks --device rtx5090|b300|gh200|all
+#                                      # the same for the saved cost models of
+#                                      #   the paper's Table 1 devices (no GPU)
+#   ./run_artifact.sh --explain <row> [--all|--format F]
+#                                      # what the compiler considered, applied
+#                                      #   and rejected for one row (no GPU);
+#                                      #   --explain --list names the rows
 #   ./run_artifact.sh --bootstrap-only # preflight + cost model, then stop
 #   ./run_artifact.sh --calibrate      # measure this GPU's own cost model even
 #                                      #   where the shipped one applies, then run
+#   ./run_artifact.sh --from-scratch   # use nothing precomputed: measured cost
+#                                      #   model, fresh profiles, Herbie searches,
+#                                      #   no shipped solve caches (needs Herbie
+#                                      #   with --num-taylor-terms); with --quick too
+#   ./run_artifact.sh --no-shipped-cache  # (with any mode) solve without the
+#                                      #   shipped DP tables and accuracy memos
 #   ./run_artifact.sh --force          # start even though a benchmark of this
 #                                      #   artifact is already running (unsafe)
 #
@@ -28,6 +41,9 @@
 # shipped RTX 5090 model is checked against the device and used, unless
 # --calibrate; on any other GPU this device is measured with poseidon-calibrate
 # (~15-30 min) into cost_models/measured/ and cost_models/target.env records it.
+# A run priced with a measured model makes that model's decisions: it checks
+# the shipped decisions compile-only at the end (--picks --device all; the
+# quick run: rtx5090) and reports its speedups as this GPU's, unjudged.
 # Results (logs, TSVs, figures, the cost model, a config snapshot) are collected
 # into results/<device>_<timestamp>/ and tarred for transfer.
 #
@@ -36,22 +52,62 @@
 #   sbatch -A <account> slurm/run_artifact_parallel.sbatch [--quick]  # one per GPU
 set -uo pipefail
 cd "$(dirname "$0")"
+usage() { awk 'NR > 1 && /^#/ { sub(/^# ?/, ""); print; next } NR > 1 { exit }' "$0"; }
 
-MODE=full BOOTSTRAP_ARGS="" FORCE_RUN=0
-for _a in "$@"; do
-  case "$_a" in
+MODE=full BOOTSTRAP_ARGS="" FORCE_RUN=0 FROM_SCRATCH=0 PICK_ARGS=()
+while [ $# -gt 0 ]; do
+  case "$1" in
     --quick) MODE=quick ;;
     --check) MODE=check ;;
     --picks) MODE=picks ;;
+    --device) [ $# -ge 2 ] || { echo "run_artifact: --device needs a device (rtx5090, b300, gh200, all)" >&2; exit 1; }
+              PICK_ARGS+=(--device "$2"); shift ;;
+    --device=*) PICK_ARGS+=(--device "${1#*=}") ;;
+    --explain) shift; exec bash scripts/explain.sh "$@" ;;
+    --no-shipped-cache) export POSEIDON_SHIPPED_CACHE=0 ;;
+    --from-scratch) FROM_SCRATCH=1 ;;
     --bootstrap-only) MODE=bootstrap ;;
     --calibrate) BOOTSTRAP_ARGS=--calibrate ;;
     --force) FORCE_RUN=1 ;;
-    *) sed -n '2,24p' "$0"; exit 1 ;;
+    -h|--help) usage; exit 0 ;;
+    *) usage; exit 1 ;;
   esac
+  shift
 done
+if [ ${#PICK_ARGS[@]} -gt 0 ] && [ "$MODE" != picks ]; then
+  echo "run_artifact: --device selects the devices of --picks; a GPU run uses the GPU it runs on" >&2; exit 1
+fi
 
 if [ "$MODE" = picks ]; then
-  exec bash scripts/check_picks.sh
+  exec bash scripts/check_picks.sh "${PICK_ARGS[@]}"
+fi
+
+# ---- from scratch: nothing precomputed --------------------------------------
+# The cost model is measured on this GPU (from the ozp surrogate profile this
+# run makes), every benchmark profiles on this GPU, GENGA's drift and unified
+# solves search with Herbie instead of replaying answers, and no shipped or
+# earlier solve cache is read.
+if [ "$FROM_SCRATCH" = 1 ]; then
+  case "$MODE" in full|quick) ;; *) echo "run_artifact: --from-scratch is a GPU run (full or --quick)" >&2; exit 1 ;; esac
+  BOOTSTRAP_ARGS="--calibrate --fresh-profile"
+  export PROFILES=fresh GENGA_HERBIE=run POSEIDON_SHIPPED_CACHE=0
+  _BUILD="$(bash scripts/detect.sh build_dir)" || exit 1
+  HERBIE="${HERBIE:-$(sed -n 's/^POSEIDON_HERBIE_BINARY:FILEPATH=//p' "$_BUILD/CMakeCache.txt")}"
+  if [ -z "$HERBIE" ] || [ ! -x "$HERBIE" ] ||
+     ! "$HERBIE" improve --help 2>&1 | grep -q -- '--num-taylor-terms'; then
+    echo "run_artifact: --from-scratch runs Herbie, and needs one that accepts --num-taylor-terms." >&2
+    echo "run_artifact: none at '${HERBIE:-<unset>}' (HERBIE, else the build's POSEIDON_HERBIE_BINARY)." >&2
+    echo "run_artifact: Build it from sources/herbie with sources/herbie-num-taylor-terms.patch:" >&2
+    echo "run_artifact:   scripts/build_toolchain.sh --with-herbie --prefix <prefix>   (Racket 8.15, Rust 1.85.1)" >&2
+    echo "run_artifact:   or: scripts/docker.sh build --herbie   (docker/Dockerfile.herbie)" >&2
+    echo "run_artifact: then HERBIE=<prefix>/herbie/bin/herbie ./run_artifact.sh --from-scratch" >&2
+    exit 1
+  fi
+  export HERBIE
+  echo "==== from scratch: Herbie $HERBIE; removing earlier solve caches ===="
+  for _c in benchmarks/*/cache*/; do
+    [ -d "$_c" ] && { echo "  rm -r $_c"; rm -r -- "${_c:?}"; }
+  done
 fi
 
 # On a multi-GPU box PARALLEL_GPUS names the devices the caller owns. The
@@ -134,11 +190,14 @@ STAMP="$(date +%Y%m%d_%H%M%S)"
 RES="results/${GPU_NAME}_${GPU_ARCH}_${STAMP}"
 mkdir -p logs figures "$RES"
 
+OWN_MODEL=0
 if ! cmp -s "$COST_MODEL" "$(bash scripts/detect.sh shipped_cost_model)"; then
+  OWN_MODEL=1
   echo "NOTE: this run prices with a cost model measured on this device ($(basename "$COST_MODEL"))."
-  echo "      The solver's picks are that model's and may differ from EXPECTED_RESULTS.md,"
-  echo "      whose picks are the shipped RTX 5090 model's; every run prints, per row,"
-  echo "      whether the configuration differs. See EXPECTED_RESULTS.md: Own cost model."
+  echo "      Its decisions are this model's own; they are reported, not compared with the"
+  echo "      RTX 5090's. After the benchmarks the run checks the shipped decisions"
+  echo "      compile-only (the same as ./run_artifact.sh --picks --device ...), and its"
+  echo "      speedups are this GPU's, not judged against the RTX 5090 numbers."
 fi
 
 # ---- benchmarks -------------------------------------------------------------
@@ -220,6 +279,19 @@ else
   done
 fi
 
+# ---- device-independent checks on a GPU priced with its own model -----------
+# The decisions of the shipped models are a compile-time function of the
+# compiler, the profiles and those models, so they are checked here as on any
+# machine; the GPU's own decisions and timings above are its own.
+PICKS_RC=""
+if [ "$OWN_MODEL" = 1 ]; then
+  _DEVS=all; [ "$MODE" = quick ] && _DEVS=rtx5090
+  echo "==== decisions of the shipped cost models, compile-only (--picks --device $_DEVS; log: logs/picks.log) ===="
+  ( unset COST_MODEL GPU_ARCH; bash scripts/check_picks.sh --device "$_DEVS" ) > logs/picks.log 2>&1
+  PICKS_RC=$?
+  grep -E '^== ' logs/picks.log
+fi
+
 # ---- results bundle ---------------------------------------------------------
 echo "==== collecting results into $RES ===="
 {
@@ -236,6 +308,7 @@ echo "==== collecting results into $RES ===="
 } > "$RES/config.txt"
 # Every row whose configuration a run checked against EXPECTED_RESULTS.md.
 grep -h '^\[expected\]' logs/*.log > "$RES/expected_picks.txt" 2>/dev/null || true
+[ -f picks_check/picks.tsv ] && [ -n "$PICKS_RC" ] && cp picks_check/picks.tsv "$RES/picks_check.tsv"
 cp -r logs "$RES/"
 [ -n "$(ls figures 2>/dev/null)" ] && cp -r figures "$RES/"
 cp "$COST_MODEL" "$RES/"
@@ -257,4 +330,13 @@ if [ -n "$FAILED" ]; then
   exit 1
 fi
 [ -s "$RES/expected_picks.txt" ] && { echo "==== configurations checked against EXPECTED_RESULTS.md ===="; cat "$RES/expected_picks.txt"; }
+if [ "$OWN_MODEL" = 1 ]; then
+  echo "==== this GPU priced with its own model ===="
+  echo "  decisions of the shipped models (device-independent): $(grep -E '^== ' logs/picks.log | sed 's/^== //' | paste -sd';' -)"
+  [ "$PICKS_RC" = 0 ] || echo "  a shipped decision did not reproduce: see logs/picks.log and $RES/picks_check.tsv"
+  echo "  this GPU's own decisions: the [expected] lines above (reported, not compared)"
+  echo "  speedups: this GPU's own, in the benchmark tables; EXPECTED_RESULTS.md's speedup"
+  echo "  tolerances are for an RTX 5090. What carries over is the paper's qualitative claims."
+  [ "$PICKS_RC" = 0 ] || exit 1
+fi
 echo "==== DONE. Compare the bundle against EXPECTED_RESULTS.md. ===="

@@ -1,0 +1,143 @@
+{
+  "functions": {
+    "preprocess__Z12nbody_kernelPK7double4P7double3i_poseidon_body": {
+      "baselineAccCost": 0,
+      "costToAccuracyMap": {
+        "-130659902": 6.552375829416146e-15,
+        "-2007707988": 7.7135563561481213e-15,
+        "-3907134140": 3.9632163136620806e-11,
+        "-5596741605": 8.8654170699939828e-11,
+        "-6722163526": 3.4334155071157704e-07,
+        "-6771244302": 3.5221964545206889e-07,
+        "-6991859437": 3.7903628912172448e-07,
+        "-7097062537": 0.001267432669916906,
+        "-7153184862": 0.002832089154054902,
+        "0": 0
+      },
+      "costToSolutionMap": {
+        "-130659902": [
+          {
+            "candidateIndex": 21,
+            "candidateKey": "A1B748FD49D37016",
+            "itemIndex": 0,
+            "itemType": "CS"
+          }
+        ],
+        "-2007707988": [
+          {
+            "candidateIndex": 13,
+            "candidateKey": "D6C8CC18EA15DAC6",
+            "itemIndex": 0,
+            "itemType": "CS"
+          }
+        ],
+        "-3907134140": [
+          {
+            "candidateIndex": 12,
+            "candidateKey": "1AF8EED16FB2460C",
+            "itemIndex": 0,
+            "itemType": "CS"
+          }
+        ],
+        "-5596741605": [
+          {
+            "candidateIndex": 11,
+            "candidateKey": "352B44ECA2B267CF",
+            "itemIndex": 0,
+            "itemType": "CS"
+          }
+        ],
+        "-6722163526": [
+          {
+            "candidateIndex": 27,
+            "candidateKey": "3A6ABE10D9866F5F",
+            "itemIndex": 0,
+            "itemType": "CS"
+          }
+        ],
+        "-6771244302": [
+          {
+            "candidateIndex": 26,
+            "candidateKey": "11FF70C80900A32C",
+            "itemIndex": 0,
+            "itemType": "CS"
+          }
+        ],
+        "-6991859437": [
+          {
+            "candidateIndex": 24,
+            "candidateKey": "3ABEFA0739041C86",
+            "itemIndex": 0,
+            "itemType": "CS"
+          }
+        ],
+        "-7097062537": [
+          {
+            "candidateIndex": 23,
+            "candidateKey": "985C7DF3A6A0779D",
+            "itemIndex": 0,
+            "itemType": "CS"
+          }
+        ],
+        "-7153184862": [
+          {
+            "candidateIndex": 0,
+            "candidateKey": "1234E180F5EAD952",
+            "itemIndex": 0,
+            "itemType": "CS"
+          }
+        ],
+        "0": []
+      },
+      "key": {
+        "-poseidon-aggressive-dce": "0",
+        "-poseidon-arm-search-factor": "64",
+        "-poseidon-early-prune": "1",
+        "-poseidon-enable-herbie": "0",
+        "-poseidon-enable-multifloat": "1",
+        "-poseidon-enable-pt": "1",
+        "-poseidon-enable-three-tier": "1",
+        "-poseidon-expansion-components": "2",
+        "-poseidon-exponent-penalty": "1.0000000000000000e+30",
+        "-poseidon-freq-weighted-pricing": "0",
+        "-poseidon-herbie-array-grouping": "inputs",
+        "-poseidon-herbie-array-weights": "sensitivity",
+        "-poseidon-herbie-arrays": "1",
+        "-poseidon-herbie-num-enodes": "8000",
+        "-poseidon-herbie-num-iters": "6",
+        "-poseidon-herbie-num-pts": "1024",
+        "-poseidon-herbie-num-taylor-terms": "",
+        "-poseidon-herbie-pre-floor-bits": "0",
+        "-poseidon-inkernel-calibration": "0",
+        "-poseidon-loose-coverage": "1",
+        "-poseidon-max-broken-share": "1.0000000000000000e-02",
+        "-poseidon-max-expr-length": "10000",
+        "-poseidon-merge-shared-staging": "0",
+        "-poseidon-min-arm-samples": "32",
+        "-poseidon-min-ops-split": "99",
+        "-poseidon-min-uses-split": "99",
+        "-poseidon-narrow-multiview-staging": "0",
+        "-poseidon-narrow-param-staging": "0",
+        "-poseidon-num-samples": "1024",
+        "-poseidon-ozaki-host-dispatch": "1",
+        "-poseidon-raise-wmma": "1",
+        "-poseidon-random-seed": "239778888",
+        "-poseidon-reduction-subgraphs": "0",
+        "-poseidon-sample-log-bits": "0",
+        "-poseidon-split-calls": "",
+        "-poseidon-strict-mode": "0",
+        "-poseidon-two-tier-step": "10",
+        "TCEC backend": "cuMpSGEMM",
+        "candidate set": "8504F23CFBEA52B3",
+        "compiler": "780A327D33EDB28A LLVM 24.0.0git",
+        "cost axis": "cost-model units times 2^(32 - log2 profiled cost)",
+        "cost model": "39FCEC252540B4F6",
+        "device": "sm_103",
+        "format": "1",
+        "function body": "3A7A6077B50AAF0A",
+        "profile": "780A96AE3234FFE8"
+      },
+      "profiledCost": 14561713798.041605
+    }
+  }
+}

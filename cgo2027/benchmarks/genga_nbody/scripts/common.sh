@@ -39,6 +39,7 @@ source "$ART/scripts/expected.sh"
 BENCH_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 NUM_RUNS="${NUM_RUNS:-5}"    # avg-of-5 wall-clock (artifact convention)
 GENGA_HERBIE="${GENGA_HERBIE:-replay}"
+HERBIE_ANSWERS_GIVEN=0; [ -n "${HERBIE_ANSWERS:-}" ] && HERBIE_ANSWERS_GIVEN=1
 HERBIE_ANSWERS="${HERBIE_ANSWERS:-$BENCH_DIR/herbie_answers}"
 PROFILES="${PROFILES:-fresh}"
 case "$GENGA_HERBIE" in replay|run) ;; *) echo "GENGA_HERBIE=$GENGA_HERBIE: use replay or run" >&2; exit 2 ;; esac
@@ -62,23 +63,29 @@ elif head -1 "$COST_MODEL" | grep -q '^# poseidon-derived-from:'; then
   GENGA_CM="$COST_MODEL"   # already a scaled copy (a caller handed it back)
 else
   GENGA_CM="$BENCH_DIR/measured/cm_native_x1e6.csv"
-  STAMP="# poseidon-derived-from: $(basename "$COST_MODEL") $(cksum < "$COST_MODEL")"
-  if [ ! -s "$GENGA_CM" ] || [ "$(head -1 "$GENGA_CM")" != "$STAMP" ]; then
-    mkdir -p "$BENCH_DIR/measured"
-    { echo "$STAMP"
-      awk -F, 'BEGIN{OFS=","}
-        /^#/ || $1 ~ /_rel$/ {print; next}
-        NF>=3 {$NF=sprintf("%.6f",$NF*1000000); print; next}
-        {print}' "$COST_MODEL"; } > "$GENGA_CM.tmp.$$" &&
-      mv -f "$GENGA_CM.tmp.$$" "$GENGA_CM"
-    echo "[config] derived measured/cm_native_x1e6.csv from $(basename "$COST_MODEL")" >&2
-  fi
-  if [ ! -s "${GENGA_CM%.csv}.herbie.rkt" ] || [ "$GENGA_CM" -nt "${GENGA_CM%.csv}.herbie.rkt" ]; then
-    "$POSEIDON_CALIBRATE" --only herbie-platform --out "$GENGA_CM" >&2 ||
-      { echo "[config] could not generate the Herbie platform of $GENGA_CM" >&2; return 1 2>/dev/null || exit 1; }
-  fi
+  bash "$ART/scripts/genga_x1e6.sh" "$COST_MODEL" "$GENGA_CM" ||
+    { return 1 2>/dev/null || exit 1; }
 fi
 COST_MODEL="$GENGA_CM"
+
+# Replay needs answers for this model's Herbie platform: the default ones are
+# the RTX 5090 model's (devices/<device>/herbie_answers/ hold the B300's and
+# GH200's saved models', which check_picks.sh passes), so a model measured on
+# this GPU has none unless HERBIE_ANSWERS names a pack made for it. The drift
+# and unified solves are then skipped, not failed: on such a model they need
+# Herbie (GENGA_HERBIE=run).
+GENGA_HERBIE_USABLE=1
+if [ "$GENGA_HERBIE" = replay ] && [ "$ON_SHIPPED_MODEL" = 0 ] && [ "$HERBIE_ANSWERS_GIVEN" = 0 ]; then
+  GENGA_HERBIE_USABLE=0
+fi
+herbie_skip_note() {   # <what is skipped>
+  echo "[skip] $1: SKIPPED, not failed. The shipped Herbie answers belong to the shipped cost"
+  echo "[skip]   models, and this run prices with a model measured on this GPU, whose Herbie"
+  echo "[skip]   questions have no shipped answer. GENGA_HERBIE=run searches them (a Herbie with"
+  echo "[skip]   --num-taylor-terms; scripts/build_toolchain.sh --with-herbie builds one), or"
+  echo "[skip]   HERBIE_ANSWERS=<pack> replays a pack made for this model. The GENGA decisions of"
+  echo "[skip]   the RTX 5090, B300 and GH200 are checked compile-only: ./run_artifact.sh --picks --device all"
+}
 
 cd "$BENCH_DIR"
 

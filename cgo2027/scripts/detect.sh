@@ -24,10 +24,11 @@
 # Usage:
 #   detect.sh export    # print `export VAR=...` lines (eval'd by env.sh)
 #   detect.sh mkfrag    # print a `VAR ?= ...` make fragment (config.mk)
+#   detect.sh sources   # print the directory of the repository's submodules
 #   detect.sh <var>     # print one resolved value (poseidon_root, build_dir,
 #                       #   clang, cuda, gpu_id, gpu_arch, gpu_name, py,
 #                       #   poseidon_clangxx, poseidon_calibrate, plugin,
-#                       #   cost_model, shipped_cost_model)
+#                       #   poseidon_explain, cost_model, shipped_cost_model)
 set -o pipefail
 ART="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
@@ -36,6 +37,10 @@ ART="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
 fail() { echo "detect.sh: error: $*" >&2; exit 1; }
 warn() { echo "detect.sh: warning: $*" >&2; }
+
+# The repository's submodules (the compiler, cuMpSGEMM, Herbie) and the Herbie
+# patch; every script that builds from them asks for this path here.
+SOURCES_DIR="$ART/../sources"
 
 # The RTX 5090 model the paper's decisions were solved with, and the Herbie
 # platform generated from it, ship with the artifact.
@@ -86,6 +91,18 @@ resolve_poseidon_tool() {   # $1 = build dir, $2 = tool name
   [ -n "$bin" ] || bin="$(command -v "$2" || true)"
   [ -n "$bin" ] || fail "$2 not found under $1/Poseidon/bin or on PATH - build the compiler first (README: Setup)"
   echo "$bin"
+}
+
+# poseidon-explain is a script of the source tree that an installation puts
+# next to the driver; a build tree does not copy it.
+resolve_poseidon_explain() {
+  local b r
+  b="$(resolve_build_dir)" || exit 1
+  for r in "$b/Poseidon/bin/poseidon-explain" "$(command -v poseidon-explain || true)" \
+           "$(resolve_poseidon_root)/tools/explain/poseidon-explain"; do
+    [ -n "$r" ] && [ -f "$r" ] && { echo "$r"; return; }
+  done
+  fail "poseidon-explain not found in $b/Poseidon/bin, on PATH or under the source tree's tools/explain"
 }
 
 # Recorded in config.txt only: poseidon-clang++ loads the plugin of the tree it
@@ -222,6 +239,8 @@ case "${1:-}" in
   build_dir) resolve_build_dir ;;
   poseidon_clangxx) resolve_poseidon_tool "$(resolve_build_dir)" poseidon-clang++ ;;
   poseidon_calibrate) resolve_poseidon_tool "$(resolve_build_dir)" poseidon-calibrate ;;
+  poseidon_explain) resolve_poseidon_explain ;;
+  sources) [ -d "$SOURCES_DIR" ] || fail "no sources/ directory at $SOURCES_DIR"; (cd "$SOURCES_DIR" && pwd) ;;
   plugin) resolve_plugin "$(resolve_poseidon_tool "$(resolve_build_dir)" poseidon-clang++)" ;;
   clang) resolve_clang "$(resolve_build_dir)" ;;
   cuda) resolve_cuda ;;

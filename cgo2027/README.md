@@ -23,10 +23,18 @@ container (Setup, A) presets it. Licences and provenance: `LICENSES.md`.
 export POSEIDON_BUILD=<the Enzyme build tree configured with -DENZYME_POSEIDON=ON>   # preset in the container
 ./run_artifact.sh --check      # preflight: toolchain + GPU visible, nothing runs
 ./run_artifact.sh --picks      # every solver decision of EXPECTED_RESULTS.md, compile-only (no GPU)
+./run_artifact.sh --picks --device all   # ... and Table 1's B300 and GH200 decisions (rtx5090|b300|gh200|all)
+./run_artifact.sh --explain ozp-tau1e-7  # one row: candidates considered, applied, rejected (no GPU)
 ./run_artifact.sh --quick      # cost model + smoke tests (~15 min)
 ./run_artifact.sh              # cost model + full paper pipeline (hours)
 GPU_ID=1 ./run_artifact.sh     # on GPU 1 (default 0, or Slurm's CUDA_VISIBLE_DEVICES)
+./run_artifact.sh --from-scratch   # nothing precomputed: measured model, fresh profiles, Herbie searches
 ```
+
+`--picks` and `--explain` start every solve from the shipped solve caches
+(`devices/<device>/caches/`), which only save time; `--no-shipped-cache` solves
+without them. `scripts/docker.sh build|run|picks|explain` runs the same in the
+container of Setup, A.
 
 ### What a benchmark source says
 
@@ -82,21 +90,31 @@ sbatch -A <account> -C gpu -q regular --gpus-per-node=1 -c 32 \
 cgo2027/
   run_artifact.sh      # single-command driver (see Quick start)
   EXPECTED_RESULTS.md  # what a reviewer should see; tables generated from expected/
-  expected/            # picks.tsv (every decision, by the compiler's own name) and
+  expected/            # picks.tsv (every decision, by the compiler's own name),
+                       # picks_b300.tsv, picks_gh200.tsv (Table 1's decisions of those devices) and
                        # claims.tsv (every checked number, its tolerance and source)
   LICENSES.md          # licences and provenance of every third-party part
   docker/Dockerfile    # the container image (Setup, A); Dockerfile.herbie adds Herbie
   env.sh               # sourceable environment for direct script invocation
   config.mk            # make-side twin of env.sh; benchmarks include it
   local.env            # OPTIONAL user pins (not shipped; see Configuration)
+  devices/             # devices.tsv: the devices whose decisions --picks checks;
+                       # b300/, gh200/: their saved cost models (+ x1e6/) and Herbie
+                       # answers; <device>/caches/: the shipped DP tables and accuracy memos
   cost_models/         # cm_sm_120_RTX5090.csv + .herbie.rkt: the RTX 5090 model;
                        # x1e6/: the same model in 1e6 units, as GENGA prices with it;
                        # measured/ + target.env: written by the bootstrap
   scripts/
     detect.sh          # configuration resolver (all auto-detection lives here)
     bootstrap_cost_model.sh  # the cost model of this GPU (check or measure)
-    build_cumpsgemm.sh # clone + build cuMpSGEMM from GitHub (Setup B uses the shipped source instead)
-    check_picks.sh     # compile-only check of every decision (run_artifact.sh --picks)
+    build_toolchain.sh # Setup B as one resumable script (LLVM, cuMpSGEMM, compiler, --with-herbie)
+    build_cumpsgemm.sh # its cuMpSGEMM step alone
+    docker.sh          # build|run|picks|explain in the container
+    check_picks.sh     # compile-only check of every decision (run_artifact.sh --picks [--device])
+    explain.sh         # one row's candidates, compile-only (run_artifact.sh --explain)
+    caches.sh, make_caches.sh  # the shipped solve caches: seeding, regeneration
+    make_herbie_answers.sh     # regenerate a device's Herbie answers (needs Herbie)
+    genga_x1e6.sh      # the x1e6 copy of a cost model GENGA prices with
     expected.sh, expected_results.py  # read expected/; regenerate EXPECTED_RESULTS.md
   slurm/run_artifact.sbatch  # Slurm submission wrapper (site options on the command line)
   benchmarks/
@@ -162,10 +180,13 @@ Poseidon-CGO-2027/
   cgo2027/            this directory
   sources/Enzyme      submodule, the compiler: Enzyme at 9e2e0572931248b4610940f2906e583914f9913e
   sources/cuMpSGEMM   submodule: cuMpSGEMM 42dd92ea1c0e3d603bbb3f8f354f53e0967a9f4b + its submodules
+  sources/herbie      submodule: Herbie 73ba1fe76f97d4cdb852a602addd82e3a983b209
+  sources/herbie-num-taylor-terms.patch   adds the --num-taylor-terms option to it
 ```
 
-Herbie's source (only for `GENGA_HERBIE=run`) is not in the repository; it is
-`sources/herbie-50ffcda04.tar.gz` of the archival deposit.
+Herbie (only for `GENGA_HERBIE=run`) is built from the `sources/herbie`
+submodule with `sources/herbie-num-taylor-terms.patch` applied to a copy of it
+(`scripts/build_toolchain.sh --with-herbie`, or `docker/Dockerfile.herbie`).
 
 LLVM is llvm-project (https://github.com/llvm/llvm-project) at commit
 `9d618fc0243103263ebf9bdcd08ef25e871d9c78`; both paths below build it from
@@ -221,7 +242,10 @@ Needs CMake (3.24 or newer), Ninja, git (Enzyme's configure step requires it;
 nothing is cloned), a C++17 compiler, the CUDA toolkit (12.x
 or 13.x), MPFR and GMP (`libmpfr-dev libgmp-dev`), zlib, zstd, libxml2 and
 liblzma development files, and Python 3 with numpy and matplotlib. From the
-repository root, with `P` any installation directory and `CUDA` the toolkit:
+repository root, with `P` any installation directory and `CUDA` the toolkit,
+`scripts/build_toolchain.sh --prefix $P` does all of the following
+(resumable; `-h` lists its options, e.g. `--llvm <existing LLVM 9d618fc>` and
+`--with-herbie`); by hand:
 
 ```sh
 P=$PWD/toolchain CUDA=/usr/local/cuda; mkdir -p $P
@@ -273,10 +297,11 @@ tree 330 MB, cuMpSGEMM 50 MB; a run generates about 4 GB of inputs.
 artifact replays the shipped answers and starts no Herbie, so the path may not
 exist. Leaving the option out makes CMake clone and build upstream Herbie
 (git, cargo and raco needed), which lacks the `--num-taylor-terms` option the
-GENGA search uses. To search yourself (Choices, below), build Herbie from
-`sources/herbie-50ffcda04.tar.gz` (of the archival deposit) with the commands of
-`cgo2027/docker/Dockerfile.herbie` (Racket 8.15 and Rust 1.85.1) and install it
-at that path.
+GENGA search uses. To search yourself (Choices, below), build Herbie from the
+`sources/herbie` submodule with `sources/herbie-num-taylor-terms.patch` and the
+commands of `docker/Dockerfile.herbie` (Racket 8.15 and Rust 1.85.1),
+which `scripts/build_toolchain.sh --with-herbie` runs, and install it at that
+path.
 
 ### One build tree — read this before mixing trees
 
@@ -502,9 +527,11 @@ bundle elsewhere.
 - With the shipped cost model and the shipped profiles every solver decision
   is deterministic; `./run_artifact.sh --picks` reproduces all of them on any
   machine with the compiler, no GPU needed.
-- The DP caches (`cache*/table.json`, `cache*/budgets.txt`) are not shipped and
-  regenerate per run. `budgets.txt` is written only if absent: the pipeline
-  scripts delete it whenever the profile or the cost model changes.
+- The DP caches (`cache*/table.json`, `cache*/budgets.txt`) regenerate per
+  run; `--picks` and `--explain` seed them from `devices/<device>/caches/`
+  (`scripts/caches.sh` says when an entry is used and when it is re-solved).
+  `budgets.txt` is written only if absent: the pipeline scripts delete it
+  whenever the profile or the cost model changes.
 - Profiles: value ranges and execution counts are deterministic; sums of
   products and condition numbers (`Kappa`) are accumulated with atomics and
   differ from run to run in the last digits.

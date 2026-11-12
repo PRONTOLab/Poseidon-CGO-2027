@@ -44,6 +44,13 @@ BN="$(head_share cache_kep_herbieoff)"
 bash ../../scripts/pt.sh solve_compile "kepler-naive b=$BN" -- "$POSEIDON_CLANGXX" "${KEPLER_CUDA[@]}" "${KH[@]}" -poseidon-cost-budget="$BN" \
   genga_kepler.cu -o tmp_quick/naive.exe > tmp_quick/naive.log 2>&1
 expected_report genga-drift-naive tmp_quick/naive.log
+if [ "$GENGA_HERBIE_USABLE" = 0 ]; then
+  herbie_skip_note "the Herbie-rewritten drift kernel"
+  NAI=$(CUDA_VISIBLE_DEVICES="$GPU_ID" tmp_quick/naive.exe --integrate --steps=2000 65536 | grep -oE "Mean energy drift = \S+" | grep -oE "[0-9.e+-]+$")
+  echo "  drift @2000 steps: naive-FP32=$NAI"
+  echo "======== quick.sh OK ========"
+  exit 0
+fi
 # Poseidon: the drift row of EXPECTED_RESULTS.md on the shipped model; on this
 # device's own model, the most accurate rewrite that costs no more than the
 # plain downcast.
