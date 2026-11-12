@@ -1,0 +1,3 @@
+arm	budget	schemes	eigL2	locked	solve_ms_avg5
+sensitivity-guided	-0.8196793023307888	hemm=wmma m16n16k16 bf16/f32;rrhv=ozaki-ii nm=12 wmma m16n16k16 s8/s32	1.230509e-11	locked 64/64	86.905
+sensitivity-blind	-0.8196793023307888	gram=tcec-dispatch wmma m16n16k16 f16/f32;hemm=tcec n=2 wmma m16n16k16 bf16/f32;rrhv=ozaki-ii nm=10 wmma m16n16k16 s8/s32	1.199920e-07	locked 0/64	713.451

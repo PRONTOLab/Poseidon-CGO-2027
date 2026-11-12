@@ -1,0 +1,11 @@
+budget	speedup	L2	pin
+-0.9802112539377893	53.085	5.056976e-06	_Z12nbody_kernelPK7double4P7double3i:PT0=All FP64(0%) + FP32(100%)
+-0.96955669244562059	35.845	4.565253e-06	_Z12nbody_kernelPK7double4P7double3i:PT0=All Expansion2(10%) + FP32(90%)
+-0.94958965128913242	20.406	3.318266e-06	_Z12nbody_kernelPK7double4P7double3i:PT0=All Expansion2(20%) + FP32(80%)
+-0.91677393875062119	9.480	3.319215e-06	_Z12nbody_kernelPK7double4P7double3i:PT0=All Expansion2(40%) + FP32(60%)
+-0.90562827500709941	8.746	3.311696e-06	_Z12nbody_kernelPK7double4P7double3i:PT0=All Expansion2(50%) + FP32(50%)
+-0.73412131315651241	5.338	1.828723e-13	_Z12nbody_kernelPK7double4P7double3i:PT0=All FP64(0%) + Expansion2(100%)
+-0.50335060602438764	3.851	1.531450e-13	_Z12nbody_kernelPK7double4P7double3i:PT0=All FP64(10%) + Expansion2(90%)
+-0.24681054015711376	1.839	6.469445e-14	_Z12nbody_kernelPK7double4P7double3i:PT0=All FP64(20%) + Expansion2(80%)
+-0.018123688401439002	1.055	1.611409e-15	_Z12nbody_kernelPK7double4P7double3i:PT0=Funcs FP64(0%) + Expansion2(100%)
+0	0.996	0.000000e+00	

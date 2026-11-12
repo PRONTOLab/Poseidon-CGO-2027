@@ -1,0 +1,6 @@
+budget	speedup	L2	pin
+-0.9802112539377893	53.186	5.056976e-06	_Z12nbody_kernelPK7double4P7double3i:PT0=All FP64(0%) + FP32(100%)
+-0.87956917224615838	9.487	4.565253e-06	_Z12nbody_kernelPK7double4P7double3i:PT0=All FP64(10%) + FP32(90%)
+-0.74384525250636913	4.009	3.318266e-06	_Z12nbody_kernelPK7double4P7double3i:PT0=All FP64(20%) + FP32(80%)
+-0.20017348506509205	1.329	4.091316e-08	_Z12nbody_kernelPK7double4P7double3i:PT0=Funcs FP64(0%) + FP32(100%)
+0	1.002	0.000000e+00	

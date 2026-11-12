@@ -1,0 +1,6 @@
+/out/
+/toolchain/
+/llvm.tar.gz
+/llvm-build/
+/llvm-project-*/
+/sources/herbie-*.tar.gz

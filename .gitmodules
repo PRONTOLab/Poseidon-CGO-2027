@@ -1,0 +1,6 @@
+[submodule "sources/Enzyme"]
+	path = sources/Enzyme
+	url = https://github.com/EnzymeAD/Enzyme.git
+[submodule "sources/cuMpSGEMM"]
+	path = sources/cuMpSGEMM
+	url = https://github.com/enp1s0/cuMpSGEMM.git

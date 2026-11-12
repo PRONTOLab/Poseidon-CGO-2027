@@ -1,0 +1,17 @@
+budget	schemes	eigL2	locked	solve_ms
+0	all-FP64	3.006041e-15	locked 64/64	197.293
+-0.9350376086350308	rrproj=direct-dispatch cublas f16/f32;gram=direct-dispatch cublas f16/f32;hemm=wmma m16n16k16 f16/f16;rrhv=direct-dispatch cublas f16/f32;resid=wmma m16n16k16 f16/f16	1.515922e-04	locked 0/64	267.723
+-0.9350374488280665	rrproj=direct-dispatch cublas f16/f32;gram=direct-dispatch cublas bf16/f32;hemm=wmma m16n16k16 f16/f16;rrhv=direct-dispatch cublas f16/f32;resid=wmma m16n16k16 f16/f16	2.005415e-04	locked 0/64	308.777
+-0.9332054345670118	rrproj=direct-dispatch cublas f16/f32;gram=tcec-dispatch wmma m16n16k16 f16/f32;hemm=wmma m16n16k16 bf16/f32;rrhv=direct-dispatch cublas f16/f32;resid=tcec n=2 wmma m16n16k16 bf16/f32	1.567892e-04	locked 0/64	774.117
+-0.9221863466791029	gram=tcec-dispatch wmma m16n16k16 f16/f32;hemm=wmma m16n16k16 bf16/f32;rrhv=tcec-dispatch wmma m16n16k16 f16/f32;resid=tcec n=2 wmma m16n16k16 f16/f32	2.286175e-07	locked 0/64	699.162
+-0.8937005161243083	hemm=wmma m16n16k16 bf16/f32;rrhv=ozaki-ii nm=9 wmma m16n16k16 s8/s32;resid=tcec n=3 wmma m16n16k16 f16/f32	2.535532e-08	locked 0/64	256.987
+-0.8349884246083463	gram=tcec-dispatch wmma m16n16k16 f16/f32;hemm=wmma m16n16k16 bf16/f32;rrhv=ozaki-ii nm=9 wmma m16n16k16 s8/s32	1.482644e-07	locked 0/64	762.723
+-0.8196793023307888	hemm=wmma m16n16k16 bf16/f32;rrhv=ozaki-ii nm=12 wmma m16n16k16 s8/s32	1.230509e-11	locked 64/64	86.905
+-0.8037852980785799	hemm=tcec n=2 wmma m16n16k16 bf16/f32;rrhv=ozaki-ii nm=14 wmma m16n16k16 s8/s32	4.633054e-14	locked 64/64	91.328
+-0.7593169255791722	hemm=tcec n=2 wmma m16n16k16 bf16/f32	2.724089e-15	locked 64/64	94.679
+-0.7279720842555291	hemm=tcec n=2 wmma m16n16k8 tf32/f32;rrhv=ozaki-ii nm=14 wmma m16n16k16 s8/s32	4.609108e-14	locked 64/64	100.602
+-0.6977981916714862	hemm=tcec n=2 wmma m16n16k8 tf32/f32;rrhv=native-dgemm cublas f64/f64	3.152291e-15	locked 64/64	103.874
+-0.6835037117561215	hemm=tcec n=2 wmma m16n16k8 tf32/f32	3.152291e-15	locked 64/64	107.685
+-0.5693942018090458	hemm=tcec n=3 wmma m16n16k8 tf32/f32	3.195108e-15	locked 64/64	115.006
+-0.01429447991536471	rrhv=native-dgemm cublas f64/f64	3.006041e-15	locked 64/64	193.677
+0.0	all-FP64	3.006041e-15	locked 64/64	196.660

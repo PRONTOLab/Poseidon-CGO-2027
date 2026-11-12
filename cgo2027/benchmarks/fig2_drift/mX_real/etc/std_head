@@ -1,0 +1,8 @@
+#pragma once
+
+#include "mX_real.hpp"
+
+//
+// std:: compatibility of the constant numbers and math-fuctions
+//
+

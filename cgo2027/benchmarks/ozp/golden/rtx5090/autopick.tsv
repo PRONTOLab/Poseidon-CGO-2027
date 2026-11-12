@@ -1,0 +1,4 @@
+tau	pick	rung_label	modelled_domain_err	deployed_RMSD	L2_vs_Kref	time_ms	x_scalar_fp64	x_cublas_dgemm
+1e-6	tcec-dispatch wmma m16n16k16 f16/f32	tcec-dispatch	2.213637e-07	1.672398e-07	1.070335e-05	37.394878	30.795	17.694
+1e-7	ozaki-ii nm=8 wmma m16n16k16 s8/s32	nm=8	2.275334e-08	1.375262e-08	8.801675e-07	42.044395	27.396	15.760
+1e-12	ozaki-ii nm=12 wmma m16n16k16 s8/s32	nm=12	4.010224e-13	3.802463e-13	2.433576e-11	57.101494	20.172	11.604

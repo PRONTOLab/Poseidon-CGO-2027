@@ -1,0 +1,32 @@
+CUDA_VISIBLE_DEVICES=0 ./fig2_drift.exe 2>&1 | tee run.log
+GPU FP64 (as written)          5.470 ms     1.00x
+GPU 3xFP32 emulation           2.620 ms     2.09x
+GPU naive FP32                 0.084 ms    64.93x
+CPU FP64 (as written)         22.530 ms     1.00x
+CPU 3xFP32 emulation         193.504 ms     0.12x (i.e., 8.6x SLOWER)
+  steps=       1  fp32= 2.87e-08  fp64= 4.17e-17  3xf32= 0.00e+00
+  steps=       2  fp32= 3.30e-08  fp64= 5.50e-17  3xf32= 2.28e-23
+  steps=       4  fp32= 4.68e-08  fp64= 7.77e-17  3xf32= 4.48e-23
+  steps=       8  fp32= 6.26e-08  fp64= 1.07e-16  3xf32= 7.25e-23
+  steps=      16  fp32= 8.58e-08  fp64= 1.50e-16  3xf32= 1.09e-22
+  steps=      32  fp32= 1.17e-07  fp64= 2.08e-16  3xf32= 1.57e-22
+  steps=      64  fp32= 1.54e-07  fp64= 2.80e-16  3xf32= 2.11e-22
+  steps=     128  fp32= 1.64e-07  fp64= 3.12e-16  3xf32= 2.30e-22
+  steps=     256  fp32= 1.80e-07  fp64= 3.33e-16  3xf32= 2.47e-22
+  steps=     512  fp32= 3.22e-07  fp64= 6.12e-16  3xf32= 4.59e-22
+  steps=    1024  fp32= 3.24e-07  fp64= 6.23e-16  3xf32= 4.65e-22
+  steps=    2048  fp32= 7.93e-07  fp64= 1.46e-15  3xf32= 1.11e-21
+  steps=    4096  fp32= 1.00e-06  fp64= 1.89e-15  3xf32= 1.42e-21
+  steps=    8192  fp32= 1.07e-06  fp64= 1.96e-15  3xf32= 1.46e-21
+  steps=   16384  fp32= 1.76e-06  fp64= 3.48e-15  3xf32= 2.58e-21
+  steps=   32768  fp32= 1.68e-06  fp64= 3.41e-15  3xf32= 2.57e-21
+  steps=   65536  fp32= 3.84e-06  fp64= 8.59e-15  3xf32= 6.44e-21
+  steps=  131072  fp32= 5.26e-06  fp64= 1.20e-14  3xf32= 8.98e-21
+  steps=  262144  fp32= 7.01e-06  fp64= 1.65e-14  3xf32= 1.24e-20
+  steps=  524288  fp32= 9.09e-06  fp64= 2.14e-14  3xf32= 1.62e-20
+  steps= 1048576  fp32= 1.07e-05  fp64= 2.20e-14  3xf32= 1.61e-20
+wrote drift.csv
+mkdir -p ../../figures
+python plot_drift.py
+wrote <artifact>/figures/intro_drift.pdf
+  final drift @  1048576 steps: fp32=1.07e-05  fp64=2.20e-14  3xfp32=1.61e-20
