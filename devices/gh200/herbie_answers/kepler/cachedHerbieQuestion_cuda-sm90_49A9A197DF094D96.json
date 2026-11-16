@@ -1,0 +1,12 @@
+{
+  "key": {
+    "Herbie arguments": "--seed 239778888 --num-points 256 --num-iters 3 --num-enodes 2000 --disable generate:proofs --enable reduce:dag-cost --num-taylor-terms 4",
+    "Herbie platform": "cuda-sm90 A735CA60182563B",
+    "cores": "8E55092DEF70975A",
+    "format": "1"
+  },
+  "value": {
+    "Herbie binary": "10282A56A2A43153",
+    "answer": "cachedHerbieOutput_cuda-sm90_E280D00A0205332C.txt"
+  }
+}

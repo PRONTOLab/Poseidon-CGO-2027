@@ -1,0 +1,12 @@
+.git
+**/.git
+out
+toolchain
+llvm-build
+llvm-project-*
+results
+picks_check
+explain
+modal/bundle
+**/__pycache__
+figures/*.pdf

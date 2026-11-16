@@ -1,0 +1,34 @@
+Adds the --num-taylor-terms option to Herbie 73ba1fe (patch -p1).
+
+--- a/src/api/server.rkt
++++ b/src/api/server.rkt
+@@ -296,6 +296,7 @@
+                          *reeval-pts*
+                          *node-limit*
+                          *max-find-range-depth*
++                         *taylor-order-limit*
+                          *platform-state*)
+    (activate-platform! (*platform-state*))
+    ; not sure if the above code is actaully needed.
+@@ -427,6 +428,7 @@
+                          *reeval-pts*
+                          *node-limit*
+                          *max-find-range-depth*
++                         *taylor-order-limit*
+                          *platform-state*)
+    (activate-platform! (*platform-state*))
+    (define worker-thread
+--- a/src/main.rkt
++++ b/src/main.rkt
+@@ -103,6 +103,11 @@
+      during sampling. May fix \"Cannot sample enough valid points\" but will slow."
+      (format "[Default: ~a iterations]" (*max-find-range-depth*)))
+     (*max-find-range-depth* (string->number num))]
++   [("--num-taylor-terms")
++    num
++    ("The number of terms kept in each Taylor series."
++     (format "[Default: ~a terms]" (*taylor-order-limit*)))
++    (*taylor-order-limit* (string->number num))]
+    [("--profile") "Whether to profile each run (no-op, always on)" (void)]
+    #:multi [("-o" "--disable")
+             flag

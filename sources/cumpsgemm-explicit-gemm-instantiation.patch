@@ -1,0 +1,38 @@
+Explicitly instantiates cumpsgemm::gemm and cumpsgemm::gemm_stridedBatch in cuMpSGEMM 42dd92e (patch -p1).
+
+--- a/src/cumpsgemm.cu
++++ b/src/cumpsgemm.cu
+@@ -546,6 +546,33 @@
+   return CUBLAS_STATUS_SUCCESS;
+ }
+ 
++template cublasStatus_t cumpsgemm::gemm<float>(
++    cuMpSGEMM_handle_t, const cublasOperation_t, const cublasOperation_t,
++    const uint64_t, const uint64_t, const uint64_t, const float *,
++    const float *const, const uint64_t, const float *const, const uint64_t,
++    const float *, float *const, const uint64_t,
++    const cuMpSGEMM_compute_mode_t, unsigned *const);
++template cublasStatus_t cumpsgemm::gemm<cuComplex>(
++    cuMpSGEMM_handle_t, const cublasOperation_t, const cublasOperation_t,
++    const uint64_t, const uint64_t, const uint64_t, const cuComplex *,
++    const cuComplex *const, const uint64_t, const cuComplex *const,
++    const uint64_t, const cuComplex *, cuComplex *const, const uint64_t,
++    const cuMpSGEMM_compute_mode_t, unsigned *const);
++template cublasStatus_t cumpsgemm::gemm_stridedBatch<float>(
++    cuMpSGEMM_handle_t, const cublasOperation_t, const cublasOperation_t,
++    const uint64_t, const uint64_t, const uint64_t, const float *,
++    const float *const, const uint64_t, const uint64_t, const float *const,
++    const uint64_t, const uint64_t, const float *, float *const,
++    const uint64_t, const uint64_t, const uint64_t,
++    const cuMpSGEMM_compute_mode_t, unsigned *const);
++template cublasStatus_t cumpsgemm::gemm_stridedBatch<cuComplex>(
++    cuMpSGEMM_handle_t, const cublasOperation_t, const cublasOperation_t,
++    const uint64_t, const uint64_t, const uint64_t, const cuComplex *,
++    const cuComplex *const, const uint64_t, const uint64_t,
++    const cuComplex *const, const uint64_t, const uint64_t, const cuComplex *,
++    cuComplex *const, const uint64_t, const uint64_t, const uint64_t,
++    const cuMpSGEMM_compute_mode_t, unsigned *const);
++
+ extern "C" {
+ cublasStatus_t
+ cuMpSGEMM_sgemm(cuMpSGEMM_handle_t handle, const cublasOperation_t op_A,
